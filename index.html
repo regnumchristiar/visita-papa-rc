@@ -1,1 +1,924 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#91152B">
 
+  <title>Visita Papa León XIV | Regnum Christi</title>
+
+  <style>
+    :root {
+      --bordo: #91152B;
+      --bordo-oscuro: #68101f;
+      --bordo-claro: #f6ecef;
+      --texto: #252525;
+      --gris: #737373;
+      --fondo: #f7f7f5;
+      --blanco: #ffffff;
+      --borde: #e9e6e4;
+    }
+
+    * {
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                   Helvetica, Arial, sans-serif;
+      background: var(--fondo);
+      color: var(--texto);
+    }
+
+    .app {
+      width: 100%;
+      max-width: 520px;
+      min-height: 100vh;
+      margin: 0 auto;
+      background: var(--fondo);
+    }
+
+    /* HEADER */
+
+    .header {
+      background: var(--bordo);
+      color: white;
+      padding: 42px 24px 34px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header::before {
+      content: "";
+      position: absolute;
+      width: 250px;
+      height: 250px;
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 50%;
+      top: -150px;
+      right: -80px;
+    }
+
+    .header::after {
+      content: "";
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      border: 1px solid rgba(255,255,255,.07);
+      border-radius: 50%;
+      bottom: -120px;
+      left: -80px;
+    }
+
+    .cross {
+      font-family: Georgia, serif;
+      font-size: 38px;
+      margin-bottom: 13px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .header-small {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2.2px;
+      text-transform: uppercase;
+      opacity: .85;
+      position: relative;
+      z-index: 2;
+    }
+
+    .header h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 29px;
+      line-height: 1.1;
+      font-weight: 500;
+      margin: 10px 0 8px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .header-date {
+      font-size: 14px;
+      opacity: .9;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* CONTENIDO */
+
+    .content {
+      padding: 25px 18px 35px;
+    }
+
+    .intro {
+      text-align: center;
+      margin: 0 auto 22px;
+      max-width: 380px;
+    }
+
+    .intro strong {
+      display: block;
+      font-size: 17px;
+      margin-bottom: 5px;
+    }
+
+    .intro span {
+      color: var(--gris);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    /* MENU */
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 11px;
+    }
+
+    .menu-card {
+      background: white;
+      border: 1px solid var(--borde);
+      border-radius: 17px;
+      min-height: 137px;
+      padding: 19px 16px;
+      cursor: pointer;
+      text-align: left;
+      transition: transform .12s ease, box-shadow .12s ease;
+      color: var(--texto);
+      font-family: inherit;
+    }
+
+    .menu-card:active {
+      transform: scale(.97);
+    }
+
+    .icon {
+      width: 39px;
+      height: 39px;
+      border-radius: 11px;
+      background: var(--bordo-claro);
+      color: var(--bordo);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 21px;
+      margin-bottom: 15px;
+    }
+
+    .menu-card strong {
+      display: block;
+      font-size: 15px;
+      margin-bottom: 5px;
+    }
+
+    .menu-card span {
+      display: block;
+      font-size: 11.5px;
+      color: var(--gris);
+      line-height: 1.35;
+    }
+
+    /* DESTACADO */
+
+    .important {
+      margin-top: 15px;
+      padding: 17px 18px;
+      border-radius: 15px;
+      background: var(--bordo-claro);
+      cursor: pointer;
+    }
+
+    .important-title {
+      font-weight: 650;
+      color: var(--bordo);
+      font-size: 14px;
+    }
+
+    .important-text {
+      color: #5d5154;
+      font-size: 12px;
+      line-height: 1.5;
+      margin-top: 4px;
+    }
+
+    /* PÁGINAS */
+
+    .page {
+      display: none;
+      min-height: 100vh;
+      background: var(--fondo);
+    }
+
+    .page.active {
+      display: block;
+    }
+
+    .page-header {
+      background: var(--bordo);
+      color: white;
+      padding: 24px 18px 22px;
+    }
+
+    .back {
+      border: 0;
+      background: rgba(255,255,255,.13);
+      color: white;
+      height: 38px;
+      padding: 0 14px;
+      border-radius: 10px;
+      font-family: inherit;
+      cursor: pointer;
+      margin-bottom: 20px;
+    }
+
+    .page-header h2 {
+      font-family: Georgia, serif;
+      font-weight: 500;
+      font-size: 27px;
+      margin: 0 0 4px;
+    }
+
+    .page-header p {
+      font-size: 12px;
+      opacity: .8;
+      margin: 0;
+    }
+
+    .page-content {
+      padding: 22px 18px 40px;
+    }
+
+    /* CRONOGRAMA */
+
+    .day {
+      font-size: 12px;
+      color: var(--bordo);
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .timeline {
+      position: relative;
+      margin-left: 5px;
+    }
+
+    .event {
+      display: grid;
+      grid-template-columns: 62px 1fr;
+      gap: 11px;
+      padding-bottom: 21px;
+      position: relative;
+    }
+
+    .event::before {
+      content: "";
+      position: absolute;
+      left: 69px;
+      top: 10px;
+      bottom: -5px;
+      width: 1px;
+      background: #ddd5d7;
+    }
+
+    .event:last-child::before {
+      display: none;
+    }
+
+    .time {
+      color: var(--bordo);
+      font-weight: 700;
+      font-size: 13px;
+      padding-top: 2px;
+    }
+
+    .event-info {
+      position: relative;
+      padding-left: 17px;
+    }
+
+    .event-info::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      background: var(--bordo);
+      border-radius: 50%;
+      position: absolute;
+      left: -8px;
+      top: 5px;
+    }
+
+    .event-info strong {
+      display: block;
+      font-size: 14px;
+    }
+
+    .event-info span {
+      display: block;
+      color: var(--gris);
+      font-size: 12px;
+      margin-top: 3px;
+      line-height: 1.4;
+    }
+
+    /* GENERICO */
+
+    .box {
+      background: white;
+      border: 1px solid var(--borde);
+      border-radius: 15px;
+      padding: 18px;
+      margin-bottom: 12px;
+    }
+
+    .box h3 {
+      margin: 0 0 8px;
+      font-size: 15px;
+    }
+
+    .box p {
+      margin: 0;
+      color: var(--gris);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    .song {
+      background: white;
+      border: 1px solid var(--borde);
+      border-radius: 13px;
+      padding: 17px;
+      margin-bottom: 9px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    details {
+      background: white;
+      border: 1px solid var(--borde);
+      border-radius: 13px;
+      padding: 16px;
+      margin-bottom: 9px;
+    }
+
+    summary {
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    details p {
+      color: var(--gris);
+      font-size: 12.5px;
+      line-height: 1.55;
+      margin: 12px 0 0;
+    }
+
+    /* FOOTER */
+
+    footer {
+      text-align: center;
+      color: #999;
+      font-size: 10.5px;
+      line-height: 1.6;
+      padding: 28px 20px 38px;
+    }
+
+    @media (min-width: 700px) {
+      body {
+        padding: 25px 0;
+      }
+
+      .app {
+        min-height: calc(100vh - 50px);
+        border-radius: 24px;
+        overflow: hidden;
+        box-shadow: 0 8px 40px rgba(0,0,0,.08);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="app">
+
+  <!-- ===================== -->
+  <!-- INICIO -->
+  <!-- ===================== -->
+
+  <div id="home">
+
+    <header class="header">
+
+      <div class="cross">✦</div>
+
+      <div class="header-small">
+        Regnum Christi Argentina
+      </div>
+
+      <h1>
+        Visita del<br>
+        Papa León XIV
+      </h1>
+
+      <div class="header-date">
+        Buenos Aires · Domingo 8 de noviembre de 2026
+      </div>
+
+    </header>
+
+    <main class="content">
+
+      <div class="intro">
+        <strong>Bienvenidos al encuentro</strong>
+        <span>
+          Encontrá acá toda la información que necesitás
+          para vivir esta jornada junto al Santo Padre.
+        </span>
+      </div>
+
+      <div class="grid">
+
+        <button class="menu-card" onclick="openPage('cronograma')">
+          <div class="icon">◷</div>
+          <strong>Cronograma</strong>
+          <span>Horarios y actividades de la jornada</span>
+        </button>
+
+        <button class="menu-card" onclick="openPage('plano')">
+          <div class="icon">⌖</div>
+          <strong>Plano</strong>
+          <span>Ubicaciones y puntos importantes</span>
+        </button>
+
+        <button class="menu-card" onclick="openPage('misa')">
+          <div class="icon">✝</div>
+          <strong>Guía de la Misa</strong>
+          <span>Seguí la celebración desde acá</span>
+        </button>
+
+        <button class="menu-card" onclick="openPage('cancionero')">
+          <div class="icon">♫</div>
+          <strong>Cancionero</strong>
+          <span>Cantos para acompañar la celebración</span>
+        </button>
+
+        <button class="menu-card" onclick="openPage('actividades')">
+          <div class="icon">◇</div>
+          <strong>Actividades</strong>
+          <span>Propuestas y encuentros RC</span>
+        </button>
+
+        <button class="menu-card" onclick="openPage('preguntas')">
+          <div class="icon">?</div>
+          <strong>Preguntas</strong>
+          <span>Respuestas e información útil</span>
+        </button>
+
+      </div>
+
+      <div class="important" onclick="openPage('informacion')">
+
+        <div class="important-title">
+          Información importante →
+        </div>
+
+        <div class="important-text">
+          Recomendaciones, accesos, elementos permitidos
+          y datos útiles para el encuentro.
+        </div>
+
+      </div>
+
+    </main>
+
+    <footer>
+      REGNUM CHRISTI ARGENTINA<br>
+      VISITA DEL PAPA LEÓN XIV · 2026
+    </footer>
+
+  </div>
+
+
+  <!-- ===================== -->
+  <!-- CRONOGRAMA -->
+  <!-- ===================== -->
+
+  <section id="cronograma" class="page">
+
+    <div class="page-header">
+
+      <button class="back" onclick="goHome()">
+        ← Inicio
+      </button>
+
+      <h2>Cronograma</h2>
+
+      <p>
+        Horarios previstos para la jornada
+      </p>
+
+    </div>
+
+    <div class="page-content">
+
+      <div class="day">
+        Domingo 8 de noviembre
+      </div>
+
+      <div class="timeline">
+
+        <div class="event">
+          <div class="time">08:00</div>
+          <div class="event-info">
+            <strong>Apertura y acreditación</strong>
+            <span>Ingreso de los grupos de Regnum Christi</span>
+          </div>
+        </div>
+
+        <div class="event">
+          <div class="time">09:30</div>
+          <div class="event-info">
+            <strong>Encuentro RC</strong>
+            <span>Bienvenida y preparación para la jornada</span>
+          </div>
+        </div>
+
+        <div class="event">
+          <div class="time">11:00</div>
+          <div class="event-info">
+            <strong>Actividades</strong>
+            <span>Actividades por grupos</span>
+          </div>
+        </div>
+
+        <div class="event">
+          <div class="time">13:00</div>
+          <div class="event-info">
+            <strong>Almuerzo</strong>
+            <span>Horario estimado</span>
+          </div>
+        </div>
+
+        <div class="event">
+          <div class="time">15:00</div>
+          <div class="event-info">
+            <strong>Preparación</strong>
+            <span>Preparación para el encuentro con el Santo Padre</span>
+          </div>
+        </div>
+
+        <div class="event">
+          <div class="time">17:00</div>
+          <div class="event-info">
+            <strong>Santa Misa</strong>
+            <span>Celebración con el Papa León XIV</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="box">
+        <p>
+          Los horarios de esta versión son ilustrativos.
+          El cronograma definitivo será publicado cuando
+          se encuentre confirmado.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ===================== -->
+  <!-- PLANO -->
+  <!-- ===================== -->
+
+  <section id="plano" class="page">
+
+    <div class="page-header">
+
+      <button class="back" onclick="goHome()">
+        ← Inicio
+      </button>
+
+      <h2>Plano</h2>
+
+      <p>Ubicate durante el encuentro</p>
+
+    </div>
+
+    <div class="page-content">
+
+      <div class="box" style="text-align:center;padding:45px 20px;">
+
+        <div style="font-size:45px;color:#91152B;margin-bottom:15px;">
+          ⌖
+        </div>
+
+        <h3>Plano del evento</h3>
+
+        <p>
+          Acá incorporaremos el plano oficial del predio,
+          con accesos, sectores, baños, puestos sanitarios,
+          puntos de encuentro y demás ubicaciones importantes.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ===================== -->
+  <!-- MISA -->
+  <!-- ===================== -->
+
+  <section id="misa" class="page">
+
+    <div class="page-header">
+
+      <button class="back" onclick="goHome()">
+        ← Inicio
+      </button>
+
+      <h2>Guía de la Misa</h2>
+
+      <p>Celebración Eucarística</p>
+
+    </div>
+
+    <div class="page-content">
+
+      <div class="box">
+        <h3>Ritos iniciales</h3>
+        <p>
+          Canto de entrada · Saludo · Acto penitencial · Gloria
+        </p>
+      </div>
+
+      <div class="box">
+        <h3>Liturgia de la Palabra</h3>
+        <p>
+          Primera lectura · Salmo · Segunda lectura · Evangelio · Homilía
+        </p>
+      </div>
+
+      <div class="box">
+        <h3>Liturgia Eucarística</h3>
+        <p>
+          Presentación de las ofrendas · Plegaria Eucarística · Comunión
+        </p>
+      </div>
+
+      <div class="box">
+        <h3>Ritos finales</h3>
+        <p>
+          Bendición · Despedida · Canto final
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ===================== -->
+  <!-- CANCIONERO -->
+  <!-- ===================== -->
+
+  <section id="cancionero" class="page">
+
+    <div class="page-header">
+
+      <button class="back" onclick="goHome()">
+        ← Inicio
+      </button>
+
+      <h2>Cancionero</h2>
+
+      <p>Cantos del encuentro</p>
+
+    </div>
+
+    <div class="page-content">
+
+      <div class="song">♫ Canto de entrada</div>
+      <div class="song">♫ Gloria</div>
+      <div class="song">♫ Aleluya</div>
+      <div class="song">♫ Ofertorio</div>
+      <div class="song">♫ Santo</div>
+      <div class="song">♫ Comunión</div>
+      <div class="song">♫ Canto final</div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ===================== -->
+  <!-- ACTIVIDADES -->
+  <!-- ===================== -->
+
+  <section id="actividades" class="page">
+
+    <div class="page-header">
+
+      <button class="back" onclick="goHome()">
+        ← Inicio
+      </button>
+
+      <h2>Actividades</h2>
+
+      <p>Vivamos juntos esta jornada</p>
+
+    </div>
+
+    <div class="page-content">
+
+      <div class="box">
+        <h3>Actividades Regnum Christi</h3>
+        <p>
+          Acá podremos publicar las distintas actividades,
+          consignas y propuestas preparadas para cada grupo.
+        </p>
+      </div>
+
+      <div class="box">
+        <h3>Puntos de encuentro</h3>
+        <p>
+          También podremos indicar dónde debe reunirse
+          cada grupo durante la jornada.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ===================== -->
+  <!-- PREGUNTAS -->
+  <!-- ===================== -->
+
+  <section id="preguntas" class="page">
+
+    <div class="page-header">
+
+      <button class="back" onclick="goHome()">
+        ← Inicio
+      </button>
+
+      <h2>Preguntas frecuentes</h2>
+
+      <p>Información para participar</p>
+
+    </div>
+
+    <div class="page-content">
+
+      <details>
+        <summary>¿A qué hora tengo que llegar?</summary>
+        <p>
+          El horario definitivo de ingreso se informará
+          antes del encuentro.
+        </p>
+      </details>
+
+      <details>
+        <summary>¿Qué tengo que llevar?</summary>
+        <p>
+          Publicaremos aquí las recomendaciones y los
+          elementos necesarios para la jornada.
+        </p>
+      </details>
+
+      <details>
+        <summary>¿Dónde me encuentro con mi grupo?</summary>
+        <p>
+          Los puntos de encuentro aparecerán en el plano
+          y en la sección Actividades.
+        </p>
+      </details>
+
+      <details>
+        <summary>¿Habrá puestos sanitarios?</summary>
+        <p>
+          La información correspondiente aparecerá en
+          el plano oficial del evento.
+        </p>
+      </details>
+
+      <details>
+        <summary>¿Cómo recibo novedades?</summary>
+        <p>
+          Toda actualización importante será publicada
+          en esta aplicación y por los canales oficiales
+          de Regnum Christi Argentina.
+        </p>
+      </details>
+
+    </div>
+
+  </section>
+
+
+  <!-- ===================== -->
+  <!-- INFORMACION -->
+  <!-- ===================== -->
+
+  <section id="informacion" class="page">
+
+    <div class="page-header">
+
+      <button class="back" onclick="goHome()">
+        ← Inicio
+      </button>
+
+      <h2>Información importante</h2>
+
+      <p>Todo lo que necesitás saber</p>
+
+    </div>
+
+    <div class="page-content">
+
+      <div class="box">
+        <h3>Antes de salir</h3>
+        <p>
+          Revisá el cronograma y las recomendaciones
+          actualizadas antes de dirigirte al evento.
+        </p>
+      </div>
+
+      <div class="box">
+        <h3>Durante la jornada</h3>
+        <p>
+          Mantenete junto a tu grupo y seguí las indicaciones
+          de los voluntarios y del equipo de organización.
+        </p>
+      </div>
+
+      <div class="box">
+        <h3>Actualizaciones</h3>
+        <p>
+          Esta aplicación será el punto de consulta para
+          información y novedades durante el encuentro.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+</div>
+
+
+<script>
+
+  function openPage(id) {
+
+    document.getElementById("home").style.display = "none";
+
+    document.querySelectorAll(".page").forEach(function(page) {
+      page.classList.remove("active");
+    });
+
+    document.getElementById(id).classList.add("active");
+
+    window.scrollTo({
+      top: 0,
+      behavior: "instant"
+    });
+
+  }
+
+
+  function goHome() {
+
+    document.querySelectorAll(".page").forEach(function(page) {
+      page.classList.remove("active");
+    });
+
+    document.getElementById("home").style.display = "block";
+
+    window.scrollTo({
+      top: 0,
+      behavior: "instant"
+    });
+
+  }
+
+</script>
+
+</body>
+</html>
