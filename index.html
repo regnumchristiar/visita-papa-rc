@@ -318,46 +318,28 @@ button{
   background:var(--celeste);
 }
 
-.location-pin {
-  position: relative;
-  width: 20px;
-  height: 25px;
-  border: 2.5px solid var(--celeste);
-  border-radius: 50% 50% 50% 0;
-  transform: rotate(-45deg);
+  .map-pin-icon {
+  width: 23px;
+  height: 23px;
+  fill: none;
+  stroke: var(--celeste);
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
-.location-pin::after {
-  content: "";
-  position: absolute;
-  width: 6px;
-  height: 6px;
-  background: var(--celeste);
-  border-radius: 50%;
-  top: 6px;
-  left: 5px;
+.menu-icon.icon-cronograma {
+  font-size: 33px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.menu-icon.icon-adoracion {
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 1;
 }
   
-.adoration-menu-icon{
-  position:relative;
-  width:23px;
-  height:23px;
-  border:2px solid var(--celeste);
-  border-radius:50%;
-}
-
-.adoration-menu-icon::before{
-  content:"";
-  position:absolute;
-  width:7px;
-  height:7px;
-  border-radius:50%;
-  background:var(--celeste);
-  top:6px;
-  left:6px;
-}
-
-
 /* =========================================================
    PÁGINAS
 ========================================================= */
@@ -1378,7 +1360,7 @@ details p{
 
 /* Cronograma y Plano: símbolo un poco más grande */
 .menu-icon.icon-large {
-  font-size:29px;
+  font-size:33px;
   font-weight:500;
 }  
 
@@ -1528,7 +1510,7 @@ details p{
       onclick="openPage('cronograma')"
     >
 
-<div class="menu-icon icon-large">
+<div class="menu-icon icon-cronograma">
   ◷
 </div>
       <div class="menu-copy">
@@ -1549,9 +1531,16 @@ details p{
     >
 
 <div class="menu-icon">
-
-  <span class="location-pin"></span>
-
+  <svg
+    class="map-pin-icon"
+    viewBox="0 0 24 24"
+    aria-hidden="true"
+  >
+    <path
+      d="M12 21s6-5.4 6-11a6 6 0 1 0-12 0c0 5.6 6 11 6 11z"
+    />
+    <circle cx="12" cy="10" r="2.2" />
+  </svg>
 </div>
       
       <div class="menu-copy">
@@ -1592,7 +1581,7 @@ details p{
       onclick="openPage('adoracion')"
     >
 
-<div class="menu-icon icon-large">
+<div class="menu-icon icon-adoracion">
   ⌖
 </div>
 
