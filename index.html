@@ -795,9 +795,14 @@ button{
 
 }
 
-  /* =========================================================
-   NAVEGACIÓN RÁPIDA - AGENDA PAPAL
+/* =========================================================
+   AGENDA OFICIAL DEL PAPA
 ========================================================= */
+
+
+/* ---------------------------------------------------------
+   NAVEGACIÓN DE DÍAS
+--------------------------------------------------------- */
 
 .agenda-day-nav{
 
@@ -805,24 +810,19 @@ button{
 
   top:0;
 
-  z-index:20;
+  z-index:50;
 
   display:grid;
 
   grid-template-columns:repeat(4, 1fr);
 
-  gap:6px;
-
-  margin:
-    -25px
-    -22px
-    28px;
+  gap:7px;
 
   padding:
-    11px
+    10px
     14px;
 
-  background:rgba(255,255,255,.96);
+  background:rgba(255,255,255,.97);
 
   border-bottom:
     1px
@@ -830,7 +830,7 @@ button{
     #e5e5e5;
 
   box-shadow:
-    0 3px 8px
+    0 3px 10px
     rgba(0,0,0,.05);
 
   backdrop-filter:blur(8px);
@@ -842,6 +842,8 @@ button{
 
 .agenda-day-button{
 
+  min-height:49px;
+
   border:
     1px
     solid
@@ -852,20 +854,14 @@ button{
   background:#ffffff;
 
   padding:
-    7px
-    4px
-    6px;
+    5px
+    3px;
 
   text-align:center;
 
   cursor:pointer;
 
   color:#777777;
-
-  transition:
-    background .15s ease,
-    border-color .15s ease,
-    color .15s ease;
 
 }
 
@@ -891,16 +887,14 @@ button{
 
   display:block;
 
-  font-size:16px;
-
-  line-height:19px;
-
   color:var(--bordo);
+
+  font-size:17px;
+
+  line-height:20px;
 
 }
 
-
-/* DÍA ACTIVO */
 
 .agenda-day-button.active{
 
@@ -920,11 +914,339 @@ button{
 }
 
 
-/* ESPACIO PARA QUE EL STICKY NO TAPE EL DÍA */
+/* ---------------------------------------------------------
+   CONTENIDO GENERAL
+--------------------------------------------------------- */
+
+.agenda-content{
+
+  padding-top:26px;
+
+}
+
 
 .papal-day{
 
+  margin-bottom:42px;
+
   scroll-margin-top:82px;
+
+}
+
+
+.papal-day:last-child{
+
+  margin-bottom:0;
+
+}
+
+
+/* ---------------------------------------------------------
+   CABECERA DEL DÍA
+--------------------------------------------------------- */
+
+.papal-day-header{
+
+  margin-bottom:23px;
+
+  padding-bottom:12px;
+
+  border-bottom:
+    2px
+    solid
+    var(--bordo);
+
+}
+
+
+.papal-day-name{
+
+  display:inline-block;
+
+  color:var(--bordo);
+
+  font-size:11px;
+
+  line-height:18px;
+
+  font-weight:bold;
+
+  letter-spacing:1.2px;
+
+  vertical-align:baseline;
+
+}
+
+
+.papal-day-number{
+
+  display:inline-block;
+
+  margin:
+    0
+    5px;
+
+  color:var(--bordo);
+
+  font-size:28px;
+
+  line-height:30px;
+
+  font-weight:bold;
+
+  vertical-align:baseline;
+
+}
+
+
+.papal-day-month{
+
+  display:inline-block;
+
+  color:#777777;
+
+  font-size:10px;
+
+  line-height:16px;
+
+  font-weight:bold;
+
+  letter-spacing:1px;
+
+  vertical-align:baseline;
+
+}
+
+
+.papal-day-city{
+
+  margin-top:4px;
+
+  color:var(--celeste);
+
+  font-size:10px;
+
+  line-height:15px;
+
+  font-weight:bold;
+
+  letter-spacing:.8px;
+
+}
+
+
+/* ---------------------------------------------------------
+   TIMELINE
+--------------------------------------------------------- */
+
+.papal-event{
+
+  display:grid;
+
+  grid-template-columns:
+    60px
+    1fr;
+
+  position:relative;
+
+}
+
+
+.papal-time{
+
+  padding-top:1px;
+
+  color:var(--bordo);
+
+  font-size:13px;
+
+  line-height:19px;
+
+  font-weight:bold;
+
+}
+
+
+.papal-event-info{
+
+  position:relative;
+
+  min-height:67px;
+
+  padding:
+    0
+    0
+    24px
+    19px;
+
+  border-left:
+    1px
+    solid
+    #d9d9d9;
+
+}
+
+
+.papal-event-info::before{
+
+  content:"";
+
+  position:absolute;
+
+  top:5px;
+
+  left:-5px;
+
+  width:9px;
+
+  height:9px;
+
+  border-radius:50%;
+
+  background:var(--celeste);
+
+  box-shadow:
+    0
+    0
+    0
+    3px
+    #ffffff;
+
+}
+
+
+.papal-event:last-child
+.papal-event-info{
+
+  border-left-color:transparent;
+
+}
+
+
+.papal-event-info strong{
+
+  display:block;
+
+  color:#333333;
+
+  font-size:14px;
+
+  line-height:20px;
+
+}
+
+
+.papal-event-info span{
+
+  display:block;
+
+  margin-top:4px;
+
+  color:#777777;
+
+  font-size:12px;
+
+  line-height:18px;
+
+}
+
+
+.papal-event-info small{
+
+  display:inline-block;
+
+  margin-top:7px;
+
+  padding:
+    3px
+    7px;
+
+  border-radius:4px;
+
+  background:var(--celeste-claro);
+
+  color:var(--celeste);
+
+  font-size:9px;
+
+  line-height:13px;
+
+  font-weight:bold;
+
+  letter-spacing:.7px;
+
+}
+
+
+/* ---------------------------------------------------------
+   EVENTOS DESTACADOS
+--------------------------------------------------------- */
+
+.papal-event-featured{
+
+  margin:
+    3px
+    0
+    13px;
+
+}
+
+
+.papal-event-featured
+.papal-time{
+
+  padding-top:14px;
+
+}
+
+
+.papal-event-featured
+.papal-event-info{
+
+  min-height:auto;
+
+  margin-left:-1px;
+
+  padding:
+    12px
+    14px
+    13px
+    18px;
+
+  border-left:
+    4px
+    solid
+    var(--bordo);
+
+  background:var(--bordo-claro);
+
+}
+
+
+.papal-event-featured
+.papal-event-info::before{
+
+  display:none;
+
+}
+
+
+.papal-event-featured
+.papal-event-info strong{
+
+  color:var(--bordo);
+
+  font-size:15px;
+
+  line-height:20px;
+
+}
+
+
+.papal-event-featured
+.papal-event-info span{
+
+  color:#666666;
 
 }
 
@@ -2548,10 +2870,7 @@ y de tus fragilidades.</div>
      AGENDA OFICIAL DEL PAPA
 ====================================================== -->
 
-<section
-  id="agenda"
-  class="page"
->
+<section id="agenda" class="page">
 
   <div class="page-top">
 
@@ -2562,153 +2881,197 @@ y de tus fragilidades.</div>
       ← VOLVER
     </button>
 
-    <h2>
-      Agenda Oficial del Papa
-    </h2>
+    <h2>Agenda Oficial del Papa</h2>
 
     <p class="page-subtitle">
-      Visita del papa León XIV a la Argentina
-      · 8–11 noviembre 2026
+      Visita del papa León XIV a la Argentina · 8–11 noviembre 2026
     </p>
 
   </div>
 
 
-  <div class="page-content">
+  <!-- ====================================================
+       NAVEGACIÓN DE DÍAS
+  ===================================================== -->
+
+  <div class="agenda-day-nav">
+
+    <button
+      class="agenda-day-button active"
+      data-day="agenda-domingo"
+      onclick="goToAgendaDay('agenda-domingo', this)"
+    >
+      <span>DOM</span>
+      <strong>8</strong>
+    </button>
+
+    <button
+      class="agenda-day-button"
+      data-day="agenda-lunes"
+      onclick="goToAgendaDay('agenda-lunes', this)"
+    >
+      <span>LUN</span>
+      <strong>9</strong>
+    </button>
+
+    <button
+      class="agenda-day-button"
+      data-day="agenda-martes"
+      onclick="goToAgendaDay('agenda-martes', this)"
+    >
+      <span>MAR</span>
+      <strong>10</strong>
+    </button>
+
+    <button
+      class="agenda-day-button"
+      data-day="agenda-miercoles"
+      onclick="goToAgendaDay('agenda-miercoles', this)"
+    >
+      <span>MIÉ</span>
+      <strong>11</strong>
+    </button>
+
+  </div>
 
 
-    <!-- ============================================
+  <div class="page-content agenda-content">
+
+
+    <!-- ==================================================
          DOMINGO 8
-    ============================================= -->
+    =================================================== -->
 
-    <div class="papal-day" id="agenda-domingo">
+    <div
+      class="papal-day"
+      id="agenda-domingo"
+    >
 
       <div class="papal-day-header">
 
-        <div class="papal-day-name">
-          DOMINGO
+        <div>
+          <span class="papal-day-name">DOMINGO</span>
+          <span class="papal-day-number">8</span>
+          <span class="papal-day-month">NOVIEMBRE</span>
         </div>
 
-        <div class="papal-day-number">
-          8
-        </div>
-
-        <div class="papal-day-month">
-          NOVIEMBRE
-        </div>
-
-      </div>
-
-
-      <div class="papal-day-location">
-        BUENOS AIRES
-      </div>
-
-
-      <div class="papal-event">
-
-        <div class="papal-time">
-          16:30
-        </div>
-
-        <div class="papal-event-info">
-
-          <strong>
-            Llegada a Buenos Aires
-          </strong>
-
-          <span>
-            Aeroparque Jorge Newbery
-          </span>
-
-          <small>
-            Acogida oficial
-          </small>
-
+        <div class="papal-day-city">
+          BUENOS AIRES
         </div>
 
       </div>
 
 
-      <div class="papal-event">
-
-        <div class="papal-time">
-          17:00
-        </div>
-
-        <div class="papal-event-info">
-
-          <strong>
-            Visita al Monumento al General San Martín
-            y a los Ejércitos de la Independencia
-          </strong>
-
-          <span>
-            Plaza San Martín
-          </span>
-
-        </div>
-
-      </div>
+      <div class="papal-timeline">
 
 
-      <div class="papal-event">
+        <div class="papal-event">
 
-        <div class="papal-time">
-          17:20
-        </div>
+          <div class="papal-time">
+            16:30
+          </div>
 
-        <div class="papal-event-info">
+          <div class="papal-event-info">
 
-          <strong>
-            Ceremonia de bienvenida
-          </strong>
+            <strong>
+              Llegada a Buenos Aires
+            </strong>
 
-          <span>
-            Casa Rosada
-          </span>
+            <span>
+              Aeroparque Jorge Newbery
+            </span>
+
+            <small>
+              ACOGIDA OFICIAL
+            </small>
+
+          </div>
 
         </div>
 
-      </div>
 
+        <div class="papal-event">
 
-      <div class="papal-event">
+          <div class="papal-time">
+            17:00
+          </div>
 
-        <div class="papal-time">
-          17:50
-        </div>
+          <div class="papal-event-info">
 
-        <div class="papal-event-info">
+            <strong>
+              Visita al Monumento al General San Martín
+              y a los Ejércitos de la Independencia
+            </strong>
 
-          <strong>
-            Visita al Presidente de la República
-          </strong>
+            <span>
+              Plaza San Martín
+            </span>
 
-        </div>
-
-      </div>
-
-
-      <div class="papal-event">
-
-        <div class="papal-time">
-          18:30
-        </div>
-
-        <div class="papal-event-info">
-
-          <strong>
-            Encuentro con las autoridades,
-            la sociedad civil y el cuerpo diplomático
-          </strong>
-
-          <span>
-            Palacio Libertad · Centro Cultural
-            Domingo Faustino Sarmiento
-          </span>
+          </div>
 
         </div>
+
+
+        <div class="papal-event">
+
+          <div class="papal-time">
+            17:20
+          </div>
+
+          <div class="papal-event-info">
+
+            <strong>
+              Ceremonia de bienvenida
+            </strong>
+
+            <span>
+              Casa Rosada
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <div class="papal-event">
+
+          <div class="papal-time">
+            17:50
+          </div>
+
+          <div class="papal-event-info">
+
+            <strong>
+              Visita al Presidente de la República
+            </strong>
+
+          </div>
+
+        </div>
+
+
+        <div class="papal-event">
+
+          <div class="papal-time">
+            18:30
+          </div>
+
+          <div class="papal-event-info">
+
+            <strong>
+              Encuentro con las autoridades, la sociedad civil
+              y el cuerpo diplomático
+            </strong>
+
+            <span>
+              Palacio Libertad · Centro Cultural
+              Domingo Faustino Sarmiento
+            </span>
+
+          </div>
+
+        </div>
+
 
       </div>
 
@@ -2716,159 +3079,161 @@ y de tus fragilidades.</div>
 
 
 
-    <!-- ============================================
+    <!-- ==================================================
          LUNES 9
-    ============================================= -->
+    =================================================== -->
 
-    <div class="papal-day" id="agenda-lunes">
+    <div
+      class="papal-day"
+      id="agenda-lunes"
+    >
 
       <div class="papal-day-header">
 
-        <div class="papal-day-name">
-          LUNES
+        <div>
+          <span class="papal-day-name">LUNES</span>
+          <span class="papal-day-number">9</span>
+          <span class="papal-day-month">NOVIEMBRE</span>
         </div>
 
-        <div class="papal-day-number">
-          9
-        </div>
-
-        <div class="papal-day-month">
-          NOVIEMBRE
-        </div>
-
-      </div>
-
-
-      <div class="papal-day-location">
-        BUENOS AIRES · CLAYPOLE · BUENOS AIRES
-      </div>
-
-
-      <div class="papal-event">
-
-        <div class="papal-time">
-          09:15
-        </div>
-
-        <div class="papal-event-info">
-
-          <strong>
-            Visita al personal y a los asistidos
-            del Pequeño Cottolengo Don Orione
-          </strong>
-
-          <span>
-            Claypole
-          </span>
-
+        <div class="papal-day-city">
+          BUENOS AIRES · CLAYPOLE · BUENOS AIRES
         </div>
 
       </div>
 
 
-      <div class="papal-event papal-event-featured">
-
-        <div class="papal-time">
-          11:30
-        </div>
-
-        <div class="papal-event-info">
-
-          <strong>
-            Santa Misa
-          </strong>
-
-          <span>
-            Monumento de los Españoles
-          </span>
-
-        </div>
-
-      </div>
+      <div class="papal-timeline">
 
 
-      <div class="papal-event">
+        <div class="papal-event">
 
-        <div class="papal-time">
-          16:10
-        </div>
+          <div class="papal-time">
+            09:15
+          </div>
 
-        <div class="papal-event-info">
+          <div class="papal-event-info">
 
-          <strong>
-            Encuentro con el mundo del trabajo
-          </strong>
+            <strong>
+              Visita al personal y a los asistidos del
+              Pequeño Cottolengo Don Orione
+            </strong>
 
-          <span>
-            Universidad Católica Argentina
-          </span>
+            <span>
+              Claypole
+            </span>
+
+          </div>
 
         </div>
 
-      </div>
 
+        <div class="papal-event papal-event-featured">
 
-      <div class="papal-event">
+          <div class="papal-time">
+            11:30
+          </div>
 
-        <div class="papal-time">
-          17:30
-        </div>
+          <div class="papal-event-info">
 
-        <div class="papal-event-info">
+            <strong>
+              Santa Misa
+            </strong>
 
-          <strong>
-            Encuentro con los líderes de las comunidades
-            cristianas y de las tradiciones religiosas
-          </strong>
+            <span>
+              Monumento de los Españoles
+            </span>
 
-          <span>
-            Palacio San Martín
-          </span>
-
-        </div>
-
-      </div>
-
-
-      <div class="papal-event">
-
-        <div class="papal-time">
-          18:45
-        </div>
-
-        <div class="papal-event-info">
-
-          <strong>
-            Celebración de las Vísperas con el Episcopado
-            Argentino y los equipos sinodales
-          </strong>
-
-          <span>
-            Catedral Metropolitana de la Santísima Trinidad
-          </span>
+          </div>
 
         </div>
 
-      </div>
 
+        <div class="papal-event">
 
-      <div class="papal-event">
+          <div class="papal-time">
+            16:10
+          </div>
 
-        <div class="papal-time">
-          19:45
+          <div class="papal-event-info">
+
+            <strong>
+              Encuentro con el mundo del trabajo
+            </strong>
+
+            <span>
+              Universidad Católica Argentina
+            </span>
+
+          </div>
+
         </div>
 
-        <div class="papal-event-info">
 
-          <strong>
-            Cena con los obispos
-          </strong>
+        <div class="papal-event">
 
-          <span>
-            Arzobispado de Buenos Aires
-          </span>
+          <div class="papal-time">
+            17:30
+          </div>
+
+          <div class="papal-event-info">
+
+            <strong>
+              Encuentro con los líderes de las comunidades
+              cristianas y de las tradiciones religiosas
+            </strong>
+
+            <span>
+              Palacio San Martín
+            </span>
+
+          </div>
 
         </div>
+
+
+        <div class="papal-event">
+
+          <div class="papal-time">
+            18:45
+          </div>
+
+          <div class="papal-event-info">
+
+            <strong>
+              Celebración de las Vísperas con el Episcopado
+              Argentino y los equipos sinodales
+            </strong>
+
+            <span>
+              Catedral Metropolitana de la Santísima Trinidad
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <div class="papal-event">
+
+          <div class="papal-time">
+            19:45
+          </div>
+
+          <div class="papal-event-info">
+
+            <strong>
+              Cena con los obispos
+            </strong>
+
+            <span>
+              Arzobispado de Buenos Aires
+            </span>
+
+          </div>
+
+        </div>
+
 
       </div>
 
@@ -2876,176 +3241,178 @@ y de tus fragilidades.</div>
 
 
 
-    <!-- ============================================
+    <!-- ==================================================
          MARTES 10
-    ============================================= -->
+    =================================================== -->
 
-    <div class="papal-day" id="agenda-martes">
+    <div
+      class="papal-day"
+      id="agenda-martes"
+    >
 
       <div class="papal-day-header">
 
-        <div class="papal-day-name">
-          MARTES
+        <div>
+          <span class="papal-day-name">MARTES</span>
+          <span class="papal-day-number">10</span>
+          <span class="papal-day-month">NOVIEMBRE</span>
         </div>
 
-        <div class="papal-day-number">
-          10
-        </div>
-
-        <div class="papal-day-month">
-          NOVIEMBRE
-        </div>
-
-      </div>
-
-
-      <div class="papal-day-location">
-        BUENOS AIRES · CÓRDOBA · BUENOS AIRES
-      </div>
-
-
-      <div class="papal-event">
-
-        <div class="papal-time">
-          07:30
-        </div>
-
-        <div class="papal-event-info">
-
-          <strong>
-            Salida hacia Córdoba
-          </strong>
-
-          <span>
-            Aeropuerto internacional de Buenos Aires
-          </span>
-
+        <div class="papal-day-city">
+          BUENOS AIRES · CÓRDOBA · BUENOS AIRES
         </div>
 
       </div>
 
 
-      <div class="papal-event">
-
-        <div class="papal-time">
-          09:00
-        </div>
-
-        <div class="papal-event-info">
-
-          <strong>
-            Llegada a Córdoba
-          </strong>
-
-          <span>
-            Aeropuerto Internacional
-            Ingeniero Aeronáutico Ambrosio Taravella
-          </span>
-
-        </div>
-
-      </div>
+      <div class="papal-timeline">
 
 
-      <div class="papal-event papal-event-featured">
+        <div class="papal-event">
 
-        <div class="papal-time">
-          10:00
-        </div>
+          <div class="papal-time">
+            07:30
+          </div>
 
-        <div class="papal-event-info">
+          <div class="papal-event-info">
 
-          <strong>
-            Santa Misa
-          </strong>
+            <strong>
+              Salida hacia Córdoba
+            </strong>
 
-          <span>
-            Explanada de la Escuela de Aviación Militar
-          </span>
+            <span>
+              Aeropuerto internacional de Buenos Aires
+            </span>
+
+          </div>
 
         </div>
 
-      </div>
 
+        <div class="papal-event">
 
-      <div class="papal-event">
+          <div class="papal-time">
+            09:00
+          </div>
 
-        <div class="papal-time">
-          15:15
-        </div>
+          <div class="papal-event-info">
 
-        <div class="papal-event-info">
+            <strong>
+              Llegada a Córdoba
+            </strong>
 
-          <strong>
-            Encuentro con los obispos, sacerdotes,
-            diáconos, religiosos, religiosas,
-            seminaristas y agentes pastorales
-          </strong>
+            <span>
+              Aeropuerto Internacional Ingeniero Aeronáutico
+              Ambrosio Taravella
+            </span>
 
-          <span>
-            Catedral de Nuestra Señora de la Asunción
-          </span>
-
-        </div>
-
-      </div>
-
-
-      <div class="papal-event">
-
-        <div class="papal-time">
-          16:55
-        </div>
-
-        <div class="papal-event-info">
-
-          <strong>
-            Salida de Córdoba hacia Buenos Aires
-          </strong>
+          </div>
 
         </div>
 
-      </div>
 
+        <div class="papal-event papal-event-featured">
 
-      <div class="papal-event">
+          <div class="papal-time">
+            10:00
+          </div>
 
-        <div class="papal-time">
-          18:10
-        </div>
+          <div class="papal-event-info">
 
-        <div class="papal-event-info">
+            <strong>
+              Santa Misa
+            </strong>
 
-          <strong>
-            Llegada a Buenos Aires
-          </strong>
+            <span>
+              Explanada de la Escuela de Aviación Militar
+            </span>
 
-          <span>
-            Aeroparque Jorge Newbery
-          </span>
-
-        </div>
-
-      </div>
-
-
-      <div class="papal-event papal-event-featured">
-
-        <div class="papal-time">
-          20:15
-        </div>
-
-        <div class="papal-event-info">
-
-          <strong>
-            Vigilia con los jóvenes
-          </strong>
-
-          <span>
-            Monumento de los Españoles
-          </span>
+          </div>
 
         </div>
+
+
+        <div class="papal-event">
+
+          <div class="papal-time">
+            15:15
+          </div>
+
+          <div class="papal-event-info">
+
+            <strong>
+              Encuentro con los obispos, los sacerdotes,
+              los diáconos, los religiosos, las religiosas,
+              los seminaristas y los agentes pastorales
+            </strong>
+
+            <span>
+              Catedral de Nuestra Señora de la Asunción
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <div class="papal-event">
+
+          <div class="papal-time">
+            16:55
+          </div>
+
+          <div class="papal-event-info">
+
+            <strong>
+              Salida de Córdoba hacia Buenos Aires
+            </strong>
+
+          </div>
+
+        </div>
+
+
+        <div class="papal-event">
+
+          <div class="papal-time">
+            18:10
+          </div>
+
+          <div class="papal-event-info">
+
+            <strong>
+              Llegada a Buenos Aires
+            </strong>
+
+            <span>
+              Aeroparque Jorge Newbery
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <div class="papal-event papal-event-featured">
+
+          <div class="papal-time">
+            20:15
+          </div>
+
+          <div class="papal-event-info">
+
+            <strong>
+              Vigilia con los jóvenes
+            </strong>
+
+            <span>
+              Monumento de los Españoles
+            </span>
+
+          </div>
+
+        </div>
+
 
       </div>
 
@@ -3053,107 +3420,109 @@ y de tus fragilidades.</div>
 
 
 
-    <!-- ============================================
+    <!-- ==================================================
          MIÉRCOLES 11
-    ============================================= -->
+    =================================================== -->
 
-    <div class="papal-day" id="agenda-miercoles">
+    <div
+      class="papal-day"
+      id="agenda-miercoles"
+    >
 
       <div class="papal-day-header">
 
-        <div class="papal-day-name">
-          MIÉRCOLES
+        <div>
+          <span class="papal-day-name">MIÉRCOLES</span>
+          <span class="papal-day-number">11</span>
+          <span class="papal-day-month">NOVIEMBRE</span>
         </div>
 
-        <div class="papal-day-number">
-          11
-        </div>
-
-        <div class="papal-day-month">
-          NOVIEMBRE
-        </div>
-
-      </div>
-
-
-      <div class="papal-day-location">
-        BUENOS AIRES · LUJÁN · LIMA
-      </div>
-
-
-      <div class="papal-event">
-
-        <div class="papal-time">
-          08:00
-        </div>
-
-        <div class="papal-event-info">
-
-          <strong>
-            Visita al Complejo Penitenciario
-            Federal de Buenos Aires
-          </strong>
-
+        <div class="papal-day-city">
+          BUENOS AIRES · LUJÁN · LIMA
         </div>
 
       </div>
 
 
-      <div class="papal-event papal-event-featured">
-
-        <div class="papal-time">
-          10:00
-        </div>
-
-        <div class="papal-event-info">
-
-          <strong>
-            Santa Misa
-          </strong>
-
-          <span>
-            Plaza de la Basílica Nuestra Señora de Luján
-          </span>
-
-        </div>
-
-      </div>
+      <div class="papal-timeline">
 
 
-      <div class="papal-event">
+        <div class="papal-event">
 
-        <div class="papal-time">
-          13:30
-        </div>
+          <div class="papal-time">
+            08:00
+          </div>
 
-        <div class="papal-event-info">
+          <div class="papal-event-info">
 
-          <strong>
-            Ceremonia de despedida
-          </strong>
+            <strong>
+              Visita al Complejo Penitenciario Federal
+              de Buenos Aires
+            </strong>
 
-          <span>
-            Aeropuerto Internacional Ministro Pistarini
-          </span>
+          </div>
 
         </div>
 
-      </div>
 
+        <div class="papal-event papal-event-featured">
 
-      <div class="papal-event">
+          <div class="papal-time">
+            10:00
+          </div>
 
-        <div class="papal-time">
-          14:00
+          <div class="papal-event-info">
+
+            <strong>
+              Santa Misa
+            </strong>
+
+            <span>
+              Plaza de la Basílica Nuestra Señora de Luján
+            </span>
+
+          </div>
+
         </div>
 
-        <div class="papal-event-info">
 
-          <strong>
-            Salida hacia Lima
-          </strong>
+        <div class="papal-event">
+
+          <div class="papal-time">
+            13:30
+          </div>
+
+          <div class="papal-event-info">
+
+            <strong>
+              Ceremonia de despedida
+            </strong>
+
+            <span>
+              Aeropuerto Internacional Ministro Pistarini
+            </span>
+
+          </div>
 
         </div>
+
+
+        <div class="papal-event">
+
+          <div class="papal-time">
+            14:00
+          </div>
+
+          <div class="papal-event-info">
+
+            <strong>
+              Salida hacia Lima
+            </strong>
+
+          </div>
+
+        </div>
+
 
       </div>
 
@@ -3262,47 +3631,6 @@ y de tus fragilidades.</div>
 
   <div class="page-content">
 
-<!-- NAVEGACIÓN RÁPIDA POR DÍAS -->
-
-<div class="agenda-day-nav">
-
-  <button
-    class="agenda-day-button active"
-    data-day="agenda-domingo"
-    onclick="goToAgendaDay('agenda-domingo', this)"
-  >
-    <span>DOM</span>
-    <strong>8</strong>
-  </button>
-
-  <button
-    class="agenda-day-button"
-    data-day="agenda-lunes"
-    onclick="goToAgendaDay('agenda-lunes', this)"
-  >
-    <span>LUN</span>
-    <strong>9</strong>
-  </button>
-
-  <button
-    class="agenda-day-button"
-    data-day="agenda-martes"
-    onclick="goToAgendaDay('agenda-martes', this)"
-  >
-    <span>MAR</span>
-    <strong>10</strong>
-  </button>
-
-  <button
-    class="agenda-day-button"
-    data-day="agenda-miercoles"
-    onclick="goToAgendaDay('agenda-miercoles', this)"
-  >
-    <span>MIÉ</span>
-    <strong>11</strong>
-  </button>
-
-</div>
     
     <details>
 
