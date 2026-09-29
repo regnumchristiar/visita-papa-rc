@@ -1,0 +1,26 @@
+{
+  "name": "Visita Papa León XIV - Regnum Christi",
+  "short_name": "Visita Papa RC",
+  "description": "Información para vivir juntos la visita del Papa León XIV a la Argentina",
+  "id": "/visita-papa-rc/",
+  "start_url": "/visita-papa-rc/",
+  "scope": "/visita-papa-rc/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#ffffff",
+  "theme_color": "#91152B",
+  "icons": [
+    {
+      "src": "assets/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
