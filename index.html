@@ -1475,12 +1475,12 @@ details p{
 
   <div class="page-top">
 
-    <button
-      class="back-button"
-      onclick="goHome()"
-    >
-      ← VOLVER
-    </button>
+<button
+  class="back-button"
+  onclick="history.back()"
+>
+  ← VOLVER
+</button>
 
 
     <h2>
@@ -1628,12 +1628,12 @@ details p{
 
   <div class="page-top">
 
-    <button
-      class="back-button"
-      onclick="goHome()"
-    >
-      ← VOLVER
-    </button>
+<button
+  class="back-button"
+  onclick="history.back()"
+>
+  ← VOLVER
+</button>
 
 
     <h2>
@@ -1692,12 +1692,12 @@ details p{
 
   <div class="page-top">
 
-    <button
-      class="back-button"
-      onclick="goHome()"
-    >
-      ← VOLVER
-    </button>
+<button
+  class="back-button"
+  onclick="history.back()"
+>
+  ← VOLVER
+</button>
 
 
     <h2>
@@ -1794,12 +1794,12 @@ details p{
 
   <div class="page-top">
 
-    <button
-      class="back-button"
-      onclick="goHome()"
-    >
-      ← VOLVER
-    </button>
+<button
+  class="back-button"
+  onclick="history.back()"
+>
+  ← VOLVER
+</button>
 
 
     <h2>
@@ -1900,12 +1900,12 @@ details p{
   <div class="page-top">
 
 
-    <button
-      class="back-button"
-      onclick="openPage('cancionero')"
-    >
-      ← CANCIONERO
-    </button>
+<button
+  class="back-button"
+  onclick="history.back()"
+>
+  ← CANCIONERO
+</button>
 
 
     <h2>
@@ -1932,15 +1932,15 @@ details p{
     </div>
 
 
-    <div class="song-lyrics"><span class="chorus">Ven y sígueme,
+    <div class="song-lyrics">Ven y sígueme,
 y mar adentro echa ya tus redes.
 Ven y yo te haré
-pescador de hombres.</span>
+pescador de hombres.
 
-En tus palabras echaré mis redes.
+<span class="chorus">En tus palabras echaré mis redes.
 Dejo mi barca y donde quieras iré.
 Tú me llamaste, Señor, por mi nombre
-y sólo a Ti, Señor, Señor, te seguiré.
+y sólo a Ti, Señor, Señor, te seguiré.</span>
 
 Te vi trabajar aquella noche
 en que fracasaste.
@@ -1967,13 +1967,12 @@ y de tus fragilidades.</div>
 
   <div class="page-top">
 
-    <button
-      class="back-button"
-      onclick="goHome()"
-    >
-      ← VOLVER
-    </button>
-
+<button
+  class="back-button"
+  onclick="history.back()"
+>
+  ← VOLVER
+</button>
 
     <h2>
       Actividades
@@ -2027,12 +2026,12 @@ y de tus fragilidades.</div>
 
   <div class="page-top">
 
-    <button
-      class="back-button"
-      onclick="goHome()"
-    >
-      ← VOLVER
-    </button>
+<button
+  class="back-button"
+  onclick="history.back()"
+>
+  ← VOLVER
+</button>
 
 
     <h2>
@@ -2088,12 +2087,12 @@ y de tus fragilidades.</div>
 
   <div class="page-top">
 
-    <button
-      class="back-button"
-      onclick="goHome()"
-    >
-      ← VOLVER
-    </button>
+<button
+  class="back-button"
+  onclick="history.back()"
+>
+  ← VOLVER
+</button>
 
 
     <h2>
@@ -2149,11 +2148,11 @@ y de tus fragilidades.</div>
   <div class="page-top">
 
     <button
-      class="back-button"
-      onclick="goHome()"
-    >
-      ← VOLVER
-    </button>
+  class="back-button"
+  onclick="history.back()"
+>
+  ← VOLVER
+</button>
 
 
     <h2>
@@ -2209,12 +2208,12 @@ y de tus fragilidades.</div>
 
   <div class="page-top">
 
-    <button
-      class="back-button"
-      onclick="goHome()"
-    >
-      ← VOLVER
-    </button>
+<button
+  class="back-button"
+  onclick="history.back()"
+>
+  ← VOLVER
+</button>
 
 
     <h2>
@@ -2430,9 +2429,29 @@ y de tus fragilidades.</div>
 <script>
 
 /* =========================================================
-   NAVEGACIÓN
+   NAVEGACIÓN DE LA APP
 ========================================================= */
 
+const HOME = "home";
+
+
+/*
+  Relación padre-hijo.
+
+  Esto nos permite saber, por ejemplo,
+  que VEN Y SÍGUEME pertenece al CANCIONERO.
+*/
+
+const PAGE_PARENTS = {
+
+  venysigueme: "cancionero"
+
+};
+
+
+/* =========================================================
+   OCULTAR TODAS LAS PÁGINAS
+========================================================= */
 
 function hideAllPages(){
 
@@ -2447,89 +2466,244 @@ function hideAllPages(){
 }
 
 
+/* =========================================================
+   MOSTRAR UNA PANTALLA
+========================================================= */
 
-function openPage(id){
+function showPage(id){
 
-  document.getElementById("home").style.display="none";
+  const home =
+    document.getElementById("home");
+
 
   hideAllPages();
 
 
-  const page=
+  /*
+    INICIO
+  */
+
+  if(!id || id === HOME){
+
+    home.style.display = "block";
+
+    window.scrollTo(0,0);
+
+    return;
+
+  }
+
+
+  /*
+    PÁGINA INTERNA
+  */
+
+  const page =
     document.getElementById(id);
 
 
   if(page){
 
+    home.style.display = "none";
+
     page.classList.add("active");
 
   }
 
+  else{
 
-  window.scrollTo({
+    /*
+      Si alguien entra con una URL incorrecta,
+      mostramos Inicio.
+    */
 
-    top:0,
+    home.style.display = "block";
 
-    left:0,
+  }
 
-    behavior:"instant"
 
-  });
+  window.scrollTo(0,0);
 
 }
 
 
+/* =========================================================
+   ABRIR PÁGINA
+========================================================= */
+
+function openPage(id){
+
+  /*
+    Guardamos la nueva pantalla
+    en el historial del navegador.
+  */
+
+  history.pushState(
+    {
+      page:id
+    },
+    "",
+    "#" + id
+  );
+
+
+  showPage(id);
+
+}
+
+
+/* =========================================================
+   VOLVER AL INICIO
+========================================================= */
 
 function goHome(){
 
-  hideAllPages();
+  /*
+    Si ya estamos en una pantalla interna,
+    usamos el historial real.
+
+    Esto hace que se comporte como una app.
+  */
+
+  if(window.location.hash){
+
+    history.pushState(
+      {
+        page:HOME
+      },
+      "",
+      window.location.pathname
+    );
+
+  }
 
 
-  document.getElementById("home").style.display="block";
-
-
-  window.scrollTo({
-
-    top:0,
-
-    left:0,
-
-    behavior:"instant"
-
-  });
+  showPage(HOME);
 
 }
+
+
+/* =========================================================
+   BOTÓN ATRÁS
+   IPHONE / ANDROID / NAVEGADOR
+========================================================= */
+
+window.addEventListener(
+  "popstate",
+  function(event){
+
+    const hash =
+      window.location.hash.replace("#","");
+
+
+    if(hash){
+
+      showPage(hash);
+
+    }
+
+    else{
+
+      showPage(HOME);
+
+    }
+
+  }
+);
+
+
+/* =========================================================
+   SI CAMBIA EL HASH
+========================================================= */
+
+window.addEventListener(
+  "hashchange",
+  function(){
+
+    const hash =
+      window.location.hash.replace("#","");
+
+
+    if(hash){
+
+      showPage(hash);
+
+    }
+
+    else{
+
+      showPage(HOME);
+
+    }
+
+  }
+);
+
+
+/* =========================================================
+   CARGA INICIAL
+========================================================= */
+
+function loadInitialPage(){
+
+  const hash =
+    window.location.hash.replace("#","");
+
+
+  if(hash){
+
+    showPage(hash);
+
+  }
+
+  else{
+
+    showPage(HOME);
+
+  }
+
+}
+
+
+loadInitialPage();
+
 
 /* =========================================================
    SERVICE WORKER
 ========================================================= */
 
-if ("serviceWorker" in navigator) {
+if("serviceWorker" in navigator){
 
-  window.addEventListener("load", function() {
+  window.addEventListener(
+    "load",
+    function(){
 
-    navigator.serviceWorker
-      .register("./sw.js")
-      .then(function(registration) {
+      navigator
+        .serviceWorker
+        .register("./sw.js")
 
-        console.log(
-          "App preparada para funcionamiento offline."
-        );
+        .then(function(registration){
 
-      })
-      .catch(function(error) {
+          console.log(
+            "App preparada para funcionamiento offline."
+          );
 
-        console.log(
-          "No se pudo registrar el Service Worker:",
-          error
-        );
+        })
 
-      });
+        .catch(function(error){
 
-  });
+          console.log(
+            "No se pudo registrar el Service Worker:",
+            error
+          );
+
+        });
+
+    }
+  );
 
 }
-  
+
 </script>
 
 
