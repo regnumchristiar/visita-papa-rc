@@ -14,25 +14,20 @@
 
 <meta
   name="description"
-  content="Información oficial de Regnum Christi para vivir juntos la visita del Papa León XIV a la Argentina"
+  content="Información de Regnum Christi para vivir juntos la visita del Papa León XIV a la Argentina"
 >
 
 <meta name="theme-color" content="#91152B">
 
-<!-- PWA -->
 <link rel="manifest" href="manifest.json">
 
-<!-- IPHONE / IPAD -->
 <link
   rel="apple-touch-icon"
   sizes="180x180"
   href="assets/apple-touch-icon.png"
 >
 
-<meta
-  name="apple-mobile-web-app-capable"
-  content="yes"
->
+<meta name="apple-mobile-web-app-capable" content="yes">
 
 <meta
   name="apple-mobile-web-app-status-bar-style"
@@ -44,30 +39,26 @@
   content="Visita Papa RC"
 >
 
+
 <style>
 
 /* =========================================================
-   COLORES
+   VARIABLES
 ========================================================= */
 
 :root{
-
   --bordo:#91152B;
   --bordo-oscuro:#741020;
+  --bordo-claro:#faf1f3;
 
   --celeste:#6CA0B2;
   --celeste-claro:#f1f7f9;
 
-  --bordo-claro:#faf1f3;
-
   --texto:#333333;
   --gris:#777777;
-
   --fondo:#f2f3f3;
   --blanco:#ffffff;
-
-  --borde:#e5e5e5;
-
+  --borde:#e2e5e6;
 }
 
 
@@ -76,67 +67,39 @@
 ========================================================= */
 
 *{
-
   box-sizing:border-box;
-
   -webkit-tap-highlight-color:transparent;
-
 }
-
 
 html{
-
   scroll-behavior:smooth;
-
 }
-
 
 body{
-
   margin:0;
-
   padding:0;
-
   background:var(--fondo);
-
-  font-family:
-    Arial,
-    Helvetica,
-    sans-serif;
-
+  font-family:Arial,Helvetica,sans-serif;
   color:var(--texto);
-
 }
-
 
 button,
+input,
 a{
-
   font-family:inherit;
-
 }
-
 
 button{
-
   -webkit-appearance:none;
   appearance:none;
-
 }
 
-
 .app{
-
   width:100%;
-
   max-width:640px;
-
   margin:0 auto;
-
-  background:#ffffff;
-
+  background:#fff;
   min-height:100vh;
-
 }
 
 
@@ -145,47 +108,26 @@ button{
 ========================================================= */
 
 .main-header{
-
   width:100%;
-
-  background:#6CA0B2;
-
+  background:var(--celeste);
   line-height:0;
-
 }
-
 
 .main-header img{
-
   display:block;
-
   width:100%;
-
   height:auto;
-
-  border:0;
-
 }
 
-
 .event-band{
-
   background:var(--bordo);
-
-  color:#ffffff;
-
+  color:#fff;
   text-align:center;
-
-  padding:14px 20px;
-
+  padding:14px 16px;
   font-size:10px;
-
-  line-height:19px;
-
+  line-height:18px;
   letter-spacing:1px;
-
   font-weight:bold;
-
 }
 
 
@@ -194,71 +136,34 @@ button{
 ========================================================= */
 
 .home-content{
-
-  padding:
-    30px
-    22px
-    35px;
-
+  padding:30px 22px 36px;
 }
-
 
 .welcome{
-
-  margin:
-    0
-    0
-    26px;
-
+  margin-bottom:26px;
 }
-
 
 .welcome h1{
-
-  margin:
-    0
-    0
-    8px;
-
+  margin:0 0 8px;
   color:var(--bordo);
-
   font-size:20px;
-
   line-height:25px;
-
 }
-
 
 .welcome p{
-
   margin:0;
-
-  color:#666666;
-
+  color:#666;
   font-size:14px;
-
   line-height:21px;
-
 }
 
-
 .section-label{
-
   color:var(--celeste);
-
-  font-size:12px;
-
+  font-size:11px;
   line-height:16px;
-
   font-weight:bold;
-
-  letter-spacing:1.4px;
-
-  margin:
-    0
-    0
-    10px;
-
+  letter-spacing:1.3px;
+  margin-bottom:11px;
 }
 
 
@@ -267,181 +172,169 @@ button{
 ========================================================= */
 
 .menu{
-
   display:flex;
-
   flex-direction:column;
-
-  gap:9px;
-
+  gap:10px;
 }
 
-
 .menu-button{
-
   width:100%;
+  min-height:74px;
 
-  min-height:72px;
+  border:1px solid #d9dddf;
+  border-left:4px solid var(--celeste);
 
-  border:
-    1px
-    solid
-    var(--borde);
-
-  background:#ffffff;
-
+  background:#fff;
   border-radius:10px;
 
-  padding:
-    13px
-    15px;
+  padding:13px 14px 13px 12px;
 
   display:flex;
-
   align-items:center;
 
   text-align:left;
-
   cursor:pointer;
-
   color:var(--texto);
 
+  box-shadow:0 2px 8px rgba(0,0,0,.055);
+
   transition:
-    transform .10s ease,
-    background .15s ease,
-    border-color .15s ease;
-
+    transform .1s ease,
+    box-shadow .15s ease,
+    background .15s ease;
 }
-
 
 .menu-button:active{
-
   transform:scale(.985);
-
   background:#fafafa;
-
+  box-shadow:0 1px 3px rgba(0,0,0,.04);
 }
 
-
 .menu-icon{
+  flex:0 0 45px;
 
-  flex:
-    0
-    0
-    43px;
-
-  width:43px;
-
-  height:43px;
+  width:45px;
+  height:45px;
 
   margin-right:14px;
 
-  border-radius:9px;
+  border-radius:10px;
 
   background:var(--celeste-claro);
-
   color:var(--celeste);
 
   display:flex;
-
   align-items:center;
-
   justify-content:center;
 
   font-size:21px;
-
+  font-weight:bold;
 }
-
 
 .menu-copy{
-
   flex:1;
-
   min-width:0;
-
 }
 
-
 .menu-title{
-
   display:block;
-
-  font-size:15px;
-
-  line-height:19px;
-
-  font-weight:bold;
-
-  color:#333333;
 
   margin-bottom:3px;
 
+  color:#333;
+  font-size:15px;
+  line-height:19px;
+  font-weight:bold;
 }
-
 
 .menu-description{
-
   display:block;
 
-  font-size:13px;
+  overflow:hidden;
+  white-space:nowrap;
+  text-overflow:ellipsis;
 
+  color:#888;
+  font-size:12px;
   line-height:17px;
-
-  color:#888888;
-
 }
 
-
 .menu-arrow{
-
-  flex:
-    0
-    0
-    20px;
-
-  text-align:right;
-
-  font-size:21px;
-
-  line-height:21px;
-
-  color:#bbbbbb;
+  flex:0 0 20px;
 
   margin-left:8px;
 
+  color:#aaa;
+  text-align:right;
+  font-size:22px;
+  line-height:22px;
+}
+
+.menu-button.important{
+  border-left-color:var(--bordo);
+  background:var(--bordo-claro);
+}
+
+.menu-button.important .menu-icon{
+  background:#fff;
+  color:var(--bordo);
+}
+
+.menu-button.important .menu-title{
+  color:var(--bordo);
 }
 
 
 /* =========================================================
-   INFORMACIÓN IMPORTANTE
+   ICONOS CSS
 ========================================================= */
 
-.menu-button.important{
-
-  margin-top:7px;
-
-  background:var(--bordo-claro);
-
-  border-color:#efdce1;
-
+.cross-icon{
+  position:relative;
+  display:block;
+  width:18px;
+  height:25px;
 }
 
-
-.menu-button.important
-.menu-icon{
-
-  background:#ffffff;
-
-  color:var(--bordo);
-
+.cross-icon::before{
+  content:"";
+  position:absolute;
+  left:7px;
+  top:1px;
+  width:4px;
+  height:23px;
+  border-radius:1px;
+  background:var(--celeste);
 }
 
+.cross-icon::after{
+  content:"";
+  position:absolute;
+  left:2px;
+  top:7px;
+  width:14px;
+  height:4px;
+  border-radius:1px;
+  background:var(--celeste);
+}
 
-.menu-button.important
-.menu-title{
+.adoration-menu-icon{
+  position:relative;
+  width:23px;
+  height:23px;
+  border:2px solid var(--celeste);
+  border-radius:50%;
+}
 
-  color:var(--bordo);
-
+.adoration-menu-icon::before{
+  content:"";
+  position:absolute;
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:var(--celeste);
+  top:6px;
+  left:6px;
 }
 
 
@@ -450,104 +343,156 @@ button{
 ========================================================= */
 
 .page{
-
   display:none;
-
-  background:#ffffff;
-
+  background:#fff;
   min-height:450px;
-
 }
-
 
 .page.active{
-
   display:block;
-
 }
-
 
 .page-top{
-
-  padding:
-    19px
-    22px
-    21px;
-
-  border-bottom:
-    1px
-    solid
-    #eeeeee;
-
-  background:#ffffff;
-
+  padding:19px 22px 21px;
+  border-bottom:1px solid #eee;
+  background:#fff;
 }
 
-
 .back-button{
-
   border:0;
-
   background:none;
 
-  padding:
-    7px
-    0;
-
-  margin:
-    0
-    0
-    13px;
+  padding:7px 0;
+  margin:0 0 13px;
 
   color:var(--celeste);
 
-  font-size:15px;
-
+  font-size:14px;
+  line-height:19px;
   letter-spacing:.4px;
-
   font-weight:bold;
 
   cursor:pointer;
-
 }
 
-
 .page-top h2{
-
   margin:0;
 
   color:var(--bordo);
 
   font-size:24px;
-
   line-height:30px;
-
 }
-
 
 .page-subtitle{
+  margin:5px 0 0;
 
-  margin:
-    5px
-    0
-    0;
-
-  color:#888888;
+  color:#888;
 
   font-size:13px;
-
   line-height:19px;
+}
 
+.page-content{
+  padding:25px 22px 40px;
 }
 
 
-.page-content{
+/* =========================================================
+   BOTONES INTERNOS
+========================================================= */
 
-  padding:
-    25px
-    22px
-    40px;
+.content-button{
+  width:100%;
 
+  border:1px solid var(--borde);
+  background:#fff;
+
+  padding:15px 16px;
+  margin:0 0 9px;
+
+  border-radius:9px;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  color:#333;
+  text-decoration:none;
+  text-align:left;
+
+  font-size:14px;
+  line-height:19px;
+  font-weight:bold;
+
+  cursor:pointer;
+}
+
+.content-button > div{
+  min-width:0;
+  flex:1;
+}
+
+.content-button-arrow{
+  flex:0 0 auto;
+  margin-left:12px;
+
+  color:#aaa;
+
+  font-size:19px;
+  font-weight:normal;
+}
+
+.reading-reference{
+  margin-top:4px;
+
+  overflow:hidden;
+  white-space:nowrap;
+  text-overflow:ellipsis;
+
+  color:#888;
+
+  font-size:11px;
+  line-height:16px;
+  font-weight:normal;
+}
+
+
+/* =========================================================
+   CARDS
+========================================================= */
+
+.content-card{
+  border:1px solid var(--borde);
+  border-radius:9px;
+
+  padding:17px 18px;
+  margin-bottom:10px;
+}
+
+.content-card h3{
+  margin:0 0 7px;
+
+  color:#333;
+
+  font-size:15px;
+  line-height:20px;
+}
+
+.content-card p{
+  margin:0;
+
+  color:#777;
+
+  font-size:13px;
+  line-height:20px;
+}
+
+.content-card.accent{
+  background:var(--celeste-claro);
+  border:0;
+  border-left:4px solid var(--celeste);
+  border-radius:0;
 }
 
 
@@ -556,741 +501,74 @@ button{
 ========================================================= */
 
 .date-label{
+  margin-bottom:20px;
 
   color:var(--celeste);
 
   font-size:11px;
-
   line-height:16px;
-
   font-weight:bold;
-
   letter-spacing:1.3px;
-
-  margin-bottom:20px;
-
 }
-
 
 .timeline-item{
-
   display:grid;
-
-  grid-template-columns:
-    63px
-    1fr;
-
-  position:relative;
+  grid-template-columns:63px 1fr;
 
   min-height:68px;
-
 }
 
-
 .timeline-time{
+  padding-top:1px;
 
   color:var(--bordo);
 
   font-size:14px;
-
   font-weight:bold;
-
-  padding-top:1px;
-
 }
-
 
 .timeline-info{
-
   position:relative;
 
-  border-left:
-    1px
-    solid
-    #dddddd;
+  border-left:1px solid #ddd;
 
-  padding:
-    0
-    0
-    25px
-    20px;
-
+  padding:0 0 25px 20px;
 }
 
-
 .timeline-info::before{
-
   content:"";
 
   position:absolute;
-
-  width:9px;
-
-  height:9px;
-
-  background:var(--celeste);
-
-  border-radius:50%;
-
   left:-5px;
-
   top:3px;
 
+  width:9px;
+  height:9px;
+
+  border-radius:50%;
+  background:var(--celeste);
 }
 
-
-.timeline-item:last-child
-.timeline-info{
-
+.timeline-item:last-child .timeline-info{
   border-left-color:transparent;
-
 }
-
 
 .timeline-info strong{
-
   display:block;
 
   font-size:14px;
-
   line-height:19px;
-
 }
 
-
 .timeline-info span{
-
   display:block;
-
-  color:#888888;
-
-  font-size:12px;
-
-  line-height:17px;
 
   margin-top:3px;
 
-}
-
-
-/* =========================================================
-   TARJETAS DE CONTENIDO
-========================================================= */
-
-.content-card{
-
-  border:
-    1px
-    solid
-    var(--borde);
-
-  border-radius:9px;
-
-  padding:
-    17px
-    18px;
-
-  margin-bottom:10px;
-
-}
-
-
-.content-card h3{
-
-  margin:
-    0
-    0
-    7px;
-
-  color:#333333;
-
-  font-size:15px;
-
-  line-height:20px;
-
-}
-
-
-.content-card p{
-
-  margin:0;
-
-  color:#777777;
-
-  font-size:13px;
-
-  line-height:20px;
-
-}
-
-
-.content-card.accent{
-
-  background:var(--celeste-claro);
-
-  border:0;
-
-  border-left:
-    4px
-    solid
-    var(--celeste);
-
-  border-radius:0;
-
-}
-
-
-/* =========================================================
-   BOTONES DE CONTENIDO
-========================================================= */
-
-.content-button{
-
-  width:100%;
-
-  border:
-    1px
-    solid
-    var(--borde);
-
-  background:#ffffff;
-
-  padding:16px;
-
-  margin:
-    0
-    0
-    9px;
-
-  border-radius:9px;
-
-  text-align:left;
-
-  display:flex;
-
-  justify-content:space-between;
-
-  align-items:center;
-
-  color:#333333;
-
-  font-size:14px;
-
-  line-height:19px;
-
-  font-weight:bold;
-
-  cursor:pointer;
-
-}
-
-
-.content-button-arrow{
-
-  color:#bbbbbb;
-
-  font-size:19px;
-
-  font-weight:normal;
-
-}
-
-/* =========================================================
-   AGENDA OFICIAL DEL PAPA
-========================================================= */
-
-
-/* ---------------------------------------------------------
-   NAVEGACIÓN DE DÍAS
---------------------------------------------------------- */
-
-.agenda-day-nav{
-
-  position:sticky;
-
-  top:0;
-
-  z-index:50;
-
-  display:grid;
-
-  grid-template-columns:repeat(4, 1fr);
-
-  gap:7px;
-
-  padding:
-    10px
-    14px;
-
-  background:rgba(255,255,255,.97);
-
-  border-bottom:
-    1px
-    solid
-    #e5e5e5;
-
-  box-shadow:
-    0 3px 10px
-    rgba(0,0,0,.05);
-
-  backdrop-filter:blur(8px);
-
-  -webkit-backdrop-filter:blur(8px);
-
-}
-
-
-.agenda-day-button{
-
-  min-height:49px;
-
-  border:
-    1px
-    solid
-    #dfe3e5;
-
-  border-radius:8px;
-
-  background:#ffffff;
-
-  padding:
-    5px
-    3px;
-
-  text-align:center;
-
-  cursor:pointer;
-
-  color:#777777;
-
-}
-
-
-.agenda-day-button span{
-
-  display:block;
-
-  margin-bottom:1px;
-
-  font-size:9px;
-
-  line-height:12px;
-
-  font-weight:bold;
-
-  letter-spacing:1px;
-
-}
-
-
-.agenda-day-button strong{
-
-  display:block;
-
-  color:var(--bordo);
-
-  font-size:17px;
-
-  line-height:20px;
-
-}
-
-
-.agenda-day-button.active{
-
-  background:var(--bordo);
-
-  border-color:var(--bordo);
-
-  color:#ffffff;
-
-}
-
-
-.agenda-day-button.active strong{
-
-  color:#ffffff;
-
-}
-
-
-/* ---------------------------------------------------------
-   CONTENIDO GENERAL
---------------------------------------------------------- */
-
-.agenda-content{
-
-  padding-top:26px;
-
-}
-
-
-.papal-day{
-
-  margin-bottom:42px;
-
-  scroll-margin-top:82px;
-
-}
-
-
-.papal-day:last-child{
-
-  margin-bottom:0;
-
-}
-
-
-/* ---------------------------------------------------------
-   CABECERA DEL DÍA
---------------------------------------------------------- */
-
-.papal-day-header{
-
-  margin-bottom:23px;
-
-  padding-bottom:12px;
-
-  border-bottom:
-    2px
-    solid
-    var(--bordo);
-
-}
-
-
-.papal-day-name{
-
-  display:inline-block;
-
-  color:var(--bordo);
-
-  font-size:11px;
-
-  line-height:18px;
-
-  font-weight:bold;
-
-  letter-spacing:1.2px;
-
-  vertical-align:baseline;
-
-}
-
-
-.papal-day-number{
-
-  display:inline-block;
-
-  margin:
-    0
-    5px;
-
-  color:var(--bordo);
-
-  font-size:28px;
-
-  line-height:30px;
-
-  font-weight:bold;
-
-  vertical-align:baseline;
-
-}
-
-
-.papal-day-month{
-
-  display:inline-block;
-
-  color:#777777;
-
-  font-size:10px;
-
-  line-height:16px;
-
-  font-weight:bold;
-
-  letter-spacing:1px;
-
-  vertical-align:baseline;
-
-}
-
-
-.papal-day-city{
-
-  margin-top:4px;
-
-  color:var(--celeste);
-
-  font-size:10px;
-
-  line-height:15px;
-
-  font-weight:bold;
-
-  letter-spacing:.8px;
-
-}
-
-
-/* ---------------------------------------------------------
-   TIMELINE
---------------------------------------------------------- */
-
-.papal-event{
-
-  display:grid;
-
-  grid-template-columns:
-    60px
-    1fr;
-
-  position:relative;
-
-}
-
-
-.papal-time{
-
-  padding-top:1px;
-
-  color:var(--bordo);
-
-  font-size:13px;
-
-  line-height:19px;
-
-  font-weight:bold;
-
-}
-
-
-.papal-event-info{
-
-  position:relative;
-
-  min-height:67px;
-
-  padding:
-    0
-    0
-    24px
-    19px;
-
-  border-left:
-    1px
-    solid
-    #d9d9d9;
-
-}
-
-
-.papal-event-info::before{
-
-  content:"";
-
-  position:absolute;
-
-  top:5px;
-
-  left:-5px;
-
-  width:9px;
-
-  height:9px;
-
-  border-radius:50%;
-
-  background:var(--celeste);
-
-  box-shadow:
-    0
-    0
-    0
-    3px
-    #ffffff;
-
-}
-
-
-.papal-event:last-child
-.papal-event-info{
-
-  border-left-color:transparent;
-
-}
-
-
-.papal-event-info strong{
-
-  display:block;
-
-  color:#333333;
-
-  font-size:14px;
-
-  line-height:20px;
-
-}
-
-
-.papal-event-info span{
-
-  display:block;
-
-  margin-top:4px;
-
-  color:#777777;
+  color:#888;
 
   font-size:12px;
-
-  line-height:18px;
-
-}
-
-
-.papal-event-info small{
-
-  display:inline-block;
-
-  margin-top:7px;
-
-  padding:
-    3px
-    7px;
-
-  border-radius:4px;
-
-  background:var(--celeste-claro);
-
-  color:var(--celeste);
-
-  font-size:9px;
-
-  line-height:13px;
-
-  font-weight:bold;
-
-  letter-spacing:.7px;
-
-}
-
-
-/* ---------------------------------------------------------
-   EVENTOS DESTACADOS
---------------------------------------------------------- */
-
-.papal-event-featured{
-
-  margin:
-    3px
-    0
-    13px;
-
-}
-
-
-.papal-event-featured
-.papal-time{
-
-  padding-top:14px;
-
-}
-
-
-.papal-event-featured
-.papal-event-info{
-
-  min-height:auto;
-
-  margin-left:-1px;
-
-  padding:
-    12px
-    14px
-    13px
-    18px;
-
-  border-left:
-    4px
-    solid
-    var(--bordo);
-
-  background:var(--bordo-claro);
-
-}
-
-
-.papal-event-featured
-.papal-event-info::before{
-
-  display:none;
-
-}
-
-
-.papal-event-featured
-.papal-event-info strong{
-
-  color:var(--bordo);
-
-  font-size:15px;
-
-  line-height:20px;
-
-}
-
-
-.papal-event-featured
-.papal-event-info span{
-
-  color:#666666;
-
-}
-
-/* =========================================================
-   CANCIONERO
-========================================================= */
-
-.song-title{
-
-  color:var(--bordo);
-
-  font-size:22px;
-
-  line-height:28px;
-
-  font-weight:bold;
-
-  margin:
-    0
-    0
-    22px;
-
-}
-
-
-.song-lyrics{
-
-  white-space:pre-line;
-
-  font-size:15px;
-
-  line-height:25px;
-
-  color:#444444;
-
-}
-
-
-.chorus{
-
-  color:var(--bordo);
-
-  font-weight:bold;
-
+  line-height:17px;
 }
 
 
@@ -1299,300 +577,62 @@ button{
 ========================================================= */
 
 .map-placeholder{
-
-  background:var(--celeste-claro);
-
-  border:
-    1px
-    solid
-    #dcebed;
-
   min-height:280px;
 
-  padding:
-    45px
-    25px;
+  padding:45px 25px;
+
+  background:var(--celeste-claro);
+  border:1px solid #dcebed;
 
   text-align:center;
 
   display:flex;
-
   flex-direction:column;
-
   align-items:center;
-
   justify-content:center;
-
 }
-
 
 .map-icon{
-
-  font-size:43px;
-
-  color:var(--celeste);
-
   margin-bottom:15px;
 
-}
-
-
-.map-placeholder strong{
-
-  font-size:16px;
-
-  color:#333333;
-
-}
-
-
-.map-placeholder p{
-
-  font-size:13px;
-
-  line-height:20px;
-
-  color:#777777;
-
-  max-width:300px;
-
-  margin:
-    10px
-    auto
-    0;
-
-}
-
-/* =========================================================
-   LECTURAS DE LA MISA
-========================================================= */
-
-.reading-reference{
-
-  margin-top:4px;
-
-  color:#888888;
-
-  font-size:11px;
-
-  line-height:16px;
-
-  font-weight:normal;
-
-}
-
-
-.reading-type{
-
-  margin-bottom:7px;
-
   color:var(--celeste);
 
-  font-size:10px;
-
-  line-height:15px;
-
-  font-weight:bold;
-
-  letter-spacing:1.3px;
-
+  font-size:43px;
 }
 
-
-.liturgy-text{
-
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
-
+.map-placeholder strong{
+  font-size:16px;
 }
 
+.map-placeholder p{
+  max-width:300px;
 
-.liturgy-text .reading-intro{
+  margin:10px auto 0;
 
-  margin:
-    0
-    0
-    25px;
-
-  padding:
-    15px
-    17px;
-
-  background:var(--celeste-claro);
-
-  border-left:
-    4px
-    solid
-    var(--celeste);
-
-  color:#555555;
-
-  font-family:
-    Arial,
-    Helvetica,
-    sans-serif;
+  color:#777;
 
   font-size:13px;
-
   line-height:20px;
-
-  font-weight:bold;
-
 }
 
-
-.liturgy-text p{
-
-  margin:
-    0
-    0
-    22px;
-
-  color:#333333;
-
-  font-size:17px;
-
-  line-height:28px;
-
-}
-
-
-.liturgy-text p:last-child{
-
-  margin-bottom:0;
-
-}  
-
-/* =========================================================
-   PREGUNTAS
-========================================================= */
-
-details{
-
-  border:
-    1px
-    solid
-    var(--borde);
-
-  border-radius:9px;
-
-  margin-bottom:9px;
-
-  padding:
-    15px
-    16px;
-
-}
-
-
-summary{
-
-  cursor:pointer;
-
-  font-size:14px;
-
-  line-height:20px;
-
-  font-weight:bold;
-
-}
-
-
-details p{
-
-  margin:
-    12px
-    0
-    0;
-
-  color:#777777;
-
-  font-size:13px;
-
-  line-height:20px;
-
-}
-
-/* CRUZ - EVITA EMOJI DE iOS */
-
-.cross-icon{
-
-  position:relative;
-
-  display:block;
-
-  width:18px;
-
-  height:25px;
-
-}
-
-.cross-icon::before{
-
-  content:"";
-
-  position:absolute;
-
-  left:7px;
-
-  top:1px;
-
-  width:4px;
-
-  height:23px;
-
-  border-radius:1px;
-
-  background:var(--celeste);
-
-}
-
-.cross-icon::after{
-
-  content:"";
-
-  position:absolute;
-
-  left:2px;
-
-  top:7px;
-
-  width:14px;
-
-  height:4px;
-
-  border-radius:1px;
-
-  background:var(--celeste);
-
-}  
 
 /* =========================================================
    MISA
 ========================================================= */
 
 .misa-section{
-
   margin-bottom:35px;
-
 }
 
 .misa-section:last-child{
-
   margin-bottom:0;
-
 }
 
 .misa-section-heading{
-
   margin-bottom:15px;
-
 }
 
 .misa-section-label{
-
   display:block;
 
   margin-bottom:4px;
@@ -1600,142 +640,779 @@ details p{
   color:var(--celeste);
 
   font-size:10px;
-
   line-height:15px;
-
   font-weight:bold;
-
   letter-spacing:1.3px;
-
 }
 
 .misa-section-heading h3{
-
   margin:0;
 
   color:var(--bordo);
 
   font-size:20px;
-
   line-height:26px;
-
 }
 
 .misa-songs{
-
   padding-top:28px;
-
   border-top:1px solid #e5e5e5;
-
 }
-  
+
+
+/* =========================================================
+   LECTURAS
+========================================================= */
+
+.reading-type{
+  margin-bottom:7px;
+
+  color:var(--celeste);
+
+  font-size:10px;
+  line-height:15px;
+  font-weight:bold;
+  letter-spacing:1.3px;
+}
+
+.liturgy-text{
+  font-family:Georgia,"Times New Roman",serif;
+}
+
+.liturgy-text .reading-intro{
+  margin:0 0 25px;
+
+  padding:15px 17px;
+
+  background:var(--celeste-claro);
+  border-left:4px solid var(--celeste);
+
+  color:#555;
+
+  font-family:Arial,Helvetica,sans-serif;
+  font-size:13px;
+  line-height:20px;
+  font-weight:bold;
+}
+
+.liturgy-text p{
+  margin:0 0 22px;
+
+  color:#333;
+
+  font-size:17px;
+  line-height:28px;
+}
+
+
+/* =========================================================
+   CANCIONES
+========================================================= */
+
+.song-title{
+  margin:0 0 22px;
+
+  color:var(--bordo);
+
+  font-size:22px;
+  line-height:28px;
+  font-weight:bold;
+}
+
+.song-lyrics{
+  white-space:pre-line;
+
+  color:#444;
+
+  font-size:15px;
+  line-height:25px;
+}
+
+.chorus{
+  color:var(--bordo);
+  font-weight:bold;
+}
+
+
+/* =========================================================
+   ADORACIÓN
+========================================================= */
+
+.adoration-intro{
+  margin-bottom:22px;
+
+  padding:18px 19px;
+
+  background:var(--celeste-claro);
+  border-left:4px solid var(--celeste);
+}
+
+.adoration-intro-label{
+  margin-bottom:7px;
+
+  color:var(--celeste);
+
+  font-size:10px;
+  line-height:15px;
+  font-weight:bold;
+  letter-spacing:1.2px;
+}
+
+.adoration-intro p{
+  margin:0;
+
+  color:#555;
+
+  font-size:14px;
+  line-height:21px;
+}
+
+.adoration-my-slots{
+  margin-bottom:25px;
+
+  padding:17px 18px;
+
+  background:var(--bordo-claro);
+  border-left:4px solid var(--bordo);
+}
+
+.adoration-my-label{
+  margin-bottom:6px;
+
+  color:var(--bordo);
+
+  font-size:10px;
+  line-height:15px;
+  font-weight:bold;
+  letter-spacing:1.2px;
+}
+
+.adoration-my-slots-text{
+  color:#333;
+
+  font-size:15px;
+  line-height:22px;
+  font-weight:bold;
+}
+
+.adoration-my-thanks{
+  margin-top:5px;
+
+  color:#777;
+
+  font-size:12px;
+  line-height:18px;
+}
+
+.adoration-section-title{
+  margin-bottom:13px;
+}
+
+.adoration-section-title span{
+  color:var(--celeste);
+
+  font-size:11px;
+  line-height:16px;
+  font-weight:bold;
+  letter-spacing:1.2px;
+}
+
+.adoration-section-title p{
+  margin:4px 0 0;
+
+  color:#888;
+
+  font-size:12px;
+  line-height:18px;
+}
+
+.adoration-slots{
+  border-top:1px solid #eee;
+}
+
+.adoration-slot{
+  display:grid;
+
+  grid-template-columns:minmax(105px,1fr) 90px 44px;
+
+  align-items:center;
+
+  min-height:60px;
+
+  border-bottom:1px solid #eee;
+}
+
+.adoration-slot-time{
+  color:#333;
+
+  font-size:14px;
+  line-height:19px;
+  font-weight:bold;
+}
+
+.adoration-slot-count{
+  padding-right:11px;
+
+  color:#888;
+
+  text-align:right;
+
+  font-size:11px;
+  line-height:16px;
+}
+
+.adoration-slot-button{
+  width:38px;
+  height:38px;
+
+  padding:0;
+
+  border:1px solid #d9d9d9;
+  border-radius:50%;
+
+  background:#fff;
+  color:var(--bordo);
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  font-size:23px;
+
+  cursor:pointer;
+}
+
+.adoration-slot-button.selected{
+  border-color:var(--bordo);
+  background:var(--bordo);
+  color:#fff;
+
+  font-size:17px;
+  font-weight:bold;
+}
+
+.adoration-slot-button:disabled{
+  opacity:.5;
+}
+
+.adoration-loading{
+  padding:22px 0;
+
+  color:#888;
+
+  text-align:center;
+
+  font-size:13px;
+}
+
+.adoration-error{
+  margin-bottom:15px;
+
+  padding:13px 15px;
+
+  background:var(--bordo-claro);
+  color:var(--bordo);
+
+  font-size:12px;
+  line-height:18px;
+}
+
+.adoration-divider{
+  margin:30px 0 27px;
+  border-top:1px solid #ddd;
+}
+
+
+/* =========================================================
+   MODAL ADORACIÓN
+========================================================= */
+
+.adoration-modal{
+  position:fixed;
+  inset:0;
+
+  z-index:999;
+
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+}
+
+.adoration-modal-backdrop{
+  position:absolute;
+  inset:0;
+
+  background:rgba(0,0,0,.45);
+}
+
+.adoration-modal-card{
+  position:relative;
+
+  z-index:2;
+
+  width:100%;
+  max-width:640px;
+
+  padding:
+    27px
+    22px
+    calc(28px + env(safe-area-inset-bottom));
+
+  background:#fff;
+
+  border-radius:18px 18px 0 0;
+
+  box-shadow:0 -5px 30px rgba(0,0,0,.15);
+}
+
+.adoration-modal-close{
+  position:absolute;
+  top:12px;
+  right:16px;
+
+  width:35px;
+  height:35px;
+
+  border:0;
+  background:none;
+
+  color:#999;
+
+  font-size:27px;
+
+  cursor:pointer;
+}
+
+.adoration-modal-label{
+  margin-bottom:5px;
+
+  color:var(--celeste);
+
+  font-size:10px;
+  line-height:15px;
+  font-weight:bold;
+  letter-spacing:1.2px;
+}
+
+.adoration-modal-card h3{
+  margin:0 0 8px;
+
+  color:var(--bordo);
+
+  font-size:21px;
+  line-height:27px;
+}
+
+.adoration-modal-slot{
+  margin-bottom:22px;
+
+  color:#555;
+
+  font-size:15px;
+  line-height:21px;
+  font-weight:bold;
+}
+
+.adoration-name-label{
+  display:block;
+
+  margin-bottom:7px;
+
+  color:#555;
+
+  font-size:12px;
+  line-height:17px;
+  font-weight:bold;
+}
+
+.adoration-name-input{
+  display:block;
+
+  width:100%;
+  height:49px;
+
+  border:1px solid #d8d8d8;
+  border-radius:7px;
+
+  padding:0 13px;
+
+  outline:none;
+
+  background:#fff;
+  color:#333;
+
+  font-size:16px;
+}
+
+.adoration-name-input:focus{
+  border-color:var(--celeste);
+}
+
+.adoration-modal-error{
+  min-height:19px;
+
+  margin-top:6px;
+
+  color:var(--bordo);
+
+  font-size:11px;
+  line-height:16px;
+}
+
+.adoration-confirm-button{
+  width:100%;
+  min-height:50px;
+
+  margin-top:8px;
+
+  border:0;
+  border-radius:6px;
+
+  background:var(--bordo);
+  color:#fff;
+
+  font-size:13px;
+  font-weight:bold;
+  letter-spacing:.5px;
+
+  cursor:pointer;
+}
+
+.adoration-confirm-button:disabled{
+  opacity:.55;
+}
+
+
+/* =========================================================
+   AGENDA PAPAL
+========================================================= */
+
+.agenda-day-nav{
+  position:sticky;
+  top:0;
+
+  z-index:50;
+
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:7px;
+
+  padding:10px 14px;
+
+  background:rgba(255,255,255,.97);
+
+  border-bottom:1px solid #e5e5e5;
+
+  box-shadow:0 3px 10px rgba(0,0,0,.05);
+}
+
+.agenda-day-button{
+  min-height:49px;
+
+  border:1px solid #dfe3e5;
+  border-radius:8px;
+
+  background:#fff;
+  color:#777;
+
+  padding:5px 3px;
+
+  text-align:center;
+
+  cursor:pointer;
+}
+
+.agenda-day-button span{
+  display:block;
+
+  margin-bottom:1px;
+
+  font-size:9px;
+  line-height:12px;
+  font-weight:bold;
+  letter-spacing:1px;
+}
+
+.agenda-day-button strong{
+  display:block;
+
+  color:var(--bordo);
+
+  font-size:17px;
+  line-height:20px;
+}
+
+.agenda-day-button.active{
+  background:var(--bordo);
+  border-color:var(--bordo);
+  color:#fff;
+}
+
+.agenda-day-button.active strong{
+  color:#fff;
+}
+
+.agenda-content{
+  padding-top:26px;
+}
+
+.papal-day{
+  margin-bottom:42px;
+  scroll-margin-top:82px;
+}
+
+.papal-day-header{
+  margin-bottom:23px;
+
+  padding-bottom:12px;
+
+  border-bottom:2px solid var(--bordo);
+}
+
+.papal-day-name{
+  color:var(--bordo);
+
+  font-size:11px;
+  font-weight:bold;
+  letter-spacing:1.2px;
+}
+
+.papal-day-number{
+  display:inline-block;
+
+  margin:0 5px;
+
+  color:var(--bordo);
+
+  font-size:28px;
+  line-height:30px;
+  font-weight:bold;
+}
+
+.papal-day-month{
+  color:#777;
+
+  font-size:10px;
+  font-weight:bold;
+  letter-spacing:1px;
+}
+
+.papal-day-city{
+  margin-top:4px;
+
+  color:var(--celeste);
+
+  font-size:10px;
+  line-height:15px;
+  font-weight:bold;
+  letter-spacing:.8px;
+}
+
+.papal-event{
+  display:grid;
+
+  grid-template-columns:60px 1fr;
+}
+
+.papal-time{
+  padding-top:1px;
+
+  color:var(--bordo);
+
+  font-size:13px;
+  line-height:19px;
+  font-weight:bold;
+}
+
+.papal-event-info{
+  position:relative;
+
+  min-height:67px;
+
+  padding:0 0 24px 19px;
+
+  border-left:1px solid #d9d9d9;
+}
+
+.papal-event-info::before{
+  content:"";
+
+  position:absolute;
+  top:5px;
+  left:-5px;
+
+  width:9px;
+  height:9px;
+
+  border-radius:50%;
+
+  background:var(--celeste);
+
+  box-shadow:0 0 0 3px #fff;
+}
+
+.papal-event:last-child .papal-event-info{
+  border-left-color:transparent;
+}
+
+.papal-event-info strong{
+  display:block;
+
+  color:#333;
+
+  font-size:14px;
+  line-height:20px;
+}
+
+.papal-event-info span{
+  display:block;
+
+  margin-top:4px;
+
+  color:#777;
+
+  font-size:12px;
+  line-height:18px;
+}
+
+.papal-event-info small{
+  display:inline-block;
+
+  margin-top:7px;
+
+  padding:3px 7px;
+
+  border-radius:4px;
+
+  background:var(--celeste-claro);
+  color:var(--celeste);
+
+  font-size:9px;
+  line-height:13px;
+  font-weight:bold;
+  letter-spacing:.7px;
+}
+
+.papal-event-featured{
+  margin:3px 0 13px;
+}
+
+.papal-event-featured .papal-time{
+  padding-top:14px;
+}
+
+.papal-event-featured .papal-event-info{
+  min-height:auto;
+
+  margin-left:-1px;
+
+  padding:12px 14px 13px 18px;
+
+  border-left:4px solid var(--bordo);
+
+  background:var(--bordo-claro);
+}
+
+.papal-event-featured .papal-event-info::before{
+  display:none;
+}
+
+.papal-event-featured .papal-event-info strong{
+  color:var(--bordo);
+}
+
+
+/* =========================================================
+   PREGUNTAS
+========================================================= */
+
+details{
+  border:1px solid var(--borde);
+  border-radius:9px;
+
+  margin-bottom:9px;
+
+  padding:15px 16px;
+}
+
+summary{
+  cursor:pointer;
+
+  font-size:14px;
+  line-height:20px;
+  font-weight:bold;
+}
+
+details p{
+  margin:12px 0 0;
+
+  color:#777;
+
+  font-size:13px;
+  line-height:20px;
+}
+
+
 /* =========================================================
    FOOTER
 ========================================================= */
 
 .footer{
+  background:#333;
 
-  background:#333333;
-
-  padding:
-    34px
-    25px
-    30px;
+  padding:34px 25px 30px;
 
   text-align:center;
-
 }
 
-
 .footer-logo{
-
   display:block;
 
   width:255px;
-
   max-width:80%;
 
   height:auto;
 
   margin:0 auto;
-
-  border:0;
-
 }
 
-
 .socials{
-
   display:flex;
-
   justify-content:center;
-
   align-items:center;
 
   gap:19px;
 
   margin-top:28px;
-
 }
 
-
 .social-link{
-
   width:28px;
-
   height:28px;
 
   display:flex;
-
   align-items:center;
-
   justify-content:center;
-
 }
 
-
 .social-link img{
-
   display:block;
 
   max-width:26px;
-
   max-height:26px;
-
-  width:auto;
-
-  height:auto;
-
-  border:0;
-
 }
-
 
 .footer-divider{
+  border-top:1px solid #666;
 
-  width:100%;
-
-  border-top:
-    1px
-    solid
-    #666666;
-
-  margin:
-    27px
-    0
-    19px;
-
+  margin:27px 0 19px;
 }
 
-
 .footer-text{
-
-  color:#aaaaaa;
+  color:#aaa;
 
   font-size:11px;
-
   line-height:18px;
-
 }
 
 
@@ -1746,22 +1423,11 @@ details p{
 @media(min-width:700px){
 
   body{
-
-    padding:
-      25px
-      0;
-
+    padding:25px 0;
   }
 
-
   .app{
-
-    box-shadow:
-      0
-      5px
-      30px
-      rgba(0,0,0,.08);
-
+    box-shadow:0 5px 30px rgba(0,0,0,.08);
   }
 
 }
@@ -1772,7 +1438,6 @@ details p{
 
 
 <body>
-
 
 <div class="app">
 
@@ -1792,12 +1457,8 @@ details p{
 
   </div>
 
-
   <div class="event-band">
-
-    VISITA DEL PAPA LEÓN XIV A LA ARGENTINA
-    · 8–11 NOV 2026
-
+    VISITA DEL PAPA LEÓN XIV A LA ARGENTINA · 8–11 NOV 2026
   </div>
 
 </header>
@@ -1805,295 +1466,193 @@ details p{
 
 
 <!-- ======================================================
-     INICIO
+     HOME
 ====================================================== -->
 
 <main id="home">
 
-
-  <div class="home-content">
-
-
-    <div class="welcome">
-
-      <h1>
-        Vivamos juntos este encuentro
-      </h1>
-
-      <p>
-
-        Toda la información para acompañarnos
-        como comunidad y familia Regnum Christi
-        durante la visita del papa León XIV.
-
-      </p>
-
-    </div>
+<div class="home-content">
 
 
+  <div class="welcome">
 
-    <div class="section-label">
+    <h1>Vivamos juntos este encuentro</h1>
 
-      EVENTO RC · DOMINGO 8 DE NOVIEMBRE
-
-    </div>
-
-
-
-    <div class="menu">
-
-
-      <!-- CRONOGRAMA -->
-
-      <button
-        class="menu-button"
-        onclick="openPage('cronograma')"
-      >
-
-        <div class="menu-icon">
-          ◷
-        </div>
-
-        <div class="menu-copy">
-
-          <span class="menu-title">
-            Cronograma
-          </span>
-
-          <span class="menu-description">
-            Horarios y actividades del Evento RC
-          </span>
-
-        </div>
-
-        <div class="menu-arrow">
-          ›
-        </div>
-
-      </button>
-
-
-
-      <!-- PLANO -->
-
-      <button
-        class="menu-button"
-        onclick="openPage('plano')"
-      >
-
-        <div class="menu-icon">
-          ⌖
-        </div>
-
-        <div class="menu-copy">
-
-          <span class="menu-title">
-            Plano
-          </span>
-
-          <span class="menu-description">
-            Ubicaciones y puntos de encuentro
-          </span>
-
-        </div>
-
-        <div class="menu-arrow">
-          ›
-        </div>
-
-      </button>
-
-
-
-<!-- MISA -->
-
-<button
-  class="menu-button"
-  onclick="openPage('misa')"
->
-
-  <div class="menu-icon">
-    <span class="cross-icon"></span>
-  </div>
-
-  <div class="menu-copy">
-
-    <span class="menu-title">
-      Misa
-    </span>
-
-    <span class="menu-description">
-      Lecturas y Cancionero
-    </span>
+    <p>
+      Toda la información para acompañarnos como comunidad
+      y familia Regnum Christi durante la visita del papa León XIV.
+    </p>
 
   </div>
 
-  <div class="menu-arrow">
-    ›
+
+  <div class="section-label">
+    EVENTO RC · DOMINGO 8 DE NOVIEMBRE
   </div>
 
-</button>
+
+  <div class="menu">
 
 
+    <button
+      class="menu-button"
+      onclick="openPage('cronograma')"
+    >
 
-      <!-- ACTIVIDADES -->
+      <div class="menu-icon">◷</div>
 
-      <button
-        class="menu-button"
-        onclick="openPage('actividades')"
-      >
+      <div class="menu-copy">
+        <span class="menu-title">Cronograma</span>
+        <span class="menu-description">
+          Horarios y actividades del Evento RC
+        </span>
+      </div>
 
-        <div class="menu-icon">
-          ◇
-        </div>
+      <div class="menu-arrow">›</div>
 
-        <div class="menu-copy">
-
-          <span class="menu-title">
-            Actividades
-          </span>
-
-          <span class="menu-description">
-            Propuestas para vivir juntos la jornada
-          </span>
-
-        </div>
-
-        <div class="menu-arrow">
-          ›
-        </div>
-
-      </button>
+    </button>
 
 
+    <button
+      class="menu-button"
+      onclick="openPage('plano')"
+    >
 
-<!-- ADORACIÓN PERMANENTE -->
+      <div class="menu-icon">⌖</div>
 
-<button
-  class="menu-button"
-  onclick="openPage('adoracion')"
->
+      <div class="menu-copy">
+        <span class="menu-title">Plano</span>
+        <span class="menu-description">
+          Ubicaciones y puntos de encuentro
+        </span>
+      </div>
 
-  <div class="menu-icon">
-    <span class="adoration-icon">✦</span>
-  </div>
+      <div class="menu-arrow">›</div>
 
-  <div class="menu-copy">
-
-    <span class="menu-title">
-      Adoración Permanente
-    </span>
-
-    <span class="menu-description">
-      Anotate en un turno
-    </span>
-
-  </div>
-
-  <div class="menu-arrow">
-    ›
-  </div>
-
-</button>
+    </button>
 
 
-      <!-- AGENDA -->
+    <button
+      class="menu-button"
+      onclick="openPage('misa')"
+    >
 
-      <button
-        class="menu-button"
-        onclick="openPage('agenda')"
-      >
+      <div class="menu-icon">
+        <span class="cross-icon"></span>
+      </div>
 
-        <div class="menu-icon">
-          ▣
-        </div>
+      <div class="menu-copy">
+        <span class="menu-title">Misa</span>
+        <span class="menu-description">
+          Lecturas y Cancionero
+        </span>
+      </div>
 
-        <div class="menu-copy">
+      <div class="menu-arrow">›</div>
 
-          <span class="menu-title">
-            Agenda Oficial del Papa
-          </span>
-
-          <span class="menu-description">
-            Visita del papa León XIV a la Argentina
-          </span>
-
-        </div>
-
-        <div class="menu-arrow">
-          ›
-        </div>
-
-      </button>
+    </button>
 
 
+    <button
+      class="menu-button"
+      onclick="openPage('adoracion')"
+    >
 
-      <!-- INFORMACIÓN IMPORTANTE -->
+      <div class="menu-icon">
+        <span class="adoration-menu-icon"></span>
+      </div>
 
-      <button
-        class="menu-button important"
-        onclick="openPage('informacion')"
-      >
+      <div class="menu-copy">
+        <span class="menu-title">Adoración Permanente</span>
+        <span class="menu-description">
+          Anotate en un turno
+        </span>
+      </div>
 
-        <div class="menu-icon">
-          !
-        </div>
+      <div class="menu-arrow">›</div>
 
-        <div class="menu-copy">
-
-          <span class="menu-title">
-            Información Importante
-          </span>
-
-          <span class="menu-description">
-            Para los próximos días
-          </span>
-
-        </div>
-
-        <div class="menu-arrow">
-          ›
-        </div>
-
-      </button>
+    </button>
 
 
+    <button
+      class="menu-button"
+      onclick="openPage('actividades')"
+    >
 
-      <!-- PREGUNTAS -->
+      <div class="menu-icon">◇</div>
 
-      <button
-        class="menu-button"
-        onclick="openPage('preguntas')"
-      >
+      <div class="menu-copy">
+        <span class="menu-title">Actividades</span>
+        <span class="menu-description">
+          Propuestas para vivir juntos la jornada
+        </span>
+      </div>
 
-        <div class="menu-icon">
-          ?
-        </div>
+      <div class="menu-arrow">›</div>
 
-        <div class="menu-copy">
-
-          <span class="menu-title">
-            Preguntas
-          </span>
-
-          <span class="menu-description">
-            Preguntas frecuentes e información útil
-          </span>
-
-        </div>
-
-        <div class="menu-arrow">
-          ›
-        </div>
-
-      </button>
+    </button>
 
 
-    </div>
+    <button
+      class="menu-button"
+      onclick="openPage('agenda')"
+    >
+
+      <div class="menu-icon">▣</div>
+
+      <div class="menu-copy">
+        <span class="menu-title">Agenda Oficial del Papa</span>
+        <span class="menu-description">
+          Visita del papa León XIV a la Argentina
+        </span>
+      </div>
+
+      <div class="menu-arrow">›</div>
+
+    </button>
+
+
+    <button
+      class="menu-button important"
+      onclick="openPage('informacion')"
+    >
+
+      <div class="menu-icon">!</div>
+
+      <div class="menu-copy">
+        <span class="menu-title">Información Importante</span>
+        <span class="menu-description">
+          Para los próximos días
+        </span>
+      </div>
+
+      <div class="menu-arrow">›</div>
+
+    </button>
+
+
+    <button
+      class="menu-button"
+      onclick="openPage('preguntas')"
+    >
+
+      <div class="menu-icon">?</div>
+
+      <div class="menu-copy">
+        <span class="menu-title">Preguntas</span>
+        <span class="menu-description">
+          Preguntas frecuentes e información útil
+        </span>
+      </div>
+
+      <div class="menu-arrow">›</div>
+
+    </button>
 
 
   </div>
 
+</div>
 
 </main>
 
@@ -2103,150 +1662,88 @@ details p{
      CRONOGRAMA
 ====================================================== -->
 
-<section
-  id="cronograma"
-  class="page"
->
+<section id="cronograma" class="page">
+
+<div class="page-top">
+
+  <button class="back-button" onclick="history.back()">
+    ← VOLVER
+  </button>
+
+  <h2>Cronograma</h2>
+
+  <p class="page-subtitle">
+    Evento Familia Regnum Christi
+  </p>
+
+</div>
 
 
-  <div class="page-top">
+<div class="page-content">
 
-<button
-  class="back-button"
-  onclick="history.back()"
->
-  ← VOLVER
-</button>
+  <div class="date-label">
+    DOMINGO 8 DE NOVIEMBRE
+  </div>
 
 
-    <h2>
-      Cronograma
-    </h2>
+  <div class="timeline-item">
 
+    <div class="timeline-time">11:00</div>
 
-    <p class="page-subtitle">
-      Evento Familia Regnum Christi
-    </p>
+    <div class="timeline-info">
+      <strong>Salida de colectivos</strong>
+      <span>Núñez → Betania</span>
+    </div>
 
   </div>
 
 
+  <div class="timeline-item">
 
-  <div class="page-content">
+    <div class="timeline-time">12:00</div>
 
-
-    <div class="date-label">
-
-      DOMINGO 8 DE NOVIEMBRE
-
+    <div class="timeline-info">
+      <strong>Acreditación</strong>
+      <span>Ingreso y retiro de kits</span>
     </div>
-
-
-
-    <div class="timeline-item">
-
-      <div class="timeline-time">
-        11:00
-      </div>
-
-      <div class="timeline-info">
-
-        <strong>
-          Salida de colectivos
-        </strong>
-
-        <span>
-          Núñez → Betania
-        </span>
-
-      </div>
-
-    </div>
-
-
-
-    <div class="timeline-item">
-
-      <div class="timeline-time">
-        12:00
-      </div>
-
-      <div class="timeline-info">
-
-        <strong>
-          Acreditación
-        </strong>
-
-        <span>
-          Ingreso y retiro de kits
-        </span>
-
-      </div>
-
-    </div>
-
-
-
-    <div class="timeline-item">
-
-      <div class="timeline-time">
-        12:30
-      </div>
-
-      <div class="timeline-info">
-
-        <strong>
-          Santa Misa
-        </strong>
-
-      </div>
-
-    </div>
-
-
-
-    <div class="timeline-item">
-
-      <div class="timeline-time">
-        13:30
-      </div>
-
-      <div class="timeline-info">
-
-        <strong>
-          Almuerzo
-        </strong>
-
-      </div>
-
-    </div>
-
-
-
-    <div class="timeline-item">
-
-      <div class="timeline-time">
-        15:00
-      </div>
-
-      <div class="timeline-info">
-
-        <strong>
-          Actividades
-        </strong>
-
-        <span>
-          Actividades para compartir
-          en familia y comunidad
-        </span>
-
-      </div>
-
-    </div>
-
 
   </div>
 
+
+  <div class="timeline-item">
+
+    <div class="timeline-time">12:30</div>
+
+    <div class="timeline-info">
+      <strong>Santa Misa</strong>
+    </div>
+
+  </div>
+
+
+  <div class="timeline-item">
+
+    <div class="timeline-time">13:30</div>
+
+    <div class="timeline-info">
+      <strong>Almuerzo</strong>
+    </div>
+
+  </div>
+
+
+  <div class="timeline-item">
+
+    <div class="timeline-time">15:00</div>
+
+    <div class="timeline-info">
+      <strong>Actividades</strong>
+      <span>Actividades para compartir en familia y comunidad</span>
+    </div>
+
+  </div>
+
+</div>
 
 </section>
 
@@ -2256,61 +1753,39 @@ details p{
      PLANO
 ====================================================== -->
 
-<section
-  id="plano"
-  class="page"
->
+<section id="plano" class="page">
+
+<div class="page-top">
+
+  <button class="back-button" onclick="history.back()">
+    ← VOLVER
+  </button>
+
+  <h2>Plano</h2>
+
+  <p class="page-subtitle">
+    Evento Familia RC
+  </p>
+
+</div>
 
 
-  <div class="page-top">
+<div class="page-content">
 
-<button
-  class="back-button"
-  onclick="history.back()"
->
-  ← VOLVER
-</button>
+  <div class="map-placeholder">
 
+    <div class="map-icon">⌖</div>
 
-    <h2>
-      Plano
-    </h2>
+    <strong>Plano del evento</strong>
 
-
-    <p class="page-subtitle">
-      Evento Familia RC
+    <p>
+      Próximamente vas a poder consultar acá accesos,
+      sectores, baños, puestos sanitarios y puntos de encuentro.
     </p>
 
   </div>
 
-
-
-  <div class="page-content">
-
-
-    <div class="map-placeholder">
-
-      <div class="map-icon">
-        ⌖
-      </div>
-
-      <strong>
-        Plano del evento
-      </strong>
-
-      <p>
-
-        Próximamente vas a poder consultar
-        acá accesos, sectores, baños,
-        puestos sanitarios y puntos de encuentro.
-
-      </p>
-
-    </div>
-
-
-  </div>
-
+</div>
 
 </section>
 
@@ -2322,214 +1797,847 @@ details p{
 
 <section id="misa" class="page">
 
-  <div class="page-top">
+<div class="page-top">
+
+  <button class="back-button" onclick="history.back()">
+    ← VOLVER
+  </button>
+
+  <h2>Santa Misa</h2>
+
+  <p class="page-subtitle">
+    Domingo 8 de noviembre
+  </p>
+
+</div>
+
+
+<div class="page-content">
+
+
+  <!-- LECTURAS -->
+
+  <div class="misa-section">
+
+    <div class="misa-section-heading">
+
+      <span class="misa-section-label">
+        LITURGIA DE LA PALABRA
+      </span>
+
+      <h3>Lecturas de la Misa</h3>
+
+    </div>
+
 
     <button
-      class="back-button"
-      onclick="history.back()"
+      class="content-button"
+      onclick="openPage('primera-lectura')"
     >
-      ← VOLVER
+
+      <div>
+        Primera Lectura
+        <div class="reading-reference">
+          Sabiduría 6, 12-16
+        </div>
+      </div>
+
+      <span class="content-button-arrow">›</span>
+
     </button>
 
-    <h2>Santa Misa</h2>
 
-    <p class="page-subtitle">
-      Domingo 8 de noviembre
+    <button
+      class="content-button"
+      onclick="openPage('salmo')"
+    >
+
+      <div>
+        Salmo Responsorial
+        <div class="reading-reference">
+          Próximamente
+        </div>
+      </div>
+
+      <span class="content-button-arrow">›</span>
+
+    </button>
+
+
+    <button
+      class="content-button"
+      onclick="openPage('segunda-lectura')"
+    >
+
+      <div>
+        Segunda Lectura
+        <div class="reading-reference">
+          1 Tesalonicenses 4, 13-18
+        </div>
+      </div>
+
+      <span class="content-button-arrow">›</span>
+
+    </button>
+
+
+    <button
+      class="content-button"
+      onclick="openPage('evangelio')"
+    >
+
+      <div>
+        Evangelio
+        <div class="reading-reference">
+          Mateo 25, 1-13
+        </div>
+      </div>
+
+      <span class="content-button-arrow">›</span>
+
+    </button>
+
+  </div>
+
+
+
+  <!-- CANCIONERO -->
+
+  <div class="misa-section misa-songs">
+
+    <div class="misa-section-heading">
+
+      <span class="misa-section-label">
+        CANTOS DE LA CELEBRACIÓN
+      </span>
+
+      <h3>Cancionero</h3>
+
+    </div>
+
+
+    <button
+      class="content-button"
+      onclick="openPage('cantos-entrada')"
+    >
+
+      <div>
+        Entrada
+
+        <div class="reading-reference">
+          Ven y Sígueme
+        </div>
+      </div>
+
+      <span class="content-button-arrow">›</span>
+
+    </button>
+
+
+    <button
+      class="content-button"
+      onclick="openPage('cantos-ofertorio')"
+    >
+
+      <div>
+        Ofertorio
+
+        <div class="reading-reference">
+          Próximamente
+        </div>
+      </div>
+
+      <span class="content-button-arrow">›</span>
+
+    </button>
+
+
+    <button
+      class="content-button"
+      onclick="openPage('cantos-comunion')"
+    >
+
+      <div>
+        Comunión
+
+        <div class="reading-reference">
+          Padre me pongo en tus manos | Tan pobre tan rico
+        </div>
+      </div>
+
+      <span class="content-button-arrow">›</span>
+
+    </button>
+
+
+    <button
+      class="content-button"
+      onclick="openPage('cantos-meditacion')"
+    >
+
+      <div>
+        Meditación
+
+        <div class="reading-reference">
+          Próximamente
+        </div>
+      </div>
+
+      <span class="content-button-arrow">›</span>
+
+    </button>
+
+
+    <button
+      class="content-button"
+      onclick="openPage('cantos-salida')"
+    >
+
+      <div>
+        Salida
+
+        <div class="reading-reference">
+          Próximamente
+        </div>
+      </div>
+
+      <span class="content-button-arrow">›</span>
+
+    </button>
+
+
+  </div>
+
+</div>
+
+</section>
+
+
+
+<!-- ======================================================
+     PRIMERA LECTURA
+====================================================== -->
+
+<section id="primera-lectura" class="page">
+
+<div class="page-top">
+
+  <button class="back-button" onclick="openPage('misa', false)">
+    ← MISA
+  </button>
+
+  <div class="reading-type">
+    PRIMERA LECTURA
+  </div>
+
+  <h2>Sabiduría 6, 12-16</h2>
+
+</div>
+
+
+<div class="page-content liturgy-text">
+
+  <p class="reading-intro">
+    Lectura del libro de la Sabiduría
+  </p>
+
+  <p>
+    Radiante e incorruptible es la sabiduría;<br>
+    con facilidad la contemplan quienes la aman<br>
+    y ella se deja encontrar por quienes la buscan<br>
+    y se anticipa a darse a conocer a los que la desean.
+  </p>
+
+  <p>
+    El que madruga por ella no se fatigará,<br>
+    porque la hallará sentada a su puerta.<br>
+    Darle la primacía en los pensamientos<br>
+    es prudencia consumada;<br>
+    quien por ella se desvela<br>
+    pronto se verá libre de preocupaciones.
+  </p>
+
+  <p>
+    A los que son dignos de ella,<br>
+    ella misma sale a buscarlos por los caminos;<br>
+    se les aparece benévola<br>
+    y colabora con ellos en todos sus proyectos.
+  </p>
+
+</div>
+
+</section>
+
+
+
+<!-- ======================================================
+     SALMO
+====================================================== -->
+
+<section id="salmo" class="page">
+
+<div class="page-top">
+
+  <button class="back-button" onclick="openPage('misa', false)">
+    ← MISA
+  </button>
+
+  <div class="reading-type">
+    SALMO RESPONSORIAL
+  </div>
+
+  <h2>Salmo</h2>
+
+</div>
+
+
+<div class="page-content">
+
+  <div class="content-card accent">
+
+    <h3>Próximamente</h3>
+
+    <p>
+      El salmo responsorial será publicado en esta sección.
+    </p>
+
+  </div>
+
+</div>
+
+</section>
+
+
+
+<!-- ======================================================
+     SEGUNDA LECTURA
+====================================================== -->
+
+<section id="segunda-lectura" class="page">
+
+<div class="page-top">
+
+  <button class="back-button" onclick="openPage('misa', false)">
+    ← MISA
+  </button>
+
+  <div class="reading-type">
+    SEGUNDA LECTURA
+  </div>
+
+  <h2>1 Tesalonicenses 4, 13-18</h2>
+
+</div>
+
+
+<div class="page-content liturgy-text">
+
+  <p class="reading-intro">
+    Lectura de la primera carta del apóstol san Pablo
+    a los Tesalonicenses
+  </p>
+
+  <p>
+    Hermanos: No queremos que ignoren lo que pasa con los
+    difuntos, para que no vivan tristes, como los que no tienen
+    esperanza. Pues, si creemos que Jesús murió y resucitó,
+    de igual manera debemos creer que, a los que murieron en Jesús,
+    Dios los llevará con él.
+  </p>
+
+  <p>
+    Lo que les decimos, como palabra del Señor, es esto:
+    que nosotros, los que quedemos vivos para cuando venga
+    el Señor, no tendremos ninguna ventaja sobre los que ya murieron.
+  </p>
+
+  <p>
+    Cuando Dios mande que suenen las trompetas, se oirá la voz
+    de un arcángel y el Señor mismo bajará del cielo. Entonces,
+    los que murieron en Cristo resucitarán primero; después nosotros,
+    los que quedemos vivos, seremos arrebatados, juntamente con ellos
+    entre nubes, por el aire, para ir al encuentro del Señor,
+    y así estaremos siempre con él.
+  </p>
+
+  <p>
+    Consuélense, pues, unos a otros con estas palabras.
+  </p>
+
+</div>
+
+</section>
+
+
+
+<!-- ======================================================
+     EVANGELIO
+====================================================== -->
+
+<section id="evangelio" class="page">
+
+<div class="page-top">
+
+  <button class="back-button" onclick="openPage('misa', false)">
+    ← MISA
+  </button>
+
+  <div class="reading-type">
+    EVANGELIO
+  </div>
+
+  <h2>Mateo 25, 1-13</h2>
+
+</div>
+
+
+<div class="page-content liturgy-text">
+
+  <p class="reading-intro">
+    Lectura del santo Evangelio según san Mateo
+  </p>
+
+  <p>
+    En aquel tiempo, Jesús dijo a sus discípulos esta parábola:
+    “El Reino de los cielos es semejante a diez jóvenes, que tomando
+    sus lámparas, salieron al encuentro del esposo. Cinco de ellas
+    eran descuidadas y cinco, previsoras. Las descuidadas llevaron
+    sus lámparas, pero no llevaron aceite para llenarlas de nuevo;
+    las previsoras, en cambio, llevaron cada una un frasco de aceite
+    junto con su lámpara. Como el esposo tardaba, les entró sueño
+    a todas y se durmieron.
+  </p>
+
+  <p>
+    A medianoche se oyó un grito: ‘¡Ya viene el esposo!
+    ¡Salgan a su encuentro!’ Se levantaron entonces todas aquellas
+    jóvenes y se pusieron a preparar sus lámparas, y las descuidadas
+    dijeron a las previsoras: ‘Dennos un poco de su aceite, porque
+    nuestras lámparas se están apagando’. Las previsoras les
+    contestaron: ‘No, porque no va a alcanzar para ustedes y para
+    nosotras. Vayan mejor a donde lo venden y cómprenlo’.
+  </p>
+
+  <p>
+    Mientras aquéllas iban a comprarlo, llegó el esposo, y las que
+    estaban listas entraron con él al banquete de bodas y se cerró
+    la puerta. Más tarde llegaron las otras jóvenes y dijeron:
+    ‘Señor, señor, ábrenos’. Pero él les respondió:
+    ‘Yo les aseguro que no las conozco’.
+  </p>
+
+  <p>
+    Estén, pues, preparados, porque no saben ni el día ni la hora”.
+  </p>
+
+</div>
+
+</section>
+
+
+
+<!-- ======================================================
+     CANTOS DE ENTRADA
+====================================================== -->
+
+<section id="cantos-entrada" class="page">
+
+<div class="page-top">
+
+  <button class="back-button" onclick="openPage('misa', false)">
+    ← MISA
+  </button>
+
+  <h2>Entrada</h2>
+
+  <p class="page-subtitle">
+    Cantos de entrada
+  </p>
+
+</div>
+
+
+<div class="page-content">
+
+  <button
+    class="content-button"
+    onclick="openPage('venysigueme')"
+  >
+
+    <div>
+      Ven y Sígueme
+    </div>
+
+    <span class="content-button-arrow">›</span>
+
+  </button>
+
+</div>
+
+</section>
+
+
+
+<!-- ======================================================
+     VEN Y SÍGUEME
+====================================================== -->
+
+<section id="venysigueme" class="page">
+
+<div class="page-top">
+
+  <button
+    class="back-button"
+    onclick="openPage('cantos-entrada', false)"
+  >
+    ← ENTRADA
+  </button>
+
+  <h2>Entrada</h2>
+
+  <p class="page-subtitle">
+    Canto de entrada
+  </p>
+
+</div>
+
+
+<div class="page-content">
+
+  <div class="song-title">
+    VEN Y SÍGUEME
+  </div>
+
+  <div class="song-lyrics"><span class="chorus">Ven y sígueme,
+y mar adentro echa ya tus redes.
+Ven y yo te haré
+pescador de hombres.</span>
+
+En tus palabras echaré mis redes.
+Dejo mi barca y donde quieras iré.
+Tú me llamaste, Señor, por mi nombre
+y sólo a Ti, Señor, Señor, te seguiré.
+
+Te vi trabajar aquella noche
+en que fracasaste.
+Sé de tu dolor, de tu vergüenza
+y de tus fragilidades.</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ======================================================
+     CANTOS OFERTORIO
+====================================================== -->
+
+<section id="cantos-ofertorio" class="page">
+
+<div class="page-top">
+
+  <button class="back-button" onclick="openPage('misa', false)">
+    ← MISA
+  </button>
+
+  <h2>Ofertorio</h2>
+
+</div>
+
+<div class="page-content">
+
+  <div class="content-card accent">
+    <h3>Próximamente</h3>
+    <p>Publicaremos aquí los cantos de Ofertorio.</p>
+  </div>
+
+</div>
+
+</section>
+
+
+
+<!-- ======================================================
+     CANTOS COMUNIÓN
+====================================================== -->
+
+<section id="cantos-comunion" class="page">
+
+<div class="page-top">
+
+  <button class="back-button" onclick="openPage('misa', false)">
+    ← MISA
+  </button>
+
+  <h2>Comunión</h2>
+
+  <p class="page-subtitle">
+    Cantos de Comunión
+  </p>
+
+</div>
+
+
+<div class="page-content">
+
+  <button class="content-button">
+    <div>Padre me pongo en tus manos</div>
+    <span class="content-button-arrow">›</span>
+  </button>
+
+  <button class="content-button">
+    <div>Tan pobre tan rico</div>
+    <span class="content-button-arrow">›</span>
+  </button>
+
+</div>
+
+</section>
+
+
+
+<!-- ======================================================
+     CANTOS MEDITACIÓN
+====================================================== -->
+
+<section id="cantos-meditacion" class="page">
+
+<div class="page-top">
+
+  <button class="back-button" onclick="openPage('misa', false)">
+    ← MISA
+  </button>
+
+  <h2>Meditación</h2>
+
+</div>
+
+<div class="page-content">
+
+  <div class="content-card accent">
+    <h3>Próximamente</h3>
+    <p>Publicaremos aquí los cantos de Meditación.</p>
+  </div>
+
+</div>
+
+</section>
+
+
+
+<!-- ======================================================
+     CANTOS SALIDA
+====================================================== -->
+
+<section id="cantos-salida" class="page">
+
+<div class="page-top">
+
+  <button class="back-button" onclick="openPage('misa', false)">
+    ← MISA
+  </button>
+
+  <h2>Salida</h2>
+
+</div>
+
+<div class="page-content">
+
+  <div class="content-card accent">
+    <h3>Próximamente</h3>
+    <p>Publicaremos aquí los cantos de Salida.</p>
+  </div>
+
+</div>
+
+</section>
+
+
+
+<!-- ======================================================
+     ADORACIÓN
+====================================================== -->
+
+<section id="adoracion" class="page">
+
+<div class="page-top">
+
+  <button class="back-button" onclick="history.back()">
+    ← VOLVER
+  </button>
+
+  <h2>Adoración Permanente</h2>
+
+  <p class="page-subtitle">
+    Elegí un turno para acompañar a Jesús
+  </p>
+
+</div>
+
+
+<div class="page-content">
+
+
+  <div class="adoration-intro">
+
+    <div class="adoration-intro-label">
+      ADORACIÓN AL SANTÍSIMO
+    </div>
+
+    <p>
+      Durante la jornada tendremos
+      <strong>Adoración Permanente.</strong>
+      Te invitamos a elegir uno o más turnos de
+      30 minutos para acompañar a Jesús.
     </p>
 
   </div>
 
 
-  <div class="page-content">
+  <div
+    id="adoration-my-slots"
+    class="adoration-my-slots"
+    style="display:none;"
+  >
 
-
-    <!-- ================================================
-         LECTURAS
-    ================================================= -->
-
-    <div class="misa-section">
-
-      <div class="misa-section-heading">
-
-        <span class="misa-section-label">
-          LITURGIA DE LA PALABRA
-        </span>
-
-        <h3>
-          Lecturas de la Misa
-        </h3>
-
-      </div>
-
-
-      <button
-        class="content-button"
-        onclick="openPage('primera-lectura')"
-      >
-
-        <div>
-          <div>Primera Lectura</div>
-
-          <div class="reading-reference">
-            Sabiduría 6, 12-16
-          </div>
-        </div>
-
-        <span class="content-button-arrow">
-          ›
-        </span>
-
-      </button>
-
-
-      <button
-        class="content-button"
-        onclick="openPage('salmo')"
-      >
-
-        <div>
-          <div>Salmo Responsorial</div>
-
-          <div class="reading-reference">
-            Próximamente
-          </div>
-        </div>
-
-        <span class="content-button-arrow">
-          ›
-        </span>
-
-      </button>
-
-
-      <button
-        class="content-button"
-        onclick="openPage('segunda-lectura')"
-      >
-
-        <div>
-          <div>Segunda Lectura</div>
-
-          <div class="reading-reference">
-            1 Tesalonicenses 4, 13-18
-          </div>
-        </div>
-
-        <span class="content-button-arrow">
-          ›
-        </span>
-
-      </button>
-
-
-      <button
-        class="content-button"
-        onclick="openPage('evangelio')"
-      >
-
-        <div>
-          <div>Evangelio</div>
-
-          <div class="reading-reference">
-            Mateo 25, 1-13
-          </div>
-        </div>
-
-        <span class="content-button-arrow">
-          ›
-        </span>
-
-      </button>
-
+    <div class="adoration-my-label">
+      TUS TURNOS
     </div>
 
+    <div
+      id="adoration-my-slots-text"
+      class="adoration-my-slots-text"
+    ></div>
 
-    <!-- ================================================
-         CANCIONERO
-    ================================================= -->
-
-    <div class="misa-section misa-songs">
-
-      <div class="misa-section-heading">
-
-        <span class="misa-section-label">
-          CANTOS DE LA CELEBRACIÓN
-        </span>
-
-        <h3>
-          Cancionero
-        </h3>
-
-      </div>
-
-
-      <button
-        class="content-button"
-        onclick="openPage('venysigueme')"
-      >
-
-        <div>
-          <div>Entrada</div>
-
-          <div class="reading-reference">
-            Ven y Sígueme
-          </div>
-        </div>
-
-        <span class="content-button-arrow">
-          ›
-        </span>
-
-      </button>
-
-
-      <button class="content-button">
-
-        <div>Ofertorio</div>
-
-        <span class="content-button-arrow">
-          ›
-        </span>
-
-      </button>
-
-
-      <button class="content-button">
-
-        <div>Comunión</div>
-
-        <span class="content-button-arrow">
-          ›
-        </span>
-
-      </button>
-
-
-      <button class="content-button">
-
-        <div>Meditación</div>
-
-        <span class="content-button-arrow">
-          ›
-        </span>
-
-      </button>
-
-
-      <button class="content-button">
-
-        <div>Salida</div>
-
-        <span class="content-button-arrow">
-          ›
-        </span>
-
-      </button>
-
+    <div class="adoration-my-thanks">
+      ¡Gracias por acompañarnos en la Adoración!
     </div>
-
 
   </div>
+
+
+  <div class="adoration-section-title">
+
+    <span>ELEGÍ TU TURNO</span>
+
+    <p>
+      Tocá + para anotarte. Podés elegir más de un horario.
+    </p>
+
+  </div>
+
+
+  <div
+    id="adoration-loading"
+    class="adoration-loading"
+  >
+    Cargando turnos...
+  </div>
+
+
+  <div
+    id="adoration-error"
+    class="adoration-error"
+    style="display:none;"
+  ></div>
+
+
+  <div
+    id="adoration-slots"
+    class="adoration-slots"
+  ></div>
+
+
+  <div class="adoration-divider"></div>
+
+
+  <button
+    class="content-button"
+    onclick="openPage('reflexiones-adoracion')"
+  >
+
+    <div>
+      Reflexiones para la Adoración
+
+      <div class="reading-reference">
+        Textos para acompañar tu momento de oración
+      </div>
+    </div>
+
+    <span class="content-button-arrow">›</span>
+
+  </button>
+
+
+  <!--
+    REEMPLAZAR # POR EL LINK REAL DE SPOTIFY
+  -->
+
+  <a
+    class="content-button"
+    href="#"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+
+    <div>
+      Playlist de Adoración
+
+      <div class="reading-reference">
+        Escuchá nuestra playlist en Spotify
+      </div>
+    </div>
+
+    <span class="content-button-arrow">↗</span>
+
+  </a>
+
+
+</div>
+
+</section>
+
+
+
+<!-- ======================================================
+     REFLEXIONES ADORACIÓN
+====================================================== -->
+
+<section id="reflexiones-adoracion" class="page">
+
+<div class="page-top">
+
+  <button
+    class="back-button"
+    onclick="openPage('adoracion', false)"
+  >
+    ← ADORACIÓN
+  </button>
+
+  <h2>Reflexiones</h2>
+
+  <p class="page-subtitle">
+    Para acompañar tu momento de Adoración
+  </p>
+
+</div>
+
+
+<div class="page-content">
+
+  <div class="content-card accent">
+
+    <h3>Quedate conmigo</h3>
+
+    <p>
+      Próximamente compartiremos reflexiones y textos
+      para acompañar tu momento de oración frente al Santísimo.
+    </p>
+
+  </div>
+
+</div>
 
 </section>
 
@@ -2539,847 +2647,525 @@ details p{
      ACTIVIDADES
 ====================================================== -->
 
-<section
-  id="actividades"
-  class="page"
->
+<section id="actividades" class="page">
+
+<div class="page-top">
+
+  <button class="back-button" onclick="history.back()">
+    ← VOLVER
+  </button>
+
+  <h2>Actividades</h2>
+
+  <p class="page-subtitle">
+    Evento Familia RC
+  </p>
+
+</div>
 
 
-  <div class="page-top">
+<div class="page-content">
 
-<button
-  class="back-button"
-  onclick="history.back()"
->
-  ← VOLVER
-</button>
+  <div class="content-card accent">
 
-    <h2>
-      Actividades
-    </h2>
+    <h3>Actividades del encuentro</h3>
 
-
-    <p class="page-subtitle">
-      Evento Familia RC
+    <p>
+      Próximamente publicaremos acá las actividades
+      preparadas para compartir durante la jornada.
     </p>
 
   </div>
 
-
-
-  <div class="page-content">
-
-
-    <div class="content-card accent">
-
-      <h3>
-        Actividades del encuentro
-      </h3>
-
-      <p>
-
-        Próximamente publicaremos acá
-        las actividades preparadas para
-        compartir durante la jornada.
-
-      </p>
-
-    </div>
-
-
-  </div>
-
+</div>
 
 </section>
 
 
 
 <!-- ======================================================
-     REFLEXIONES
-====================================================== -->
-
-<section
-  id="reflexiones"
-  class="page"
->
-
-
-  <div class="page-top">
-
-<button
-  class="back-button"
-  onclick="history.back()"
->
-  ← VOLVER
-</button>
-
-
-    <h2>
-      Reflexiones
-    </h2>
-
-
-    <p class="page-subtitle">
-      Preparando nuestro corazón
-    </p>
-
-  </div>
-
-
-
-  <div class="page-content">
-
-
-    <div class="content-card accent">
-
-      <h3>
-        Para vivir este encuentro
-      </h3>
-
-      <p>
-
-        En este espacio compartiremos
-        reflexiones, textos y propuestas
-        para prepararnos para la visita
-        del Santo Padre.
-
-      </p>
-
-    </div>
-
-
-  </div>
-
-
-</section>
-
-
-
-<!-- ======================================================
-     AGENDA OFICIAL DEL PAPA
+     AGENDA PAPAL
 ====================================================== -->
 
 <section id="agenda" class="page">
 
-  <div class="page-top">
+<div class="page-top">
 
-    <button
-      class="back-button"
-      onclick="history.back()"
-    >
-      ← VOLVER
-    </button>
+  <button class="back-button" onclick="history.back()">
+    ← VOLVER
+  </button>
 
-    <h2>Agenda Oficial del Papa</h2>
+  <h2>Agenda Oficial del Papa</h2>
 
-    <p class="page-subtitle">
-      Visita del papa León XIV a la Argentina · 8–11 noviembre 2026
-    </p>
+  <p class="page-subtitle">
+    Visita del papa León XIV a la Argentina · 8–11 noviembre 2026
+  </p>
+
+</div>
+
+
+<div class="agenda-day-nav">
+
+  <button
+    class="agenda-day-button active"
+    data-day="agenda-domingo"
+    onclick="goToAgendaDay('agenda-domingo',this)"
+  >
+    <span>DOM</span>
+    <strong>8</strong>
+  </button>
+
+  <button
+    class="agenda-day-button"
+    data-day="agenda-lunes"
+    onclick="goToAgendaDay('agenda-lunes',this)"
+  >
+    <span>LUN</span>
+    <strong>9</strong>
+  </button>
+
+  <button
+    class="agenda-day-button"
+    data-day="agenda-martes"
+    onclick="goToAgendaDay('agenda-martes',this)"
+  >
+    <span>MAR</span>
+    <strong>10</strong>
+  </button>
+
+  <button
+    class="agenda-day-button"
+    data-day="agenda-miercoles"
+    onclick="goToAgendaDay('agenda-miercoles',this)"
+  >
+    <span>MIÉ</span>
+    <strong>11</strong>
+  </button>
+
+</div>
+
+
+<div class="page-content agenda-content">
+
+
+<!-- DOMINGO -->
+
+<div class="papal-day" id="agenda-domingo">
+
+  <div class="papal-day-header">
+
+    <div>
+      <span class="papal-day-name">DOMINGO</span>
+      <span class="papal-day-number">8</span>
+      <span class="papal-day-month">NOVIEMBRE</span>
+    </div>
+
+    <div class="papal-day-city">
+      BUENOS AIRES
+    </div>
 
   </div>
 
 
-  <!-- ====================================================
-       NAVEGACIÓN DE DÍAS
-  ===================================================== -->
+  <div class="papal-event">
 
-  <div class="agenda-day-nav">
+    <div class="papal-time">16:30</div>
 
-    <button
-      class="agenda-day-button active"
-      data-day="agenda-domingo"
-      onclick="goToAgendaDay('agenda-domingo', this)"
-    >
-      <span>DOM</span>
-      <strong>8</strong>
-    </button>
-
-    <button
-      class="agenda-day-button"
-      data-day="agenda-lunes"
-      onclick="goToAgendaDay('agenda-lunes', this)"
-    >
-      <span>LUN</span>
-      <strong>9</strong>
-    </button>
-
-    <button
-      class="agenda-day-button"
-      data-day="agenda-martes"
-      onclick="goToAgendaDay('agenda-martes', this)"
-    >
-      <span>MAR</span>
-      <strong>10</strong>
-    </button>
-
-    <button
-      class="agenda-day-button"
-      data-day="agenda-miercoles"
-      onclick="goToAgendaDay('agenda-miercoles', this)"
-    >
-      <span>MIÉ</span>
-      <strong>11</strong>
-    </button>
+    <div class="papal-event-info">
+      <strong>Llegada a Buenos Aires</strong>
+      <span>Aeroparque Jorge Newbery</span>
+      <small>ACOGIDA OFICIAL</small>
+    </div>
 
   </div>
 
 
-  <div class="page-content agenda-content">
+  <div class="papal-event">
 
+    <div class="papal-time">17:00</div>
 
-    <!-- ==================================================
-         DOMINGO 8
-    =================================================== -->
-
-    <div
-      class="papal-day"
-      id="agenda-domingo"
-    >
-
-      <div class="papal-day-header">
-
-        <div>
-          <span class="papal-day-name">DOMINGO</span>
-          <span class="papal-day-number">8</span>
-          <span class="papal-day-month">NOVIEMBRE</span>
-        </div>
-
-        <div class="papal-day-city">
-          BUENOS AIRES
-        </div>
-
-      </div>
-
-
-      <div class="papal-timeline">
-
-
-        <div class="papal-event">
-
-          <div class="papal-time">
-            16:30
-          </div>
-
-          <div class="papal-event-info">
-
-            <strong>
-              Llegada a Buenos Aires
-            </strong>
-
-            <span>
-              Aeroparque Jorge Newbery
-            </span>
-
-            <small>
-              ACOGIDA OFICIAL
-            </small>
-
-          </div>
-
-        </div>
-
-
-        <div class="papal-event">
-
-          <div class="papal-time">
-            17:00
-          </div>
-
-          <div class="papal-event-info">
-
-            <strong>
-              Visita al Monumento al General San Martín
-              y a los Ejércitos de la Independencia
-            </strong>
-
-            <span>
-              Plaza San Martín
-            </span>
-
-          </div>
-
-        </div>
-
-
-        <div class="papal-event">
-
-          <div class="papal-time">
-            17:20
-          </div>
-
-          <div class="papal-event-info">
-
-            <strong>
-              Ceremonia de bienvenida
-            </strong>
-
-            <span>
-              Casa Rosada
-            </span>
-
-          </div>
-
-        </div>
-
-
-        <div class="papal-event">
-
-          <div class="papal-time">
-            17:50
-          </div>
-
-          <div class="papal-event-info">
-
-            <strong>
-              Visita al Presidente de la República
-            </strong>
-
-          </div>
-
-        </div>
-
-
-        <div class="papal-event">
-
-          <div class="papal-time">
-            18:30
-          </div>
-
-          <div class="papal-event-info">
-
-            <strong>
-              Encuentro con las autoridades, la sociedad civil
-              y el cuerpo diplomático
-            </strong>
-
-            <span>
-              Palacio Libertad · Centro Cultural
-              Domingo Faustino Sarmiento
-            </span>
-
-          </div>
-
-        </div>
-
-
-      </div>
-
+    <div class="papal-event-info">
+      <strong>
+        Visita al Monumento al General San Martín
+        y a los Ejércitos de la Independencia
+      </strong>
+      <span>Plaza San Martín</span>
     </div>
-
-
-
-    <!-- ==================================================
-         LUNES 9
-    =================================================== -->
-
-    <div
-      class="papal-day"
-      id="agenda-lunes"
-    >
-
-      <div class="papal-day-header">
-
-        <div>
-          <span class="papal-day-name">LUNES</span>
-          <span class="papal-day-number">9</span>
-          <span class="papal-day-month">NOVIEMBRE</span>
-        </div>
-
-        <div class="papal-day-city">
-          BUENOS AIRES · CLAYPOLE · BUENOS AIRES
-        </div>
-
-      </div>
-
-
-      <div class="papal-timeline">
-
-
-        <div class="papal-event">
-
-          <div class="papal-time">
-            09:15
-          </div>
-
-          <div class="papal-event-info">
-
-            <strong>
-              Visita al personal y a los asistidos del
-              Pequeño Cottolengo Don Orione
-            </strong>
-
-            <span>
-              Claypole
-            </span>
-
-          </div>
-
-        </div>
-
-
-        <div class="papal-event papal-event-featured">
-
-          <div class="papal-time">
-            11:30
-          </div>
-
-          <div class="papal-event-info">
-
-            <strong>
-              Santa Misa
-            </strong>
-
-            <span>
-              Monumento de los Españoles
-            </span>
-
-          </div>
-
-        </div>
-
-
-        <div class="papal-event">
-
-          <div class="papal-time">
-            16:10
-          </div>
-
-          <div class="papal-event-info">
-
-            <strong>
-              Encuentro con el mundo del trabajo
-            </strong>
-
-            <span>
-              Universidad Católica Argentina
-            </span>
-
-          </div>
-
-        </div>
-
-
-        <div class="papal-event">
-
-          <div class="papal-time">
-            17:30
-          </div>
-
-          <div class="papal-event-info">
-
-            <strong>
-              Encuentro con los líderes de las comunidades
-              cristianas y de las tradiciones religiosas
-            </strong>
-
-            <span>
-              Palacio San Martín
-            </span>
-
-          </div>
-
-        </div>
-
-
-        <div class="papal-event">
-
-          <div class="papal-time">
-            18:45
-          </div>
-
-          <div class="papal-event-info">
-
-            <strong>
-              Celebración de las Vísperas con el Episcopado
-              Argentino y los equipos sinodales
-            </strong>
-
-            <span>
-              Catedral Metropolitana de la Santísima Trinidad
-            </span>
-
-          </div>
-
-        </div>
-
-
-        <div class="papal-event">
-
-          <div class="papal-time">
-            19:45
-          </div>
-
-          <div class="papal-event-info">
-
-            <strong>
-              Cena con los obispos
-            </strong>
-
-            <span>
-              Arzobispado de Buenos Aires
-            </span>
-
-          </div>
-
-        </div>
-
-
-      </div>
-
-    </div>
-
-
-
-    <!-- ==================================================
-         MARTES 10
-    =================================================== -->
-
-    <div
-      class="papal-day"
-      id="agenda-martes"
-    >
-
-      <div class="papal-day-header">
-
-        <div>
-          <span class="papal-day-name">MARTES</span>
-          <span class="papal-day-number">10</span>
-          <span class="papal-day-month">NOVIEMBRE</span>
-        </div>
-
-        <div class="papal-day-city">
-          BUENOS AIRES · CÓRDOBA · BUENOS AIRES
-        </div>
-
-      </div>
-
-
-      <div class="papal-timeline">
-
-
-        <div class="papal-event">
-
-          <div class="papal-time">
-            07:30
-          </div>
-
-          <div class="papal-event-info">
-
-            <strong>
-              Salida hacia Córdoba
-            </strong>
-
-            <span>
-              Aeropuerto internacional de Buenos Aires
-            </span>
-
-          </div>
-
-        </div>
-
-
-        <div class="papal-event">
-
-          <div class="papal-time">
-            09:00
-          </div>
-
-          <div class="papal-event-info">
-
-            <strong>
-              Llegada a Córdoba
-            </strong>
-
-            <span>
-              Aeropuerto Internacional Ingeniero Aeronáutico
-              Ambrosio Taravella
-            </span>
-
-          </div>
-
-        </div>
-
-
-        <div class="papal-event papal-event-featured">
-
-          <div class="papal-time">
-            10:00
-          </div>
-
-          <div class="papal-event-info">
-
-            <strong>
-              Santa Misa
-            </strong>
-
-            <span>
-              Explanada de la Escuela de Aviación Militar
-            </span>
-
-          </div>
-
-        </div>
-
-
-        <div class="papal-event">
-
-          <div class="papal-time">
-            15:15
-          </div>
-
-          <div class="papal-event-info">
-
-            <strong>
-              Encuentro con los obispos, los sacerdotes,
-              los diáconos, los religiosos, las religiosas,
-              los seminaristas y los agentes pastorales
-            </strong>
-
-            <span>
-              Catedral de Nuestra Señora de la Asunción
-            </span>
-
-          </div>
-
-        </div>
-
-
-        <div class="papal-event">
-
-          <div class="papal-time">
-            16:55
-          </div>
-
-          <div class="papal-event-info">
-
-            <strong>
-              Salida de Córdoba hacia Buenos Aires
-            </strong>
-
-          </div>
-
-        </div>
-
-
-        <div class="papal-event">
-
-          <div class="papal-time">
-            18:10
-          </div>
-
-          <div class="papal-event-info">
-
-            <strong>
-              Llegada a Buenos Aires
-            </strong>
-
-            <span>
-              Aeroparque Jorge Newbery
-            </span>
-
-          </div>
-
-        </div>
-
-
-        <div class="papal-event papal-event-featured">
-
-          <div class="papal-time">
-            20:15
-          </div>
-
-          <div class="papal-event-info">
-
-            <strong>
-              Vigilia con los jóvenes
-            </strong>
-
-            <span>
-              Monumento de los Españoles
-            </span>
-
-          </div>
-
-        </div>
-
-
-      </div>
-
-    </div>
-
-
-
-    <!-- ==================================================
-         MIÉRCOLES 11
-    =================================================== -->
-
-    <div
-      class="papal-day"
-      id="agenda-miercoles"
-    >
-
-      <div class="papal-day-header">
-
-        <div>
-          <span class="papal-day-name">MIÉRCOLES</span>
-          <span class="papal-day-number">11</span>
-          <span class="papal-day-month">NOVIEMBRE</span>
-        </div>
-
-        <div class="papal-day-city">
-          BUENOS AIRES · LUJÁN · LIMA
-        </div>
-
-      </div>
-
-
-      <div class="papal-timeline">
-
-
-        <div class="papal-event">
-
-          <div class="papal-time">
-            08:00
-          </div>
-
-          <div class="papal-event-info">
-
-            <strong>
-              Visita al Complejo Penitenciario Federal
-              de Buenos Aires
-            </strong>
-
-          </div>
-
-        </div>
-
-
-        <div class="papal-event papal-event-featured">
-
-          <div class="papal-time">
-            10:00
-          </div>
-
-          <div class="papal-event-info">
-
-            <strong>
-              Santa Misa
-            </strong>
-
-            <span>
-              Plaza de la Basílica Nuestra Señora de Luján
-            </span>
-
-          </div>
-
-        </div>
-
-
-        <div class="papal-event">
-
-          <div class="papal-time">
-            13:30
-          </div>
-
-          <div class="papal-event-info">
-
-            <strong>
-              Ceremonia de despedida
-            </strong>
-
-            <span>
-              Aeropuerto Internacional Ministro Pistarini
-            </span>
-
-          </div>
-
-        </div>
-
-
-        <div class="papal-event">
-
-          <div class="papal-time">
-            14:00
-          </div>
-
-          <div class="papal-event-info">
-
-            <strong>
-              Salida hacia Lima
-            </strong>
-
-          </div>
-
-        </div>
-
-
-      </div>
-
-    </div>
-
 
   </div>
+
+
+  <div class="papal-event">
+
+    <div class="papal-time">17:20</div>
+
+    <div class="papal-event-info">
+      <strong>Ceremonia de bienvenida</strong>
+      <span>Casa Rosada</span>
+    </div>
+
+  </div>
+
+
+  <div class="papal-event">
+
+    <div class="papal-time">17:50</div>
+
+    <div class="papal-event-info">
+      <strong>Visita al Presidente de la República</strong>
+    </div>
+
+  </div>
+
+
+  <div class="papal-event">
+
+    <div class="papal-time">18:30</div>
+
+    <div class="papal-event-info">
+      <strong>
+        Encuentro con las autoridades, la sociedad civil
+        y el cuerpo diplomático
+      </strong>
+      <span>
+        Palacio Libertad · Centro Cultural Domingo Faustino Sarmiento
+      </span>
+    </div>
+
+  </div>
+
+</div>
+
+
+
+<!-- LUNES -->
+
+<div class="papal-day" id="agenda-lunes">
+
+  <div class="papal-day-header">
+
+    <div>
+      <span class="papal-day-name">LUNES</span>
+      <span class="papal-day-number">9</span>
+      <span class="papal-day-month">NOVIEMBRE</span>
+    </div>
+
+    <div class="papal-day-city">
+      BUENOS AIRES · CLAYPOLE · BUENOS AIRES
+    </div>
+
+  </div>
+
+
+  <div class="papal-event">
+
+    <div class="papal-time">09:15</div>
+
+    <div class="papal-event-info">
+      <strong>
+        Visita al personal y a los asistidos
+        del Pequeño Cottolengo Don Orione
+      </strong>
+      <span>Claypole</span>
+    </div>
+
+  </div>
+
+
+  <div class="papal-event papal-event-featured">
+
+    <div class="papal-time">11:30</div>
+
+    <div class="papal-event-info">
+      <strong>Santa Misa</strong>
+      <span>Monumento de los Españoles</span>
+    </div>
+
+  </div>
+
+
+  <div class="papal-event">
+
+    <div class="papal-time">16:10</div>
+
+    <div class="papal-event-info">
+      <strong>Encuentro con el mundo del trabajo</strong>
+      <span>Universidad Católica Argentina</span>
+    </div>
+
+  </div>
+
+
+  <div class="papal-event">
+
+    <div class="papal-time">17:30</div>
+
+    <div class="papal-event-info">
+      <strong>
+        Encuentro con los líderes de las comunidades cristianas
+        y de las tradiciones religiosas
+      </strong>
+      <span>Palacio San Martín</span>
+    </div>
+
+  </div>
+
+
+  <div class="papal-event">
+
+    <div class="papal-time">18:45</div>
+
+    <div class="papal-event-info">
+      <strong>
+        Celebración de las Vísperas con el Episcopado Argentino
+        y los equipos sinodales
+      </strong>
+      <span>
+        Catedral Metropolitana de la Santísima Trinidad
+      </span>
+    </div>
+
+  </div>
+
+
+  <div class="papal-event">
+
+    <div class="papal-time">19:45</div>
+
+    <div class="papal-event-info">
+      <strong>Cena con los obispos</strong>
+      <span>Arzobispado de Buenos Aires</span>
+    </div>
+
+  </div>
+
+</div>
+
+
+
+<!-- MARTES -->
+
+<div class="papal-day" id="agenda-martes">
+
+  <div class="papal-day-header">
+
+    <div>
+      <span class="papal-day-name">MARTES</span>
+      <span class="papal-day-number">10</span>
+      <span class="papal-day-month">NOVIEMBRE</span>
+    </div>
+
+    <div class="papal-day-city">
+      BUENOS AIRES · CÓRDOBA · BUENOS AIRES
+    </div>
+
+  </div>
+
+
+  <div class="papal-event">
+
+    <div class="papal-time">07:30</div>
+
+    <div class="papal-event-info">
+      <strong>Salida hacia Córdoba</strong>
+      <span>Aeropuerto internacional de Buenos Aires</span>
+    </div>
+
+  </div>
+
+
+  <div class="papal-event">
+
+    <div class="papal-time">09:00</div>
+
+    <div class="papal-event-info">
+      <strong>Llegada a Córdoba</strong>
+      <span>
+        Aeropuerto Internacional Ingeniero Aeronáutico
+        Ambrosio Taravella
+      </span>
+    </div>
+
+  </div>
+
+
+  <div class="papal-event papal-event-featured">
+
+    <div class="papal-time">10:00</div>
+
+    <div class="papal-event-info">
+      <strong>Santa Misa</strong>
+      <span>Explanada de la Escuela de Aviación Militar</span>
+    </div>
+
+  </div>
+
+
+  <div class="papal-event">
+
+    <div class="papal-time">15:15</div>
+
+    <div class="papal-event-info">
+      <strong>
+        Encuentro con los obispos, los sacerdotes, los diáconos,
+        los religiosos, las religiosas, los seminaristas
+        y los agentes pastorales
+      </strong>
+      <span>Catedral de Nuestra Señora de la Asunción</span>
+    </div>
+
+  </div>
+
+
+  <div class="papal-event">
+
+    <div class="papal-time">16:55</div>
+
+    <div class="papal-event-info">
+      <strong>Salida de Córdoba hacia Buenos Aires</strong>
+    </div>
+
+  </div>
+
+
+  <div class="papal-event">
+
+    <div class="papal-time">18:10</div>
+
+    <div class="papal-event-info">
+      <strong>Llegada a Buenos Aires</strong>
+      <span>Aeroparque Jorge Newbery</span>
+    </div>
+
+  </div>
+
+
+  <div class="papal-event papal-event-featured">
+
+    <div class="papal-time">20:15</div>
+
+    <div class="papal-event-info">
+      <strong>Vigilia con los jóvenes</strong>
+      <span>Monumento de los Españoles</span>
+    </div>
+
+  </div>
+
+</div>
+
+
+
+<!-- MIÉRCOLES -->
+
+<div class="papal-day" id="agenda-miercoles">
+
+  <div class="papal-day-header">
+
+    <div>
+      <span class="papal-day-name">MIÉRCOLES</span>
+      <span class="papal-day-number">11</span>
+      <span class="papal-day-month">NOVIEMBRE</span>
+    </div>
+
+    <div class="papal-day-city">
+      BUENOS AIRES · LUJÁN · LIMA
+    </div>
+
+  </div>
+
+
+  <div class="papal-event">
+
+    <div class="papal-time">08:00</div>
+
+    <div class="papal-event-info">
+      <strong>
+        Visita al Complejo Penitenciario Federal de Buenos Aires
+      </strong>
+    </div>
+
+  </div>
+
+
+  <div class="papal-event papal-event-featured">
+
+    <div class="papal-time">10:00</div>
+
+    <div class="papal-event-info">
+      <strong>Santa Misa</strong>
+      <span>Plaza de la Basílica Nuestra Señora de Luján</span>
+    </div>
+
+  </div>
+
+
+  <div class="papal-event">
+
+    <div class="papal-time">13:30</div>
+
+    <div class="papal-event-info">
+      <strong>Ceremonia de despedida</strong>
+      <span>Aeropuerto Internacional Ministro Pistarini</span>
+    </div>
+
+  </div>
+
+
+  <div class="papal-event">
+
+    <div class="papal-time">14:00</div>
+
+    <div class="papal-event-info">
+      <strong>Salida hacia Lima</strong>
+    </div>
+
+  </div>
+
+</div>
+
+
+</div>
 
 </section>
 
 
 
 <!-- ======================================================
-     INFORMACIÓN IMPORTANTE
+     INFORMACIÓN
 ====================================================== -->
 
-<section
-  id="informacion"
-  class="page"
->
+<section id="informacion" class="page">
+
+<div class="page-top">
+
+  <button class="back-button" onclick="history.back()">
+    ← VOLVER
+  </button>
+
+  <h2>Información Importante</h2>
+
+  <p class="page-subtitle">
+    Para los próximos días
+  </p>
+
+</div>
 
 
-  <div class="page-top">
+<div class="page-content">
 
-    <button
-  class="back-button"
-  onclick="history.back()"
->
-  ← VOLVER
-</button>
+  <div class="content-card accent">
 
+    <h3>Mantenete informado</h3>
 
-    <h2>
-      Información Importante
-    </h2>
-
-
-    <p class="page-subtitle">
-      Para los próximos días
+    <p>
+      En esta sección publicaremos información,
+      recomendaciones y novedades importantes
+      para los próximos días de la visita.
     </p>
 
   </div>
 
-
-
-  <div class="page-content">
-
-
-    <div class="content-card accent">
-
-      <h3>
-        Mantenete informado
-      </h3>
-
-      <p>
-
-        En esta sección publicaremos
-        información, recomendaciones
-        y novedades importantes para
-        los próximos días de la visita.
-
-      </p>
-
-    </div>
-
-
-  </div>
-
+</div>
 
 </section>
 
@@ -3389,110 +3175,82 @@ details p{
      PREGUNTAS
 ====================================================== -->
 
-<section
-  id="preguntas"
-  class="page"
->
+<section id="preguntas" class="page">
+
+<div class="page-top">
+
+  <button class="back-button" onclick="history.back()">
+    ← VOLVER
+  </button>
+
+  <h2>Preguntas frecuentes</h2>
+
+  <p class="page-subtitle">
+    Información útil
+  </p>
+
+</div>
 
 
-  <div class="page-top">
-
-<button
-  class="back-button"
-  onclick="history.back()"
->
-  ← VOLVER
-</button>
+<div class="page-content">
 
 
-    <h2>
-      Preguntas frecuentes
-    </h2>
+  <details>
 
+    <summary>
+      ¿Dónde salen los colectivos?
+    </summary>
 
-    <p class="page-subtitle">
-      Información útil
+    <p>
+      Los colectivos partirán desde Núñez.
+      Próximamente informaremos el punto exacto.
     </p>
 
-  </div>
+  </details>
 
 
+  <details>
 
-  <div class="page-content">
+    <summary>
+      ¿Dónde retiro mi kit?
+    </summary>
 
-    
-    <details>
+    <p>
+      Los kits se entregarán durante la acreditación en Betania.
+    </p>
 
-      <summary>
-        ¿Dónde salen los colectivos?
-      </summary>
-
-      <p>
-
-        Los colectivos partirán desde Núñez.
-        Próximamente informaremos
-        el punto exacto.
-
-      </p>
-
-    </details>
+  </details>
 
 
+  <details>
 
-    <details>
+    <summary>
+      ¿Qué tengo que llevar?
+    </summary>
 
-      <summary>
-        ¿Dónde retiro mi kit?
-      </summary>
+    <p>
+      Publicaremos acá las recomendaciones para participar
+      del encuentro.
+    </p>
 
-      <p>
-
-        Los kits se entregarán
-        durante la acreditación
-        en Betania.
-
-      </p>
-
-    </details>
+  </details>
 
 
+  <details>
 
-    <details>
+    <summary>
+      ¿Dónde puedo consultar novedades?
+    </summary>
 
-      <summary>
-        ¿Qué tengo que llevar?
-      </summary>
+    <p>
+      Esta aplicación será uno de los canales de información
+      durante la visita del Santo Padre.
+    </p>
 
-      <p>
-
-        Publicaremos acá las recomendaciones
-        para participar del encuentro.
-
-      </p>
-
-    </details>
+  </details>
 
 
-
-    <details>
-
-      <summary>
-        ¿Dónde puedo consultar novedades?
-      </summary>
-
-      <p>
-
-        Esta aplicación será uno
-        de los canales de información
-        durante la visita del Santo Padre.
-
-      </p>
-
-    </details>
-
-
-  </div>
-
+</div>
 
 </section>
 
@@ -3504,7 +3262,6 @@ details p{
 
 <footer class="footer">
 
-
   <img
     class="footer-logo"
     src="assets/logoregnumchristi.png"
@@ -3512,89 +3269,49 @@ details p{
   >
 
 
-
   <div class="socials">
-
-
-    <!-- INSTAGRAM ARGENTINA -->
 
     <a
       class="social-link"
       href="https://www.instagram.com/regnumchristiargentina/"
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="Instagram Regnum Christi Argentina"
     >
-
-      <img
-        src="assets/instagram2.png"
-        alt="Instagram"
-      >
-
+      <img src="assets/instagram2.png" alt="Instagram">
     </a>
 
-
-
-    <!-- INSTAGRAM CHILE -->
 
     <a
       class="social-link"
       href="https://www.instagram.com/regnumchristichile/"
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="Instagram Regnum Christi Chile"
     >
-
-      <img
-        src="assets/instagram2.png"
-        alt="Instagram Chile"
-      >
-
+      <img src="assets/instagram2.png" alt="Instagram Chile">
     </a>
 
-
-
-    <!-- WHATSAPP -->
 
     <a
       class="social-link"
       href="https://whatsapp.com/channel/0029Vb8ufeeCMY0R5zcwej0b"
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="Canal de WhatsApp"
     >
-
-      <img
-        src="assets/whatsapp2.png"
-        alt="WhatsApp"
-      >
-
+      <img src="assets/whatsapp2.png" alt="WhatsApp">
     </a>
 
-
-
-    <!-- EMAIL -->
 
     <a
       class="social-link"
       href="mailto:inscripcionesvisitapapa@regnumchristi.ar"
-      aria-label="Enviar email"
     >
-
-      <img
-        src="assets/sobre.png"
-        alt="Email"
-      >
-
+      <img src="assets/sobre.png" alt="Email">
     </a>
-
 
   </div>
 
 
-
   <div class="footer-divider"></div>
-
 
 
   <div class="footer-text">
@@ -3607,9 +3324,88 @@ details p{
 
   </div>
 
-
 </footer>
 
+
+</div>
+<!-- FIN APP -->
+
+
+
+<!-- ======================================================
+     MODAL ADORACIÓN
+====================================================== -->
+
+<div
+  id="adoration-modal"
+  class="adoration-modal"
+  style="display:none;"
+>
+
+  <div
+    class="adoration-modal-backdrop"
+    onclick="closeAdorationModal()"
+  ></div>
+
+
+  <div class="adoration-modal-card">
+
+    <button
+      class="adoration-modal-close"
+      onclick="closeAdorationModal()"
+      aria-label="Cerrar"
+    >
+      ×
+    </button>
+
+
+    <div class="adoration-modal-label">
+      ADORACIÓN PERMANENTE
+    </div>
+
+
+    <h3>Anotate en este turno</h3>
+
+
+    <div
+      id="adoration-modal-slot"
+      class="adoration-modal-slot"
+    ></div>
+
+
+    <label
+      class="adoration-name-label"
+      for="adoration-name"
+    >
+      Nombre y apellido
+    </label>
+
+
+    <input
+      id="adoration-name"
+      class="adoration-name-input"
+      type="text"
+      autocomplete="name"
+      maxlength="80"
+      placeholder="Tu nombre y apellido"
+    >
+
+
+    <div
+      id="adoration-modal-error"
+      class="adoration-modal-error"
+    ></div>
+
+
+    <button
+      id="adoration-confirm-button"
+      class="adoration-confirm-button"
+      onclick="confirmAdorationSubscription()"
+    >
+      CONFIRMAR TURNO
+    </button>
+
+  </div>
 
 </div>
 
@@ -3618,33 +3414,17 @@ details p{
 <script>
 
 /* =========================================================
-   NAVEGACIÓN DE LA APP
+   CONFIGURACIÓN
 ========================================================= */
 
 const HOME = "home";
 
+const ADORACION_API =
+  "https://script.google.com/macros/s/AKfycbyD19ldVM3yCGl6jQX10cJci5UPVKdCQI00G4WPTA4kXrHR1_aDL5iORwuLQF1uvIYEdA/exec";
 
-/*
-  Relación padre-hijo.
 
-  Esto nos permite saber, por ejemplo,
-  que VEN Y SÍGUEME pertenece al CANCIONERO.
-*/
-
-const PAGE_PARENTS = {
-
-  venysigueme: "misa",
-
-  "primera-lectura": "misa",
-  "salmo": "misa",
-  "segunda-lectura": "misa",
-  "evangelio": "misa"
-
-};
-
-  
 /* =========================================================
-   OCULTAR TODAS LAS PÁGINAS
+   NAVEGACIÓN
 ========================================================= */
 
 function hideAllPages(){
@@ -3660,10 +3440,6 @@ function hideAllPages(){
 }
 
 
-/* =========================================================
-   MOSTRAR UNA PANTALLA
-========================================================= */
-
 function showPage(id){
 
   const home =
@@ -3672,10 +3448,6 @@ function showPage(id){
 
   hideAllPages();
 
-
-  /*
-    INICIO
-  */
 
   if(!id || id === HOME){
 
@@ -3688,57 +3460,66 @@ function showPage(id){
   }
 
 
-  /*
-    PÁGINA INTERNA
-  */
-
   const page =
     document.getElementById(id);
 
 
-  if(page){
+  if(!page){
 
-    home.style.display = "none";
+    home.style.display = "block";
 
-    page.classList.add("active");
+    window.scrollTo(0,0);
+
+    return;
+
+  }
+
+
+  home.style.display = "none";
+
+  page.classList.add("active");
+
+  window.scrollTo(0,0);
+
+
+  if(id === "adoracion"){
+
+    loadAdorationStatus();
+
+  }
+
+}
+
+
+/*
+  pushHistory = false sirve para los botones
+  ← MISA, ← ADORACIÓN, etc.
+
+  Así reemplazamos la pantalla actual en lugar
+  de crear veinte pasos en el historial.
+*/
+
+function openPage(id, pushHistory = true){
+
+  if(pushHistory){
+
+    history.pushState(
+      {page:id},
+      "",
+      "#" + id
+    );
 
   }
 
   else{
 
-    /*
-      Si alguien entra con una URL incorrecta,
-      mostramos Inicio.
-    */
-
-    home.style.display = "block";
+    history.replaceState(
+      {page:id},
+      "",
+      "#" + id
+    );
 
   }
-
-
-  window.scrollTo(0,0);
-
-}
-
-
-/* =========================================================
-   ABRIR PÁGINA
-========================================================= */
-
-function openPage(id){
-
-  /*
-    Guardamos la nueva pantalla
-    en el historial del navegador.
-  */
-
-  history.pushState(
-    {
-      page:id
-    },
-    "",
-    "#" + id
-  );
 
 
   showPage(id);
@@ -3746,137 +3527,54 @@ function openPage(id){
 }
 
 
-/* =========================================================
-   VOLVER AL INICIO
-========================================================= */
-
-function goHome(){
-
-  /*
-    Si ya estamos en una pantalla interna,
-    usamos el historial real.
-
-    Esto hace que se comporte como una app.
-  */
-
-  if(window.location.hash){
-
-    history.pushState(
-      {
-        page:HOME
-      },
-      "",
-      window.location.pathname
-    );
-
-  }
-
-
-  showPage(HOME);
-
-}
-
-
-/* =========================================================
-   BOTÓN ATRÁS
-   IPHONE / ANDROID / NAVEGADOR
-========================================================= */
-
 window.addEventListener(
   "popstate",
-  function(event){
-
-    const hash =
-      window.location.hash.replace("#","");
-
-
-    if(hash){
-
-      showPage(hash);
-
-    }
-
-    else{
-
-      showPage(HOME);
-
-    }
-
-  }
-);
-
-
-/* =========================================================
-   SI CAMBIA EL HASH
-========================================================= */
-
-window.addEventListener(
-  "hashchange",
   function(){
 
     const hash =
       window.location.hash.replace("#","");
 
-
-    if(hash){
-
-      showPage(hash);
-
-    }
-
-    else{
-
-      showPage(HOME);
-
-    }
+    showPage(hash || HOME);
 
   }
 );
 
-
-/* =========================================================
-   CARGA INICIAL
-========================================================= */
 
 function loadInitialPage(){
 
   const hash =
     window.location.hash.replace("#","");
 
-
-  if(hash){
-
-    showPage(hash);
-
-  }
-
-  else{
-
-    showPage(HOME);
-
-  }
+  showPage(hash || HOME);
 
 }
 
 
 loadInitialPage();
 
+
+
 /* =========================================================
-   NAVEGACIÓN RÁPIDA - AGENDA PAPAL
+   AGENDA PAPAL
 ========================================================= */
 
-function goToAgendaDay(dayId, button){
+const agendaDays = [
+  "agenda-domingo",
+  "agenda-lunes",
+  "agenda-martes",
+  "agenda-miercoles"
+];
+
+
+function goToAgendaDay(dayId,button){
 
   const target =
     document.getElementById(dayId);
-
 
   if(!target){
     return;
   }
 
-
-  /* Cambiar botón activo */
 
   document
     .querySelectorAll(".agenda-day-button")
@@ -3888,74 +3586,46 @@ function goToAgendaDay(dayId, button){
 
 
   if(button){
-
     button.classList.add("active");
-
   }
 
 
-  /* Ir suavemente al día */
-
   target.scrollIntoView({
-
     behavior:"smooth",
-
     block:"start"
-
   });
 
 }
 
-  /* =========================================================
-   DETECTAR DÍA VISIBLE EN LA AGENDA
-========================================================= */
-
-const agendaDays = [
-  "agenda-domingo",
-  "agenda-lunes",
-  "agenda-martes",
-  "agenda-miercoles"
-];
-
 
 function updateActiveAgendaDay(){
 
-  const agendaPage =
+  const agenda =
     document.getElementById("agenda");
 
 
   if(
-    !agendaPage ||
-    !agendaPage.classList.contains("active")
+    !agenda ||
+    !agenda.classList.contains("active")
   ){
     return;
   }
 
 
-  let currentDay =
+  let current =
     agendaDays[0];
 
 
-  agendaDays.forEach(function(dayId){
+  agendaDays.forEach(function(id){
 
     const day =
-      document.getElementById(dayId);
+      document.getElementById(id);
 
-
-    if(!day){
-      return;
-    }
-
-
-    const rect =
-      day.getBoundingClientRect();
-
-
-    if(rect.top <= 130){
-
-      currentDay =
-        dayId;
-
+    if(
+      day &&
+      day.getBoundingClientRect().top <= 130
+    ){
+      current = id;
     }
 
   });
@@ -3967,7 +3637,7 @@ function updateActiveAgendaDay(){
 
       button.classList.toggle(
         "active",
-        button.dataset.day === currentDay
+        button.dataset.day === current
       );
 
     });
@@ -3978,9 +3648,684 @@ function updateActiveAgendaDay(){
 window.addEventListener(
   "scroll",
   updateActiveAgendaDay,
-  { passive:true }
+  {passive:true}
 );
-  
+
+
+
+/* =========================================================
+   ADORACIÓN
+========================================================= */
+
+let adorationStatus = [];
+
+let pendingAdorationSlot = null;
+
+let adorationBusy = false;
+
+
+/* IDENTIFICADOR DEL NAVEGADOR */
+
+function getAdorationToken(){
+
+  let token =
+    localStorage.getItem(
+      "rc_adoration_token"
+    );
+
+
+  if(!token){
+
+    if(
+      window.crypto &&
+      typeof crypto.randomUUID === "function"
+    ){
+
+      token =
+        crypto.randomUUID();
+
+    }
+
+    else{
+
+      token =
+        "rc-" +
+        Date.now() +
+        "-" +
+        Math.random()
+          .toString(36)
+          .substring(2);
+
+    }
+
+
+    localStorage.setItem(
+      "rc_adoration_token",
+      token
+    );
+
+  }
+
+
+  return token;
+
+}
+
+
+/* NOMBRE */
+
+function getAdorationName(){
+
+  return (
+    localStorage.getItem(
+      "rc_adoration_name"
+    ) || ""
+  );
+
+}
+
+
+function saveAdorationName(name){
+
+  localStorage.setItem(
+    "rc_adoration_name",
+    name
+  );
+
+}
+
+
+/* CARGAR ESTADO */
+
+async function loadAdorationStatus(){
+
+  const loading =
+    document.getElementById(
+      "adoration-loading"
+    );
+
+  const errorBox =
+    document.getElementById(
+      "adoration-error"
+    );
+
+
+  if(loading){
+    loading.style.display = "block";
+  }
+
+
+  if(errorBox){
+    errorBox.style.display = "none";
+  }
+
+
+  try{
+
+    const url =
+      ADORACION_API +
+      "?action=status" +
+      "&token=" +
+      encodeURIComponent(
+        getAdorationToken()
+      ) +
+      "&t=" +
+      Date.now();
+
+
+    const response =
+      await fetch(
+        url,
+        {
+          method:"GET",
+          cache:"no-store"
+        }
+      );
+
+
+    if(!response.ok){
+      throw new Error("Error de conexión");
+    }
+
+
+    const data =
+      await response.json();
+
+
+    if(!data.ok){
+      throw new Error(
+        data.error ||
+        "No se pudieron cargar los turnos."
+      );
+    }
+
+
+    adorationStatus =
+      data.slots || [];
+
+
+    renderAdorationSlots();
+
+  }
+
+  catch(error){
+
+    console.error(error);
+
+
+    if(errorBox){
+
+      errorBox.textContent =
+        "No pudimos cargar los turnos. Intentá nuevamente.";
+
+      errorBox.style.display =
+        "block";
+
+    }
+
+  }
+
+  finally{
+
+    if(loading){
+      loading.style.display = "none";
+    }
+
+  }
+
+}
+
+
+/* DIBUJAR TURNOS */
+
+function renderAdorationSlots(){
+
+  const container =
+    document.getElementById(
+      "adoration-slots"
+    );
+
+
+  if(!container){
+    return;
+  }
+
+
+  container.innerHTML = "";
+
+
+  adorationStatus.forEach(
+    function(item){
+
+      const row =
+        document.createElement("div");
+
+      row.className =
+        "adoration-slot";
+
+
+      const time =
+        document.createElement("div");
+
+      time.className =
+        "adoration-slot-time";
+
+      time.textContent =
+        item.slot;
+
+
+      const count =
+        document.createElement("div");
+
+      count.className =
+        "adoration-slot-count";
+
+      count.textContent =
+        item.count === 1
+          ? "1 persona"
+          : item.count + " personas";
+
+
+      const button =
+        document.createElement("button");
+
+      button.type =
+        "button";
+
+      button.className =
+        "adoration-slot-button" +
+        (item.selected
+          ? " selected"
+          : "");
+
+      button.textContent =
+        item.selected
+          ? "✓"
+          : "+";
+
+
+      button.onclick =
+        function(){
+
+          toggleAdorationSlot(item);
+
+        };
+
+
+      row.appendChild(time);
+      row.appendChild(count);
+      row.appendChild(button);
+
+      container.appendChild(row);
+
+    }
+  );
+
+
+  renderMyAdorationSlots();
+
+}
+
+
+/* MIS TURNOS */
+
+function renderMyAdorationSlots(){
+
+  const box =
+    document.getElementById(
+      "adoration-my-slots"
+    );
+
+  const text =
+    document.getElementById(
+      "adoration-my-slots-text"
+    );
+
+
+  if(!box || !text){
+    return;
+  }
+
+
+  const selected =
+    adorationStatus.filter(
+      function(item){
+        return item.selected;
+      }
+    );
+
+
+  if(!selected.length){
+
+    box.style.display =
+      "none";
+
+    return;
+
+  }
+
+
+  text.textContent =
+    selected
+      .map(function(item){
+        return item.slot;
+      })
+      .join(" · ");
+
+
+  box.style.display =
+    "block";
+
+}
+
+
+/* TOGGLE */
+
+function toggleAdorationSlot(item){
+
+  if(adorationBusy){
+    return;
+  }
+
+
+  if(item.selected){
+
+    unsubscribeAdoration(
+      item.slot
+    );
+
+    return;
+
+  }
+
+
+  const name =
+    getAdorationName();
+
+
+  if(name){
+
+    subscribeAdoration(
+      item.slot,
+      name
+    );
+
+    return;
+
+  }
+
+
+  openAdorationModal(
+    item.slot
+  );
+
+}
+
+
+/* MODAL */
+
+function openAdorationModal(slot){
+
+  pendingAdorationSlot =
+    slot;
+
+
+  const modal =
+    document.getElementById(
+      "adoration-modal"
+    );
+
+  const slotText =
+    document.getElementById(
+      "adoration-modal-slot"
+    );
+
+  const input =
+    document.getElementById(
+      "adoration-name"
+    );
+
+  const error =
+    document.getElementById(
+      "adoration-modal-error"
+    );
+
+
+  slotText.textContent =
+    slot;
+
+  input.value =
+    getAdorationName();
+
+  error.textContent =
+    "";
+
+  modal.style.display =
+    "flex";
+
+  document.body.style.overflow =
+    "hidden";
+
+
+  setTimeout(
+    function(){
+      input.focus();
+    },
+    150
+  );
+
+}
+
+
+function closeAdorationModal(){
+
+  document
+    .getElementById(
+      "adoration-modal"
+    )
+    .style.display =
+      "none";
+
+
+  document.body.style.overflow =
+    "";
+
+
+  pendingAdorationSlot =
+    null;
+
+}
+
+
+/* CONFIRMAR */
+
+function confirmAdorationSubscription(){
+
+  const input =
+    document.getElementById(
+      "adoration-name"
+    );
+
+  const error =
+    document.getElementById(
+      "adoration-modal-error"
+    );
+
+
+  const name =
+    input.value.trim();
+
+
+  if(name.length < 3){
+
+    error.textContent =
+      "Ingresá tu nombre y apellido.";
+
+    input.focus();
+
+    return;
+
+  }
+
+
+  if(!pendingAdorationSlot){
+    return;
+  }
+
+
+  const slot =
+    pendingAdorationSlot;
+
+
+  saveAdorationName(name);
+
+  closeAdorationModal();
+
+  subscribeAdoration(
+    slot,
+    name
+  );
+
+}
+
+
+/* INSCRIBIR */
+
+async function subscribeAdoration(slot,name){
+
+  if(adorationBusy){
+    return;
+  }
+
+
+  adorationBusy = true;
+
+
+  try{
+
+    const response =
+      await fetch(
+        ADORACION_API,
+        {
+          method:"POST",
+
+          headers:{
+            "Content-Type":
+              "text/plain;charset=utf-8"
+          },
+
+          body:JSON.stringify({
+
+            action:"subscribe",
+
+            name:name,
+
+            slot:slot,
+
+            token:
+              getAdorationToken()
+
+          })
+
+        }
+      );
+
+
+    const data =
+      await response.json();
+
+
+    if(!data.ok){
+      throw new Error(data.error);
+    }
+
+
+    adorationStatus =
+      data.slots || [];
+
+
+    renderAdorationSlots();
+
+  }
+
+  catch(error){
+
+    console.error(error);
+
+    showAdorationError(
+      "No pudimos registrar el turno. Intentá nuevamente."
+    );
+
+  }
+
+  finally{
+
+    adorationBusy = false;
+
+  }
+
+}
+
+
+/* DESINSCRIBIR */
+
+async function unsubscribeAdoration(slot){
+
+  if(adorationBusy){
+    return;
+  }
+
+
+  adorationBusy = true;
+
+
+  try{
+
+    const response =
+      await fetch(
+        ADORACION_API,
+        {
+          method:"POST",
+
+          headers:{
+            "Content-Type":
+              "text/plain;charset=utf-8"
+          },
+
+          body:JSON.stringify({
+
+            action:"unsubscribe",
+
+            slot:slot,
+
+            token:
+              getAdorationToken()
+
+          })
+
+        }
+      );
+
+
+    const data =
+      await response.json();
+
+
+    if(!data.ok){
+      throw new Error(data.error);
+    }
+
+
+    adorationStatus =
+      data.slots || [];
+
+
+    renderAdorationSlots();
+
+  }
+
+  catch(error){
+
+    console.error(error);
+
+    showAdorationError(
+      "No pudimos quitar el turno. Intentá nuevamente."
+    );
+
+  }
+
+  finally{
+
+    adorationBusy = false;
+
+  }
+
+}
+
+
+function showAdorationError(message){
+
+  const box =
+    document.getElementById(
+      "adoration-error"
+    );
+
+
+  if(!box){
+    return;
+  }
+
+
+  box.textContent =
+    message;
+
+  box.style.display =
+    "block";
+
+}
+
+
+
 /* =========================================================
    SERVICE WORKER
 ========================================================= */
@@ -3994,19 +4339,10 @@ if("serviceWorker" in navigator){
       navigator
         .serviceWorker
         .register("./sw.js")
-
-        .then(function(registration){
-
-          console.log(
-            "App preparada para funcionamiento offline."
-          );
-
-        })
-
         .catch(function(error){
 
           console.log(
-            "No se pudo registrar el Service Worker:",
+            "Service Worker:",
             error
           );
 
