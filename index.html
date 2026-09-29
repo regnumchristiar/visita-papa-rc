@@ -1515,7 +1515,120 @@ details p{
 
 }
 
+/* CRUZ - EVITA EMOJI DE iOS */
 
+.cross-icon{
+
+  position:relative;
+
+  display:block;
+
+  width:18px;
+
+  height:25px;
+
+}
+
+.cross-icon::before{
+
+  content:"";
+
+  position:absolute;
+
+  left:7px;
+
+  top:1px;
+
+  width:4px;
+
+  height:23px;
+
+  border-radius:1px;
+
+  background:var(--celeste);
+
+}
+
+.cross-icon::after{
+
+  content:"";
+
+  position:absolute;
+
+  left:2px;
+
+  top:7px;
+
+  width:14px;
+
+  height:4px;
+
+  border-radius:1px;
+
+  background:var(--celeste);
+
+}  
+
+/* =========================================================
+   MISA
+========================================================= */
+
+.misa-section{
+
+  margin-bottom:35px;
+
+}
+
+.misa-section:last-child{
+
+  margin-bottom:0;
+
+}
+
+.misa-section-heading{
+
+  margin-bottom:15px;
+
+}
+
+.misa-section-label{
+
+  display:block;
+
+  margin-bottom:4px;
+
+  color:var(--celeste);
+
+  font-size:10px;
+
+  line-height:15px;
+
+  font-weight:bold;
+
+  letter-spacing:1.3px;
+
+}
+
+.misa-section-heading h3{
+
+  margin:0;
+
+  color:var(--bordo);
+
+  font-size:20px;
+
+  line-height:26px;
+
+}
+
+.misa-songs{
+
+  padding-top:28px;
+
+  border-top:1px solid #e5e5e5;
+
+}
+  
 /* =========================================================
    FOOTER
 ========================================================= */
@@ -1792,65 +1905,34 @@ details p{
 
 
 
-      <!-- LECTURAS -->
+<!-- MISA -->
 
-      <button
-        class="menu-button"
-        onclick="openPage('lecturas')"
-      >
+<button
+  class="menu-button"
+  onclick="openPage('misa')"
+>
 
-        <div class="menu-icon">
-          ✝
-        </div>
+  <div class="menu-icon">
+    <span class="cross-icon"></span>
+  </div>
 
-        <div class="menu-copy">
+  <div class="menu-copy">
 
-          <span class="menu-title">
-            Lecturas de la Misa
-          </span>
+    <span class="menu-title">
+      Misa
+    </span>
 
-          <span class="menu-description">
-            Lecturas, Evangelio y reflexión
-          </span>
+    <span class="menu-description">
+      Lecturas y Cancionero
+    </span>
 
-        </div>
+  </div>
 
-        <div class="menu-arrow">
-          ›
-        </div>
+  <div class="menu-arrow">
+    ›
+  </div>
 
-      </button>
-
-
-
-      <!-- CANCIONERO -->
-
-      <button
-        class="menu-button"
-        onclick="openPage('cancionero')"
-      >
-
-        <div class="menu-icon">
-          ♫
-        </div>
-
-        <div class="menu-copy">
-
-          <span class="menu-title">
-            Cancionero
-          </span>
-
-          <span class="menu-description">
-            Cantos para acompañar la celebración
-          </span>
-
-        </div>
-
-        <div class="menu-arrow">
-          ›
-        </div>
-
-      </button>
+</button>
 
 
 
@@ -1885,35 +1967,34 @@ details p{
 
 
 
-      <!-- REFLEXIONES -->
+<!-- ADORACIÓN PERMANENTE -->
 
-      <button
-        class="menu-button"
-        onclick="openPage('reflexiones')"
-      >
+<button
+  class="menu-button"
+  onclick="openPage('adoracion')"
+>
 
-        <div class="menu-icon">
-          ✦
-        </div>
+  <div class="menu-icon">
+    <span class="adoration-icon">✦</span>
+  </div>
 
-        <div class="menu-copy">
+  <div class="menu-copy">
 
-          <span class="menu-title">
-            Reflexiones
-          </span>
+    <span class="menu-title">
+      Adoración Permanente
+    </span>
 
-          <span class="menu-description">
-            Para preparar y acompañar el encuentro
-          </span>
+    <span class="menu-description">
+      Anotate en un turno
+    </span>
 
-        </div>
+  </div>
 
-        <div class="menu-arrow">
-          ›
-        </div>
+  <div class="menu-arrow">
+    ›
+  </div>
 
-      </button>
-
+</button>
 
 
       <!-- AGENDA -->
@@ -2236,10 +2317,10 @@ details p{
 
 
 <!-- ======================================================
-     LECTURAS DE LA MISA
+     MISA
 ====================================================== -->
 
-<section id="lecturas" class="page">
+<section id="misa" class="page">
 
   <div class="page-top">
 
@@ -2250,7 +2331,7 @@ details p{
       ← VOLVER
     </button>
 
-    <h2>Lecturas de la Misa</h2>
+    <h2>Santa Misa</h2>
 
     <p class="page-subtitle">
       Domingo 8 de noviembre
@@ -2261,486 +2342,194 @@ details p{
 
   <div class="page-content">
 
-    <div class="date-label">
-      LITURGIA DE LA PALABRA
-    </div>
 
+    <!-- ================================================
+         LECTURAS
+    ================================================= -->
 
-    <button
-      class="content-button"
-      onclick="openPage('primera-lectura')"
-    >
-      <div>
-        <div>Primera Lectura</div>
-        <div class="reading-reference">
-          Sabiduría 6, 12-16
-        </div>
+    <div class="misa-section">
+
+      <div class="misa-section-heading">
+
+        <span class="misa-section-label">
+          LITURGIA DE LA PALABRA
+        </span>
+
+        <h3>
+          Lecturas de la Misa
+        </h3>
+
       </div>
 
-      <span class="content-button-arrow">›</span>
-    </button>
 
+      <button
+        class="content-button"
+        onclick="openPage('primera-lectura')"
+      >
 
-    <button
-      class="content-button"
-      onclick="openPage('salmo')"
-    >
-      <div>
-        <div>Salmo</div>
-        <div class="reading-reference">
-          Próximamente
+        <div>
+          <div>Primera Lectura</div>
+
+          <div class="reading-reference">
+            Sabiduría 6, 12-16
+          </div>
         </div>
+
+        <span class="content-button-arrow">
+          ›
+        </span>
+
+      </button>
+
+
+      <button
+        class="content-button"
+        onclick="openPage('salmo')"
+      >
+
+        <div>
+          <div>Salmo Responsorial</div>
+
+          <div class="reading-reference">
+            Próximamente
+          </div>
+        </div>
+
+        <span class="content-button-arrow">
+          ›
+        </span>
+
+      </button>
+
+
+      <button
+        class="content-button"
+        onclick="openPage('segunda-lectura')"
+      >
+
+        <div>
+          <div>Segunda Lectura</div>
+
+          <div class="reading-reference">
+            1 Tesalonicenses 4, 13-18
+          </div>
+        </div>
+
+        <span class="content-button-arrow">
+          ›
+        </span>
+
+      </button>
+
+
+      <button
+        class="content-button"
+        onclick="openPage('evangelio')"
+      >
+
+        <div>
+          <div>Evangelio</div>
+
+          <div class="reading-reference">
+            Mateo 25, 1-13
+          </div>
+        </div>
+
+        <span class="content-button-arrow">
+          ›
+        </span>
+
+      </button>
+
+    </div>
+
+
+    <!-- ================================================
+         CANCIONERO
+    ================================================= -->
+
+    <div class="misa-section misa-songs">
+
+      <div class="misa-section-heading">
+
+        <span class="misa-section-label">
+          CANTOS DE LA CELEBRACIÓN
+        </span>
+
+        <h3>
+          Cancionero
+        </h3>
+
       </div>
 
-      <span class="content-button-arrow">›</span>
-    </button>
 
+      <button
+        class="content-button"
+        onclick="openPage('venysigueme')"
+      >
 
-    <button
-      class="content-button"
-      onclick="openPage('segunda-lectura')"
-    >
-      <div>
-        <div>Segunda Lectura</div>
-        <div class="reading-reference">
-          1 Tesalonicenses 4, 13-18
+        <div>
+          <div>Entrada</div>
+
+          <div class="reading-reference">
+            Ven y Sígueme
+          </div>
         </div>
-      </div>
 
-      <span class="content-button-arrow">›</span>
-    </button>
+        <span class="content-button-arrow">
+          ›
+        </span>
 
-
-    <button
-      class="content-button"
-      onclick="openPage('evangelio')"
-    >
-      <div>
-        <div>Evangelio</div>
-        <div class="reading-reference">
-          Mateo 25, 1-13
-        </div>
-      </div>
-
-      <span class="content-button-arrow">›</span>
-    </button>
-
-  </div>
-
-</section>
+      </button>
 
 
+      <button class="content-button">
 
-<!-- ======================================================
-     PRIMERA LECTURA
-====================================================== -->
+        <div>Ofertorio</div>
 
-<section id="primera-lectura" class="page">
+        <span class="content-button-arrow">
+          ›
+        </span>
 
-  <div class="page-top">
-
-    <button
-      class="back-button"
-      onclick="history.back()"
-    >
-      ← LECTURAS
-    </button>
-
-    <div class="reading-type">
-      PRIMERA LECTURA
-    </div>
-
-    <h2>Sabiduría 6, 12-16</h2>
-
-  </div>
+      </button>
 
 
-  <div class="page-content liturgy-text">
+      <button class="content-button">
 
-    <p class="reading-intro">
-      Lectura del libro de la Sabiduría
-    </p>
+        <div>Comunión</div>
 
-    <p>
-      Radiante e incorruptible es la sabiduría;<br>
-      con facilidad la contemplan quienes la aman<br>
-      y ella se deja encontrar por quienes la buscan<br>
-      y se anticipa a darse a conocer a los que la desean.
-    </p>
+        <span class="content-button-arrow">
+          ›
+        </span>
 
-    <p>
-      El que madruga por ella no se fatigará,<br>
-      porque la hallará sentada a su puerta.<br>
-      Darle la primacía en los pensamientos<br>
-      es prudencia consumada;<br>
-      quien por ella se desvela<br>
-      pronto se verá libre de preocupaciones.
-    </p>
-
-    <p>
-      A los que son dignos de ella,<br>
-      ella misma sale a buscarlos por los caminos;<br>
-      se les aparece benévola<br>
-      y colabora con ellos en todos sus proyectos.
-    </p>
-
-  </div>
-
-</section>
+      </button>
 
 
+      <button class="content-button">
 
-<!-- ======================================================
-     SALMO
-====================================================== -->
+        <div>Meditación</div>
 
-<section id="salmo" class="page">
+        <span class="content-button-arrow">
+          ›
+        </span>
 
-  <div class="page-top">
-
-    <button
-      class="back-button"
-      onclick="history.back()"
-    >
-      ← LECTURAS
-    </button>
-
-    <div class="reading-type">
-      SALMO RESPONSORIAL
-    </div>
-
-    <h2>Salmo</h2>
-
-  </div>
+      </button>
 
 
-  <div class="page-content">
+      <button class="content-button">
 
-    <div class="content-card accent">
+        <div>Salida</div>
 
-      <h3>Próximamente</h3>
+        <span class="content-button-arrow">
+          ›
+        </span>
 
-      <p>
-        El salmo responsorial será publicado
-        en esta sección.
-      </p>
+      </button>
 
     </div>
 
-  </div>
-
-</section>
-
-
-
-<!-- ======================================================
-     SEGUNDA LECTURA
-====================================================== -->
-
-<section id="segunda-lectura" class="page">
-
-  <div class="page-top">
-
-    <button
-      class="back-button"
-      onclick="history.back()"
-    >
-      ← LECTURAS
-    </button>
-
-    <div class="reading-type">
-      SEGUNDA LECTURA
-    </div>
-
-    <h2>1 Tesalonicenses 4, 13-18</h2>
 
   </div>
-
-
-  <div class="page-content liturgy-text">
-
-    <p class="reading-intro">
-      Lectura de la primera carta del apóstol
-      san Pablo a los Tesalonicenses
-    </p>
-
-    <p>
-      Hermanos: No queremos que ignoren lo que pasa
-      con los difuntos, para que no vivan tristes,
-      como los que no tienen esperanza. Pues, si creemos
-      que Jesús murió y resucitó, de igual manera debemos
-      creer que, a los que murieron en Jesús, Dios los
-      llevará con él.
-    </p>
-
-    <p>
-      Lo que les decimos, como palabra del Señor, es esto:
-      que nosotros, los que quedemos vivos para cuando
-      venga el Señor, no tendremos ninguna ventaja sobre
-      los que ya murieron.
-    </p>
-
-    <p>
-      Cuando Dios mande que suenen las trompetas, se oirá
-      la voz de un arcángel y el Señor mismo bajará del
-      cielo. Entonces, los que murieron en Cristo
-      resucitarán primero; después nosotros, los que
-      quedemos vivos, seremos arrebatados, juntamente
-      con ellos entre nubes, por el aire, para ir al
-      encuentro del Señor, y así estaremos siempre con él.
-    </p>
-
-    <p>
-      Consuélense, pues, unos a otros con estas palabras.
-    </p>
-
-  </div>
-
-</section>
-
-
-
-<!-- ======================================================
-     EVANGELIO
-====================================================== -->
-
-<section id="evangelio" class="page">
-
-  <div class="page-top">
-
-    <button
-      class="back-button"
-      onclick="history.back()"
-    >
-      ← LECTURAS
-    </button>
-
-    <div class="reading-type">
-      EVANGELIO
-    </div>
-
-    <h2>Mateo 25, 1-13</h2>
-
-  </div>
-
-
-  <div class="page-content liturgy-text">
-
-    <p class="reading-intro">
-      Lectura del santo Evangelio según san Mateo
-    </p>
-
-    <p>
-      En aquel tiempo, Jesús dijo a sus discípulos esta
-      parábola: “El Reino de los cielos es semejante a diez
-      jóvenes, que tomando sus lámparas, salieron al encuentro
-      del esposo. Cinco de ellas eran descuidadas y cinco,
-      previsoras. Las descuidadas llevaron sus lámparas,
-      pero no llevaron aceite para llenarlas de nuevo;
-      las previsoras, en cambio, llevaron cada una un frasco
-      de aceite junto con su lámpara. Como el esposo tardaba,
-      les entró sueño a todas y se durmieron.
-    </p>
-
-    <p>
-      A medianoche se oyó un grito: ‘¡Ya viene el esposo!
-      ¡Salgan a su encuentro!’ Se levantaron entonces todas
-      aquellas jóvenes y se pusieron a preparar sus lámparas,
-      y las descuidadas dijeron a las previsoras: ‘Dennos un
-      poco de su aceite, porque nuestras lámparas se están
-      apagando’. Las previsoras les contestaron: ‘No, porque
-      no va a alcanzar para ustedes y para nosotras. Vayan
-      mejor a donde lo venden y cómprenlo’.
-    </p>
-
-    <p>
-      Mientras aquéllas iban a comprarlo, llegó el esposo,
-      y las que estaban listas entraron con él al banquete
-      de bodas y se cerró la puerta. Más tarde llegaron las
-      otras jóvenes y dijeron: ‘Señor, señor, ábrenos’.
-      Pero él les respondió: ‘Yo les aseguro que no las
-      conozco’.
-    </p>
-
-    <p>
-      Estén, pues, preparados, porque no saben ni el día
-      ni la hora”.
-    </p>
-
-  </div>
-
-</section>
-
-
-
-<!-- ======================================================
-     CANCIONERO
-====================================================== -->
-
-<section
-  id="cancionero"
-  class="page"
->
-
-
-  <div class="page-top">
-
-<button
-  class="back-button"
-  onclick="history.back()"
->
-  ← VOLVER
-</button>
-
-
-    <h2>
-      Cancionero
-    </h2>
-
-
-    <p class="page-subtitle">
-      Cantos de la Santa Misa
-    </p>
-
-  </div>
-
-
-
-  <div class="page-content">
-
-
-    <button
-      class="content-button"
-      onclick="openPage('venysigueme')"
-    >
-
-      Entrada
-
-      <span class="content-button-arrow">
-        ›
-      </span>
-
-    </button>
-
-
-
-    <button class="content-button">
-
-      Ofertorio
-
-      <span class="content-button-arrow">
-        ›
-      </span>
-
-    </button>
-
-
-
-    <button class="content-button">
-
-      Comunión
-
-      <span class="content-button-arrow">
-        ›
-      </span>
-
-    </button>
-
-
-
-    <button class="content-button">
-
-      Meditación
-
-      <span class="content-button-arrow">
-        ›
-      </span>
-
-    </button>
-
-
-
-    <button class="content-button">
-
-      Salida
-
-      <span class="content-button-arrow">
-        ›
-      </span>
-
-    </button>
-
-
-  </div>
-
-
-</section>
-
-
-
-<!-- ======================================================
-     CANCIÓN - VEN Y SÍGUEME
-====================================================== -->
-
-<section
-  id="venysigueme"
-  class="page"
->
-
-
-  <div class="page-top">
-
-
-<button
-  class="back-button"
-  onclick="history.back()"
->
-  ← CANCIONERO
-</button>
-
-
-    <h2>
-      Entrada
-    </h2>
-
-
-    <p class="page-subtitle">
-      Canto de entrada
-    </p>
-
-
-  </div>
-
-
-
-  <div class="page-content">
-
-
-    <div class="song-title">
-
-      VEN Y SÍGUEME
-
-    </div>
-
-
-    <div class="song-lyrics">Ven y sígueme,
-y mar adentro echa ya tus redes.
-Ven y yo te haré
-pescador de hombres.
-
-<span class="chorus">En tus palabras echaré mis redes.
-Dejo mi barca y donde quieras iré.
-Tú me llamaste, Señor, por mi nombre
-y sólo a Ti, Señor, Señor, te seguiré.</span>
-
-Te vi trabajar aquella noche
-en que fracasaste.
-Sé de tu dolor, de tu vergüenza
-y de tus fragilidades.</div>
-
-
-  </div>
-
 
 </section>
 
@@ -3844,15 +3633,16 @@ const HOME = "home";
 
 const PAGE_PARENTS = {
 
-  venysigueme: "cancionero",
+  venysigueme: "misa",
 
-  "primera-lectura": "lecturas",
-  "salmo": "lecturas",
-  "segunda-lectura": "lecturas",
-  "evangelio": "lecturas"
+  "primera-lectura": "misa",
+  "salmo": "misa",
+  "segunda-lectura": "misa",
+  "evangelio": "misa"
 
 };
 
+  
 /* =========================================================
    OCULTAR TODAS LAS PÁGINAS
 ========================================================= */
