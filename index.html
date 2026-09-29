@@ -2500,6 +2500,36 @@ function goHome(){
 
 }
 
+/* =========================================================
+   SERVICE WORKER
+========================================================= */
+
+if ("serviceWorker" in navigator) {
+
+  window.addEventListener("load", function() {
+
+    navigator.serviceWorker
+      .register("./sw.js")
+      .then(function(registration) {
+
+        console.log(
+          "App preparada para funcionamiento offline."
+        );
+
+      })
+      .catch(function(error) {
+
+        console.log(
+          "No se pudo registrar el Service Worker:",
+          error
+        );
+
+      });
+
+  });
+
+}
+  
 </script>
 
 
