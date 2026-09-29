@@ -318,6 +318,26 @@ button{
   background:var(--celeste);
 }
 
+.location-pin {
+  position: relative;
+  width: 20px;
+  height: 25px;
+  border: 2.5px solid var(--celeste);
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+}
+
+.location-pin::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: var(--celeste);
+  border-radius: 50%;
+  top: 6px;
+  left: 5px;
+}
+  
 .adoration-menu-icon{
   position:relative;
   width:23px;
@@ -1352,6 +1372,15 @@ details p{
   line-height:20px;
 }
 
+/* =========================================================
+   AJUSTES DE ÍCONOS DEL MENÚ
+========================================================= */
+
+/* Cronograma y Plano: símbolo un poco más grande */
+.menu-icon.icon-large {
+  font-size:29px;
+  font-weight:500;
+}  
 
 /* =========================================================
    FOOTER
@@ -1499,8 +1528,9 @@ details p{
       onclick="openPage('cronograma')"
     >
 
-      <div class="menu-icon">◷</div>
-
+<div class="menu-icon icon-large">
+  ◷
+</div>
       <div class="menu-copy">
         <span class="menu-title">Cronograma</span>
         <span class="menu-description">
@@ -1518,8 +1548,12 @@ details p{
       onclick="openPage('plano')"
     >
 
-      <div class="menu-icon">⌖</div>
+<div class="menu-icon">
 
+  <span class="location-pin"></span>
+
+</div>
+      
       <div class="menu-copy">
         <span class="menu-title">Plano</span>
         <span class="menu-description">
@@ -1558,9 +1592,9 @@ details p{
       onclick="openPage('adoracion')"
     >
 
-      <div class="menu-icon">
-        <span class="adoration-menu-icon"></span>
-      </div>
+<div class="menu-icon icon-large">
+  ⌖
+</div>
 
       <div class="menu-copy">
         <span class="menu-title">Adoración Permanente</span>
@@ -2519,7 +2553,7 @@ y de tus fragilidades.</div>
 
   <div class="adoration-section-title">
 
-    <span>ELEGÍ TU TURNO</span>
+    <span style="font-size:14px;">ELEGÍ TU TURNO</span>
 
     <p>
       Tocá + para anotarte. Podés elegir más de un horario.
