@@ -795,6 +795,138 @@ button{
 
 }
 
+  /* =========================================================
+   NAVEGACIÓN RÁPIDA - AGENDA PAPAL
+========================================================= */
+
+.agenda-day-nav{
+
+  position:sticky;
+
+  top:0;
+
+  z-index:20;
+
+  display:grid;
+
+  grid-template-columns:repeat(4, 1fr);
+
+  gap:6px;
+
+  margin:
+    -25px
+    -22px
+    28px;
+
+  padding:
+    11px
+    14px;
+
+  background:rgba(255,255,255,.96);
+
+  border-bottom:
+    1px
+    solid
+    #e5e5e5;
+
+  box-shadow:
+    0 3px 8px
+    rgba(0,0,0,.05);
+
+  backdrop-filter:blur(8px);
+
+  -webkit-backdrop-filter:blur(8px);
+
+}
+
+
+.agenda-day-button{
+
+  border:
+    1px
+    solid
+    #dfe3e5;
+
+  border-radius:8px;
+
+  background:#ffffff;
+
+  padding:
+    7px
+    4px
+    6px;
+
+  text-align:center;
+
+  cursor:pointer;
+
+  color:#777777;
+
+  transition:
+    background .15s ease,
+    border-color .15s ease,
+    color .15s ease;
+
+}
+
+
+.agenda-day-button span{
+
+  display:block;
+
+  margin-bottom:1px;
+
+  font-size:9px;
+
+  line-height:12px;
+
+  font-weight:bold;
+
+  letter-spacing:1px;
+
+}
+
+
+.agenda-day-button strong{
+
+  display:block;
+
+  font-size:16px;
+
+  line-height:19px;
+
+  color:var(--bordo);
+
+}
+
+
+/* DÍA ACTIVO */
+
+.agenda-day-button.active{
+
+  background:var(--bordo);
+
+  border-color:var(--bordo);
+
+  color:#ffffff;
+
+}
+
+
+.agenda-day-button.active strong{
+
+  color:#ffffff;
+
+}
+
+
+/* ESPACIO PARA QUE EL STICKY NO TAPE EL DÍA */
+
+.papal-day{
+
+  scroll-margin-top:82px;
+
+}
 
 /* =========================================================
    CANCIONERO
@@ -909,6 +1041,107 @@ button{
 
 }
 
+/* =========================================================
+   LECTURAS DE LA MISA
+========================================================= */
+
+.reading-reference{
+
+  margin-top:4px;
+
+  color:#888888;
+
+  font-size:11px;
+
+  line-height:16px;
+
+  font-weight:normal;
+
+}
+
+
+.reading-type{
+
+  margin-bottom:7px;
+
+  color:var(--celeste);
+
+  font-size:10px;
+
+  line-height:15px;
+
+  font-weight:bold;
+
+  letter-spacing:1.3px;
+
+}
+
+
+.liturgy-text{
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+}
+
+
+.liturgy-text .reading-intro{
+
+  margin:
+    0
+    0
+    25px;
+
+  padding:
+    15px
+    17px;
+
+  background:var(--celeste-claro);
+
+  border-left:
+    4px
+    solid
+    var(--celeste);
+
+  color:#555555;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size:13px;
+
+  line-height:20px;
+
+  font-weight:bold;
+
+}
+
+
+.liturgy-text p{
+
+  margin:
+    0
+    0
+    22px;
+
+  color:#333333;
+
+  font-size:17px;
+
+  line-height:28px;
+
+}
+
+
+.liturgy-text p:last-child{
+
+  margin-bottom:0;
+
+}  
 
 /* =========================================================
    PREGUNTAS
@@ -1684,26 +1917,18 @@ details p{
      LECTURAS DE LA MISA
 ====================================================== -->
 
-<section
-  id="lecturas"
-  class="page"
->
-
+<section id="lecturas" class="page">
 
   <div class="page-top">
 
-<button
-  class="back-button"
-  onclick="history.back()"
->
-  ← VOLVER
-</button>
+    <button
+      class="back-button"
+      onclick="history.back()"
+    >
+      ← VOLVER
+    </button>
 
-
-    <h2>
-      Lecturas de la Misa
-    </h2>
-
+    <h2>Lecturas de la Misa</h2>
 
     <p class="page-subtitle">
       Domingo 8 de noviembre
@@ -1712,71 +1937,315 @@ details p{
   </div>
 
 
-
   <div class="page-content">
 
+    <div class="date-label">
+      LITURGIA DE LA PALABRA
+    </div>
 
-    <button class="content-button">
 
-      1ra Lectura
+    <button
+      class="content-button"
+      onclick="openPage('primera-lectura')"
+    >
+      <div>
+        <div>Primera Lectura</div>
+        <div class="reading-reference">
+          Sabiduría 6, 12-16
+        </div>
+      </div>
 
-      <span class="content-button-arrow">
-        ›
-      </span>
-
+      <span class="content-button-arrow">›</span>
     </button>
 
 
+    <button
+      class="content-button"
+      onclick="openPage('salmo')"
+    >
+      <div>
+        <div>Salmo</div>
+        <div class="reading-reference">
+          Próximamente
+        </div>
+      </div>
 
-    <button class="content-button">
-
-      Salmo
-
-      <span class="content-button-arrow">
-        ›
-      </span>
-
+      <span class="content-button-arrow">›</span>
     </button>
 
 
+    <button
+      class="content-button"
+      onclick="openPage('segunda-lectura')"
+    >
+      <div>
+        <div>Segunda Lectura</div>
+        <div class="reading-reference">
+          1 Tesalonicenses 4, 13-18
+        </div>
+      </div>
 
-    <button class="content-button">
-
-      2da Lectura
-
-      <span class="content-button-arrow">
-        ›
-      </span>
-
+      <span class="content-button-arrow">›</span>
     </button>
 
 
+    <button
+      class="content-button"
+      onclick="openPage('evangelio')"
+    >
+      <div>
+        <div>Evangelio</div>
+        <div class="reading-reference">
+          Mateo 25, 1-13
+        </div>
+      </div>
 
-    <button class="content-button">
-
-      Evangelio
-
-      <span class="content-button-arrow">
-        ›
-      </span>
-
+      <span class="content-button-arrow">›</span>
     </button>
-
-
-
-    <button class="content-button">
-
-      Reflexión
-
-      <span class="content-button-arrow">
-        ›
-      </span>
-
-    </button>
-
 
   </div>
 
+</section>
+
+
+
+<!-- ======================================================
+     PRIMERA LECTURA
+====================================================== -->
+
+<section id="primera-lectura" class="page">
+
+  <div class="page-top">
+
+    <button
+      class="back-button"
+      onclick="history.back()"
+    >
+      ← LECTURAS
+    </button>
+
+    <div class="reading-type">
+      PRIMERA LECTURA
+    </div>
+
+    <h2>Sabiduría 6, 12-16</h2>
+
+  </div>
+
+
+  <div class="page-content liturgy-text">
+
+    <p class="reading-intro">
+      Lectura del libro de la Sabiduría
+    </p>
+
+    <p>
+      Radiante e incorruptible es la sabiduría;<br>
+      con facilidad la contemplan quienes la aman<br>
+      y ella se deja encontrar por quienes la buscan<br>
+      y se anticipa a darse a conocer a los que la desean.
+    </p>
+
+    <p>
+      El que madruga por ella no se fatigará,<br>
+      porque la hallará sentada a su puerta.<br>
+      Darle la primacía en los pensamientos<br>
+      es prudencia consumada;<br>
+      quien por ella se desvela<br>
+      pronto se verá libre de preocupaciones.
+    </p>
+
+    <p>
+      A los que son dignos de ella,<br>
+      ella misma sale a buscarlos por los caminos;<br>
+      se les aparece benévola<br>
+      y colabora con ellos en todos sus proyectos.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- ======================================================
+     SALMO
+====================================================== -->
+
+<section id="salmo" class="page">
+
+  <div class="page-top">
+
+    <button
+      class="back-button"
+      onclick="history.back()"
+    >
+      ← LECTURAS
+    </button>
+
+    <div class="reading-type">
+      SALMO RESPONSORIAL
+    </div>
+
+    <h2>Salmo</h2>
+
+  </div>
+
+
+  <div class="page-content">
+
+    <div class="content-card accent">
+
+      <h3>Próximamente</h3>
+
+      <p>
+        El salmo responsorial será publicado
+        en esta sección.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ======================================================
+     SEGUNDA LECTURA
+====================================================== -->
+
+<section id="segunda-lectura" class="page">
+
+  <div class="page-top">
+
+    <button
+      class="back-button"
+      onclick="history.back()"
+    >
+      ← LECTURAS
+    </button>
+
+    <div class="reading-type">
+      SEGUNDA LECTURA
+    </div>
+
+    <h2>1 Tesalonicenses 4, 13-18</h2>
+
+  </div>
+
+
+  <div class="page-content liturgy-text">
+
+    <p class="reading-intro">
+      Lectura de la primera carta del apóstol
+      san Pablo a los Tesalonicenses
+    </p>
+
+    <p>
+      Hermanos: No queremos que ignoren lo que pasa
+      con los difuntos, para que no vivan tristes,
+      como los que no tienen esperanza. Pues, si creemos
+      que Jesús murió y resucitó, de igual manera debemos
+      creer que, a los que murieron en Jesús, Dios los
+      llevará con él.
+    </p>
+
+    <p>
+      Lo que les decimos, como palabra del Señor, es esto:
+      que nosotros, los que quedemos vivos para cuando
+      venga el Señor, no tendremos ninguna ventaja sobre
+      los que ya murieron.
+    </p>
+
+    <p>
+      Cuando Dios mande que suenen las trompetas, se oirá
+      la voz de un arcángel y el Señor mismo bajará del
+      cielo. Entonces, los que murieron en Cristo
+      resucitarán primero; después nosotros, los que
+      quedemos vivos, seremos arrebatados, juntamente
+      con ellos entre nubes, por el aire, para ir al
+      encuentro del Señor, y así estaremos siempre con él.
+    </p>
+
+    <p>
+      Consuélense, pues, unos a otros con estas palabras.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- ======================================================
+     EVANGELIO
+====================================================== -->
+
+<section id="evangelio" class="page">
+
+  <div class="page-top">
+
+    <button
+      class="back-button"
+      onclick="history.back()"
+    >
+      ← LECTURAS
+    </button>
+
+    <div class="reading-type">
+      EVANGELIO
+    </div>
+
+    <h2>Mateo 25, 1-13</h2>
+
+  </div>
+
+
+  <div class="page-content liturgy-text">
+
+    <p class="reading-intro">
+      Lectura del santo Evangelio según san Mateo
+    </p>
+
+    <p>
+      En aquel tiempo, Jesús dijo a sus discípulos esta
+      parábola: “El Reino de los cielos es semejante a diez
+      jóvenes, que tomando sus lámparas, salieron al encuentro
+      del esposo. Cinco de ellas eran descuidadas y cinco,
+      previsoras. Las descuidadas llevaron sus lámparas,
+      pero no llevaron aceite para llenarlas de nuevo;
+      las previsoras, en cambio, llevaron cada una un frasco
+      de aceite junto con su lámpara. Como el esposo tardaba,
+      les entró sueño a todas y se durmieron.
+    </p>
+
+    <p>
+      A medianoche se oyó un grito: ‘¡Ya viene el esposo!
+      ¡Salgan a su encuentro!’ Se levantaron entonces todas
+      aquellas jóvenes y se pusieron a preparar sus lámparas,
+      y las descuidadas dijeron a las previsoras: ‘Dennos un
+      poco de su aceite, porque nuestras lámparas se están
+      apagando’. Las previsoras les contestaron: ‘No, porque
+      no va a alcanzar para ustedes y para nosotras. Vayan
+      mejor a donde lo venden y cómprenlo’.
+    </p>
+
+    <p>
+      Mientras aquéllas iban a comprarlo, llegó el esposo,
+      y las que estaban listas entraron con él al banquete
+      de bodas y se cerró la puerta. Más tarde llegaron las
+      otras jóvenes y dijeron: ‘Señor, señor, ábrenos’.
+      Pero él les respondió: ‘Yo les aseguro que no las
+      conozco’.
+    </p>
+
+    <p>
+      Estén, pues, preparados, porque no saben ni el día
+      ni la hora”.
+    </p>
+
+  </div>
 
 </section>
 
@@ -2112,7 +2581,7 @@ y de tus fragilidades.</div>
          DOMINGO 8
     ============================================= -->
 
-    <div class="papal-day">
+    <div class="papal-day" id="agenda-domingo">
 
       <div class="papal-day-header">
 
@@ -2251,7 +2720,7 @@ y de tus fragilidades.</div>
          LUNES 9
     ============================================= -->
 
-    <div class="papal-day">
+    <div class="papal-day" id="agenda-lunes">
 
       <div class="papal-day-header">
 
@@ -2411,7 +2880,7 @@ y de tus fragilidades.</div>
          MARTES 10
     ============================================= -->
 
-    <div class="papal-day">
+    <div class="papal-day" id="agenda-martes">
 
       <div class="papal-day-header">
 
@@ -2588,7 +3057,7 @@ y de tus fragilidades.</div>
          MIÉRCOLES 11
     ============================================= -->
 
-    <div class="papal-day">
+    <div class="papal-day" id="agenda-miercoles">
 
       <div class="papal-day-header">
 
@@ -2793,7 +3262,48 @@ y de tus fragilidades.</div>
 
   <div class="page-content">
 
+<!-- NAVEGACIÓN RÁPIDA POR DÍAS -->
 
+<div class="agenda-day-nav">
+
+  <button
+    class="agenda-day-button active"
+    data-day="agenda-domingo"
+    onclick="goToAgendaDay('agenda-domingo', this)"
+  >
+    <span>DOM</span>
+    <strong>8</strong>
+  </button>
+
+  <button
+    class="agenda-day-button"
+    data-day="agenda-lunes"
+    onclick="goToAgendaDay('agenda-lunes', this)"
+  >
+    <span>LUN</span>
+    <strong>9</strong>
+  </button>
+
+  <button
+    class="agenda-day-button"
+    data-day="agenda-martes"
+    onclick="goToAgendaDay('agenda-martes', this)"
+  >
+    <span>MAR</span>
+    <strong>10</strong>
+  </button>
+
+  <button
+    class="agenda-day-button"
+    data-day="agenda-miercoles"
+    onclick="goToAgendaDay('agenda-miercoles', this)"
+  >
+    <span>MIÉ</span>
+    <strong>11</strong>
+  </button>
+
+</div>
+    
     <details>
 
       <summary>
@@ -3006,10 +3516,14 @@ const HOME = "home";
 
 const PAGE_PARENTS = {
 
-  venysigueme: "cancionero"
+  venysigueme: "cancionero",
+
+  "primera-lectura": "lecturas",
+  "salmo": "lecturas",
+  "segunda-lectura": "lecturas",
+  "evangelio": "lecturas"
 
 };
-
 
 /* =========================================================
    OCULTAR TODAS LAS PÁGINAS
@@ -3229,7 +3743,126 @@ function loadInitialPage(){
 
 loadInitialPage();
 
+/* =========================================================
+   NAVEGACIÓN RÁPIDA - AGENDA PAPAL
+========================================================= */
 
+function goToAgendaDay(dayId, button){
+
+  const target =
+    document.getElementById(dayId);
+
+
+  if(!target){
+    return;
+  }
+
+
+  /* Cambiar botón activo */
+
+  document
+    .querySelectorAll(".agenda-day-button")
+    .forEach(function(btn){
+
+      btn.classList.remove("active");
+
+    });
+
+
+  if(button){
+
+    button.classList.add("active");
+
+  }
+
+
+  /* Ir suavemente al día */
+
+  target.scrollIntoView({
+
+    behavior:"smooth",
+
+    block:"start"
+
+  });
+
+}
+
+  /* =========================================================
+   DETECTAR DÍA VISIBLE EN LA AGENDA
+========================================================= */
+
+const agendaDays = [
+  "agenda-domingo",
+  "agenda-lunes",
+  "agenda-martes",
+  "agenda-miercoles"
+];
+
+
+function updateActiveAgendaDay(){
+
+  const agendaPage =
+    document.getElementById("agenda");
+
+
+  if(
+    !agendaPage ||
+    !agendaPage.classList.contains("active")
+  ){
+    return;
+  }
+
+
+  let currentDay =
+    agendaDays[0];
+
+
+  agendaDays.forEach(function(dayId){
+
+    const day =
+      document.getElementById(dayId);
+
+
+    if(!day){
+      return;
+    }
+
+
+    const rect =
+      day.getBoundingClientRect();
+
+
+    if(rect.top <= 130){
+
+      currentDay =
+        dayId;
+
+    }
+
+  });
+
+
+  document
+    .querySelectorAll(".agenda-day-button")
+    .forEach(function(button){
+
+      button.classList.toggle(
+        "active",
+        button.dataset.day === currentDay
+      );
+
+    });
+
+}
+
+
+window.addEventListener(
+  "scroll",
+  updateActiveAgendaDay,
+  { passive:true }
+);
+  
 /* =========================================================
    SERVICE WORKER
 ========================================================= */
