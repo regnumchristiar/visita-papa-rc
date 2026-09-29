@@ -1,924 +1,2481 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="theme-color" content="#91152B">
 
-  <title>Visita Papa León XIV | Regnum Christi</title>
+<meta charset="UTF-8">
 
-  <style>
-    :root {
-      --bordo: #91152B;
-      --bordo-oscuro: #68101f;
-      --bordo-claro: #f6ecef;
-      --texto: #252525;
-      --gris: #737373;
-      --fondo: #f7f7f5;
-      --blanco: #ffffff;
-      --borde: #e9e6e4;
-    }
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+>
 
-    * {
-      box-sizing: border-box;
-      -webkit-tap-highlight-color: transparent;
-    }
+<meta name="theme-color" content="#91152B">
 
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-                   Helvetica, Arial, sans-serif;
-      background: var(--fondo);
-      color: var(--texto);
-    }
+<title>
+Visita Papa León XIV | Regnum Christi
+</title>
 
-    .app {
-      width: 100%;
-      max-width: 520px;
-      min-height: 100vh;
-      margin: 0 auto;
-      background: var(--fondo);
-    }
 
-    /* HEADER */
+<style>
 
-    .header {
-      background: var(--bordo);
-      color: white;
-      padding: 42px 24px 34px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
+/* =========================================================
+   COLORES
+========================================================= */
 
-    .header::before {
-      content: "";
-      position: absolute;
-      width: 250px;
-      height: 250px;
-      border: 1px solid rgba(255,255,255,.08);
-      border-radius: 50%;
-      top: -150px;
-      right: -80px;
-    }
+:root{
 
-    .header::after {
-      content: "";
-      position: absolute;
-      width: 180px;
-      height: 180px;
-      border: 1px solid rgba(255,255,255,.07);
-      border-radius: 50%;
-      bottom: -120px;
-      left: -80px;
-    }
+  --bordo:#91152B;
+  --bordo-oscuro:#741020;
 
-    .cross {
-      font-family: Georgia, serif;
-      font-size: 38px;
-      margin-bottom: 13px;
-      position: relative;
-      z-index: 2;
-    }
+  --celeste:#6CA0B2;
+  --celeste-claro:#f1f7f9;
 
-    .header-small {
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 2.2px;
-      text-transform: uppercase;
-      opacity: .85;
-      position: relative;
-      z-index: 2;
-    }
+  --bordo-claro:#faf1f3;
 
-    .header h1 {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 29px;
-      line-height: 1.1;
-      font-weight: 500;
-      margin: 10px 0 8px;
-      position: relative;
-      z-index: 2;
-    }
+  --texto:#333333;
+  --gris:#777777;
 
-    .header-date {
-      font-size: 14px;
-      opacity: .9;
-      position: relative;
-      z-index: 2;
-    }
+  --fondo:#f2f3f3;
+  --blanco:#ffffff;
 
-    /* CONTENIDO */
+  --borde:#e5e5e5;
 
-    .content {
-      padding: 25px 18px 35px;
-    }
+}
 
-    .intro {
-      text-align: center;
-      margin: 0 auto 22px;
-      max-width: 380px;
-    }
 
-    .intro strong {
-      display: block;
-      font-size: 17px;
-      margin-bottom: 5px;
-    }
+/* =========================================================
+   GENERAL
+========================================================= */
 
-    .intro span {
-      color: var(--gris);
-      font-size: 13px;
-      line-height: 1.5;
-    }
+*{
 
-    /* MENU */
+  box-sizing:border-box;
 
-    .grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 11px;
-    }
+  -webkit-tap-highlight-color:transparent;
 
-    .menu-card {
-      background: white;
-      border: 1px solid var(--borde);
-      border-radius: 17px;
-      min-height: 137px;
-      padding: 19px 16px;
-      cursor: pointer;
-      text-align: left;
-      transition: transform .12s ease, box-shadow .12s ease;
-      color: var(--texto);
-      font-family: inherit;
-    }
+}
 
-    .menu-card:active {
-      transform: scale(.97);
-    }
 
-    .icon {
-      width: 39px;
-      height: 39px;
-      border-radius: 11px;
-      background: var(--bordo-claro);
-      color: var(--bordo);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 21px;
-      margin-bottom: 15px;
-    }
+html{
 
-    .menu-card strong {
-      display: block;
-      font-size: 15px;
-      margin-bottom: 5px;
-    }
+  scroll-behavior:smooth;
 
-    .menu-card span {
-      display: block;
-      font-size: 11.5px;
-      color: var(--gris);
-      line-height: 1.35;
-    }
+}
 
-    /* DESTACADO */
 
-    .important {
-      margin-top: 15px;
-      padding: 17px 18px;
-      border-radius: 15px;
-      background: var(--bordo-claro);
-      cursor: pointer;
-    }
+body{
 
-    .important-title {
-      font-weight: 650;
-      color: var(--bordo);
-      font-size: 14px;
-    }
+  margin:0;
 
-    .important-text {
-      color: #5d5154;
-      font-size: 12px;
-      line-height: 1.5;
-      margin-top: 4px;
-    }
+  padding:0;
 
-    /* PÁGINAS */
+  background:var(--fondo);
 
-    .page {
-      display: none;
-      min-height: 100vh;
-      background: var(--fondo);
-    }
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
 
-    .page.active {
-      display: block;
-    }
+  color:var(--texto);
 
-    .page-header {
-      background: var(--bordo);
-      color: white;
-      padding: 24px 18px 22px;
-    }
+}
 
-    .back {
-      border: 0;
-      background: rgba(255,255,255,.13);
-      color: white;
-      height: 38px;
-      padding: 0 14px;
-      border-radius: 10px;
-      font-family: inherit;
-      cursor: pointer;
-      margin-bottom: 20px;
-    }
 
-    .page-header h2 {
-      font-family: Georgia, serif;
-      font-weight: 500;
-      font-size: 27px;
-      margin: 0 0 4px;
-    }
+button,
+a{
 
-    .page-header p {
-      font-size: 12px;
-      opacity: .8;
-      margin: 0;
-    }
+  font-family:inherit;
 
-    .page-content {
-      padding: 22px 18px 40px;
-    }
+}
 
-    /* CRONOGRAMA */
 
-    .day {
-      font-size: 12px;
-      color: var(--bordo);
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      margin-bottom: 14px;
-    }
+button{
 
-    .timeline {
-      position: relative;
-      margin-left: 5px;
-    }
+  -webkit-appearance:none;
+  appearance:none;
 
-    .event {
-      display: grid;
-      grid-template-columns: 62px 1fr;
-      gap: 11px;
-      padding-bottom: 21px;
-      position: relative;
-    }
+}
 
-    .event::before {
-      content: "";
-      position: absolute;
-      left: 69px;
-      top: 10px;
-      bottom: -5px;
-      width: 1px;
-      background: #ddd5d7;
-    }
 
-    .event:last-child::before {
-      display: none;
-    }
+.app{
 
-    .time {
-      color: var(--bordo);
-      font-weight: 700;
-      font-size: 13px;
-      padding-top: 2px;
-    }
+  width:100%;
 
-    .event-info {
-      position: relative;
-      padding-left: 17px;
-    }
+  max-width:640px;
 
-    .event-info::before {
-      content: "";
-      width: 8px;
-      height: 8px;
-      background: var(--bordo);
-      border-radius: 50%;
-      position: absolute;
-      left: -8px;
-      top: 5px;
-    }
+  margin:0 auto;
 
-    .event-info strong {
-      display: block;
-      font-size: 14px;
-    }
+  background:#ffffff;
 
-    .event-info span {
-      display: block;
-      color: var(--gris);
-      font-size: 12px;
-      margin-top: 3px;
-      line-height: 1.4;
-    }
+  min-height:100vh;
 
-    /* GENERICO */
+}
 
-    .box {
-      background: white;
-      border: 1px solid var(--borde);
-      border-radius: 15px;
-      padding: 18px;
-      margin-bottom: 12px;
-    }
 
-    .box h3 {
-      margin: 0 0 8px;
-      font-size: 15px;
-    }
+/* =========================================================
+   HEADER
+========================================================= */
 
-    .box p {
-      margin: 0;
-      color: var(--gris);
-      font-size: 13px;
-      line-height: 1.55;
-    }
+.main-header{
 
-    .song {
-      background: white;
-      border: 1px solid var(--borde);
-      border-radius: 13px;
-      padding: 17px;
-      margin-bottom: 9px;
-      font-size: 14px;
-      font-weight: 600;
-    }
+  width:100%;
 
-    details {
-      background: white;
-      border: 1px solid var(--borde);
-      border-radius: 13px;
-      padding: 16px;
-      margin-bottom: 9px;
-    }
+  background:#6CA0B2;
 
-    summary {
-      font-size: 14px;
-      font-weight: 600;
-      cursor: pointer;
-    }
+  line-height:0;
 
-    details p {
-      color: var(--gris);
-      font-size: 12.5px;
-      line-height: 1.55;
-      margin: 12px 0 0;
-    }
+}
 
-    /* FOOTER */
 
-    footer {
-      text-align: center;
-      color: #999;
-      font-size: 10.5px;
-      line-height: 1.6;
-      padding: 28px 20px 38px;
-    }
+.main-header img{
 
-    @media (min-width: 700px) {
-      body {
-        padding: 25px 0;
-      }
+  display:block;
 
-      .app {
-        min-height: calc(100vh - 50px);
-        border-radius: 24px;
-        overflow: hidden;
-        box-shadow: 0 8px 40px rgba(0,0,0,.08);
-      }
-    }
-  </style>
+  width:100%;
+
+  height:auto;
+
+  border:0;
+
+}
+
+
+.event-band{
+
+  background:var(--bordo);
+
+  color:#ffffff;
+
+  text-align:center;
+
+  padding:14px 20px;
+
+  font-size:12px;
+
+  line-height:19px;
+
+  letter-spacing:1.1px;
+
+  font-weight:bold;
+
+}
+
+
+/* =========================================================
+   HOME
+========================================================= */
+
+.home-content{
+
+  padding:
+    30px
+    22px
+    35px;
+
+}
+
+
+.welcome{
+
+  margin:
+    0
+    0
+    26px;
+
+}
+
+
+.welcome h1{
+
+  margin:
+    0
+    0
+    8px;
+
+  color:var(--bordo);
+
+  font-size:21px;
+
+  line-height:27px;
+
+}
+
+
+.welcome p{
+
+  margin:0;
+
+  color:#666666;
+
+  font-size:14px;
+
+  line-height:21px;
+
+}
+
+
+.section-label{
+
+  color:var(--celeste);
+
+  font-size:11px;
+
+  line-height:16px;
+
+  font-weight:bold;
+
+  letter-spacing:1.4px;
+
+  margin:
+    0
+    0
+    10px;
+
+}
+
+
+/* =========================================================
+   MENÚ PRINCIPAL
+========================================================= */
+
+.menu{
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:9px;
+
+}
+
+
+.menu-button{
+
+  width:100%;
+
+  min-height:72px;
+
+  border:
+    1px
+    solid
+    var(--borde);
+
+  background:#ffffff;
+
+  border-radius:10px;
+
+  padding:
+    13px
+    15px;
+
+  display:flex;
+
+  align-items:center;
+
+  text-align:left;
+
+  cursor:pointer;
+
+  color:var(--texto);
+
+  transition:
+    transform .10s ease,
+    background .15s ease,
+    border-color .15s ease;
+
+}
+
+
+.menu-button:active{
+
+  transform:scale(.985);
+
+  background:#fafafa;
+
+}
+
+
+.menu-icon{
+
+  flex:
+    0
+    0
+    43px;
+
+  width:43px;
+
+  height:43px;
+
+  margin-right:14px;
+
+  border-radius:9px;
+
+  background:var(--celeste-claro);
+
+  color:var(--celeste);
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  font-size:21px;
+
+}
+
+
+.menu-copy{
+
+  flex:1;
+
+  min-width:0;
+
+}
+
+
+.menu-title{
+
+  display:block;
+
+  font-size:15px;
+
+  line-height:19px;
+
+  font-weight:bold;
+
+  color:#333333;
+
+  margin-bottom:3px;
+
+}
+
+
+.menu-description{
+
+  display:block;
+
+  font-size:12px;
+
+  line-height:17px;
+
+  color:#888888;
+
+}
+
+
+.menu-arrow{
+
+  flex:
+    0
+    0
+    20px;
+
+  text-align:right;
+
+  font-size:21px;
+
+  line-height:21px;
+
+  color:#bbbbbb;
+
+  margin-left:8px;
+
+}
+
+
+/* =========================================================
+   INFORMACIÓN IMPORTANTE
+========================================================= */
+
+.menu-button.important{
+
+  margin-top:7px;
+
+  background:var(--bordo-claro);
+
+  border-color:#efdce1;
+
+}
+
+
+.menu-button.important
+.menu-icon{
+
+  background:#ffffff;
+
+  color:var(--bordo);
+
+}
+
+
+.menu-button.important
+.menu-title{
+
+  color:var(--bordo);
+
+}
+
+
+/* =========================================================
+   PÁGINAS
+========================================================= */
+
+.page{
+
+  display:none;
+
+  background:#ffffff;
+
+  min-height:450px;
+
+}
+
+
+.page.active{
+
+  display:block;
+
+}
+
+
+.page-top{
+
+  padding:
+    19px
+    22px
+    21px;
+
+  border-bottom:
+    1px
+    solid
+    #eeeeee;
+
+  background:#ffffff;
+
+}
+
+
+.back-button{
+
+  border:0;
+
+  background:none;
+
+  padding:
+    7px
+    0;
+
+  margin:
+    0
+    0
+    13px;
+
+  color:var(--celeste);
+
+  font-size:12px;
+
+  letter-spacing:.4px;
+
+  font-weight:bold;
+
+  cursor:pointer;
+
+}
+
+
+.page-top h2{
+
+  margin:0;
+
+  color:var(--bordo);
+
+  font-size:24px;
+
+  line-height:30px;
+
+}
+
+
+.page-subtitle{
+
+  margin:
+    5px
+    0
+    0;
+
+  color:#888888;
+
+  font-size:13px;
+
+  line-height:19px;
+
+}
+
+
+.page-content{
+
+  padding:
+    25px
+    22px
+    40px;
+
+}
+
+
+/* =========================================================
+   CRONOGRAMA
+========================================================= */
+
+.date-label{
+
+  color:var(--celeste);
+
+  font-size:11px;
+
+  line-height:16px;
+
+  font-weight:bold;
+
+  letter-spacing:1.3px;
+
+  margin-bottom:20px;
+
+}
+
+
+.timeline-item{
+
+  display:grid;
+
+  grid-template-columns:
+    63px
+    1fr;
+
+  position:relative;
+
+  min-height:68px;
+
+}
+
+
+.timeline-time{
+
+  color:var(--bordo);
+
+  font-size:14px;
+
+  font-weight:bold;
+
+  padding-top:1px;
+
+}
+
+
+.timeline-info{
+
+  position:relative;
+
+  border-left:
+    1px
+    solid
+    #dddddd;
+
+  padding:
+    0
+    0
+    25px
+    20px;
+
+}
+
+
+.timeline-info::before{
+
+  content:"";
+
+  position:absolute;
+
+  width:9px;
+
+  height:9px;
+
+  background:var(--celeste);
+
+  border-radius:50%;
+
+  left:-5px;
+
+  top:3px;
+
+}
+
+
+.timeline-item:last-child
+.timeline-info{
+
+  border-left-color:transparent;
+
+}
+
+
+.timeline-info strong{
+
+  display:block;
+
+  font-size:14px;
+
+  line-height:19px;
+
+}
+
+
+.timeline-info span{
+
+  display:block;
+
+  color:#888888;
+
+  font-size:12px;
+
+  line-height:17px;
+
+  margin-top:3px;
+
+}
+
+
+/* =========================================================
+   TARJETAS DE CONTENIDO
+========================================================= */
+
+.content-card{
+
+  border:
+    1px
+    solid
+    var(--borde);
+
+  border-radius:9px;
+
+  padding:
+    17px
+    18px;
+
+  margin-bottom:10px;
+
+}
+
+
+.content-card h3{
+
+  margin:
+    0
+    0
+    7px;
+
+  color:#333333;
+
+  font-size:15px;
+
+  line-height:20px;
+
+}
+
+
+.content-card p{
+
+  margin:0;
+
+  color:#777777;
+
+  font-size:13px;
+
+  line-height:20px;
+
+}
+
+
+.content-card.accent{
+
+  background:var(--celeste-claro);
+
+  border:0;
+
+  border-left:
+    4px
+    solid
+    var(--celeste);
+
+  border-radius:0;
+
+}
+
+
+/* =========================================================
+   BOTONES DE CONTENIDO
+========================================================= */
+
+.content-button{
+
+  width:100%;
+
+  border:
+    1px
+    solid
+    var(--borde);
+
+  background:#ffffff;
+
+  padding:16px;
+
+  margin:
+    0
+    0
+    9px;
+
+  border-radius:9px;
+
+  text-align:left;
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  color:#333333;
+
+  font-size:14px;
+
+  line-height:19px;
+
+  font-weight:bold;
+
+  cursor:pointer;
+
+}
+
+
+.content-button-arrow{
+
+  color:#bbbbbb;
+
+  font-size:19px;
+
+  font-weight:normal;
+
+}
+
+
+/* =========================================================
+   CANCIONERO
+========================================================= */
+
+.song-title{
+
+  color:var(--bordo);
+
+  font-size:22px;
+
+  line-height:28px;
+
+  font-weight:bold;
+
+  margin:
+    0
+    0
+    22px;
+
+}
+
+
+.song-lyrics{
+
+  white-space:pre-line;
+
+  font-size:15px;
+
+  line-height:25px;
+
+  color:#444444;
+
+}
+
+
+.chorus{
+
+  color:var(--bordo);
+
+  font-weight:bold;
+
+}
+
+
+/* =========================================================
+   PLANO
+========================================================= */
+
+.map-placeholder{
+
+  background:var(--celeste-claro);
+
+  border:
+    1px
+    solid
+    #dcebed;
+
+  min-height:280px;
+
+  padding:
+    45px
+    25px;
+
+  text-align:center;
+
+  display:flex;
+
+  flex-direction:column;
+
+  align-items:center;
+
+  justify-content:center;
+
+}
+
+
+.map-icon{
+
+  font-size:43px;
+
+  color:var(--celeste);
+
+  margin-bottom:15px;
+
+}
+
+
+.map-placeholder strong{
+
+  font-size:16px;
+
+  color:#333333;
+
+}
+
+
+.map-placeholder p{
+
+  font-size:13px;
+
+  line-height:20px;
+
+  color:#777777;
+
+  max-width:300px;
+
+  margin:
+    10px
+    auto
+    0;
+
+}
+
+
+/* =========================================================
+   PREGUNTAS
+========================================================= */
+
+details{
+
+  border:
+    1px
+    solid
+    var(--borde);
+
+  border-radius:9px;
+
+  margin-bottom:9px;
+
+  padding:
+    15px
+    16px;
+
+}
+
+
+summary{
+
+  cursor:pointer;
+
+  font-size:14px;
+
+  line-height:20px;
+
+  font-weight:bold;
+
+}
+
+
+details p{
+
+  margin:
+    12px
+    0
+    0;
+
+  color:#777777;
+
+  font-size:13px;
+
+  line-height:20px;
+
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer{
+
+  background:#333333;
+
+  padding:
+    34px
+    25px
+    30px;
+
+  text-align:center;
+
+}
+
+
+.footer-logo{
+
+  display:block;
+
+  width:255px;
+
+  max-width:80%;
+
+  height:auto;
+
+  margin:0 auto;
+
+  border:0;
+
+}
+
+
+.socials{
+
+  display:flex;
+
+  justify-content:center;
+
+  align-items:center;
+
+  gap:19px;
+
+  margin-top:28px;
+
+}
+
+
+.social-link{
+
+  width:28px;
+
+  height:28px;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+}
+
+
+.social-link img{
+
+  display:block;
+
+  max-width:26px;
+
+  max-height:26px;
+
+  width:auto;
+
+  height:auto;
+
+  border:0;
+
+}
+
+
+.footer-divider{
+
+  width:100%;
+
+  border-top:
+    1px
+    solid
+    #666666;
+
+  margin:
+    27px
+    0
+    19px;
+
+}
+
+
+.footer-text{
+
+  color:#aaaaaa;
+
+  font-size:11px;
+
+  line-height:18px;
+
+}
+
+
+/* =========================================================
+   ESCRITORIO
+========================================================= */
+
+@media(min-width:700px){
+
+  body{
+
+    padding:
+      25px
+      0;
+
+  }
+
+
+  .app{
+
+    box-shadow:
+      0
+      5px
+      30px
+      rgba(0,0,0,.08);
+
+  }
+
+}
+
+</style>
+
 </head>
+
 
 <body>
 
+
 <div class="app">
 
-  <!-- ===================== -->
-  <!-- INICIO -->
-  <!-- ===================== -->
 
-  <div id="home">
+<!-- ======================================================
+     HEADER
+====================================================== -->
 
-    <header class="header">
+<header>
 
-      <div class="cross">✦</div>
+  <div class="main-header">
 
-      <div class="header-small">
-        Regnum Christi Argentina
-      </div>
-
-      <h1>
-        Visita del<br>
-        Papa León XIV
-      </h1>
-
-      <div class="header-date">
-        Buenos Aires · Domingo 8 de noviembre de 2026
-      </div>
-
-    </header>
-
-    <main class="content">
-
-      <div class="intro">
-        <strong>Bienvenidos al encuentro</strong>
-        <span>
-          Encontrá acá toda la información que necesitás
-          para vivir esta jornada junto al Santo Padre.
-        </span>
-      </div>
-
-      <div class="grid">
-
-        <button class="menu-card" onclick="openPage('cronograma')">
-          <div class="icon">◷</div>
-          <strong>Cronograma</strong>
-          <span>Horarios y actividades de la jornada</span>
-        </button>
-
-        <button class="menu-card" onclick="openPage('plano')">
-          <div class="icon">⌖</div>
-          <strong>Plano</strong>
-          <span>Ubicaciones y puntos importantes</span>
-        </button>
-
-        <button class="menu-card" onclick="openPage('misa')">
-          <div class="icon">✝</div>
-          <strong>Guía de la Misa</strong>
-          <span>Seguí la celebración desde acá</span>
-        </button>
-
-        <button class="menu-card" onclick="openPage('cancionero')">
-          <div class="icon">♫</div>
-          <strong>Cancionero</strong>
-          <span>Cantos para acompañar la celebración</span>
-        </button>
-
-        <button class="menu-card" onclick="openPage('actividades')">
-          <div class="icon">◇</div>
-          <strong>Actividades</strong>
-          <span>Propuestas y encuentros RC</span>
-        </button>
-
-        <button class="menu-card" onclick="openPage('preguntas')">
-          <div class="icon">?</div>
-          <strong>Preguntas</strong>
-          <span>Respuestas e información útil</span>
-        </button>
-
-      </div>
-
-      <div class="important" onclick="openPage('informacion')">
-
-        <div class="important-title">
-          Información importante →
-        </div>
-
-        <div class="important-text">
-          Recomendaciones, accesos, elementos permitidos
-          y datos útiles para el encuentro.
-        </div>
-
-      </div>
-
-    </main>
-
-    <footer>
-      REGNUM CHRISTI ARGENTINA<br>
-      VISITA DEL PAPA LEÓN XIV · 2026
-    </footer>
+    <img
+      src="assets/headerpapa.png"
+      alt="¡Bienvenido, Papa León! Peregrino de la Paz"
+    >
 
   </div>
 
 
-  <!-- ===================== -->
-  <!-- CRONOGRAMA -->
-  <!-- ===================== -->
+  <div class="event-band">
 
-  <section id="cronograma" class="page">
+    VISITA DEL PAPA LEÓN XIV A LA ARGENTINA
+    · 8–11 NOVIEMBRE 2026
 
-    <div class="page-header">
+  </div>
 
-      <button class="back" onclick="goHome()">
-        ← Inicio
-      </button>
+</header>
 
-      <h2>Cronograma</h2>
+
+
+<!-- ======================================================
+     INICIO
+====================================================== -->
+
+<main id="home">
+
+
+  <div class="home-content">
+
+
+    <div class="welcome">
+
+      <h1>
+        Vivamos juntos este encuentro
+      </h1>
 
       <p>
-        Horarios previstos para la jornada
+
+        Toda la información para acompañarnos
+        como comunidad y familia Regnum Christi
+        durante la visita del papa León XIV.
+
       </p>
 
     </div>
 
-    <div class="page-content">
 
-      <div class="day">
-        Domingo 8 de noviembre
-      </div>
 
-      <div class="timeline">
+    <div class="section-label">
 
-        <div class="event">
-          <div class="time">08:00</div>
-          <div class="event-info">
-            <strong>Apertura y acreditación</strong>
-            <span>Ingreso de los grupos de Regnum Christi</span>
-          </div>
-        </div>
-
-        <div class="event">
-          <div class="time">09:30</div>
-          <div class="event-info">
-            <strong>Encuentro RC</strong>
-            <span>Bienvenida y preparación para la jornada</span>
-          </div>
-        </div>
-
-        <div class="event">
-          <div class="time">11:00</div>
-          <div class="event-info">
-            <strong>Actividades</strong>
-            <span>Actividades por grupos</span>
-          </div>
-        </div>
-
-        <div class="event">
-          <div class="time">13:00</div>
-          <div class="event-info">
-            <strong>Almuerzo</strong>
-            <span>Horario estimado</span>
-          </div>
-        </div>
-
-        <div class="event">
-          <div class="time">15:00</div>
-          <div class="event-info">
-            <strong>Preparación</strong>
-            <span>Preparación para el encuentro con el Santo Padre</span>
-          </div>
-        </div>
-
-        <div class="event">
-          <div class="time">17:00</div>
-          <div class="event-info">
-            <strong>Santa Misa</strong>
-            <span>Celebración con el Papa León XIV</span>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="box">
-        <p>
-          Los horarios de esta versión son ilustrativos.
-          El cronograma definitivo será publicado cuando
-          se encuentre confirmado.
-        </p>
-      </div>
+      EVENTO RC · DOMINGO 8 DE NOVIEMBRE
 
     </div>
 
-  </section>
 
 
-  <!-- ===================== -->
-  <!-- PLANO -->
-  <!-- ===================== -->
+    <div class="menu">
 
-  <section id="plano" class="page">
 
-    <div class="page-header">
+      <!-- CRONOGRAMA -->
 
-      <button class="back" onclick="goHome()">
-        ← Inicio
+      <button
+        class="menu-button"
+        onclick="openPage('cronograma')"
+      >
+
+        <div class="menu-icon">
+          ◷
+        </div>
+
+        <div class="menu-copy">
+
+          <span class="menu-title">
+            Cronograma
+          </span>
+
+          <span class="menu-description">
+            Horarios y actividades del Evento RC
+          </span>
+
+        </div>
+
+        <div class="menu-arrow">
+          ›
+        </div>
+
       </button>
 
-      <h2>Plano</h2>
 
-      <p>Ubicate durante el encuentro</p>
 
-    </div>
+      <!-- PLANO -->
 
-    <div class="page-content">
+      <button
+        class="menu-button"
+        onclick="openPage('plano')"
+      >
 
-      <div class="box" style="text-align:center;padding:45px 20px;">
-
-        <div style="font-size:45px;color:#91152B;margin-bottom:15px;">
+        <div class="menu-icon">
           ⌖
         </div>
 
-        <h3>Plano del evento</h3>
+        <div class="menu-copy">
 
-        <p>
-          Acá incorporaremos el plano oficial del predio,
-          con accesos, sectores, baños, puestos sanitarios,
-          puntos de encuentro y demás ubicaciones importantes.
-        </p>
+          <span class="menu-title">
+            Plano
+          </span>
 
-      </div>
+          <span class="menu-description">
+            Ubicaciones y puntos de encuentro
+          </span>
 
-    </div>
+        </div>
 
-  </section>
+        <div class="menu-arrow">
+          ›
+        </div>
 
-
-  <!-- ===================== -->
-  <!-- MISA -->
-  <!-- ===================== -->
-
-  <section id="misa" class="page">
-
-    <div class="page-header">
-
-      <button class="back" onclick="goHome()">
-        ← Inicio
       </button>
 
-      <h2>Guía de la Misa</h2>
-
-      <p>Celebración Eucarística</p>
-
-    </div>
-
-    <div class="page-content">
-
-      <div class="box">
-        <h3>Ritos iniciales</h3>
-        <p>
-          Canto de entrada · Saludo · Acto penitencial · Gloria
-        </p>
-      </div>
-
-      <div class="box">
-        <h3>Liturgia de la Palabra</h3>
-        <p>
-          Primera lectura · Salmo · Segunda lectura · Evangelio · Homilía
-        </p>
-      </div>
-
-      <div class="box">
-        <h3>Liturgia Eucarística</h3>
-        <p>
-          Presentación de las ofrendas · Plegaria Eucarística · Comunión
-        </p>
-      </div>
-
-      <div class="box">
-        <h3>Ritos finales</h3>
-        <p>
-          Bendición · Despedida · Canto final
-        </p>
-      </div>
-
-    </div>
-
-  </section>
 
 
-  <!-- ===================== -->
-  <!-- CANCIONERO -->
-  <!-- ===================== -->
+      <!-- LECTURAS -->
 
-  <section id="cancionero" class="page">
+      <button
+        class="menu-button"
+        onclick="openPage('lecturas')"
+      >
 
-    <div class="page-header">
+        <div class="menu-icon">
+          ✝
+        </div>
 
-      <button class="back" onclick="goHome()">
-        ← Inicio
+        <div class="menu-copy">
+
+          <span class="menu-title">
+            Lecturas de la Misa
+          </span>
+
+          <span class="menu-description">
+            Lecturas, Evangelio y reflexión
+          </span>
+
+        </div>
+
+        <div class="menu-arrow">
+          ›
+        </div>
+
       </button>
 
-      <h2>Cancionero</h2>
-
-      <p>Cantos del encuentro</p>
-
-    </div>
-
-    <div class="page-content">
-
-      <div class="song">♫ Canto de entrada</div>
-      <div class="song">♫ Gloria</div>
-      <div class="song">♫ Aleluya</div>
-      <div class="song">♫ Ofertorio</div>
-      <div class="song">♫ Santo</div>
-      <div class="song">♫ Comunión</div>
-      <div class="song">♫ Canto final</div>
-
-    </div>
-
-  </section>
 
 
-  <!-- ===================== -->
-  <!-- ACTIVIDADES -->
-  <!-- ===================== -->
+      <!-- CANCIONERO -->
 
-  <section id="actividades" class="page">
+      <button
+        class="menu-button"
+        onclick="openPage('cancionero')"
+      >
 
-    <div class="page-header">
+        <div class="menu-icon">
+          ♫
+        </div>
 
-      <button class="back" onclick="goHome()">
-        ← Inicio
+        <div class="menu-copy">
+
+          <span class="menu-title">
+            Cancionero
+          </span>
+
+          <span class="menu-description">
+            Cantos para acompañar la celebración
+          </span>
+
+        </div>
+
+        <div class="menu-arrow">
+          ›
+        </div>
+
       </button>
 
-      <h2>Actividades</h2>
-
-      <p>Vivamos juntos esta jornada</p>
-
-    </div>
-
-    <div class="page-content">
-
-      <div class="box">
-        <h3>Actividades Regnum Christi</h3>
-        <p>
-          Acá podremos publicar las distintas actividades,
-          consignas y propuestas preparadas para cada grupo.
-        </p>
-      </div>
-
-      <div class="box">
-        <h3>Puntos de encuentro</h3>
-        <p>
-          También podremos indicar dónde debe reunirse
-          cada grupo durante la jornada.
-        </p>
-      </div>
-
-    </div>
-
-  </section>
 
 
-  <!-- ===================== -->
-  <!-- PREGUNTAS -->
-  <!-- ===================== -->
+      <!-- ACTIVIDADES -->
 
-  <section id="preguntas" class="page">
+      <button
+        class="menu-button"
+        onclick="openPage('actividades')"
+      >
 
-    <div class="page-header">
+        <div class="menu-icon">
+          ◇
+        </div>
 
-      <button class="back" onclick="goHome()">
-        ← Inicio
+        <div class="menu-copy">
+
+          <span class="menu-title">
+            Actividades
+          </span>
+
+          <span class="menu-description">
+            Propuestas para vivir juntos la jornada
+          </span>
+
+        </div>
+
+        <div class="menu-arrow">
+          ›
+        </div>
+
       </button>
 
-      <h2>Preguntas frecuentes</h2>
-
-      <p>Información para participar</p>
-
-    </div>
-
-    <div class="page-content">
-
-      <details>
-        <summary>¿A qué hora tengo que llegar?</summary>
-        <p>
-          El horario definitivo de ingreso se informará
-          antes del encuentro.
-        </p>
-      </details>
-
-      <details>
-        <summary>¿Qué tengo que llevar?</summary>
-        <p>
-          Publicaremos aquí las recomendaciones y los
-          elementos necesarios para la jornada.
-        </p>
-      </details>
-
-      <details>
-        <summary>¿Dónde me encuentro con mi grupo?</summary>
-        <p>
-          Los puntos de encuentro aparecerán en el plano
-          y en la sección Actividades.
-        </p>
-      </details>
-
-      <details>
-        <summary>¿Habrá puestos sanitarios?</summary>
-        <p>
-          La información correspondiente aparecerá en
-          el plano oficial del evento.
-        </p>
-      </details>
-
-      <details>
-        <summary>¿Cómo recibo novedades?</summary>
-        <p>
-          Toda actualización importante será publicada
-          en esta aplicación y por los canales oficiales
-          de Regnum Christi Argentina.
-        </p>
-      </details>
-
-    </div>
-
-  </section>
 
 
-  <!-- ===================== -->
-  <!-- INFORMACION -->
-  <!-- ===================== -->
+      <!-- REFLEXIONES -->
 
-  <section id="informacion" class="page">
+      <button
+        class="menu-button"
+        onclick="openPage('reflexiones')"
+      >
 
-    <div class="page-header">
+        <div class="menu-icon">
+          ✦
+        </div>
 
-      <button class="back" onclick="goHome()">
-        ← Inicio
+        <div class="menu-copy">
+
+          <span class="menu-title">
+            Reflexiones
+          </span>
+
+          <span class="menu-description">
+            Para preparar y acompañar el encuentro
+          </span>
+
+        </div>
+
+        <div class="menu-arrow">
+          ›
+        </div>
+
       </button>
 
-      <h2>Información importante</h2>
 
-      <p>Todo lo que necesitás saber</p>
+
+      <!-- AGENDA -->
+
+      <button
+        class="menu-button"
+        onclick="openPage('agenda')"
+      >
+
+        <div class="menu-icon">
+          ▣
+        </div>
+
+        <div class="menu-copy">
+
+          <span class="menu-title">
+            Agenda Oficial del Papa
+          </span>
+
+          <span class="menu-description">
+            Visita del papa León XIV a la Argentina
+          </span>
+
+        </div>
+
+        <div class="menu-arrow">
+          ›
+        </div>
+
+      </button>
+
+
+
+      <!-- INFORMACIÓN IMPORTANTE -->
+
+      <button
+        class="menu-button important"
+        onclick="openPage('informacion')"
+      >
+
+        <div class="menu-icon">
+          !
+        </div>
+
+        <div class="menu-copy">
+
+          <span class="menu-title">
+            Información Importante
+          </span>
+
+          <span class="menu-description">
+            Para los próximos días
+          </span>
+
+        </div>
+
+        <div class="menu-arrow">
+          ›
+        </div>
+
+      </button>
+
+
+
+      <!-- PREGUNTAS -->
+
+      <button
+        class="menu-button"
+        onclick="openPage('preguntas')"
+      >
+
+        <div class="menu-icon">
+          ?
+        </div>
+
+        <div class="menu-copy">
+
+          <span class="menu-title">
+            Preguntas
+          </span>
+
+          <span class="menu-description">
+            Preguntas frecuentes e información útil
+          </span>
+
+        </div>
+
+        <div class="menu-arrow">
+          ›
+        </div>
+
+      </button>
+
 
     </div>
 
-    <div class="page-content">
 
-      <div class="box">
-        <h3>Antes de salir</h3>
-        <p>
-          Revisá el cronograma y las recomendaciones
-          actualizadas antes de dirigirte al evento.
-        </p>
+  </div>
+
+
+</main>
+
+
+
+<!-- ======================================================
+     CRONOGRAMA
+====================================================== -->
+
+<section
+  id="cronograma"
+  class="page"
+>
+
+
+  <div class="page-top">
+
+    <button
+      class="back-button"
+      onclick="goHome()"
+    >
+      ← VOLVER
+    </button>
+
+
+    <h2>
+      Cronograma
+    </h2>
+
+
+    <p class="page-subtitle">
+      Evento Familia Regnum Christi
+    </p>
+
+  </div>
+
+
+
+  <div class="page-content">
+
+
+    <div class="date-label">
+
+      DOMINGO 8 DE NOVIEMBRE
+
+    </div>
+
+
+
+    <div class="timeline-item">
+
+      <div class="timeline-time">
+        11:00
       </div>
 
-      <div class="box">
-        <h3>Durante la jornada</h3>
-        <p>
-          Mantenete junto a tu grupo y seguí las indicaciones
-          de los voluntarios y del equipo de organización.
-        </p>
-      </div>
+      <div class="timeline-info">
 
-      <div class="box">
-        <h3>Actualizaciones</h3>
-        <p>
-          Esta aplicación será el punto de consulta para
-          información y novedades durante el encuentro.
-        </p>
+        <strong>
+          Salida de colectivos
+        </strong>
+
+        <span>
+          Núñez → Betania
+        </span>
+
       </div>
 
     </div>
 
-  </section>
+
+
+    <div class="timeline-item">
+
+      <div class="timeline-time">
+        12:00
+      </div>
+
+      <div class="timeline-info">
+
+        <strong>
+          Acreditación
+        </strong>
+
+        <span>
+          Ingreso y retiro de kits
+        </span>
+
+      </div>
+
+    </div>
+
+
+
+    <div class="timeline-item">
+
+      <div class="timeline-time">
+        12:30
+      </div>
+
+      <div class="timeline-info">
+
+        <strong>
+          Santa Misa
+        </strong>
+
+      </div>
+
+    </div>
+
+
+
+    <div class="timeline-item">
+
+      <div class="timeline-time">
+        13:30
+      </div>
+
+      <div class="timeline-info">
+
+        <strong>
+          Almuerzo
+        </strong>
+
+      </div>
+
+    </div>
+
+
+
+    <div class="timeline-item">
+
+      <div class="timeline-time">
+        15:00
+      </div>
+
+      <div class="timeline-info">
+
+        <strong>
+          Actividades
+        </strong>
+
+        <span>
+          Actividades para compartir
+          en familia y comunidad
+        </span>
+
+      </div>
+
+    </div>
+
+
+  </div>
+
+
+</section>
+
+
+
+<!-- ======================================================
+     PLANO
+====================================================== -->
+
+<section
+  id="plano"
+  class="page"
+>
+
+
+  <div class="page-top">
+
+    <button
+      class="back-button"
+      onclick="goHome()"
+    >
+      ← VOLVER
+    </button>
+
+
+    <h2>
+      Plano
+    </h2>
+
+
+    <p class="page-subtitle">
+      Evento Familia RC
+    </p>
+
+  </div>
+
+
+
+  <div class="page-content">
+
+
+    <div class="map-placeholder">
+
+      <div class="map-icon">
+        ⌖
+      </div>
+
+      <strong>
+        Plano del evento
+      </strong>
+
+      <p>
+
+        Próximamente vas a poder consultar
+        acá accesos, sectores, baños,
+        puestos sanitarios y puntos de encuentro.
+
+      </p>
+
+    </div>
+
+
+  </div>
+
+
+</section>
+
+
+
+<!-- ======================================================
+     LECTURAS DE LA MISA
+====================================================== -->
+
+<section
+  id="lecturas"
+  class="page"
+>
+
+
+  <div class="page-top">
+
+    <button
+      class="back-button"
+      onclick="goHome()"
+    >
+      ← VOLVER
+    </button>
+
+
+    <h2>
+      Lecturas de la Misa
+    </h2>
+
+
+    <p class="page-subtitle">
+      Domingo 8 de noviembre
+    </p>
+
+  </div>
+
+
+
+  <div class="page-content">
+
+
+    <button class="content-button">
+
+      1ra Lectura
+
+      <span class="content-button-arrow">
+        ›
+      </span>
+
+    </button>
+
+
+
+    <button class="content-button">
+
+      Salmo
+
+      <span class="content-button-arrow">
+        ›
+      </span>
+
+    </button>
+
+
+
+    <button class="content-button">
+
+      2da Lectura
+
+      <span class="content-button-arrow">
+        ›
+      </span>
+
+    </button>
+
+
+
+    <button class="content-button">
+
+      Evangelio
+
+      <span class="content-button-arrow">
+        ›
+      </span>
+
+    </button>
+
+
+
+    <button class="content-button">
+
+      Reflexión
+
+      <span class="content-button-arrow">
+        ›
+      </span>
+
+    </button>
+
+
+  </div>
+
+
+</section>
+
+
+
+<!-- ======================================================
+     CANCIONERO
+====================================================== -->
+
+<section
+  id="cancionero"
+  class="page"
+>
+
+
+  <div class="page-top">
+
+    <button
+      class="back-button"
+      onclick="goHome()"
+    >
+      ← VOLVER
+    </button>
+
+
+    <h2>
+      Cancionero
+    </h2>
+
+
+    <p class="page-subtitle">
+      Cantos de la Santa Misa
+    </p>
+
+  </div>
+
+
+
+  <div class="page-content">
+
+
+    <button
+      class="content-button"
+      onclick="openPage('venysigueme')"
+    >
+
+      Entrada
+
+      <span class="content-button-arrow">
+        ›
+      </span>
+
+    </button>
+
+
+
+    <button class="content-button">
+
+      Ofertorio
+
+      <span class="content-button-arrow">
+        ›
+      </span>
+
+    </button>
+
+
+
+    <button class="content-button">
+
+      Comunión
+
+      <span class="content-button-arrow">
+        ›
+      </span>
+
+    </button>
+
+
+
+    <button class="content-button">
+
+      Meditación
+
+      <span class="content-button-arrow">
+        ›
+      </span>
+
+    </button>
+
+
+
+    <button class="content-button">
+
+      Salida
+
+      <span class="content-button-arrow">
+        ›
+      </span>
+
+    </button>
+
+
+  </div>
+
+
+</section>
+
+
+
+<!-- ======================================================
+     CANCIÓN - VEN Y SÍGUEME
+====================================================== -->
+
+<section
+  id="venysigueme"
+  class="page"
+>
+
+
+  <div class="page-top">
+
+
+    <button
+      class="back-button"
+      onclick="openPage('cancionero')"
+    >
+      ← CANCIONERO
+    </button>
+
+
+    <h2>
+      Entrada
+    </h2>
+
+
+    <p class="page-subtitle">
+      Canto de entrada
+    </p>
+
+
+  </div>
+
+
+
+  <div class="page-content">
+
+
+    <div class="song-title">
+
+      VEN Y SÍGUEME
+
+    </div>
+
+
+    <div class="song-lyrics"><span class="chorus">Ven y sígueme,
+y mar adentro echa ya tus redes.
+Ven y yo te haré
+pescador de hombres.</span>
+
+En tus palabras echaré mis redes.
+Dejo mi barca y donde quieras iré.
+Tú me llamaste, Señor, por mi nombre
+y sólo a Ti, Señor, Señor, te seguiré.
+
+Te vi trabajar aquella noche
+en que fracasaste.
+Sé de tu dolor, de tu vergüenza
+y de tus fragilidades.</div>
+
+
+  </div>
+
+
+</section>
+
+
+
+<!-- ======================================================
+     ACTIVIDADES
+====================================================== -->
+
+<section
+  id="actividades"
+  class="page"
+>
+
+
+  <div class="page-top">
+
+    <button
+      class="back-button"
+      onclick="goHome()"
+    >
+      ← VOLVER
+    </button>
+
+
+    <h2>
+      Actividades
+    </h2>
+
+
+    <p class="page-subtitle">
+      Evento Familia RC
+    </p>
+
+  </div>
+
+
+
+  <div class="page-content">
+
+
+    <div class="content-card accent">
+
+      <h3>
+        Actividades del encuentro
+      </h3>
+
+      <p>
+
+        Próximamente publicaremos acá
+        las actividades preparadas para
+        compartir durante la jornada.
+
+      </p>
+
+    </div>
+
+
+  </div>
+
+
+</section>
+
+
+
+<!-- ======================================================
+     REFLEXIONES
+====================================================== -->
+
+<section
+  id="reflexiones"
+  class="page"
+>
+
+
+  <div class="page-top">
+
+    <button
+      class="back-button"
+      onclick="goHome()"
+    >
+      ← VOLVER
+    </button>
+
+
+    <h2>
+      Reflexiones
+    </h2>
+
+
+    <p class="page-subtitle">
+      Preparando nuestro corazón
+    </p>
+
+  </div>
+
+
+
+  <div class="page-content">
+
+
+    <div class="content-card accent">
+
+      <h3>
+        Para vivir este encuentro
+      </h3>
+
+      <p>
+
+        En este espacio compartiremos
+        reflexiones, textos y propuestas
+        para prepararnos para la visita
+        del Santo Padre.
+
+      </p>
+
+    </div>
+
+
+  </div>
+
+
+</section>
+
+
+
+<!-- ======================================================
+     AGENDA OFICIAL
+====================================================== -->
+
+<section
+  id="agenda"
+  class="page"
+>
+
+
+  <div class="page-top">
+
+    <button
+      class="back-button"
+      onclick="goHome()"
+    >
+      ← VOLVER
+    </button>
+
+
+    <h2>
+      Agenda Oficial del Papa
+    </h2>
+
+
+    <p class="page-subtitle">
+      8–11 noviembre 2026
+    </p>
+
+  </div>
+
+
+
+  <div class="page-content">
+
+
+    <div class="content-card">
+
+      <h3>
+        Agenda oficial
+      </h3>
+
+      <p>
+
+        La agenda completa de la visita
+        del papa León XIV será publicada
+        acá cuando se encuentre confirmada.
+
+      </p>
+
+    </div>
+
+
+  </div>
+
+
+</section>
+
+
+
+<!-- ======================================================
+     INFORMACIÓN IMPORTANTE
+====================================================== -->
+
+<section
+  id="informacion"
+  class="page"
+>
+
+
+  <div class="page-top">
+
+    <button
+      class="back-button"
+      onclick="goHome()"
+    >
+      ← VOLVER
+    </button>
+
+
+    <h2>
+      Información Importante
+    </h2>
+
+
+    <p class="page-subtitle">
+      Para los próximos días
+    </p>
+
+  </div>
+
+
+
+  <div class="page-content">
+
+
+    <div class="content-card accent">
+
+      <h3>
+        Mantenete informado
+      </h3>
+
+      <p>
+
+        En esta sección publicaremos
+        información, recomendaciones
+        y novedades importantes para
+        los próximos días de la visita.
+
+      </p>
+
+    </div>
+
+
+  </div>
+
+
+</section>
+
+
+
+<!-- ======================================================
+     PREGUNTAS
+====================================================== -->
+
+<section
+  id="preguntas"
+  class="page"
+>
+
+
+  <div class="page-top">
+
+    <button
+      class="back-button"
+      onclick="goHome()"
+    >
+      ← VOLVER
+    </button>
+
+
+    <h2>
+      Preguntas frecuentes
+    </h2>
+
+
+    <p class="page-subtitle">
+      Información útil
+    </p>
+
+  </div>
+
+
+
+  <div class="page-content">
+
+
+    <details>
+
+      <summary>
+        ¿Dónde salen los colectivos?
+      </summary>
+
+      <p>
+
+        Los colectivos partirán desde Núñez.
+        Próximamente informaremos
+        el punto exacto.
+
+      </p>
+
+    </details>
+
+
+
+    <details>
+
+      <summary>
+        ¿Dónde retiro mi kit?
+      </summary>
+
+      <p>
+
+        Los kits se entregarán
+        durante la acreditación
+        en Betania.
+
+      </p>
+
+    </details>
+
+
+
+    <details>
+
+      <summary>
+        ¿Qué tengo que llevar?
+      </summary>
+
+      <p>
+
+        Publicaremos acá las recomendaciones
+        para participar del encuentro.
+
+      </p>
+
+    </details>
+
+
+
+    <details>
+
+      <summary>
+        ¿Dónde puedo consultar novedades?
+      </summary>
+
+      <p>
+
+        Esta aplicación será uno
+        de los canales de información
+        durante la visita del Santo Padre.
+
+      </p>
+
+    </details>
+
+
+  </div>
+
+
+</section>
+
+
+
+<!-- ======================================================
+     FOOTER
+====================================================== -->
+
+<footer class="footer">
+
+
+  <img
+    class="footer-logo"
+    src="assets/logoregnumchristi.png"
+    alt="Regnum Christi"
+  >
+
+
+
+  <div class="socials">
+
+
+    <!-- INSTAGRAM ARGENTINA -->
+
+    <a
+      class="social-link"
+      href="https://www.instagram.com/regnumchristiargentina/"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Instagram Regnum Christi Argentina"
+    >
+
+      <img
+        src="assets/instagram2.png"
+        alt="Instagram"
+      >
+
+    </a>
+
+
+
+    <!-- INSTAGRAM CHILE -->
+
+    <a
+      class="social-link"
+      href="https://www.instagram.com/regnumchristichile/"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Instagram Regnum Christi Chile"
+    >
+
+      <img
+        src="assets/instagram2.png"
+        alt="Instagram Chile"
+      >
+
+    </a>
+
+
+
+    <!-- WHATSAPP -->
+
+    <a
+      class="social-link"
+      href="https://whatsapp.com/channel/0029Vb8ufeeCMY0R5zcwej0b"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Canal de WhatsApp"
+    >
+
+      <img
+        src="assets/whatsapp2.png"
+        alt="WhatsApp"
+      >
+
+    </a>
+
+
+
+    <!-- EMAIL -->
+
+    <a
+      class="social-link"
+      href="mailto:inscripcionesvisitapapa@regnumchristi.ar"
+      aria-label="Enviar email"
+    >
+
+      <img
+        src="assets/sobre.png"
+        alt="Email"
+      >
+
+    </a>
+
+
+  </div>
+
+
+
+  <div class="footer-divider"></div>
+
+
+
+  <div class="footer-text">
+
+    Regnum Christi Argentina
+
+    <br>
+
+    Visita del papa León XIV · Argentina 2026
+
+  </div>
+
+
+</footer>
+
 
 </div>
 
 
+
 <script>
 
-  function openPage(id) {
+/* =========================================================
+   NAVEGACIÓN
+========================================================= */
 
-    document.getElementById("home").style.display = "none";
 
-    document.querySelectorAll(".page").forEach(function(page) {
+function hideAllPages(){
+
+  document
+    .querySelectorAll(".page")
+    .forEach(function(page){
+
       page.classList.remove("active");
+
     });
 
-    document.getElementById(id).classList.add("active");
+}
 
-    window.scrollTo({
-      top: 0,
-      behavior: "instant"
-    });
+
+
+function openPage(id){
+
+  document.getElementById("home").style.display="none";
+
+  hideAllPages();
+
+
+  const page=
+    document.getElementById(id);
+
+
+  if(page){
+
+    page.classList.add("active");
 
   }
 
 
-  function goHome() {
+  window.scrollTo({
 
-    document.querySelectorAll(".page").forEach(function(page) {
-      page.classList.remove("active");
-    });
+    top:0,
 
-    document.getElementById("home").style.display = "block";
+    left:0,
 
-    window.scrollTo({
-      top: 0,
-      behavior: "instant"
-    });
+    behavior:"instant"
 
-  }
+  });
+
+}
+
+
+
+function goHome(){
+
+  hideAllPages();
+
+
+  document.getElementById("home").style.display="block";
+
+
+  window.scrollTo({
+
+    top:0,
+
+    left:0,
+
+    behavior:"instant"
+
+  });
+
+}
 
 </script>
 
+
 </body>
+
 </html>
