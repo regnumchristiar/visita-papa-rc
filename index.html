@@ -284,6 +284,42 @@ button{
   color:var(--bordo);
 }
 
+/* BOTÓN PÁGINA OFICIAL */
+
+.menu-button.official{
+  border:1px solid #e5dfd4;
+  border-left:4px solid #c9bca8;
+  background:#f5f0e7;
+}
+
+.menu-button.official:active{
+  background:#eee7dc;
+}
+
+.menu-button.official .official-icon{
+  background:#fff;
+  padding:6px;
+  overflow:hidden;
+}
+
+.menu-button.official .official-icon img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+}
+
+.menu-button.official .menu-title{
+  color:#4b4741;
+}
+
+.menu-button.official .menu-description{
+  color:#817a70;
+}
+
+.menu-button.official .menu-arrow{
+  color:#9a9185;
+}
 
 /* =========================================================
    ICONOS CSS
@@ -1634,6 +1670,36 @@ details p{
 
     </button>
 
+    <a
+  class="menu-button official"
+  href="https://www.elpapaenargentina.com.ar/"
+  target="_blank"
+  rel="noopener noreferrer"
+  style="text-decoration:none;"
+>
+
+  <div class="menu-icon official-icon">
+    <img
+      src="assets/icono-pagina-oficial.png"
+      alt=""
+    >
+  </div>
+
+  <div class="menu-copy">
+
+    <span class="menu-title">
+      Página oficial
+    </span>
+
+    <span class="menu-description">
+      Bienvenidos Todos: Vayan y anuncien
+    </span>
+
+  </div>
+
+  <div class="menu-arrow">↗</div>
+
+</a>
 
     <button
       class="menu-button important"
