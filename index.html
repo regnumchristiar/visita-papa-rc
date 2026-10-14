@@ -609,6 +609,51 @@ button{
   line-height:17px;
 }
 
+/* Paradas del transporte */
+.timeline-stops{
+  list-style:none;
+  margin:9px 0 0;
+  padding:0;
+}
+.timeline-stops li{
+  position:relative;
+  padding:0 0 0 13px;
+  margin-bottom:3px;
+  color:#777;
+  font-size:12px;
+  line-height:18px;
+}
+.timeline-stops li::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:7px;
+  width:5px;
+  height:5px;
+  border-radius:50%;
+  background:#c8d9df;
+}
+.timeline-stops b{
+  color:#555;
+}
+
+/* Eventos RC destacados */
+.timeline-featured .timeline-info{
+  margin-bottom:22px;
+  padding:11px 14px 12px 18px;
+  border-left:4px solid var(--bordo);
+  background:var(--bordo-claro);
+}
+.timeline-featured .timeline-info::before{
+  display:none;
+}
+.timeline-featured .timeline-time{
+  padding-top:12px;
+}
+.timeline-featured .timeline-info strong{
+  color:var(--bordo);
+}
+  
 
 /* =========================================================
    PLANO
@@ -1771,68 +1816,98 @@ details p{
 <div class="page-content">
 
   <div class="date-label">
-    DOMINGO 8 DE NOVIEMBRE
+    DOMINGO 8 DE NOVIEMBRE · OAKHILL PILAR
   </div>
 
-
   <div class="timeline-item">
-
-    <div class="timeline-time">11:00</div>
-
+    <div class="timeline-time">10:30</div>
     <div class="timeline-info">
-      <strong>Salida de colectivos</strong>
-      <span>Núñez → Betania</span>
+      <strong>Salida de transporte</strong>
+      <span>Desde los cuatro puntos de encuentro:</span>
+      <ul class="timeline-stops">
+        <li><b>Betania</b> · Almagro</li>
+        <li><b>Facultad de Derecho</b> · Recoleta</li>
+        <li><b>Club Ciudad</b> · Núñez</li>
+        <li><b>Colegio Mano Amiga</b> · Fátima</li>
+      </ul>
     </div>
-
   </div>
 
-
-  <div class="timeline-item">
-
+  <div class="timeline-item timeline-featured">
     <div class="timeline-time">12:00</div>
-
     <div class="timeline-info">
-      <strong>Acreditación</strong>
-      <span>Ingreso y retiro de kits</span>
+      <strong>Evento RC Familias</strong>
+      <span>Oakhill Pilar</span>
     </div>
-
   </div>
 
+  <div class="timeline-item">
+    <div class="timeline-time">12:05</div>
+    <div class="timeline-info">
+      <strong>Acreditaciones y retiro de kits</strong>
+    </div>
+  </div>
 
   <div class="timeline-item">
-
-    <div class="timeline-time">12:30</div>
-
+    <div class="timeline-time">13:00</div>
     <div class="timeline-info">
       <strong>Santa Misa</strong>
     </div>
-
   </div>
 
-
   <div class="timeline-item">
-
-    <div class="timeline-time">13:30</div>
-
+    <div class="timeline-time">14:00</div>
     <div class="timeline-info">
       <strong>Almuerzo</strong>
+      <span>Foodtrucks · No incluido</span>
     </div>
-
   </div>
 
+  <div class="timeline-item">
+    <div class="timeline-time">15:00</div>
+    <div class="timeline-info">
+      <strong>Dinámicas</strong>
+    </div>
+  </div>
 
   <div class="timeline-item">
-
-    <div class="timeline-time">15:00</div>
-
+    <div class="timeline-time">17:00</div>
     <div class="timeline-info">
-      <strong>Actividades</strong>
-      <span>Actividades para compartir en familia y comunidad</span>
+      <strong>Vuelta de familias</strong>
+      <span>Regreso a los puntos de encuentro:</span>
+      <ul class="timeline-stops">
+        <li><b>Betania</b> · Almagro</li>
+        <li><b>Facultad de Derecho</b> · Recoleta</li>
+        <li><b>Club Ciudad</b> · Núñez</li>
+        <li><b>Colegio Mano Amiga</b> · Fátima</li>
+      </ul>
     </div>
+  </div>
 
+  <div class="timeline-item timeline-featured">
+    <div class="timeline-time">18:30</div>
+    <div class="timeline-info">
+      <strong>Evento RC Jóvenes</strong>
+      <span>Oakhill Pilar</span>
+    </div>
+  </div>
+
+  <div class="timeline-item">
+    <div class="timeline-time">22:30</div>
+    <div class="timeline-info">
+      <strong>Vuelta de jóvenes</strong>
+      <span>Regreso a los puntos de encuentro:</span>
+      <ul class="timeline-stops">
+        <li><b>Betania</b> · Almagro</li>
+        <li><b>Facultad de Derecho</b> · Recoleta</li>
+        <li><b>Club Ciudad</b> · Núñez</li>
+        <li><b>Colegio Mano Amiga</b> · Fátima</li>
+      </ul>
+    </div>
   </div>
 
 </div>
+
 
 </section>
 
