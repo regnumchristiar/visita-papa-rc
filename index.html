@@ -609,12 +609,15 @@ button{
   line-height:17px;
 }
 
+
 /* Paradas del transporte */
+
 .timeline-stops{
   list-style:none;
   margin:9px 0 0;
   padding:0;
 }
+
 .timeline-stops li{
   position:relative;
   padding:0 0 0 13px;
@@ -623,6 +626,7 @@ button{
   font-size:12px;
   line-height:18px;
 }
+
 .timeline-stops li::before{
   content:"";
   position:absolute;
@@ -633,27 +637,31 @@ button{
   border-radius:50%;
   background:#c8d9df;
 }
+
 .timeline-stops b{
   color:#555;
 }
 
-/* Eventos RC destacados */
+/* Evento RC destacado */
+
 .timeline-featured .timeline-info{
   margin-bottom:22px;
   padding:11px 14px 12px 18px;
   border-left:4px solid var(--bordo);
   background:var(--bordo-claro);
 }
+
 .timeline-featured .timeline-info::before{
   display:none;
 }
+
 .timeline-featured .timeline-time{
   padding-top:12px;
 }
+
 .timeline-featured .timeline-info strong{
   color:var(--bordo);
 }
-  
 
 /* =========================================================
    PLANO
@@ -1406,6 +1414,112 @@ button{
 
 
 /* =========================================================
+   AGENDA · ITEMS REGNUM CHRISTI
+========================================================= */
+
+.agenda-legend{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px 18px;
+  margin-bottom:24px;
+  color:#777;
+  font-size:11px;
+  line-height:16px;
+}
+
+.agenda-legend span{
+  display:flex;
+  align-items:center;
+  gap:7px;
+}
+
+.legend-papa::before{
+  content:"";
+  width:9px;
+  height:9px;
+  border-radius:50%;
+  background:var(--celeste);
+}
+
+.legend-rc::before{
+  content:"";
+  width:4px;
+  height:14px;
+  background:var(--bordo);
+}
+
+.rc-event .papal-time{
+  padding-top:12px;
+}
+
+.rc-event .papal-event-info{
+  min-height:auto;
+  margin:0 0 20px -1px;
+  padding:10px 14px 12px 16px;
+  border-left:4px solid var(--bordo);
+  background:#fff;
+  box-shadow:0 1px 6px rgba(0,0,0,.07);
+  border-radius:0 8px 8px 0;
+}
+
+.papal-event.rc-event:last-child .papal-event-info{
+  border-left-color:var(--bordo);
+}
+
+.rc-event .papal-event-info::before{
+  display:none;
+}
+
+.rc-event .rc-label{
+  display:block;
+  margin-bottom:3px;
+  color:var(--bordo);
+  font-size:9px;
+  line-height:13px;
+  font-weight:bold;
+  letter-spacing:1.1px;
+}
+
+.rc-event .papal-event-info strong{
+  color:#333;
+}
+
+.rc-stops{
+  list-style:none;
+  margin:7px 0 0;
+  padding:0;
+}
+
+.rc-stops li{
+  position:relative;
+  padding-left:12px;
+  color:#777;
+  font-size:12px;
+  line-height:19px;
+}
+
+.rc-stops li::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:7px;
+  width:5px;
+  height:5px;
+  border-radius:50%;
+  background:#d7b3ba;
+}
+
+.rc-stops b{
+  color:#555;
+}
+
+.papal-event-info small.rc-tag{
+  background:var(--bordo);
+  color:#fff;
+}
+
+
+/* =========================================================
    PREGUNTAS
 ========================================================= */
 
@@ -1705,9 +1819,9 @@ details p{
       <div class="menu-icon">▣</div>
 
       <div class="menu-copy">
-        <span class="menu-title">Agenda Oficial del Papa</span>
+        <span class="menu-title">Agenda Oficial y RC</span>
         <span class="menu-description">
-          Visita del papa León XIV a la Argentina
+          Minuto a minuto de la visita con Regnum Christi
         </span>
       </div>
 
@@ -1907,7 +2021,6 @@ details p{
   </div>
 
 </div>
-
 
 </section>
 
@@ -2860,10 +2973,10 @@ y de tus fragilidades.</div>
     ← VOLVER
   </button>
 
-  <h2>Agenda Oficial del Papa</h2>
+  <h2>Agenda Oficial y RC</h2>
 
   <p class="page-subtitle">
-    Visita del papa León XIV a la Argentina · 8–11 noviembre 2026
+    Minuto a minuto de la visita, con los puntos de encuentro de Regnum Christi
   </p>
 
 </div>
@@ -2912,95 +3025,129 @@ y de tus fragilidades.</div>
 
 <div class="page-content agenda-content">
 
+<div class="agenda-legend">
+  <span class="legend-papa">Agenda oficial del Papa</span>
+  <span class="legend-rc">Regnum Christi</span>
+</div>
+
 
 <!-- DOMINGO -->
 
 <div class="papal-day" id="agenda-domingo">
 
   <div class="papal-day-header">
-
     <div>
       <span class="papal-day-name">DOMINGO</span>
       <span class="papal-day-number">8</span>
       <span class="papal-day-month">NOVIEMBRE</span>
     </div>
-
-    <div class="papal-day-city">
-      BUENOS AIRES
-    </div>
-
+    <div class="papal-day-city">BUENOS AIRES · PILAR</div>
   </div>
 
+  <div class="papal-event rc-event">
+    <div class="papal-time">10:30</div>
+    <div class="papal-event-info">
+      <span class="rc-label">REGNUM CHRISTI</span>
+      <strong>Salida de transporte</strong>
+      <span>Desde los puntos de encuentro:</span>
+      <ul class="rc-stops">
+        <li><b>Betania</b> · Almagro</li>
+        <li><b>Facultad de Derecho</b> · Recoleta</li>
+        <li><b>Club Ciudad</b> · Núñez</li>
+        <li><b>Colegio Mano Amiga</b> · Fátima</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="papal-event rc-event">
+    <div class="papal-time">12:00</div>
+    <div class="papal-event-info">
+      <span class="rc-label">REGNUM CHRISTI</span>
+      <strong>Evento RC Familias</strong>
+      <span>Oakhill Pilar</span>
+    </div>
+  </div>
 
   <div class="papal-event">
-
     <div class="papal-time">16:30</div>
-
     <div class="papal-event-info">
       <strong>Llegada a Buenos Aires</strong>
       <span>Aeroparque Jorge Newbery</span>
       <small>ACOGIDA OFICIAL</small>
     </div>
-
   </div>
 
-
   <div class="papal-event">
-
     <div class="papal-time">17:00</div>
-
     <div class="papal-event-info">
-      <strong>
-        Visita al Monumento al General San Martín
-        y a los Ejércitos de la Independencia
-      </strong>
+      <strong>Visita al Monumento al General San Martín y a los Ejércitos de la Independencia</strong>
       <span>Plaza San Martín</span>
     </div>
-
   </div>
 
+  <div class="papal-event rc-event">
+    <div class="papal-time">17:00</div>
+    <div class="papal-event-info">
+      <span class="rc-label">REGNUM CHRISTI</span>
+      <strong>Vuelta de familias</strong>
+      <span>Regreso a los puntos de encuentro:</span>
+      <ul class="rc-stops">
+        <li><b>Betania</b> · Almagro</li>
+        <li><b>Facultad de Derecho</b> · Recoleta</li>
+        <li><b>Club Ciudad</b> · Núñez</li>
+        <li><b>Colegio Mano Amiga</b> · Fátima</li>
+      </ul>
+    </div>
+  </div>
 
   <div class="papal-event">
-
     <div class="papal-time">17:20</div>
-
     <div class="papal-event-info">
       <strong>Ceremonia de bienvenida</strong>
       <span>Casa Rosada</span>
     </div>
-
   </div>
 
-
   <div class="papal-event">
-
     <div class="papal-time">17:50</div>
-
     <div class="papal-event-info">
       <strong>Visita al Presidente de la República</strong>
     </div>
-
   </div>
 
-
   <div class="papal-event">
-
     <div class="papal-time">18:30</div>
-
     <div class="papal-event-info">
-      <strong>
-        Encuentro con las autoridades, la sociedad civil
-        y el cuerpo diplomático
-      </strong>
-      <span>
-        Palacio Libertad · Centro Cultural Domingo Faustino Sarmiento
-      </span>
+      <strong>Encuentro con las autoridades, la sociedad civil y el cuerpo diplomático</strong>
+      <span>Palacio Libertad · Centro Cultural Domingo Faustino Sarmiento</span>
     </div>
+  </div>
 
+  <div class="papal-event rc-event">
+    <div class="papal-time">18:30</div>
+    <div class="papal-event-info">
+      <span class="rc-label">REGNUM CHRISTI</span>
+      <strong>Evento RC Jóvenes</strong>
+      <span>Oakhill Pilar</span>
+    </div>
+  </div>
+
+  <div class="papal-event rc-event">
+    <div class="papal-time">22:30</div>
+    <div class="papal-event-info">
+      <span class="rc-label">REGNUM CHRISTI</span>
+      <strong>Vuelta de jóvenes</strong>
+      <span>Regreso a los puntos de encuentro:</span>
+      <ul class="rc-stops">
+        <li><b>Betania</b> · Almagro</li>
+        <li><b>Facultad de Derecho</b> · Recoleta</li>
+        <li><b>Club Ciudad</b> · Núñez</li>
+        <li><b>Colegio Mano Amiga</b> · Fátima</li>
+      </ul>
+    </div>
   </div>
 
 </div>
-
 
 
 <!-- LUNES -->
@@ -3008,104 +3155,76 @@ y de tus fragilidades.</div>
 <div class="papal-day" id="agenda-lunes">
 
   <div class="papal-day-header">
-
     <div>
       <span class="papal-day-name">LUNES</span>
       <span class="papal-day-number">9</span>
       <span class="papal-day-month">NOVIEMBRE</span>
     </div>
-
-    <div class="papal-day-city">
-      BUENOS AIRES · CLAYPOLE · BUENOS AIRES
-    </div>
-
+    <div class="papal-day-city">BUENOS AIRES · CLAYPOLE · BUENOS AIRES</div>
   </div>
 
+  <div class="papal-event rc-event">
+    <div class="papal-time">07:30</div>
+    <div class="papal-event-info">
+      <span class="rc-label">REGNUM CHRISTI</span>
+      <strong>Puntos de encuentro RC</strong>
+      <ul class="rc-stops">
+        <li><b>Parque Barrancas de Belgrano</b></li>
+        <li><b>Parque Thays</b> · Recoleta</li>
+      </ul>
+    </div>
+  </div>
 
   <div class="papal-event">
-
     <div class="papal-time">09:15</div>
-
     <div class="papal-event-info">
-      <strong>
-        Visita al personal y a los asistidos
-        del Pequeño Cottolengo Don Orione
-      </strong>
+      <strong>Visita al personal y a los asistidos del Pequeño Cottolengo Don Orione</strong>
       <span>Claypole</span>
     </div>
-
   </div>
 
-
   <div class="papal-event papal-event-featured">
-
     <div class="papal-time">11:30</div>
-
     <div class="papal-event-info">
       <strong>Santa Misa</strong>
       <span>Monumento de los Españoles</span>
+      <small class="rc-tag">PARTICIPA RC</small>
     </div>
-
   </div>
 
-
   <div class="papal-event">
-
     <div class="papal-time">16:10</div>
-
     <div class="papal-event-info">
       <strong>Encuentro con el mundo del trabajo</strong>
       <span>Universidad Católica Argentina</span>
     </div>
-
   </div>
 
-
   <div class="papal-event">
-
     <div class="papal-time">17:30</div>
-
     <div class="papal-event-info">
-      <strong>
-        Encuentro con los líderes de las comunidades cristianas
-        y de las tradiciones religiosas
-      </strong>
+      <strong>Encuentro con los líderes de las comunidades cristianas y de las tradiciones religiosas</strong>
       <span>Palacio San Martín</span>
     </div>
-
   </div>
 
-
   <div class="papal-event">
-
     <div class="papal-time">18:45</div>
-
     <div class="papal-event-info">
-      <strong>
-        Celebración de las Vísperas con el Episcopado Argentino
-        y los equipos sinodales
-      </strong>
-      <span>
-        Catedral Metropolitana de la Santísima Trinidad
-      </span>
+      <strong>Celebración de las Vísperas con el Episcopado Argentino y los equipos sinodales</strong>
+      <span>Catedral Metropolitana de la Santísima Trinidad</span>
     </div>
-
   </div>
 
-
   <div class="papal-event">
-
     <div class="papal-time">19:45</div>
-
     <div class="papal-event-info">
       <strong>Cena con los obispos</strong>
       <span>Arzobispado de Buenos Aires</span>
     </div>
-
   </div>
 
 </div>
-
 
 
 <!-- MARTES -->
@@ -3113,111 +3232,83 @@ y de tus fragilidades.</div>
 <div class="papal-day" id="agenda-martes">
 
   <div class="papal-day-header">
-
     <div>
       <span class="papal-day-name">MARTES</span>
       <span class="papal-day-number">10</span>
       <span class="papal-day-month">NOVIEMBRE</span>
     </div>
-
-    <div class="papal-day-city">
-      BUENOS AIRES · CÓRDOBA · BUENOS AIRES
-    </div>
-
+    <div class="papal-day-city">BUENOS AIRES · CÓRDOBA · BUENOS AIRES</div>
   </div>
 
-
   <div class="papal-event">
-
     <div class="papal-time">07:30</div>
-
     <div class="papal-event-info">
       <strong>Salida hacia Córdoba</strong>
       <span>Aeropuerto internacional de Buenos Aires</span>
     </div>
-
   </div>
-
 
   <div class="papal-event">
-
     <div class="papal-time">09:00</div>
-
     <div class="papal-event-info">
       <strong>Llegada a Córdoba</strong>
-      <span>
-        Aeropuerto Internacional Ingeniero Aeronáutico
-        Ambrosio Taravella
-      </span>
+      <span>Aeropuerto Internacional Ingeniero Aeronáutico Ambrosio Taravella</span>
     </div>
-
   </div>
 
-
   <div class="papal-event papal-event-featured">
-
     <div class="papal-time">10:00</div>
-
     <div class="papal-event-info">
       <strong>Santa Misa</strong>
       <span>Explanada de la Escuela de Aviación Militar</span>
     </div>
-
   </div>
 
-
   <div class="papal-event">
-
     <div class="papal-time">15:15</div>
-
     <div class="papal-event-info">
-      <strong>
-        Encuentro con los obispos, los sacerdotes, los diáconos,
-        los religiosos, las religiosas, los seminaristas
-        y los agentes pastorales
-      </strong>
+      <strong>Encuentro con los obispos, los sacerdotes, los diáconos, los religiosos, las religiosas, los seminaristas y los agentes pastorales</strong>
       <span>Catedral de Nuestra Señora de la Asunción</span>
     </div>
-
   </div>
 
-
   <div class="papal-event">
-
     <div class="papal-time">16:55</div>
-
     <div class="papal-event-info">
       <strong>Salida de Córdoba hacia Buenos Aires</strong>
     </div>
-
   </div>
 
+  <div class="papal-event rc-event">
+    <div class="papal-time">17:00</div>
+    <div class="papal-event-info">
+      <span class="rc-label">REGNUM CHRISTI</span>
+      <strong>Puntos de encuentro RC</strong>
+      <ul class="rc-stops">
+        <li><b>Parque Barrancas de Belgrano</b></li>
+        <li><b>Parque Thays</b> · Recoleta</li>
+      </ul>
+    </div>
+  </div>
 
   <div class="papal-event">
-
     <div class="papal-time">18:10</div>
-
     <div class="papal-event-info">
       <strong>Llegada a Buenos Aires</strong>
       <span>Aeroparque Jorge Newbery</span>
     </div>
-
   </div>
 
-
   <div class="papal-event papal-event-featured">
-
     <div class="papal-time">20:15</div>
-
     <div class="papal-event-info">
       <strong>Vigilia con los jóvenes</strong>
       <span>Monumento de los Españoles</span>
+      <small class="rc-tag">PARTICIPA RC</small>
     </div>
-
   </div>
 
 </div>
-
 
 
 <!-- MIÉRCOLES -->
@@ -3225,73 +3316,65 @@ y de tus fragilidades.</div>
 <div class="papal-day" id="agenda-miercoles">
 
   <div class="papal-day-header">
-
     <div>
       <span class="papal-day-name">MIÉRCOLES</span>
       <span class="papal-day-number">11</span>
       <span class="papal-day-month">NOVIEMBRE</span>
     </div>
-
-    <div class="papal-day-city">
-      BUENOS AIRES · LUJÁN · LIMA
-    </div>
-
+    <div class="papal-day-city">BUENOS AIRES · LUJÁN · LIMA</div>
   </div>
 
+  <div class="papal-event rc-event">
+    <div class="papal-time">04:00</div>
+    <div class="papal-event-info">
+      <span class="rc-label">REGNUM CHRISTI</span>
+      <strong>Salida de transporte</strong>
+      <span>Desde Oakhill Pilar hacia Luján</span>
+    </div>
+  </div>
 
   <div class="papal-event">
-
     <div class="papal-time">08:00</div>
-
     <div class="papal-event-info">
-      <strong>
-        Visita al Complejo Penitenciario Federal de Buenos Aires
-      </strong>
+      <strong>Visita al Complejo Penitenciario Federal de Buenos Aires</strong>
     </div>
-
   </div>
 
-
   <div class="papal-event papal-event-featured">
-
     <div class="papal-time">10:00</div>
-
     <div class="papal-event-info">
       <strong>Santa Misa</strong>
       <span>Plaza de la Basílica Nuestra Señora de Luján</span>
+      <small class="rc-tag">PARTICIPA RC</small>
     </div>
-
   </div>
 
+  <div class="papal-event rc-event">
+    <div class="papal-time">13:00</div>
+    <div class="papal-event-info">
+      <span class="rc-label">REGNUM CHRISTI</span>
+      <strong>Vuelta a Oakhill Pilar</strong>
+    </div>
+  </div>
 
   <div class="papal-event">
-
     <div class="papal-time">13:30</div>
-
     <div class="papal-event-info">
       <strong>Ceremonia de despedida</strong>
       <span>Aeropuerto Internacional Ministro Pistarini</span>
     </div>
-
   </div>
 
-
   <div class="papal-event">
-
     <div class="papal-time">14:00</div>
-
     <div class="papal-event-info">
       <strong>Salida hacia Lima</strong>
     </div>
-    
   </div>
-<br>
-<br>
-<br>
-<br>
-<br>
+
 </div>
 
+<div style="height:90px"></div>
 
 </div>
 
