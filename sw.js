@@ -1,4 +1,4 @@
-const CACHE_NAME = "visita-papa-rc-v1";
+const CACHE_NAME = "visita-papa-rc-v2";
 
 const FILES_TO_CACHE = [
   "./",
