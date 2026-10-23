@@ -734,6 +734,7 @@
     <div class="extra-grid">
      <label>Nombre *<input name="nombre" required maxlength="160" autocomplete="given-name"></label>
      <label>Apellido *<input name="apellido" required maxlength="160" autocomplete="family-name"></label>
+     <label>DNI / RUT *<input name="dni" type="text" inputmode="text" required maxlength="24" autocomplete="off" placeholder="Sin puntos ni guiones"></label>
      <label>Correo electrónico *<input name="mail" type="email" required maxlength="160" autocomplete="email"></label>
      <label>Localidad *<select name="localidad" required><option value="">Seleccionar...</option><option>Pilar</option><option>C.A.B.A.</option><option>Fátima</option><option>Betania</option><option>Chile</option><option>Salta</option><option>Otro</option></select></label>
      <label>Teléfono<input name="telefono" type="tel" maxlength="160" autocomplete="tel"></label>
@@ -744,8 +745,8 @@
   </section>
   <section id="panelExtras" class="extra-panel" hidden>
    <h2>Inscripciones extras</h2>
-   <p class="extra-muted">Buscá por nombre, apellido, correo o número EXTRA-0001. Los registros de esta sección no pertenecen a TODOS.</p>
-   <div class="search-row"><input id="extraBusqueda" class="extra-search" placeholder="Nombre, apellido, correo o EXTRA-0001" onkeydown="if(event.key==='Enter')rcBuscarExtras()"><button class="btn btn-primary" onclick="rcBuscarExtras()">BUSCAR</button></div>
+   <p class="extra-muted">Buscá por DNI/RUT, nombre, apellido, correo o número EXTRA-0001. Los registros de esta sección no pertenecen a TODOS.</p>
+   <div class="search-row"><input id="extraBusqueda" class="extra-search" placeholder="DNI/RUT, nombre, apellido, correo o EXTRA-0001" onkeydown="if(event.key==='Enter')rcBuscarExtras()"><button class="btn btn-primary" onclick="rcBuscarExtras()">BUSCAR</button></div>
    <div id="extraResultados" aria-live="polite"></div>
   </section>
   <div id="panelOriginal">
@@ -941,7 +942,7 @@ function rcRenderExtras(total){
  let html='<p class="extra-muted">'+total+' coincidencias'+(total>100?' (se muestran las primeras 100)':'')+'</p>';
  rcExtrasResultados.forEach(p=>{
   html+='<article class="extra-card"><h3>'+escapeHtml(p.nombre+' '+p.apellido)+'</h3>'+
-   '<div class="extra-muted"><strong>'+escapeHtml(p.registro)+'</strong> · '+escapeHtml(p.localidad)+' · '+escapeHtml(p.edad)+' años<br>'+escapeHtml(p.mail)+'<br>Alta: '+escapeHtml(p.fechaRegistro)+'</div>'+
+   '<div class="extra-muted"><strong>'+escapeHtml(p.registro)+'</strong> · DNI/RUT: '+escapeHtml(p.dni||'—')+' · '+escapeHtml(p.localidad)+' · '+escapeHtml(p.edad)+' años<br>'+escapeHtml(p.mail)+'<br>Alta: '+escapeHtml(p.fechaRegistro)+'</div>'+
    '<div class="meta"><span class="chip '+(p.pagado?'chip-paid':'chip-unpaid')+'">'+(p.pagado?'✓ PAGADO':'PAGO PENDIENTE')+'</span>'+
    (p.acreditado?'<span class="chip chip-accredited">✓ ACREDITADO</span>':'')+
    (p.kitEntregado?'<span class="chip chip-paid">✓ KIT ENTREGADO</span>':'')+'</div>'+
