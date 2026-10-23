@@ -1638,6 +1638,10 @@ details p{
 
 }
 
+
+/* Pantalla de consulta integrada */
+.rc-inscripcion-frame-wrap {width:100%;max-width:940px;margin:0 auto;padding:0 0 25px;}
+#rcInscripcionFrame {display:block;width:100%;min-height:440px;border:0;background:#f3f5f6;}
 </style>
 
 </head>
@@ -1699,6 +1703,16 @@ details p{
 
   <div class="menu">
 
+
+
+    <button class="menu-button" onclick="openPage('inscripcion')">
+      <div class="menu-icon" aria-hidden="true">✓</div>
+      <div class="menu-copy">
+        <span class="menu-title">Consultar mi inscripción</span>
+        <span class="menu-description">Eventos, colectivos y retiro del kit</span>
+      </div>
+      <div class="menu-arrow">›</div>
+    </button>
 
     <button
       class="menu-button"
@@ -1903,6 +1917,19 @@ details p{
 </div>
 
 </main>
+
+<!-- CONSULTA DE INSCRIPCIÓN · PANTALLA INTERNA -->
+<section id="inscripcion" class="page">
+  <div class="page-top">
+    <button class="back-button" onclick="openPage('home', false)">← VOLVER AL MENÚ</button>
+    <h2>Mi inscripción</h2>
+    <p class="page-subtitle">Consultá tus eventos, colectivos y kit RC</p>
+  </div>
+  <div class="rc-inscripcion-frame-wrap">
+    <iframe id="rcInscripcionFrame" title="Consulta de inscripción" src="inscripcion/?integrada=1" loading="lazy" scrolling="no"></iframe>
+  </div>
+</section>
+
 
 
 
@@ -4597,9 +4624,32 @@ if("serviceWorker" in navigator){
 
 }
 
+
+/* Ajusta la altura del formulario integrado sin scroll interno. */
+(function(){
+  const frame=document.getElementById('rcInscripcionFrame');
+  if(!frame)return;
+  frame.addEventListener('load',function(){
+    try {
+      const doc=frame.contentDocument;
+      if(!doc)return;
+      const resize=()=>{
+        const h=Math.max(doc.body.scrollHeight,doc.documentElement.scrollHeight);
+        frame.style.height=Math.max(440,h+12)+'px';
+      };
+      resize();
+      if(window.ResizeObserver){new ResizeObserver(resize).observe(doc.body);}
+      frame.contentWindow.addEventListener('resize',resize);
+    }catch(e){frame.style.height='1000px';}
+  });
+})();
+
 </script>
 
 
 </body>
 
 </html>
+
+
+
