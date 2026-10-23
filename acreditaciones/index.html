@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <base target="_top">
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover"
+  >
+
+  <title>Acreditación · Visita Papa León XIV</title>
+
+  <style>
+
+    :root {
+      --bordo: #91152B;
+      --azul: #6CA0B2;
+      --azul-claro: #EAF4F7;
+      --azul-medio: #D8EBF0;
+
+      --verde-claro: #EAF6EE;
+      --verde: #287A45;
+
+      --rojo-claro: #FFF0F1;
+      --rojo: #B42318;
+
+      --amarillo-claro: #FFF8E5;
+      --amarillo: #8A6100;
+
+      --gris-fondo: #F5F6F7;
+      --gris-borde: #D8DCDF;
+      --gris-texto: #666666;
+      --texto: #252525;
+
+      --sombra: 0 2px 10px rgba(0,0,0,.07);
+    }
+
+
+    /* =========================================================
+       BASE / SCROLL MOBILE
+       ========================================================= */
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      width: 100%;
+      min-height: 100%;
+      overflow-x: hidden;
+    }
+
+    body {
+      width: 100%;
+      min-height: 100%;
+
+      margin: 0;
+
+      overflow-x: hidden;
+
+      background: var(--gris-fondo);
+      color: var(--texto);
+
+      font-family: Arial, Helvetica, sans-serif;
+      -webkit-font-smoothing: antialiased;
+
+      /*
+       * Prioriza el desplazamiento vertical,
+       * especialmente al iniciar el gesto
+       * sobre una tarjeta.
+       */
+      touch-action: pan-y;
+
+      -webkit-overflow-scrolling: touch;
+    }
+
+    button,
+    input {
+      font: inherit;
+    }
+
+    /*
+     * Los botones también permiten iniciar
+     * un desplazamiento vertical.
+     */
+    button {
+      cursor: pointer;
+      touch-action: pan-y;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    input {
+      touch-action: manipulation;
+    }
+
+    /*
+     * Todas estas áreas deben dejar pasar
+     * inmediatamente el gesto vertical.
+     */
+    .container,
+    .results,
+    .group-box,
+    .group-header,
+    .person,
+    .person-top,
+    .meta,
+    .actions,
+    .accredited-info,
+    .group-action {
+      touch-action: pan-y;
+    }
+
+
+    /* =========================================================
+       HEADER
+       ========================================================= */
+
+    .header {
+      background: var(--bordo);
+      color: white;
+      padding: 20px 18px 22px;
+    }
+
+    .header-inner {
+      max-width: 1050px;
+      margin: auto;
+    }
+
+    .eyebrow {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.6px;
+      opacity: .85;
+      margin-bottom: 6px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 25px;
+      line-height: 1.15;
+    }
+
+    .subtitle {
+      margin-top: 6px;
+      font-size: 14px;
+      opacity: .88;
+    }
+
+
+    /* =========================================================
+       CONTENIDO
+       ========================================================= */
+
+    .container {
+      max-width: 1050px;
+      margin: auto;
+      padding: 18px;
+    }
+
+
+    /* =========================================================
+       BUSCADOR
+       ========================================================= */
+
+    .search-box {
+      background: white;
+      border-radius: 14px;
+      padding: 16px;
+      box-shadow: var(--sombra);
+    }
+
+    .search-label {
+      display: block;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .search-row {
+      display: flex;
+      gap: 8px;
+    }
+
+    .search-input {
+      width: 100%;
+      min-width: 0;
+      height: 50px;
+
+      padding: 0 14px;
+
+      border: 1px solid #C9CDD1;
+      border-radius: 9px;
+
+      font-size: 17px;
+      outline: none;
+    }
+
+    .search-input:focus {
+      border-color: var(--azul);
+      box-shadow: 0 0 0 3px rgba(108,160,178,.15);
+    }
+
+    .helper {
+      color: var(--gris-texto);
+      font-size: 12px;
+      margin-top: 9px;
+    }
+
+
+    /* =========================================================
+       BOTONES
+       ========================================================= */
+
+    .btn {
+      border: 0;
+      border-radius: 9px;
+
+      min-height: 46px;
+      padding: 0 17px;
+
+      font-weight: 700;
+      transition: .15s ease;
+    }
+
+    .btn:disabled {
+      cursor: default;
+      opacity: .65;
+    }
+
+    .btn-primary {
+      background: var(--bordo);
+      color: white;
+    }
+
+    .btn-primary:active {
+      transform: scale(.98);
+    }
+
+    /*
+     * Acreditación individual
+     */
+    .btn-blue {
+      background: var(--azul);
+      color: white;
+    }
+
+    /*
+     * Acreditación de grupo:
+     * azul más oscuro para diferenciarla.
+     */
+    .btn-group {
+      background: #356F82;
+      color: white;
+    }
+
+    .btn-light {
+      background: #E5E8EA;
+      color: #555;
+    }
+
+    .btn-danger-light {
+      background: var(--rojo-claro);
+      color: var(--rojo);
+    }
+
+    .search-btn {
+      height: 50px;
+      min-width: 105px;
+    }
+
+
+    /* =========================================================
+       LOADING / MENSAJES
+       ========================================================= */
+
+    .loading {
+      display: none;
+
+      padding: 28px 0;
+
+      text-align: center;
+      color: var(--gris-texto);
+    }
+
+    .spinner {
+      width: 28px;
+      height: 28px;
+
+      border: 3px solid #ddd;
+      border-top-color: var(--bordo);
+      border-radius: 50%;
+
+      margin: 0 auto 10px;
+
+      animation: spin .75s linear infinite;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .message {
+      display: none;
+
+      margin-top: 16px;
+
+      border-radius: 10px;
+      padding: 14px 15px;
+
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    .message-error {
+      display: block;
+      background: var(--rojo-claro);
+      color: var(--rojo);
+    }
+
+    .message-success {
+      display: block;
+      background: var(--verde-claro);
+      color: var(--verde);
+    }
+
+
+    /* =========================================================
+       RESULTADOS
+       ========================================================= */
+
+    .results {
+      margin-top: 18px;
+    }
+
+    .results-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+
+      gap: 15px;
+      margin-bottom: 12px;
+    }
+
+    .results-title {
+      font-size: 19px;
+      font-weight: 700;
+    }
+
+    .results-subtitle {
+      margin-top: 3px;
+      color: var(--gris-texto);
+      font-size: 13px;
+    }
+
+    .counter {
+      font-size: 12px;
+      color: var(--gris-texto);
+
+      text-align: right;
+      white-space: nowrap;
+    }
+
+
+    /* =========================================================
+       GRUPOS
+       ========================================================= */
+
+    .group-box {
+      position: relative;
+
+      background: white;
+
+      border: 1px solid var(--gris-borde);
+      border-radius: 14px;
+
+      margin-bottom: 15px;
+
+      /*
+       * IMPORTANTE:
+       * no usamos overflow:hidden porque puede
+       * interferir con el scroll táctil dentro
+       * del Web App en algunos teléfonos.
+       */
+
+      box-shadow: var(--sombra);
+    }
+
+    .group-header {
+      padding: 13px 15px;
+
+      background: #E3E6E8;
+
+      border-bottom: 1px solid var(--gris-borde);
+
+      /*
+       * Conservamos visualmente las esquinas
+       * superiores redondeadas sin overflow:hidden.
+       */
+      border-radius: 13px 13px 0 0;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      gap: 10px;
+    }
+
+    .group-register {
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .group-count {
+      color: var(--gris-texto);
+      font-size: 13px;
+    }
+
+
+    /* =========================================================
+       PERSONA
+       ========================================================= */
+
+    .person {
+      position: relative;
+
+      padding: 15px;
+
+      border-bottom: 1px solid var(--gris-borde);
+    }
+
+    .person.accredited {
+      background: var(--azul-claro);
+    }
+
+    .person-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+
+      gap: 12px;
+    }
+
+    .person-name {
+      font-size: 19px;
+      line-height: 1.2;
+      font-weight: 700;
+    }
+
+    /*
+     * Pack aumentado 1 punto.
+     */
+    .pack {
+      margin-top: 5px;
+
+      color: var(--gris-texto);
+
+      font-size: 14px;
+    }
+
+    /*
+     * DNI aumentado 1 punto.
+     */
+    .dni {
+      margin-top: 4px;
+
+      color: #777;
+
+      font-size: 13px;
+    }
+
+
+    /* =========================================================
+       CHIPS
+       ========================================================= */
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+
+      gap: 7px;
+      margin-top: 12px;
+    }
+
+    /*
+     * Edad / Remera / Pago / Acreditado:
+     * 13 px.
+     */
+    .chip {
+      background: #F0F2F3;
+
+      border-radius: 999px;
+
+      padding: 6px 10px;
+
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .chip-shirt {
+      background: #EEE9F2;
+    }
+
+    .chip-paid {
+      background: var(--verde-claro);
+      color: var(--verde);
+    }
+
+    .chip-unpaid {
+      background: var(--amarillo-claro);
+      color: var(--amarillo);
+    }
+
+    .chip-accredited {
+      background: var(--azul-medio);
+      color: #285B68;
+    }
+
+
+    /* =========================================================
+       ACCIONES
+       ========================================================= */
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .actions .btn {
+      min-height: 44px;
+    }
+
+    .accredited-info {
+      margin-top: 11px;
+
+      color: #285B68;
+
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .group-action {
+      padding: 14px 15px;
+
+      background: #FAFAFA;
+
+      border-top: 1px solid var(--gris-borde);
+
+      /*
+       * Como ya no usamos overflow:hidden
+       * en group-box, redondeamos acá las
+       * esquinas inferiores.
+       */
+      border-radius: 0 0 13px 13px;
+    }
+
+    .group-action .btn {
+      width: 100%;
+      min-height: 50px;
+    }
+
+
+    /* =========================================================
+       SIN RESULTADOS
+       ========================================================= */
+
+    .empty {
+      background: white;
+
+      border-radius: 14px;
+
+      padding: 30px 20px;
+
+      text-align: center;
+      color: var(--gris-texto);
+
+      box-shadow: var(--sombra);
+    }
+
+    .footer-note {
+      text-align: center;
+
+      color: #999;
+
+      font-size: 11px;
+
+      padding: 18px 0 30px;
+    }
+
+
+    /* =========================================================
+       MOBILE
+       ========================================================= */
+
+    @media (max-width: 600px) {
+
+      .header {
+        padding-top: 17px;
+      }
+
+      h1 {
+        font-size: 22px;
+      }
+
+      .container {
+        padding: 12px;
+      }
+
+      .search-box {
+        padding: 13px;
+      }
+
+      .search-row {
+        display: block;
+      }
+
+      .search-btn {
+        width: 100%;
+        margin-top: 8px;
+      }
+
+      .results-header {
+        align-items: flex-start;
+      }
+
+      .counter {
+        white-space: normal;
+      }
+
+      .person-top {
+        display: block;
+      }
+
+      .actions {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+
+      .actions .btn {
+        width: 100%;
+      }
+    }
+
+    .pago-alerta{margin-top:12px;padding:13px;background:#fff0f1;border:2px solid #b42318;border-radius:9px;color:#b42318;font-size:14px;font-weight:800}
+  .group-buttons{display:grid;gap:8px}
+  .modal-eventos{border:0;border-radius:14px;max-width:min(550px,94vw);width:100%;padding:24px;box-shadow:0 15px 60px #0004}
+  .modal-eventos::backdrop{background:#0008}
+  .modal-eventos pre{white-space:pre-wrap;overflow-wrap:anywhere;font:14px/1.55 Arial,sans-serif}
+</style>
+</head>
+
+<body>
+
+<style>
+ body:not(.acceso-autorizado) > header, body:not(.acceso-autorizado) > main {display:none!important}
+ #pantallaAcceso {min-height:100vh;display:flex;align-items:center;justify-content:center;background:#f5f6f7;padding:24px;font-family:Arial,sans-serif}
+ body.acceso-autorizado #pantallaAcceso {display:none}
+ .acceso-tarjeta {background:white;max-width:420px;width:100%;padding:30px;border-radius:16px;box-shadow:0 4px 25px #0001;text-align:center}
+ .acceso-tarjeta h2 {color:#91152B;margin:8px 0 12px}
+ .acceso-tarjeta input {width:100%;padding:14px;border:1px solid #ccc;border-radius:8px;font-size:17px;margin:15px 0}
+ .acceso-tarjeta button {background:#91152B;color:white;border:0;border-radius:8px;padding:14px 20px;width:100%;font-weight:bold;cursor:pointer}
+ #errorAcceso {color:#b42318;min-height:22px;margin-top:12px;font-size:14px}
+</style>
+<div id="pantallaAcceso"><div class="acceso-tarjeta">
+ <div style="font-size:12px;letter-spacing:1px;color:#777">REGNUM CHRISTI ARGENTINA</div>
+ <h2>Acceso a Acreditaciones</h2>
+ <p>Ingresá la clave del equipo de acreditaciones.</p>
+ <form id="formAcceso" onsubmit="iniciarAcceso(event)">
+ <input id="claveAcceso" type="password" placeholder="Clave de acceso" autocomplete="off" required>
+ <button id="botonAcceso" type="submit">INGRESAR</button></form>
+ <div id="errorAcceso" role="alert"></div>
+</div></div>
+
+
+  <header class="header">
+
+    <div class="header-inner">
+
+      <div class="eyebrow">
+        REGNUM CHRISTI ARGENTINA
+      </div>
+
+      <h1>
+        Acreditación
+      </h1>
+
+      <div class="subtitle">
+        Visita del Papa León XIV
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <main class="container">
+
+    <section class="search-box">
+
+      <label
+        class="search-label"
+        for="busqueda"
+      >
+        DNI / RUT o apellido
+      </label>
+
+
+      <div class="search-row">
+
+        <input
+          id="busqueda"
+          class="search-input"
+          type="search"
+          autocomplete="off"
+          autocapitalize="words"
+          placeholder="Ej. 30123456 o Fernández"
+        >
+
+
+        <button
+          id="btnBuscar"
+          class="btn btn-primary search-btn"
+          onclick="buscar()"
+        >
+          BUSCAR
+        </button>
+
+      </div>
+
+
+      <div class="helper">
+        Por DNI/RUT se identifica la inscripción y su grupo familiar.
+        Por apellido se muestran las coincidencias y sus grupos familiares.
+      </div>
+
+    </section>
+
+
+    <div
+      id="mensaje"
+      class="message"
+    ></div>
+
+
+    <div
+      id="loading"
+      class="loading"
+    >
+
+      <div class="spinner"></div>
+
+      Buscando…
+
+    </div>
+
+
+    <section
+      id="resultados"
+      class="results"
+    ></section>
+
+
+    <div class="footer-note">
+      Sistema de acreditación · Regnum Christi Argentina
+    </div>
+
+  </main>
+
+
+<script>
+// REEMPLAZAR por la URL pública del Worker Cloudflare, sin barra final.
+const API_URL = 'https://acreditaciones-rc.delicate-sun-3691.workers.dev';
+let claveAcreditacion='',ultimaBusqueda='',ultimoResultado=null,ocupado=false;
+const $=id=>document.getElementById(id);
+async function api(action, data={}) {
+ const response=await fetch(API_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action,token:claveAcreditacion,...data})});
+ if(!response.ok)throw Error('Error HTTP '+response.status);
+ const res=await response.json();if(!res.ok)throw Error(res.mensaje||'Operación fallida');return res;
+}
+async function iniciarAcceso(event){event.preventDefault();const btn=$('botonAcceso');btn.disabled=true;$('errorAcceso').textContent='';
+ try{claveAcreditacion=$('claveAcceso').value.trim();await api('rcValidar');$('claveAcceso').value='';document.body.classList.add('acceso-autorizado');$('busqueda').focus();}
+ catch(e){claveAcreditacion='';$('errorAcceso').textContent=e.message;}finally{btn.disabled=false;}}
+$('busqueda').addEventListener('keydown',e=>{if(e.key==='Enter')buscar();});
+function escapeHtml(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+function nombre(p){return [p.nombre,p.apellido].filter(Boolean).join(' ');}
+function mostrarError(s){$('mensaje').className='message message-error';$('mensaje').textContent=s;}
+function mostrarExito(s){$('mensaje').className='message message-success';$('mensaje').textContent=s;}
+function limpiarMensaje(){$('mensaje').className='message';$('mensaje').textContent='';}
+async function buscar(){const t=$('busqueda').value.trim();if(!t)return mostrarError('Ingresá DNI/RUT o apellido.');ultimaBusqueda=t;limpiarMensaje();$('loading').style.display='block';$('resultados').innerHTML='';
+ try{ultimoResultado=await api('rcBuscar',{termino:t});renderResultados();}catch(e){mostrarError(e.message);}finally{$('loading').style.display='none';}}
+async function repetirBusqueda(){if(!ultimaBusqueda)return;try{ultimoResultado=await api('rcBuscar',{termino:ultimaBusqueda});renderResultados();}catch(e){mostrarError(e.message);}}
+function renderResultados(){const personas=ultimoResultado?.resultados||[];if(!personas.length){$('resultados').innerHTML='<div class="empty">No encontramos inscriptos.</div>';return;}
+ const groups=new Map();personas.forEach(p=>{if(!groups.has(p.nroRegistro))groups.set(p.nroRegistro,[]);groups.get(p.nroRegistro).push(p);});
+ const a=personas.filter(p=>p.acreditado).length,k=personas.filter(p=>p.kitEntregado).length;
+ let html=`<div class="results-header"><div><div class="results-title">${personas.length} resultados</div><div class="results-subtitle">${escapeHtml(ultimaBusqueda)}</div></div><div class="counter">${a} acreditados · ${k} kits</div></div>`;
+ for(const [reg,people] of groups)html+=renderGrupo(reg,people);
+ $('resultados').innerHTML=html;
+}
+function renderGrupo(reg,people){let h=`<div class="group-box"><div class="group-header"><span class="group-register">${escapeHtml(reg)}</span><span class="group-count">${people.length} personas</span></div>`;
+ people.forEach(p=>h+=renderPersona(p));
+ if(/^PACK(?:T)?3-/i.test(reg)&&people.length>1){
+  h+='<div class="group-action"><div class="group-buttons">';
+  if(people.some(p=>!p.pagado))h+=`<button class="btn btn-primary" onclick="operarGrupo('${escapeHtml(reg)}','pago')">REGISTRAR PAGOS PENDIENTES DEL GRUPO</button>`;
+  if(people.every(p=>p.pagado)){
+   if(people.some(p=>!p.acreditado))h+=`<button class="btn btn-group" onclick="operarGrupo('${escapeHtml(reg)}','acreditar')">ACREDITAR TODO EL GRUPO</button>`;
+   if(people.some(p=>!p.kitEntregado))h+=`<button class="btn btn-group" onclick="operarGrupo('${escapeHtml(reg)}','kit')">ENTREGAR KITS DEL GRUPO</button>`;
+  }h+='</div></div>';
+ }return h+'</div>';}
+function renderPersona(p){const id=Number(p.sheetRow);let h=`<div class="person ${p.acreditado?'accredited':''}"><div class="person-name">${escapeHtml(nombre(p))}</div><div class="pack">${escapeHtml(p.pack)}</div><div class="dni">DNI/RUT: ${escapeHtml(p.dni)}</div><div class="meta">`;
+ if(p.edad)h+=`<span class="chip">Edad: ${escapeHtml(p.edad)}</span>`;
+ if(p.remera)h+=`<span class="chip chip-shirt">Remera: ${escapeHtml(p.remera)}</span>`;
+ h+=`<span class="chip ${p.pagado?'chip-paid':'chip-unpaid'}">${p.pagado?'✓ PAGADO':'PAGO PENDIENTE'}</span>`;
+ if(p.acreditado)h+='<span class="chip chip-accredited">✓ ACREDITADO RC</span>';
+ if(p.kitEntregado)h+='<span class="chip chip-paid">✓ KIT ENTREGADO</span>';
+ h+='</div>';
+ if(!p.pagado)h+='<div class="pago-alerta">⚠️ PAGO PENDIENTE — DEBE PASAR POR ADMINISTRACIÓN</div>';
+ h+='<div class="actions">';
+ if(!p.pagado)h+=`<button class="btn btn-primary" onclick="operarUno(${id},'pago')">REGISTRAR PAGO</button>`;
+ else {
+  h+=`<button class="btn ${p.acreditado?'btn-danger-light':'btn-blue'}" onclick="operarUno(${id},'${p.acreditado?'desacreditar':'acreditar'}')">${p.acreditado?'DESHACER ACREDITACIÓN':'ACREDITAR EVENTO RC'}</button>`;
+  h+=`<button class="btn ${p.kitEntregado?'btn-danger-light':'btn-group'}" onclick="operarUno(${id},'${p.kitEntregado?'deshacerKit':'kit'}')">${p.kitEntregado?'DESHACER ENTREGA DE KIT':'ENTREGAR KIT'}</button>`;
+ }
+ h+=`<button class="btn btn-light" onclick="verEventos(${id})">VER EVENTOS Y COLECTIVOS</button></div>`;
+ if(p.acreditacion)h+=`<div class="accredited-info">Acreditación: ${escapeHtml(p.acreditacion)}</div>`;
+ if(p.retiroKit)h+=`<div class="accredited-info">Kit: ${escapeHtml(p.retiroKit)}</div>`;
+ return h+'</div>';}
+function personaPorFila(n){return ultimoResultado?.resultados?.find(p=>Number(p.sheetRow)===Number(n));}
+const acciones={pago:'REGISTRAR PAGO',acreditar:'ACREDITAR EVENTO RC',desacreditar:'DESHACER ACREDITACIÓN',kit:'ENTREGAR KIT',deshacerKit:'DESHACER ENTREGA DE KIT'};
+async function operarUno(n,operacion){const p=personaPorFila(n);if(p)await operar([p],operacion);}
+async function operarGrupo(reg,operacion){const ps=(ultimoResultado?.resultados||[]).filter(p=>p.nroRegistro===reg).filter(p=>operacion==='pago'?!p.pagado:operacion==='acreditar'?!p.acreditado:!p.kitEntregado);if(ps.length)await operar(ps,operacion);}
+async function operar(personas,operacion){if(ocupado)return;
+ if(!confirm(`¿${acciones[operacion]} a ${personas.length===1?nombre(personas[0]):personas.length+' integrantes'}?${operacion==='pago'?'\n\nConfirmá que el pago fue efectivamente recibido.':''}`))return;
+ ocupado=true;document.querySelectorAll('button').forEach(b=>b.disabled=true);limpiarMensaje();
+ try{await api('rcOperar',{operacion,personas:personas.map(p=>({sheetRow:p.sheetRow,dni:p.dni,nroRegistro:p.nroRegistro}))});await repetirBusqueda();mostrarExito(acciones[operacion]+' — operación registrada correctamente.');}
+ catch(e){mostrarError(e.message);await repetirBusqueda();}finally{ocupado=false;document.querySelectorAll('button').forEach(b=>{if(!b.closest('#pantallaAcceso'))b.disabled=false;});}}
+function verEventos(n){const p=personaPorFila(n);if(!p)return;
+ const c=p.confirmaciones||{};const lines=Object.entries(c).filter(([_,v])=>v&&String(v).trim()).map(([k,v])=>`${k}: ${v}`);
+ $('modalTitulo').textContent='Eventos y colectivos · '+nombre(p);
+ $('modalContenido').textContent='EVENTOS INSCRIPTOS\n'+(p.eventos||'Sin información')+'\n\nTRAYECTOS SOLICITADOS\n'+(p.trayectos||'Sin información')+'\n\nCONFIRMACIONES DE COLECTIVOS\n'+(lines.length?lines.join('\n'):'Sin confirmaciones registradas');
+ $('modalEventos').showModal();}
+
+</script>
+
+<dialog id="modalEventos" class="modal-eventos"><h2 id="modalTitulo">Eventos y colectivos</h2><pre id="modalContenido"></pre><form method="dialog"><button class="btn btn-primary" style="width:100%">CERRAR</button></form></dialog>
+</body>
+</html> 
