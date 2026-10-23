@@ -674,6 +674,21 @@
  .acceso-tarjeta input {width:100%;padding:14px;border:1px solid #ccc;border-radius:8px;font-size:17px;margin:15px 0}
  .acceso-tarjeta button {background:#91152B;color:white;border:0;border-radius:8px;padding:14px 20px;width:100%;font-weight:bold;cursor:pointer}
  #errorAcceso {color:#b42318;min-height:22px;margin-top:12px;font-size:14px}
+
+/* Módulo Extras */
+.rc-tabs{display:flex;gap:7px;flex-wrap:wrap;margin:0 0 18px}
+.rc-tabs button{flex:1;min-width:130px;padding:12px 8px;border:1px solid #d5e0e5;border-radius:9px;background:#eaf2f5;color:#356f82;font-weight:800;cursor:pointer}
+.rc-tabs button.active{background:#91152b;color:#fff;border-color:#91152b}
+.extra-panel{background:#fff;border:1px solid #dfe4e7;border-radius:12px;padding:20px;margin-bottom:18px}
+.extra-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
+.extra-grid label{display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:700;color:#465560}
+.extra-grid input,.extra-grid select,.extra-search{width:100%;min-width:0;border:1px solid #bdc9d0;border-radius:8px;padding:12px;font-size:16px;background:#fff}
+.extra-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.extra-actions button{flex:1;min-width:140px}
+.extra-card{background:#fff;border:1px solid #dce4e8;border-radius:12px;padding:17px;margin:12px 0}
+.extra-card h3{margin:0 0 7px;color:#91152b}
+.extra-muted{font-size:13px;color:#64717a;line-height:1.55}
+@media(max-width:540px){.extra-grid{grid-template-columns:1fr}}
 </style>
 <div id="pantallaAcceso"><div class="acceso-tarjeta">
  <div style="font-size:12px;letter-spacing:1px;color:#777">REGNUM CHRISTI ARGENTINA</div>
@@ -708,6 +723,32 @@
 
 
   <main class="container">
+  <nav class="rc-tabs" aria-label="Secciones de acreditación">
+   <button type="button" id="tabOriginal" class="active" onclick="rcTab('original')">🔎 BUSCAR INSCRIPTOS</button>
+   <button type="button" id="tabAgregar" onclick="rcTab('agregar')">➕ AGREGAR EXTRA</button>
+   <button type="button" id="tabExtras" onclick="rcTab('extras')">👥 INSCRIPCIONES EXTRAS</button>
+  </nav>
+  <section id="panelAgregar" class="extra-panel" hidden>
+   <h2>Agregar inscripción extra</h2><p class="extra-muted">Registro independiente de TODOS. El pago, la acreditación y el kit se registran luego desde la pestaña Extras.</p>
+   <form id="formExtra" onsubmit="rcCrearExtra(event)">
+    <div class="extra-grid">
+     <label>Nombre *<input name="nombre" required maxlength="160" autocomplete="given-name"></label>
+     <label>Apellido *<input name="apellido" required maxlength="160" autocomplete="family-name"></label>
+     <label>Correo electrónico *<input name="mail" type="email" required maxlength="160" autocomplete="email"></label>
+     <label>Localidad *<select name="localidad" required><option value="">Seleccionar...</option><option>Pilar</option><option>C.A.B.A.</option><option>Fátima</option><option>Betania</option><option>Chile</option><option>Salta</option><option>Otro</option></select></label>
+     <label>Teléfono<input name="telefono" type="tel" maxlength="160" autocomplete="tel"></label>
+     <label>Fecha de nacimiento *<input name="fechaNacimiento" type="date" required></label>
+    </div>
+    <div class="extra-actions"><button type="submit" class="btn btn-primary" id="btnGuardarExtra">GUARDAR INSCRIPCIÓN EXTRA</button></div>
+   </form><div id="extraAltaMensaje" aria-live="polite"></div>
+  </section>
+  <section id="panelExtras" class="extra-panel" hidden>
+   <h2>Inscripciones extras</h2>
+   <p class="extra-muted">Buscá por nombre, apellido, correo o número EXTRA-0001. Los registros de esta sección no pertenecen a TODOS.</p>
+   <div class="search-row"><input id="extraBusqueda" class="extra-search" placeholder="Nombre, apellido, correo o EXTRA-0001" onkeydown="if(event.key==='Enter')rcBuscarExtras()"><button class="btn btn-primary" onclick="rcBuscarExtras()">BUSCAR</button></div>
+   <div id="extraResultados" aria-live="polite"></div>
+  </section>
+  <div id="panelOriginal">
 
     <section class="search-box">
 
@@ -774,6 +815,7 @@
     ></section>
 
 
+    </div><!-- panelOriginal -->
     <div class="footer-note">
       Sistema de acreditación · Regnum Christi Argentina
     </div>
@@ -864,6 +906,63 @@ function verEventos(n){
  '<p class="rc-muted">Lunes y martes no hay colectivos de Regnum Christi programados.</p>'+
  '<h3 class="rc-section">👕 Kit RC</h3>'+rcLinea('Talle de remera',escapeHtml(k.talle||'Sin talle registrado'))+rcLinea('Retiro del kit',kit);
  $('modalEventos').showModal();
+}
+
+
+// ===== INSCRIPCIONES EXTRAS: base independiente =====
+let rcExtrasUltima='',rcExtrasResultados=[],rcExtraBusy=false;
+function rcTab(tab){
+ const keys=['original','agregar','extras'];
+ keys.forEach(k=>{const el=document.getElementById(k==='original'?'panelOriginal':k==='agregar'?'panelAgregar':'panelExtras');el.hidden=k!==tab;});
+ [['tabOriginal','original'],['tabAgregar','agregar'],['tabExtras','extras']].forEach(([id,k])=>$(id).classList.toggle('active',k===tab));
+ limpiarMensaje();
+}
+async function rcCrearExtra(ev){
+ ev.preventDefault();if(rcExtraBusy)return;
+ const form=$('formExtra'),d=Object.fromEntries(new FormData(form).entries());
+ if(!confirm('¿Guardar inscripción EXTRA de '+d.nombre+' '+d.apellido+'?\n\nSe incorporará exclusivamente a INSCRIPCIONES EXTRAS.'))return;
+ rcExtraBusy=true;$('btnGuardarExtra').disabled=true;$('extraAltaMensaje').textContent='Guardando...';
+ try{
+  const res=await api('rcExtraRegistrar',d);
+  $('extraAltaMensaje').innerHTML='<div class="message message-success">✓ Inscripción extra registrada: <strong>'+escapeHtml(res.persona.registro)+'</strong></div>';
+  form.reset();$('extraBusqueda').value=res.persona.registro;rcExtrasUltima=res.persona.registro;
+  await rcBuscarExtras();rcTab('extras');
+ }catch(e){$('extraAltaMensaje').textContent=e.message;}
+ finally{rcExtraBusy=false;$('btnGuardarExtra').disabled=false;}
+}
+async function rcBuscarExtras(){
+ const term=$('extraBusqueda').value.trim();if(term.length<2){$('extraResultados').textContent='Ingresá al menos 2 caracteres.';return;}
+ rcExtrasUltima=term;$('extraResultados').textContent='Buscando...';
+ try{const res=await api('rcExtraBuscar',{termino:term});rcExtrasResultados=res.resultados||[];rcRenderExtras(res.total||0);}
+ catch(e){$('extraResultados').textContent=e.message;}
+}
+function rcRenderExtras(total){
+ if(!rcExtrasResultados.length){$('extraResultados').innerHTML='<p class="extra-muted">No se encontraron inscripciones extras.</p>';return;}
+ let html='<p class="extra-muted">'+total+' coincidencias'+(total>100?' (se muestran las primeras 100)':'')+'</p>';
+ rcExtrasResultados.forEach(p=>{
+  html+='<article class="extra-card"><h3>'+escapeHtml(p.nombre+' '+p.apellido)+'</h3>'+
+   '<div class="extra-muted"><strong>'+escapeHtml(p.registro)+'</strong> · '+escapeHtml(p.localidad)+' · '+escapeHtml(p.edad)+' años<br>'+escapeHtml(p.mail)+'<br>Alta: '+escapeHtml(p.fechaRegistro)+'</div>'+
+   '<div class="meta"><span class="chip '+(p.pagado?'chip-paid':'chip-unpaid')+'">'+(p.pagado?'✓ PAGADO':'PAGO PENDIENTE')+'</span>'+
+   (p.acreditado?'<span class="chip chip-accredited">✓ ACREDITADO</span>':'')+
+   (p.kitEntregado?'<span class="chip chip-paid">✓ KIT ENTREGADO</span>':'')+'</div>'+
+   (!p.pagado?'<div class="pago-alerta">⚠️ PAGO PENDIENTE — DEBE PASAR POR ADMINISTRACIÓN</div>':'')+
+   '<div class="extra-actions">';
+  if(!p.pagado)html+='<button class="btn btn-primary" onclick="rcOperarExtra('+p.sheetRow+',\'pago\')">REGISTRAR PAGO</button>';
+  else{
+   html+='<button class="btn '+(p.acreditado?'btn-danger-light':'btn-blue')+'" onclick="rcOperarExtra('+p.sheetRow+',\''+(p.acreditado?'desacreditar':'acreditar')+'\')">'+(p.acreditado?'DESHACER ACREDITACIÓN':'ACREDITAR EVENTO RC')+'</button>';
+   html+='<button class="btn '+(p.kitEntregado?'btn-danger-light':'btn-group')+'" onclick="rcOperarExtra('+p.sheetRow+',\''+(p.kitEntregado?'deshacerKit':'kit')+'\')">'+(p.kitEntregado?'DESHACER ENTREGA DE KIT':'ENTREGAR KIT')+'</button>';
+  }
+  html+='</div>'+(p.acreditacion?'<div class="extra-muted">Acreditación: '+escapeHtml(p.acreditacion)+'</div>':'')+(p.retiroKit?'<div class="extra-muted">Kit: '+escapeHtml(p.retiroKit)+'</div>':'')+'</article>';
+ });$('extraResultados').innerHTML=html;
+}
+async function rcOperarExtra(row,op){
+ if(rcExtraBusy)return;const p=rcExtrasResultados.find(x=>x.sheetRow===row);if(!p)return;
+ const labels={pago:'REGISTRAR PAGO',acreditar:'ACREDITAR EVENTO RC',desacreditar:'DESHACER ACREDITACIÓN',kit:'ENTREGAR KIT',deshacerKit:'DESHACER ENTREGA DE KIT'};
+ if(!confirm('¿'+labels[op]+' para '+p.nombre+' '+p.apellido+' ('+p.registro+')?'+(op==='pago'?'\n\nConfirmá que recibiste el pago.':'')))return;
+ rcExtraBusy=true;document.querySelectorAll('#panelExtras button').forEach(b=>b.disabled=true);
+ try{await api('rcExtraOperar',{sheetRow:row,registro:p.registro,operacion:op});await rcBuscarExtras();}
+ catch(e){alert(e.message);}
+ finally{rcExtraBusy=false;document.querySelectorAll('#panelExtras button').forEach(b=>b.disabled=false);}
 }
 
 </script>
