@@ -652,6 +652,14 @@
   .modal-eventos{border:0;border-radius:14px;max-width:min(550px,94vw);width:100%;padding:24px;box-shadow:0 15px 60px #0004}
   .modal-eventos::backdrop{background:#0008}
   .modal-eventos pre{white-space:pre-wrap;overflow-wrap:anywhere;font:14px/1.55 Arial,sans-serif}
+ .modal-eventos{max-height:88vh;overflow-y:auto}
+ .rc-detail h3{color:#94132e;font-size:16px;margin:18px 0 9px}
+ .rc-detail h3:first-child{margin-top:8px}
+ .rc-row{display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid #dfe4e7;font-size:14px;line-height:1.45}
+ .rc-row span:last-child{text-align:right;max-width:55%;overflow-wrap:anywhere}
+ .rc-yes{color:#16734d;font-weight:750}.rc-no{color:#6d747a;font-weight:700}
+ .rc-muted{color:#66717a;font-size:13px;line-height:1.5}
+ @media(max-width:480px){.modal-eventos{padding:16px}.rc-row{font-size:13px}}
 </style>
 </head>
 
@@ -839,14 +847,27 @@ async function operar(personas,operacion){if(ocupado)return;
  ocupado=true;document.querySelectorAll('button').forEach(b=>b.disabled=true);limpiarMensaje();
  try{await api('rcOperar',{operacion,personas:personas.map(p=>({sheetRow:p.sheetRow,dni:p.dni,nroRegistro:p.nroRegistro}))});await repetirBusqueda();mostrarExito(acciones[operacion]+' — operación registrada correctamente.');}
  catch(e){mostrarError(e.message);await repetirBusqueda();}finally{ocupado=false;document.querySelectorAll('button').forEach(b=>{if(!b.closest('#pantallaAcceso'))b.disabled=false;});}}
-function verEventos(n){const p=personaPorFila(n);if(!p)return;
- const c=p.confirmaciones||{};const lines=Object.entries(c).filter(([_,v])=>v&&String(v).trim()).map(([k,v])=>`${k}: ${v}`);
+function rcEstadoEvento(s){return s==='si'?'<span class="rc-yes">✓ Inscripto</span>':s==='no'?'<span class="rc-no">— No inscripto</span>':'<span class="rc-no">Sin dato confirmado</span>';}
+function rcLinea(k,v){return '<div class="rc-row"><span>'+escapeHtml(k)+'</span><span>'+v+'</span></div>';}
+function verEventos(n){
+ const p=personaPorFila(n);if(!p)return;
+ const c=p.consulta;
  $('modalTitulo').textContent='Eventos y colectivos · '+nombre(p);
- $('modalContenido').textContent='EVENTOS INSCRIPTOS\n'+(p.eventos||'Sin información')+'\n\nTRAYECTOS SOLICITADOS\n'+(p.trayectos||'Sin información')+'\n\nCONFIRMACIONES DE COLECTIVOS\n'+(lines.length?lines.join('\n'):'Sin confirmaciones registradas');
- $('modalEventos').showModal();}
+ if(!c){$('modalContenido').innerHTML='<p>La consulta detallada todavía no está disponible. Actualizá Acreditaciones_API.gs.</p>'; $('modalEventos').showModal();return;}
+ const e=c.events||{},t=c.transport||{},k=c.kit||{};
+ const ev=[['Domingo 8/11 · Evento Familia RC',e.familias],['Domingo 8/11 · Evento Jóvenes RC',e.jovenes],['Lunes 9/11 · Misa CABA',e.caba],['Martes 10/11 · Vigilia con los Jóvenes',e.vigilia],['Miércoles 11/11 · Misa Luján',e.lujan]];
+ const ida=t.domingoIda?escapeHtml(t.domingoIda.origen+' · Partida '+t.domingoIda.hora):'Sin colectivo asignado';
+ const vuelta=t.domingoVuelta?escapeHtml(t.domingoVuelta.destino+' · Partida '+t.domingoVuelta.hora):'Sin colectivo asignado';
+ const kit=k.retirado?'✓ Retirado'+(k.fechaHora?' · '+escapeHtml(k.fechaHora):''):'Pendiente de retiro';
+ $('modalContenido').innerHTML='<h3>📅 Eventos</h3>'+ev.map(x=>rcLinea(x[0],rcEstadoEvento(x[1]))).join('')+
+ '<h3 class="rc-section">🚌 Colectivos</h3>'+rcLinea('Domingo · Ida',ida)+rcLinea('Domingo · Vuelta',vuelta)+rcLinea('Miércoles · Luján',escapeHtml(t.lujan||'Sin colectivo asignado'))+
+ '<p class="rc-muted">Lunes y martes no hay colectivos de Regnum Christi programados.</p>'+
+ '<h3 class="rc-section">👕 Kit RC</h3>'+rcLinea('Talle de remera',escapeHtml(k.talle||'Sin talle registrado'))+rcLinea('Retiro del kit',kit);
+ $('modalEventos').showModal();
+}
 
 </script>
 
-<dialog id="modalEventos" class="modal-eventos"><h2 id="modalTitulo">Eventos y colectivos</h2><pre id="modalContenido"></pre><form method="dialog"><button class="btn btn-primary" style="width:100%">CERRAR</button></form></dialog>
+<dialog id="modalEventos" class="modal-eventos"><h2 id="modalTitulo">Eventos y colectivos</h2><div id="modalContenido" class="rc-detail"></div><form method="dialog"><button class="btn btn-primary" style="width:100%">CERRAR</button></form></dialog>
 </body>
 </html> 
