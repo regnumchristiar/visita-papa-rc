@@ -730,6 +730,17 @@
   </nav>
   <section id="panelAgregar" class="extra-panel" hidden>
    <h2>Agregar inscripción extra</h2><p class="extra-muted">Registro independiente de TODOS. El pago, la acreditación y el kit se registran luego desde la pestaña Extras.</p>
+   <div class="extra-qr-launch" style="margin:18px 0;padding:16px;background:#eaf3f6;border:1px solid #b8d3dd;border-radius:12px">
+    <strong>📱 Autoinscripción desde el celular</strong>
+    <p class="extra-muted">Mostrale este QR a quien quiera completar sus propios datos. El pago y la acreditación se gestionan después en esta aplicación.</p>
+    <button type="button" class="btn btn-blue" onclick="rcMostrarQR()">MOSTRAR QR DE AUTOINSCRIPCIÓN</button>
+   </div>
+   <dialog id="rcQrDialog" style="border:0;border-radius:14px;padding:22px;max-width:min(92vw,420px);text-align:center">
+    <h2>Escaneá para inscribirte</h2><p>Completá tus datos en tu celular y después acercate a acreditaciones.</p>
+    <div id="rcQrCanvas" style="display:flex;justify-content:center;margin:18px auto"></div>
+    <p style="overflow-wrap:anywhere;font-size:12px"><a href="https://regnumchristiar.github.io/visita-papa-rc/inscripcion-extra/" target="_blank" rel="noopener">Abrir formulario de autoinscripción</a></p>
+    <button type="button" class="btn btn-primary" onclick="document.getElementById('rcQrDialog').close()">CERRAR</button>
+   </dialog>
    <form id="formExtra" onsubmit="rcCrearExtra(event)">
     <div class="extra-grid">
      <label>Nombre *<input name="nombre" required maxlength="160" autocomplete="given-name"></label>
@@ -969,5 +980,14 @@ async function rcOperarExtra(row,op){
 </script>
 
 <dialog id="modalEventos" class="modal-eventos"><h2 id="modalTitulo">Eventos y colectivos</h2><div id="modalContenido" class="rc-detail"></div><form method="dialog"><button class="btn btn-primary" style="width:100%">CERRAR</button></form></dialog>
-</body>
+<script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+<script>
+function rcMostrarQR(){
+ const d=document.getElementById('rcQrDialog'),box=document.getElementById('rcQrCanvas');
+ box.replaceChildren();
+ if(typeof QRCode==='function')new QRCode(box,{text:'https://regnumchristiar.github.io/visita-papa-rc/inscripcion-extra/',width:240,height:240,correctLevel:QRCode.CorrectLevel.M});
+ else box.textContent='No se pudo cargar el QR. Utilizá el enlace de abajo.';
+ d.showModal();
+}
+</script></body>
 </html> 
