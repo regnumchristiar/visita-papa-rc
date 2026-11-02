@@ -1,45 +1,17 @@
 <!DOCTYPE html>
+
 <html lang="es">
-
 <head>
-
-<meta charset="UTF-8">
-
-<meta
-  name="viewport"
-  content="width=device-width, initial-scale=1.0, viewport-fit=cover"
->
-
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
 <title>Visita Papa León XIV | Regnum Christi</title>
-
-<meta
-  name="description"
-  content="Información de Regnum Christi para vivir juntos la visita del Papa León XIV a la Argentina"
->
-
-<meta name="theme-color" content="#91152B">
-
-<link rel="manifest" href="manifest.json">
-
-<link
-  rel="apple-touch-icon"
-  sizes="180x180"
-  href="assets/apple-touch-icon.png"
->
-
-<meta name="apple-mobile-web-app-capable" content="yes">
-
-<meta
-  name="apple-mobile-web-app-status-bar-style"
-  content="default"
->
-
-<meta
-  name="apple-mobile-web-app-title"
-  content="Visita Papa RC"
->
-
-
+<meta content="Información de Regnum Christi para vivir juntos la visita del Papa León XIV a la Argentina" name="description"/>
+<meta content="#91152B" name="theme-color"/>
+<link href="manifest.json" rel="manifest"/>
+<link href="assets/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="default" name="apple-mobile-web-app-status-bar-style"/>
+<meta content="Visita Papa RC" name="apple-mobile-web-app-title"/>
 <style>
 
 /* =========================================================
@@ -1654,856 +1626,368 @@ details p{
 
 /* Preguntas frecuentes · navegación y contenido */
 .faq-page-content{padding-top:20px}.faq-feature{padding:19px 18px;margin-bottom:22px;background:#faf1f3;border:1px solid #e8cdd2;border-left:4px solid var(--bordo);border-radius:8px}.faq-feature-eyebrow{font-size:10px;font-weight:800;letter-spacing:1.1px;color:var(--bordo);margin-bottom:7px}.faq-feature h3{font-size:17px;line-height:23px;color:var(--bordo);margin:0 0 9px}.faq-feature p{font-size:13px;line-height:20px;color:#555;margin:9px 0}.faq-feature .faq-jump{margin-top:9px;background:var(--bordo);color:#fff;border-color:var(--bordo)}.faq-intro strong{font-size:16px;color:#333}.faq-intro p{font-size:13px;color:#777;line-height:20px;margin:7px 0 14px}.faq-category-nav{display:grid;grid-template-columns:1fr;gap:7px;margin-bottom:29px}.faq-category-link{display:flex;align-items:center;justify-content:space-between;text-decoration:none;color:#485b61;background:#f4f8f9;border:1px solid #dfe9eb;border-radius:8px;padding:11px 13px;font-size:12px;font-weight:bold;line-height:17px}.faq-category-link span{font-size:21px;color:var(--celeste);margin-left:10px}.faq-group{scroll-margin-top:15px;margin:0 0 29px}.faq-group h3{color:var(--bordo);font-size:16px;line-height:22px;margin:0 0 12px;padding-bottom:9px;border-bottom:2px solid #f0e3e6}.faq-item{padding:0;margin-bottom:8px;overflow:hidden;border-radius:9px}.faq-item summary{list-style:none;position:relative;padding:14px 36px 14px 14px;font-size:13px;line-height:19px;background:#fff;color:#333}.faq-item summary::-webkit-details-marker{display:none}.faq-item summary:after{content:'+';position:absolute;right:13px;top:12px;color:var(--celeste);font-size:22px;font-weight:400}.faq-item[open] summary{background:#f9fbfb;color:var(--bordo)}.faq-item[open] summary:after{content:'−'}.faq-answer{padding:0 14px 15px}.faq-answer p{font-size:13px;line-height:20px;margin:9px 0 11px;color:#555}.faq-jump{display:inline-flex;align-items:center;gap:8px;min-height:34px;padding:8px 12px;background:#f1f7f9;border:1px solid #d5e5e9;border-radius:7px;color:#426e7d;font-size:12px;font-weight:bold;cursor:pointer;text-align:left}.faq-jump span{font-size:16px}
+
+/* Cancionero: legibilidad equivalente a las lecturas, con estrofas separadas */
+.song-lines {font-family:Georgia,"Times New Roman",serif; font-size:17px; line-height:1.68; color:#333; white-space:normal;}
+.song-lines .song-stanza {font-size:17px; line-height:1.68; margin:0 0 23px; overflow-wrap:break-word;}
+.song-lines .song-stanza:last-child {margin-bottom:0;}
+.song-card h3 {margin-bottom:20px;}
+@media (max-width:420px) {.song-lines,.song-lines .song-stanza{font-size:17px;line-height:1.65;}}
 </style>
-
-</head>
-
-
+<style>
+.main-five .menu-button{min-height:84px}.main-five .menu-title{font-weight:750}.main-five .menu-description{line-height:1.35}
+.faq-topic{margin:24px 0 14px}.faq-topic h3{font-size:1.13rem;margin:0 0 5px;color:#642539}.faq-topic-subtitle{margin:0 0 14px;font-size:.9rem;line-height:1.45;opacity:.8}
+.faq-entry{background:#fff;border:1px solid #e8e2e4;border-radius:12px;margin:8px 0;overflow:hidden}.faq-entry summary{cursor:pointer;padding:15px 16px;font-weight:650;line-height:1.4;list-style:none}.faq-entry summary:after{content:'+';float:right;color:#7d4254;font-size:20px;margin-left:8px}.faq-entry[open] summary:after{content:'−'}.faq-entry-body{padding:0 16px 16px;line-height:1.55}.faq-entry-body p{margin:0 0 12px}.faq-entry .faq-jump{font-size:.78rem}
+.song-lines{line-height:1.65;white-space:normal}.song-card{margin-bottom:15px}.prayer-lines{white-space:pre-line;line-height:1.85}.dynamic-questions{padding-left:22px;line-height:1.65}.dynamic-questions li{margin:0 0 15px}
+</style><style>
+/* Cancionero: presentación litúrgica legible y estrofas reales (sin párrafos anidados) */
+.song-card {padding:24px 20px 27px !important; margin-bottom:19px !important; background:#fff; border-radius:13px;}
+.song-card h3 {font-family:Georgia,"Times New Roman",serif !important; font-size:23px !important; line-height:1.25 !important; font-weight:700 !important; color:var(--bordo) !important; margin:0 0 25px !important; padding-bottom:15px; border-bottom:1px solid #eadfe2;}
+.song-card .song-lines {display:block !important; font-family:Georgia,"Times New Roman",serif !important; font-size:18px !important; line-height:1.66 !important; color:#292929 !important; white-space:normal !important;}
+.song-card .song-lines .song-stanza {display:block !important; font-family:inherit !important; font-size:18px !important; line-height:1.66 !important; font-weight:400; color:#292929 !important; margin:0 0 27px !important; padding:0 !important; white-space:normal !important; overflow-wrap:break-word;}
+.song-card .song-lines .song-stanza:last-child {margin-bottom:0 !important;}
+.song-card .song-lines .song-refrain {border-left:3px solid var(--bordo); padding:5px 0 5px 15px !important; color:#62263a !important; background:linear-gradient(90deg,#faf3f5 0%,#fff 90%); border-radius:0 6px 6px 0;}
+@media(max-width:430px){.song-card{padding:21px 17px 25px !important}.song-card .song-lines,.song-card .song-lines .song-stanza{font-size:18px !important;line-height:1.62 !important}}
+</style></head>
 <body>
-
 <div class="app">
-
-
 <!-- ======================================================
      HEADER
 ====================================================== -->
-
 <header>
-
-  <div class="main-header">
-
-    <img
-      src="assets/headerpapa.png"
-      alt="¡Bienvenido, Papa León! Peregrino de la Paz"
-    >
-
-  </div>
-
-  <div class="event-band">
+<div class="main-header">
+<img alt="¡Bienvenido, Papa León! Peregrino de la Paz" src="assets/headerpapa.png"/>
+</div>
+<div class="event-band">
     VISITA DEL PAPA LEÓN XIV A LA ARGENTINA · 8–11 NOV 2026
   </div>
-
 </header>
-
-
-
 <!-- ======================================================
      HOME
 ====================================================== -->
-
 <main id="home">
-
 <div class="home-content">
-
-
-  <div class="welcome">
-
-    <h1>Vivamos juntos este encuentro</h1>
-
-    <p style="font-size:85%;">
-      Toda la información para acompañarnos como comunidad
-      y familia Regnum Christi durante la visita del papa León XIV.
-    </p>
-
-  </div>
-
-
-  <div class="section-label">
-    DÍA RC · DOMINGO 8 DE NOVIEMBRE
-  </div>
-
-
-  <div class="menu">
-
-
-
-
-    <button
-      class="menu-button"
-      onclick="openPage('cronograma')"
-    >
-
-<div class="menu-icon icon-cronograma">
-  ◷
+<div class="welcome">
+<h1>Vivamos este encuentro como familia Regnum Christi</h1>
+<p style="font-size:85%;">Toda la información que necesitás para vivir la visita del papa León XIV en comunidad.</p>
 </div>
-      <div class="menu-copy">
-        <span class="menu-title">Cronograma</span>
-        <span class="menu-description">
-          Horarios y actividades del Día RC
-        </span>
-      </div>
-
-      <div class="menu-arrow">›</div>
-
-    </button>
-
-
-    <button
-      class="menu-button"
-      onclick="openPage('plano')"
-    >
-
-<div class="menu-icon">
-  <svg
-    class="map-pin-icon"
-    viewBox="0 0 24 24"
-    aria-hidden="true"
-  >
-    <path
-      d="M12 21s6-5.4 6-11a6 6 0 1 0-12 0c0 5.6 6 11 6 11z"
-    />
-    <circle cx="12" cy="10" r="2.2" />
-  </svg>
+<div class="menu main-five">
+<button class="menu-button" onclick="openPage('dia-rc')"><div class="menu-icon">✦</div><div class="menu-copy"><span class="menu-title">DÍA RC</span><span class="menu-description">Información para el Día RC (Familia RC y Jóvenes RC) el domingo 8/11</span></div><div class="menu-arrow">›</div></button>
+<button class="menu-button" onclick="openPage('agenda')"><div class="menu-icon">◷</div><div class="menu-copy"><span class="menu-title">AGENDA OFICIAL Y RC</span><span class="menu-description">Minuto a minuto de la visita con el Regnum Christi</span></div><div class="menu-arrow">›</div></button>
+<button class="menu-button" onclick="openPage('preguntas')"><div class="menu-icon">?</div><div class="menu-copy"><span class="menu-title">TODO LO QUE NECESITÁS SABER</span><span class="menu-description">Preguntas frecuentes para preparar tu participación</span></div><div class="menu-arrow">›</div></button>
+<button class="menu-button" onclick="openPage('inscripcion')"><div class="menu-icon">✓</div><div class="menu-copy"><span class="menu-title">CONSULTAR MI INSCRIPCIÓN</span><span class="menu-description">Eventos, colectivos, QR y sector del encuentro de jóvenes</span></div><div class="menu-arrow">›</div></button>
+<a class="menu-button official" href="https://www.elpapaenargentina.com.ar/" rel="noopener noreferrer" style="text-decoration:none;" target="_blank">
+<div class="menu-icon official-icon">
+<img alt="" src="assets/icono-pagina-oficial.png"/>
 </div>
-      
-      <div class="menu-copy">
-        <span class="menu-title">Plano</span>
-        <span class="menu-description">
-          Ubicaciones y puntos de encuentro
-        </span>
-      </div>
-
-      <div class="menu-arrow">›</div>
-
-    </button>
-
-
-    <button
-      class="menu-button"
-      onclick="openPage('misa')"
-    >
-
-      <div class="menu-icon">
-        <span class="cross-icon"></span>
-      </div>
-
-      <div class="menu-copy">
-        <span class="menu-title">Misa</span>
-        <span class="menu-description">
-          Lecturas y Cancionero
-        </span>
-      </div>
-
-      <div class="menu-arrow">›</div>
-
-    </button>
-
-
-    <button
-      class="menu-button"
-      onclick="openPage('adoracion')"
-    >
-
-<div class="menu-icon icon-adoracion">
-  ⌖
-</div>
-
-      <div class="menu-copy">
-        <span class="menu-title">Adoración Permanente</span>
-        <span class="menu-description">
-          Anotate en un turno
-        </span>
-      </div>
-
-      <div class="menu-arrow">›</div>
-
-    </button>
-
-
-    <button
-      class="menu-button"
-      onclick="openPage('actividades')"
-    >
-
-      <div class="menu-icon">◇</div>
-
-      <div class="menu-copy">
-        <span class="menu-title">Actividades</span>
-        <span class="menu-description">
-          Propuestas para vivir juntos la jornada
-        </span>
-      </div>
-
-      <div class="menu-arrow">›</div>
-
-    </button>
-
-        <button class="menu-button" onclick="openPage('inscripcion')">
-      <div class="menu-icon" aria-hidden="true">✓</div>
-      <div class="menu-copy">
-        <span class="menu-title">Consultar mi inscripción</span>
-        <span class="menu-description">Eventos, colectivos y retiro del kit</span>
-      </div>
-      <div class="menu-arrow">›</div>
-    </button>
-
-
-    <button
-      class="menu-button"
-      onclick="openPage('agenda')"
-    >
-
-      <div class="menu-icon">▣</div>
-
-      <div class="menu-copy">
-        <span class="menu-title">Minuto a minuto con RC</span>
-        <span class="menu-description">
-          Consultá el cronograma de lo que vamos a vivir estos días
-        </span>
-      </div>
-
-      <div class="menu-arrow">›</div>
-
-    </button>
-
-    <a
-  class="menu-button official"
-  href="https://www.elpapaenargentina.com.ar/"
-  target="_blank"
-  rel="noopener noreferrer"
-  style="text-decoration:none;"
->
-
-  <div class="menu-icon official-icon">
-    <img
-      src="assets/icono-pagina-oficial.png"
-      alt=""
-    >
-  </div>
-
-  <div class="menu-copy">
-
-    <span class="menu-title">
+<div class="menu-copy">
+<span class="menu-title">
       Página oficial
     </span>
-
-    <span class="menu-description">
+<span class="menu-description">
       Bienvenidos Todos: Vayan y anuncien
     </span>
-
-  </div>
-
-  <div class="menu-arrow">↗</div>
-
-</a>
-
-    <button
-      class="menu-button important"
-      onclick="openPage('informacion')"
-    >
-
-      <div class="menu-icon">!</div>
-
-      <div class="menu-copy">
-        <span class="menu-title">Información Importante</span>
-        <span class="menu-description">
-          Para los próximos días
-        </span>
-      </div>
-
-      <div class="menu-arrow">›</div>
-
-    </button>
-
-
-    <button
-      class="menu-button"
-      onclick="openPage('preguntas')"
-    >
-
-      <div class="menu-icon">?</div>
-
-      <div class="menu-copy">
-        <span class="menu-title">Preguntas</span>
-        <span class="menu-description">
-          Preguntas frecuentes e información útil
-        </span>
-      </div>
-
-      <div class="menu-arrow">›</div>
-
-    </button>
-
-
-  </div>
-
 </div>
-
-</main>
-
+<div class="menu-arrow">↗</div>
+</a>
+</div></div>
+</main><section class="page" id="dia-rc"><div class="page-top"><button class="back-button" onclick="openPage('home', false)">← VOLVER</button><h2>Día RC</h2><p class="page-subtitle">Información para el Día RC (Familia RC y Jóvenes RC) el domingo 8/11</p></div><div class="page-content"><div class="menu">
+<button class="menu-button" onclick="openPage('cronograma')"><div class="menu-icon">◷</div><div class="menu-copy"><span class="menu-title">Cronograma</span><span class="menu-description">Horarios y transporte</span></div><div class="menu-arrow">›</div></button>
+<button class="menu-button" onclick="openPage('plano')"><div class="menu-icon">⌖</div><div class="menu-copy"><span class="menu-title">Plano</span><span class="menu-description">Ubicaciones y accesos</span></div><div class="menu-arrow">›</div></button>
+<button class="menu-button" onclick="openPage('misa')"><div class="menu-icon">✝</div><div class="menu-copy"><span class="menu-title">Misa</span><span class="menu-description">Lecturas, cancionero y adoración permanente</span></div><div class="menu-arrow">›</div></button>
+<button class="menu-button" onclick="openPage('actividades')"><div class="menu-icon">◇</div><div class="menu-copy"><span class="menu-title">Dinámica</span><span class="menu-description">Preguntas para compartir en grupo reducido</span></div><div class="menu-arrow">›</div></button>
+</div></div></section>
 <!-- CONSULTA DE INSCRIPCIÓN · PANTALLA INTERNA -->
-<section id="inscripcion" class="page">
-  <div class="page-top">
-    <button class="back-button" onclick="openPage('home', false)">← VOLVER AL MENÚ</button>
-    <h2>Mi inscripción</h2>
-    <p class="page-subtitle">Consultá tus eventos, colectivos y kit RC</p>
-  </div>
-  <div class="rc-inscripcion-frame-wrap">
-    <iframe id="rcInscripcionFrame" title="Consulta de inscripción" src="inscripcion/?integrada=1" loading="lazy" scrolling="no"></iframe>
-  </div>
+<section class="page" id="inscripcion">
+<div class="page-top">
+<button class="back-button" onclick="openPage('home', false)">← VOLVER AL MENÚ</button>
+<h2>Mi inscripción</h2>
+<p class="page-subtitle">Consultá tus eventos, colectivos y kit RC</p>
+</div>
+<div class="rc-inscripcion-frame-wrap">
+<iframe id="rcInscripcionFrame" loading="lazy" scrolling="no" src="inscripcion/?integrada=1" title="Consulta de inscripción"></iframe>
+</div>
 </section>
-
-
-
-
 <!-- ======================================================
      CRONOGRAMA
 ====================================================== -->
-
-<section id="cronograma" class="page">
-
+<section class="page" id="cronograma">
 <div class="page-top">
-
-  <button class="back-button" onclick="openPage('home', false)">
-    ← VOLVER
-  </button>
-
-  <h2>Cronograma</h2>
-
-  <p class="page-subtitle">
+<button class="back-button" onclick="openPage('dia-rc', false)">← DÍA RC</button>
+<h2>Cronograma</h2>
+<p class="page-subtitle">
     Día RC · Oakhill Pilar
   </p>
-
 </div>
-
-
 <div class="page-content">
-
-  <div class="date-label">
+<div class="date-label">
     DOMINGO 8 DE NOVIEMBRE · OAKHILL PILAR
   </div>
-
-  <div class="timeline-item">
-    <div class="timeline-time">10:00</div>
-    <div class="timeline-info">
-      <strong>Salida de transporte</strong>
-      <span>Desde los cuatro puntos de encuentro:</span>
-      <ul class="timeline-stops">
-        <li><b>Betania</b><a class="meet-map-link" href="https://www.google.com/maps/search/?api=1&query=Parroquia%20Betania%20Almagro%20Buenos%20Aires" target="_blank" rel="noopener noreferrer" aria-label="Ver Betania en Google Maps" title="Ver ubicación aproximada en Google Maps"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.5 9 4l6 2.5L21 4v13.5L15 20l-6-2.5L3 20z"/><path d="M9 4v13.5M15 6.5V20"/></svg><span aria-hidden="true">↗</span></a> · Almagro</li>
-        <li><b>Facultad de Derecho</b><a class="meet-map-link" href="https://www.google.com/maps/search/?api=1&query=Facultad%20de%20Derecho%20UBA%20Buenos%20Aires" target="_blank" rel="noopener noreferrer" aria-label="Ver Facultad de Derecho en Google Maps" title="Ver ubicación aproximada en Google Maps"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.5 9 4l6 2.5L21 4v13.5L15 20l-6-2.5L3 20z"/><path d="M9 4v13.5M15 6.5V20"/></svg><span aria-hidden="true">↗</span></a> · Recoleta</li>
-        <li><b>Club Ciudad</b><a class="meet-map-link" href="https://www.google.com/maps/search/?api=1&query=Club%20Ciudad%20de%20Buenos%20Aires%20N%C3%BA%C3%B1ez" target="_blank" rel="noopener noreferrer" aria-label="Ver Club Ciudad en Google Maps" title="Ver ubicación aproximada en Google Maps"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.5 9 4l6 2.5L21 4v13.5L15 20l-6-2.5L3 20z"/><path d="M9 4v13.5M15 6.5V20"/></svg><span aria-hidden="true">↗</span></a> · Núñez</li>
-        <li><b>Colegio Mano Amiga</b><a class="meet-map-link" href="https://www.google.com/maps/search/?api=1&query=Colegio%20Mano%20Amiga%20F%C3%A1tima%20Pilar%20Buenos%20Aires" target="_blank" rel="noopener noreferrer" aria-label="Ver Colegio Mano Amiga en Google Maps" title="Ver ubicación aproximada en Google Maps"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.5 9 4l6 2.5L21 4v13.5L15 20l-6-2.5L3 20z"/><path d="M9 4v13.5M15 6.5V20"/></svg><span aria-hidden="true">↗</span></a> · Fátima · salida 11:00</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="timeline-item timeline-featured">
-    <div class="timeline-time">12:00</div>
-    <div class="timeline-info">
-      <strong>Evento Familia RC</strong>
-      <span>Oakhill Pilar</span>
-    </div>
-  </div>
-
-  <div class="timeline-item">
-    <div class="timeline-time">12:05</div>
-    <div class="timeline-info">
-      <strong>Acreditaciones y retiro de kits</strong>
-    </div>
-  </div>
-
-  <div class="timeline-item">
-    <div class="timeline-time">13:00</div>
-    <div class="timeline-info">
-      <strong>Santa Misa</strong>
-    </div>
-  </div>
-
-  <div class="timeline-item">
-    <div class="timeline-time">14:00</div>
-    <div class="timeline-info">
-      <strong>Almuerzo</strong>
-      <span>Foodtrucks · No incluido</span>
-    </div>
-  </div>
-
-  <div class="timeline-item">
-    <div class="timeline-time">15:00</div>
-    <div class="timeline-info">
-      <strong>Dinámicas</strong>
-    </div>
-  </div>
-
-  <div class="timeline-item">
-    <div class="timeline-time">17:00</div>
-    <div class="timeline-info">
-      <strong>Vuelta de familias</strong>
-      <span>Regreso a los puntos de encuentro:</span>
-      <ul class="timeline-stops">
-        <li><b>Betania</b><a class="meet-map-link" href="https://www.google.com/maps/search/?api=1&query=Parroquia%20Betania%20Almagro%20Buenos%20Aires" target="_blank" rel="noopener noreferrer" aria-label="Ver Betania en Google Maps" title="Ver ubicación aproximada en Google Maps"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.5 9 4l6 2.5L21 4v13.5L15 20l-6-2.5L3 20z"/><path d="M9 4v13.5M15 6.5V20"/></svg><span aria-hidden="true">↗</span></a> · Almagro</li>
-        <li><b>Facultad de Derecho</b><a class="meet-map-link" href="https://www.google.com/maps/search/?api=1&query=Facultad%20de%20Derecho%20UBA%20Buenos%20Aires" target="_blank" rel="noopener noreferrer" aria-label="Ver Facultad de Derecho en Google Maps" title="Ver ubicación aproximada en Google Maps"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.5 9 4l6 2.5L21 4v13.5L15 20l-6-2.5L3 20z"/><path d="M9 4v13.5M15 6.5V20"/></svg><span aria-hidden="true">↗</span></a> · Recoleta</li>
-        <li><b>Club Ciudad</b><a class="meet-map-link" href="https://www.google.com/maps/search/?api=1&query=Club%20Ciudad%20de%20Buenos%20Aires%20N%C3%BA%C3%B1ez" target="_blank" rel="noopener noreferrer" aria-label="Ver Club Ciudad en Google Maps" title="Ver ubicación aproximada en Google Maps"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.5 9 4l6 2.5L21 4v13.5L15 20l-6-2.5L3 20z"/><path d="M9 4v13.5M15 6.5V20"/></svg><span aria-hidden="true">↗</span></a> · Núñez</li>
-        <li><b>Colegio Mano Amiga</b><a class="meet-map-link" href="https://www.google.com/maps/search/?api=1&query=Colegio%20Mano%20Amiga%20F%C3%A1tima%20Pilar%20Buenos%20Aires" target="_blank" rel="noopener noreferrer" aria-label="Ver Colegio Mano Amiga en Google Maps" title="Ver ubicación aproximada en Google Maps"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.5 9 4l6 2.5L21 4v13.5L15 20l-6-2.5L3 20z"/><path d="M9 4v13.5M15 6.5V20"/></svg><span aria-hidden="true">↗</span></a> · Fátima</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="timeline-item timeline-featured">
-    <div class="timeline-time">18:30</div>
-    <div class="timeline-info">
-      <strong>Jóvenes RC</strong>
-      <span>Oakhill Pilar</span>
-    </div>
-  </div>
-
-  <div class="timeline-item">
-    <div class="timeline-time">22:30</div>
-    <div class="timeline-info">
-      <strong>Vuelta de jóvenes</strong>
-      <span>Regreso a los puntos de encuentro:</span>
-      <ul class="timeline-stops">
-        <li><b>Betania</b><a class="meet-map-link" href="https://www.google.com/maps/search/?api=1&query=Parroquia%20Betania%20Almagro%20Buenos%20Aires" target="_blank" rel="noopener noreferrer" aria-label="Ver Betania en Google Maps" title="Ver ubicación aproximada en Google Maps"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.5 9 4l6 2.5L21 4v13.5L15 20l-6-2.5L3 20z"/><path d="M9 4v13.5M15 6.5V20"/></svg><span aria-hidden="true">↗</span></a> · Almagro</li>
-        <li><b>Facultad de Derecho</b><a class="meet-map-link" href="https://www.google.com/maps/search/?api=1&query=Facultad%20de%20Derecho%20UBA%20Buenos%20Aires" target="_blank" rel="noopener noreferrer" aria-label="Ver Facultad de Derecho en Google Maps" title="Ver ubicación aproximada en Google Maps"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.5 9 4l6 2.5L21 4v13.5L15 20l-6-2.5L3 20z"/><path d="M9 4v13.5M15 6.5V20"/></svg><span aria-hidden="true">↗</span></a> · Recoleta</li>
-        <li><b>Club Ciudad</b><a class="meet-map-link" href="https://www.google.com/maps/search/?api=1&query=Club%20Ciudad%20de%20Buenos%20Aires%20N%C3%BA%C3%B1ez" target="_blank" rel="noopener noreferrer" aria-label="Ver Club Ciudad en Google Maps" title="Ver ubicación aproximada en Google Maps"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.5 9 4l6 2.5L21 4v13.5L15 20l-6-2.5L3 20z"/><path d="M9 4v13.5M15 6.5V20"/></svg><span aria-hidden="true">↗</span></a> · Núñez</li>
-        <li><b>Colegio Mano Amiga</b><a class="meet-map-link" href="https://www.google.com/maps/search/?api=1&query=Colegio%20Mano%20Amiga%20F%C3%A1tima%20Pilar%20Buenos%20Aires" target="_blank" rel="noopener noreferrer" aria-label="Ver Colegio Mano Amiga en Google Maps" title="Ver ubicación aproximada en Google Maps"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.5 9 4l6 2.5L21 4v13.5L15 20l-6-2.5L3 20z"/><path d="M9 4v13.5M15 6.5V20"/></svg><span aria-hidden="true">↗</span></a> · Fátima</li>
-      </ul>
-    </div>
-  </div>
-
+<div class="timeline-item">
+<div class="timeline-time">10:00</div>
+<div class="timeline-info">
+<strong>Salida de transporte</strong>
+<span>10:00 desde Betania, Facultad de Derecho y Club Ciudad. Colegio Mano Amiga: 11:00.</span>
+<ul class="timeline-stops">
+<li><b>Betania</b><a aria-label="Ver Betania en Google Maps" class="meet-map-link" href="https://www.google.com/maps/search/?api=1&amp;query=Parroquia%20Betania%20Almagro%20Buenos%20Aires" rel="noopener noreferrer" target="_blank" title="Ver ubicación aproximada en Google Maps"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M3 6.5 9 4l6 2.5L21 4v13.5L15 20l-6-2.5L3 20z"></path><path d="M9 4v13.5M15 6.5V20"></path></svg><span aria-hidden="true">↗</span></a> · Almagro</li>
+<li><b>Facultad de Derecho</b><a aria-label="Ver Facultad de Derecho en Google Maps" class="meet-map-link" href="https://www.google.com/maps/search/?api=1&amp;query=Facultad%20de%20Derecho%20UBA%20Buenos%20Aires" rel="noopener noreferrer" target="_blank" title="Ver ubicación aproximada en Google Maps"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M3 6.5 9 4l6 2.5L21 4v13.5L15 20l-6-2.5L3 20z"></path><path d="M9 4v13.5M15 6.5V20"></path></svg><span aria-hidden="true">↗</span></a> · Recoleta</li>
+<li><b>Club Ciudad</b><a aria-label="Ver Club Ciudad en Google Maps" class="meet-map-link" href="https://www.google.com/maps/search/?api=1&amp;query=Club%20Ciudad%20de%20Buenos%20Aires%20N%C3%BA%C3%B1ez" rel="noopener noreferrer" target="_blank" title="Ver ubicación aproximada en Google Maps"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M3 6.5 9 4l6 2.5L21 4v13.5L15 20l-6-2.5L3 20z"></path><path d="M9 4v13.5M15 6.5V20"></path></svg><span aria-hidden="true">↗</span></a> · Núñez</li>
+<li>11:00 · <b>Colegio Mano Amiga</b><a aria-label="Ver Colegio Mano Amiga en Google Maps" class="meet-map-link" href="https://www.google.com/maps/search/?api=1&amp;query=Colegio%20Mano%20Amiga%20F%C3%A1tima%20Pilar%20Buenos%20Aires" rel="noopener noreferrer" target="_blank" title="Ver ubicación aproximada en Google Maps"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M3 6.5 9 4l6 2.5L21 4v13.5L15 20l-6-2.5L3 20z"></path><path d="M9 4v13.5M15 6.5V20"></path></svg><span aria-hidden="true">↗</span></a> · Fátima · salida 11:00</li>
+</ul>
 </div>
-
+</div>
+<div class="timeline-item timeline-featured">
+<div class="timeline-time">12:00</div>
+<div class="timeline-info">
+<strong>Evento Familia RC</strong>
+<span>Oakhill Pilar</span>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-time">12:05</div>
+<div class="timeline-info">
+<strong>Acreditaciones y retiro de kits</strong>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-time">13:00</div>
+<div class="timeline-info">
+<strong>Santa Misa</strong>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-time">14:00</div>
+<div class="timeline-info">
+<strong>Almuerzo</strong>
+<span>Foodtrucks · No incluido</span>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-time">15:00</div>
+<div class="timeline-info">
+<strong>Dinámicas</strong>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-time">17:00</div>
+<div class="timeline-info">
+<strong>Vuelta de familias</strong>
+<span>Regreso a los puntos de encuentro:</span>
+<ul class="timeline-stops">
+<li><b>Betania</b><a aria-label="Ver Betania en Google Maps" class="meet-map-link" href="https://www.google.com/maps/search/?api=1&amp;query=Parroquia%20Betania%20Almagro%20Buenos%20Aires" rel="noopener noreferrer" target="_blank" title="Ver ubicación aproximada en Google Maps"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M3 6.5 9 4l6 2.5L21 4v13.5L15 20l-6-2.5L3 20z"></path><path d="M9 4v13.5M15 6.5V20"></path></svg><span aria-hidden="true">↗</span></a> · Almagro</li>
+<li><b>Facultad de Derecho</b><a aria-label="Ver Facultad de Derecho en Google Maps" class="meet-map-link" href="https://www.google.com/maps/search/?api=1&amp;query=Facultad%20de%20Derecho%20UBA%20Buenos%20Aires" rel="noopener noreferrer" target="_blank" title="Ver ubicación aproximada en Google Maps"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M3 6.5 9 4l6 2.5L21 4v13.5L15 20l-6-2.5L3 20z"></path><path d="M9 4v13.5M15 6.5V20"></path></svg><span aria-hidden="true">↗</span></a> · Recoleta</li>
+<li><b>Club Ciudad</b><a aria-label="Ver Club Ciudad en Google Maps" class="meet-map-link" href="https://www.google.com/maps/search/?api=1&amp;query=Club%20Ciudad%20de%20Buenos%20Aires%20N%C3%BA%C3%B1ez" rel="noopener noreferrer" target="_blank" title="Ver ubicación aproximada en Google Maps"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M3 6.5 9 4l6 2.5L21 4v13.5L15 20l-6-2.5L3 20z"></path><path d="M9 4v13.5M15 6.5V20"></path></svg><span aria-hidden="true">↗</span></a> · Núñez</li>
+</ul>
+</div>
+</div>
+<div class="timeline-item timeline-featured">
+<div class="timeline-time">18:30</div>
+<div class="timeline-info">
+<strong>Jóvenes RC</strong>
+<span>Oakhill Pilar</span>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-time">22:30</div>
+<div class="timeline-info">
+<strong>Vuelta de jóvenes</strong>
+<span>Regreso a los puntos de encuentro:</span>
+<ul class="timeline-stops">
+<li><b>Betania</b><a aria-label="Ver Betania en Google Maps" class="meet-map-link" href="https://www.google.com/maps/search/?api=1&amp;query=Parroquia%20Betania%20Almagro%20Buenos%20Aires" rel="noopener noreferrer" target="_blank" title="Ver ubicación aproximada en Google Maps"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M3 6.5 9 4l6 2.5L21 4v13.5L15 20l-6-2.5L3 20z"></path><path d="M9 4v13.5M15 6.5V20"></path></svg><span aria-hidden="true">↗</span></a> · Almagro</li>
+<li><b>Facultad de Derecho</b><a aria-label="Ver Facultad de Derecho en Google Maps" class="meet-map-link" href="https://www.google.com/maps/search/?api=1&amp;query=Facultad%20de%20Derecho%20UBA%20Buenos%20Aires" rel="noopener noreferrer" target="_blank" title="Ver ubicación aproximada en Google Maps"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M3 6.5 9 4l6 2.5L21 4v13.5L15 20l-6-2.5L3 20z"></path><path d="M9 4v13.5M15 6.5V20"></path></svg><span aria-hidden="true">↗</span></a> · Recoleta</li>
+<li><b>Club Ciudad</b><a aria-label="Ver Club Ciudad en Google Maps" class="meet-map-link" href="https://www.google.com/maps/search/?api=1&amp;query=Club%20Ciudad%20de%20Buenos%20Aires%20N%C3%BA%C3%B1ez" rel="noopener noreferrer" target="_blank" title="Ver ubicación aproximada en Google Maps"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M3 6.5 9 4l6 2.5L21 4v13.5L15 20l-6-2.5L3 20z"></path><path d="M9 4v13.5M15 6.5V20"></path></svg><span aria-hidden="true">↗</span></a> · Núñez</li>
+<li><b>Colegio Mano Amiga</b><a aria-label="Ver Colegio Mano Amiga en Google Maps" class="meet-map-link" href="https://www.google.com/maps/search/?api=1&amp;query=Colegio%20Mano%20Amiga%20F%C3%A1tima%20Pilar%20Buenos%20Aires" rel="noopener noreferrer" target="_blank" title="Ver ubicación aproximada en Google Maps"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M3 6.5 9 4l6 2.5L21 4v13.5L15 20l-6-2.5L3 20z"></path><path d="M9 4v13.5M15 6.5V20"></path></svg><span aria-hidden="true">↗</span></a> · Fátima</li>
+</ul>
+</div>
+</div>
+</div>
 </section>
-
-
-
 <!-- ======================================================
      PLANO
 ====================================================== -->
-
-<section id="plano" class="page">
-
+<section class="page" id="plano">
 <div class="page-top">
-
-  <button class="back-button" onclick="openPage('home', false)">
-    ← VOLVER
-  </button>
-
-  <h2>Plano</h2>
-
-  <p class="page-subtitle">
+<button class="back-button" onclick="openPage('dia-rc', false)">← DÍA RC</button>
+<h2>Plano</h2>
+<p class="page-subtitle">
     Evento Familia RC
   </p>
-
 </div>
-
-
 <div class="page-content">
-
-  <div class="map-panel"><div class="map-eyebrow">DOMINGO 8 DE NOVIEMBRE · OAKHILL PILAR</div><h3>Ubicate en el Día RC</h3><p>Consultá los accesos, acreditaciones y sectores del encuentro. Tocá el plano para ampliarlo.</p><button class="map-image-button" onclick="openMapViewer()" aria-label="Ampliar plano del evento"><img src="assets/mapadelevento.png" alt="Plano de ubicación del Día RC" loading="lazy"><span>⤢ Ampliar plano</span></button><div class="map-hint">Podés ampliar y desplazar la imagen para ver cada sector.</div></div>
-
+<div class="map-panel"><div class="map-eyebrow">DOMINGO 8 DE NOVIEMBRE · OAKHILL PILAR</div><h3>Ubicate en el Día RC</h3><p>Consultá los accesos, acreditaciones y sectores del encuentro. Tocá el plano para ampliarlo.</p><button aria-label="Ampliar plano del evento" class="map-image-button" onclick="openMapViewer()"><img alt="Plano de ubicación del Día RC" loading="lazy" src="assets/mapadelevento.png"/><span>⤢ Ampliar plano</span></button><div class="map-hint">Podés ampliar y desplazar la imagen para ver cada sector.</div></div>
 </div>
-
 </section>
-
-
-
 <!-- ======================================================
      MISA
 ====================================================== -->
-
-<section id="misa" class="page">
-
+<section class="page" id="misa">
 <div class="page-top">
-
-  <button class="back-button" onclick="openPage('home', false)">
-    ← VOLVER
-  </button>
-
-  <h2>Santa Misa</h2>
-
-  <p class="page-subtitle">
+<button class="back-button" onclick="openPage('dia-rc', false)">← DÍA RC</button>
+<h2>Santa Misa</h2>
+<p class="page-subtitle">
     Domingo 8 de noviembre
   </p>
-
 </div>
-
-
 <div class="page-content">
-
-
-  <!-- LECTURAS -->
-
-  <div class="misa-section">
-
-    <div class="misa-section-heading">
-
-      <span class="misa-section-label">
+<!-- LECTURAS -->
+<div class="misa-section">
+<div class="misa-section-heading">
+<span class="misa-section-label">
         LITURGIA DE LA PALABRA
       </span>
-
-      <h3>Lecturas de la Misa</h3>
-
-    </div>
-
-
-    <button
-      class="content-button"
-      onclick="openPage('primera-lectura')"
-    >
-
-      <div>
+<h3>Lecturas de la Misa</h3>
+</div>
+<button class="content-button" onclick="openPage('primera-lectura')">
+<div>
         Primera Lectura
         <div class="reading-reference">
           Sabiduría 6, 12-16
         </div>
-      </div>
-
-      <span class="content-button-arrow">›</span>
-
-    </button>
-
-
-    <button
-      class="content-button"
-      onclick="openPage('salmo')"
-    >
-
-      <div>
+</div>
+<span class="content-button-arrow">›</span>
+</button>
+<button class="content-button" onclick="openPage('salmo')">
+<div>
         Salmo Responsorial
-        <div class="reading-reference">
-          Próximamente
-        </div>
-      </div>
-
-      <span class="content-button-arrow">›</span>
-
-    </button>
-
-
-    <button
-      class="content-button"
-      onclick="openPage('segunda-lectura')"
-    >
-
-      <div>
+        <div class="reading-reference">Salmo 62, 2. 3-4. 5-6. 7-8</div>
+</div>
+<span class="content-button-arrow">›</span>
+</button>
+<button class="content-button" onclick="openPage('segunda-lectura')">
+<div>
         Segunda Lectura
-        <div class="reading-reference">
-          1 Tesalonicenses 4, 13-18
-        </div>
-      </div>
-
-      <span class="content-button-arrow">›</span>
-
-    </button>
-
-
-    <button
-      class="content-button"
-      onclick="openPage('evangelio')"
-    >
-
-      <div>
+        <div class="reading-reference">1 Tesalonicenses 4, 13-14</div>
+</div>
+<span class="content-button-arrow">›</span>
+</button>
+<button class="content-button" onclick="openPage('evangelio')">
+<div>
         Evangelio
         <div class="reading-reference">
           Mateo 25, 1-13
         </div>
-      </div>
-
-      <span class="content-button-arrow">›</span>
-
-    </button>
-
-  </div>
-
-
-
-  <!-- CANCIONERO -->
-
-  <div class="misa-section misa-songs">
-
-    <div class="misa-section-heading">
-
-      <span class="misa-section-label">
+</div>
+<span class="content-button-arrow">›</span>
+</button>
+</div>
+<!-- CANCIONERO -->
+<div class="misa-section misa-songs">
+<div class="misa-section-heading">
+<span class="misa-section-label">
         CANTOS DE LA CELEBRACIÓN
       </span>
-
-      <h3>Cancionero</h3>
-
-    </div>
-
-
-    <button
-      class="content-button"
-      onclick="openPage('cantos-entrada')"
-    >
-
-      <div>
-        Entrada
-
-        <div class="reading-reference">
-          Ven y Sígueme
-        </div>
-      </div>
-
-      <span class="content-button-arrow">›</span>
-
-    </button>
-
-
-    <button
-      class="content-button"
-      onclick="openPage('cantos-ofertorio')"
-    >
-
-      <div>
-        Ofertorio
-
-        <div class="reading-reference">
-          Próximamente
-        </div>
-      </div>
-
-      <span class="content-button-arrow">›</span>
-
-    </button>
-
-
-    <button
-      class="content-button"
-      onclick="openPage('cantos-comunion')"
-    >
-
-      <div>
-        Comunión
-
-        <div class="reading-reference">
-          Título Canción 1 | Título Canción 2
-        </div>
-      </div>
-
-      <span class="content-button-arrow">›</span>
-
-    </button>
-
-
-    <button
-      class="content-button"
-      onclick="openPage('cantos-meditacion')"
-    >
-
-      <div>
-        Meditación
-
-        <div class="reading-reference">
-          Próximamente
-        </div>
-      </div>
-
-      <span class="content-button-arrow">›</span>
-
-    </button>
-
-
-    <button
-      class="content-button"
-      onclick="openPage('cantos-salida')"
-    >
-
-      <div>
-        Salida
-
-        <div class="reading-reference">
-          Próximamente
-        </div>
-      </div>
-
-      <span class="content-button-arrow">›</span>
-
-    </button>
-
-
-  </div>
-
+<h3>Cancionero</h3>
 </div>
-
+<button class="content-button" onclick="openPage('cantos-entrada')">
+<div>Entrada<div class="reading-reference">Venga tu Reino</div></div>
+<span class="content-button-arrow">›</span>
+</button>
+<button class="content-button" onclick="openPage('cantos-ofertorio')">
+<div>Ofertorio<div class="reading-reference">Para darlo a los demás</div></div>
+<span class="content-button-arrow">›</span>
+</button>
+<button class="content-button" onclick="openPage('cantos-comunion')">
+<div>Comunion<div class="reading-reference">Resucitados · Tú, el único Rey · Divino Pan</div></div>
+<span class="content-button-arrow">›</span>
+</button>
+<button class="content-button" onclick="openPage('cantos-meditacion')">
+<div>Meditacion<div class="reading-reference">Llena de Gracia</div></div>
+<span class="content-button-arrow">›</span>
+</button>
+<button class="content-button" onclick="openPage('cantos-salida')">
+<div>Salida<div class="reading-reference">Viva Cristo Rey</div></div>
+<span class="content-button-arrow">›</span>
+</button>
+</div>
+<div class="misa-section"><div class="misa-section-heading"><span class="misa-section-label">ORACIÓN</span><h3>Adoración permanente</h3></div><button class="content-button" onclick="openPage('adoracion')"><div>Reservá tu turno de Adoración<div class="reading-reference">Turnos de 30 minutos</div></div><span class="content-button-arrow">›</span></button></div></div>
 </section>
-
-
-
 <!-- ======================================================
      PRIMERA LECTURA
 ====================================================== -->
-
-<section id="primera-lectura" class="page">
-
+<section class="page" id="primera-lectura">
 <div class="page-top">
-
-  <button class="back-button" onclick="openPage('misa', false)">
+<button class="back-button" onclick="openPage('misa', false)">
     ← MISA
   </button>
-
-  <div class="reading-type">
+<div class="reading-type">
     PRIMERA LECTURA
   </div>
-
-  <h2>Sabiduría 6, 12-16</h2>
-
+<h2>Sabiduría 6, 12-16</h2>
 </div>
-
-
 <div class="page-content liturgy-text">
-
-  <p class="reading-intro">
+<p class="reading-intro">
     Lectura del libro de la Sabiduría
   </p>
-
-  <p>
-    Radiante e incorruptible es la sabiduría;<br>
-    con facilidad la contemplan quienes la aman<br>
-    y ella se deja encontrar por quienes la buscan<br>
+<p>
+    Radiante e incorruptible es la sabiduría;<br/>
+    con facilidad la contemplan quienes la aman<br/>
+    y ella se deja encontrar por quienes la buscan<br/>
     y se anticipa a darse a conocer a los que la desean.
   </p>
-
-  <p>
-    El que madruga por ella no se fatigará,<br>
-    porque la hallará sentada a su puerta.<br>
-    Darle la primacía en los pensamientos<br>
-    es prudencia consumada;<br>
-    quien por ella se desvela<br>
+<p>
+    El que madruga por ella no se fatigará,<br/>
+    porque la hallará sentada a su puerta.<br/>
+    Darle la primacía en los pensamientos<br/>
+    es prudencia consumada;<br/>
+    quien por ella se desvela<br/>
     pronto se verá libre de preocupaciones.
   </p>
-
-  <p>
-    A los que son dignos de ella,<br>
-    ella misma sale a buscarlos por los caminos;<br>
-    se les aparece benévola<br>
+<p>
+    A los que son dignos de ella,<br/>
+    ella misma sale a buscarlos por los caminos;<br/>
+    se les aparece benévola<br/>
     y colabora con ellos en todos sus proyectos.
   </p>
-
 </div>
-
 </section>
-
-
-
 <!-- ======================================================
      SALMO
 ====================================================== -->
-
-<section id="salmo" class="page">
-
+<section class="page" id="salmo">
 <div class="page-top">
-
-  <button class="back-button" onclick="openPage('misa', false)">
+<button class="back-button" onclick="openPage('misa', false)">
     ← MISA
   </button>
-
-  <div class="reading-type">
+<div class="reading-type">
     SALMO RESPONSORIAL
   </div>
-
-  <h2>Salmo</h2>
-
+<h2>Salmo 62, 2. 3-4. 5-6. 7-8</h2>
 </div>
-
-
-<div class="page-content">
-
-  <div class="content-card accent">
-
-    <h3>Próximamente</h3>
-
-    <p>
-      El salmo responsorial será publicado en esta sección.
-    </p>
-
-  </div>
-
-</div>
-
+<div class="page-content"><div class="liturgy-text"><p><strong>R. Señor, mi alma tiene sed de ti.</strong></p><p>Señor, tú eres mi Dios, a ti te busco;<br/>de ti sedienta está mi alma.<br/>Señor, todo mi ser te añora<br/>como el suelo reseco añora el agua.</p><p><strong>R. Señor, mi alma tiene sed de ti.</strong></p><p>Para admirar tu gloria y tu poder,<br/>con este afán te busco en tu santuario.<br/>Pues mejor es tu amor que la existencia;<br/>siempre, Señor, te alabarán mis labios.</p><p><strong>R. Señor, mi alma tiene sed de ti.</strong></p><p>Podré así bendecirte mientras viva<br/>y levantar en oración mis manos.<br/>De lo mejor saciará mi alma;<br/>te alabaré con jubilosos labios.</p><p><strong>R. Señor, mi alma tiene sed de ti.</strong></p></div></div>
 </section>
-
-
-
 <!-- ======================================================
      SEGUNDA LECTURA
 ====================================================== -->
-
-<section id="segunda-lectura" class="page">
-
+<section class="page" id="segunda-lectura">
 <div class="page-top">
-
-  <button class="back-button" onclick="openPage('misa', false)">
+<button class="back-button" onclick="openPage('misa', false)">
     ← MISA
   </button>
-
-  <div class="reading-type">
+<div class="reading-type">
     SEGUNDA LECTURA
   </div>
-
-  <h2>1 Tesalonicenses 4, 13-18</h2>
-
+<h2>1 Tesalonicenses 4, 13-14</h2>
 </div>
-
-
-<div class="page-content liturgy-text">
-
-  <p class="reading-intro">
-    Lectura de la primera carta del apóstol san Pablo
-    a los Tesalonicenses
-  </p>
-
-  <p>
-    Hermanos: No queremos que ignoren lo que pasa con los
-    difuntos, para que no vivan tristes, como los que no tienen
-    esperanza. Pues, si creemos que Jesús murió y resucitó,
-    de igual manera debemos creer que, a los que murieron en Jesús,
-    Dios los llevará con él.
-  </p>
-
-  <p>
-    Lo que les decimos, como palabra del Señor, es esto:
-    que nosotros, los que quedemos vivos para cuando venga
-    el Señor, no tendremos ninguna ventaja sobre los que ya murieron.
-  </p>
-
-  <p>
-    Cuando Dios mande que suenen las trompetas, se oirá la voz
-    de un arcángel y el Señor mismo bajará del cielo. Entonces,
-    los que murieron en Cristo resucitarán primero; después nosotros,
-    los que quedemos vivos, seremos arrebatados, juntamente con ellos
-    entre nubes, por el aire, para ir al encuentro del Señor,
-    y así estaremos siempre con él.
-  </p>
-
-  <p>
-    Consuélense, pues, unos a otros con estas palabras.
-  </p>
-
-</div>
-
+<div class="page-content liturgy-text"><p class="reading-intro">Lectura de la primera carta de san Pablo a los Tesalonicenses</p><p>Hermanos: No queremos que ignoren lo que pasa con los difuntos, para que no vivan tristes, como los que no tienen esperanza. Pues, si creemos que Jesús murió y resucitó, de igual manera debemos creer que, a los que murieron en Jesús, Dios los llevará con él.</p></div>
 </section>
-
-
-
 <!-- ======================================================
      EVANGELIO
 ====================================================== -->
-
-<section id="evangelio" class="page">
-
+<section class="page" id="evangelio">
 <div class="page-top">
-
-  <button class="back-button" onclick="openPage('misa', false)">
+<button class="back-button" onclick="openPage('misa', false)">
     ← MISA
   </button>
-
-  <div class="reading-type">
+<div class="reading-type">
     EVANGELIO
   </div>
-
-  <h2>Mateo 25, 1-13</h2>
-
+<h2>Mateo 25, 1-13</h2>
 </div>
-
-
 <div class="page-content liturgy-text">
-
-  <p class="reading-intro">
+<p class="reading-intro">
     Lectura del santo Evangelio según san Mateo
   </p>
-
-  <p>
+<p>
     En aquel tiempo, Jesús dijo a sus discípulos esta parábola:
     “El Reino de los cielos es semejante a diez jóvenes, que tomando
     sus lámparas, salieron al encuentro del esposo. Cinco de ellas
@@ -2513,8 +1997,7 @@ details p{
     junto con su lámpara. Como el esposo tardaba, les entró sueño
     a todas y se durmieron.
   </p>
-
-  <p>
+<p>
     A medianoche se oyó un grito: ‘¡Ya viene el esposo!
     ¡Salgan a su encuentro!’ Se levantaron entonces todas aquellas
     jóvenes y se pusieron a preparar sus lámparas, y las descuidadas
@@ -2523,537 +2006,234 @@ details p{
     contestaron: ‘No, porque no va a alcanzar para ustedes y para
     nosotras. Vayan mejor a donde lo venden y cómprenlo’.
   </p>
-
-  <p>
+<p>
     Mientras aquéllas iban a comprarlo, llegó el esposo, y las que
     estaban listas entraron con él al banquete de bodas y se cerró
     la puerta. Más tarde llegaron las otras jóvenes y dijeron:
     ‘Señor, señor, ábrenos’. Pero él les respondió:
     ‘Yo les aseguro que no las conozco’.
   </p>
-
-  <p>
+<p>
     Estén, pues, preparados, porque no saben ni el día ni la hora”.
   </p>
-
 </div>
-
 </section>
-
-
-
 <!-- ======================================================
      CANTOS DE ENTRADA
 ====================================================== -->
-
-<section id="cantos-entrada" class="page">
-
+<section class="page" id="cantos-entrada">
 <div class="page-top">
-
-  <button class="back-button" onclick="openPage('misa', false)">
+<button class="back-button" onclick="openPage('misa', false)">
     ← MISA
   </button>
-
-  <h2>Entrada</h2>
-
-  <p class="page-subtitle">
+<h2>Entrada</h2>
+<p class="page-subtitle">
     Cantos de entrada
   </p>
-
 </div>
-
-
-<div class="page-content">
-
-  <button
-    class="content-button"
-    onclick="openPage('venysigueme')"
-  >
-
-    <div>
-      Título Canción Entrada
-    </div>
-
-    <span class="content-button-arrow">›</span>
-
-  </button>
-
-</div>
-
+<div class="page-content"><div class="content-card song-card"><h3>Venga Tu Reino</h3><div class="song-lines"><p class="song-stanza">Juntos servimos al Rey<br/>con un solo corazón,<br/>a su banquete del reino<br/>hoy nos convoca el Señor.</p><p class="song-stanza">El Rey que ha venido a servir<br/>tiene su trono en la Cruz,<br/>brotan la Sangre y el agua<br/>del Sagrado Corazón.</p><p class="song-stanza song-refrain">¡Venga Tu reino, reino<br/>de vida, verdad y de amor,<br/>hasta el extremo!<br/>¡Venga Tu reino, reino de<br/>misericordia y perdón!<br/>¡Venga Tu reino!</p><p class="song-stanza">Aquí en la mesa del Rey,<br/>el pequeño es el mayor,<br/>nos manda que nos amemos<br/>como nos ha amado Él.</p><p class="song-stanza">Ustedes son mis amigos,<br/>ir al mundo a predicar.<br/>Te ruego Señor que en tu reino,<br/>de mí te puedas acordar.</p><p class="song-stanza song-refrain">¡Venga Tu reino, reino<br/>de vida, verdad y de amor,<br/>hasta el extremo!<br/>¡Venga Tu reino, reino de<br/>misericordia y perdón<br/>¡Venga Tu reino, reino<br/>de vida, verdad y de amor,<br/>hasta el extremo!<br/>¡Venga Tu reino, reino de<br/>misericordia y perdón!<br/>¡Venga Tu reino!</p></div></div></div>
 </section>
-
-
-
 <!-- ======================================================
      CANTICO DE ENTRADA
 ====================================================== -->
-
-<section id="venysigueme" class="page">
-
+<section class="page" id="venysigueme">
 <div class="page-top">
-
-  <button
-    class="back-button"
-    onclick="openPage('cantos-entrada', false)"
-  >
+<button class="back-button" onclick="openPage('cantos-entrada', false)">
     ← ENTRADA
   </button>
-
-  <h2>Entrada</h2>
-
-  <p class="page-subtitle">
+<h2>Entrada</h2>
+<p class="page-subtitle">
     Canto de entrada
   </p>
-
 </div>
-
-
 <div class="page-content">
-
-  <div class="song-title">
+<div class="song-title">
     Título canción entrada
   </div>
-
-  <div class="song-lyrics">Letra
+<div class="song-lyrics">Letra
 
 <span class="chorus">Coro</span>
 
 Letra</div>
-
 </div>
-
 </section>
-
-
-
 <!-- ======================================================
      CANTOS OFERTORIO
 ====================================================== -->
-
-<section id="cantos-ofertorio" class="page">
-
+<section class="page" id="cantos-ofertorio">
 <div class="page-top">
-
-  <button class="back-button" onclick="openPage('misa', false)">
+<button class="back-button" onclick="openPage('misa', false)">
     ← MISA
   </button>
-
-  <h2>Ofertorio</h2>
-
+<h2>Ofertorio</h2>
 </div>
-
-<div class="page-content">
-
-  <div class="content-card accent">
-    <h3>Próximamente</h3>
-    <p>Publicaremos aquí los cantos de Ofertorio.</p>
-  </div>
-
-</div>
-
+<div class="page-content"><div class="content-card song-card"><h3>Para darlo a los demás</h3><div class="song-lines"><p class="song-stanza">A veces me siento alejado<br/>y la vergüenza no me deja ni hablar.<br/>Sólo sé que me duele verte clavado<br/>porque me olvido de lo mucho que me amás.</p><p class="song-stanza">Quiero volver       a serte fiel.<br/>Quiero  volver     a serte fiel.<br/>Fiel.</p><p class="song-stanza song-refrain">Toma de mí lo que te sirva<br/>para darlo a los demás.</p><p class="song-stanza song-refrain">Toma de mí lo que te sirva<br/>no me guardo nada más.<br/>Hoy quiero ser tu instrumento<br/>y predicar tu gran verdad,<br/>la de tu palabra, la de tu cuerpo,<br/>la de tu amor eterno,<br/>la de amar al más pequeño.</p><p class="song-stanza">Y trato de encontrarte en mis hermanos<br/>pero se me hace imposible sin tu amor.<br/>Soy débil y te pido que tus manos<br/>abran de par en par mi</p><p class="song-stanza">Quiero volver …</p></div></div></div>
 </section>
-
-
-
 <!-- ======================================================
      CANTOS COMUNIÓN
 ====================================================== -->
-
-<section id="cantos-comunion" class="page">
-
+<section class="page" id="cantos-comunion">
 <div class="page-top">
-
-  <button class="back-button" onclick="openPage('misa', false)">
+<button class="back-button" onclick="openPage('misa', false)">
     ← MISA
   </button>
-
-  <h2>Comunión</h2>
-
-  <p class="page-subtitle">
+<h2>Comunión</h2>
+<p class="page-subtitle">
     Cantos de Comunión
   </p>
-
 </div>
-
-
-<div class="page-content">
-
-  <button class="content-button">
-    <div>Título Canción 1</div>
-    <span class="content-button-arrow">›</span>
-  </button>
-
-  <button class="content-button">
-    <div>Título Canción 2</div>
-    <span class="content-button-arrow">›</span>
-  </button>
-
-</div>
-
-</section>
-
-
-
+<div class="page-content"><div class="content-card song-card"><h3>Resucitados</h3><div class="song-lines"><p class="song-stanza">Enséñame a abrazar mi cruz, Señor<br/>A no escandalizarme de todas mis heridas<br/>Así me has hecho tú así me amas, mi Dios</p><p class="song-stanza">Enséñame a abrazar tu voluntad, Señor<br/>Si no puedo apartar el cáliz de mi realidad<br/>Renuncio a mi plan, acojo tu verdad</p><p class="song-stanza">Quiero ser, ser lavado<br/>Ser curado, y quiero<br/>Morir a mí mismo</p><p class="song-stanza">Enséñame a abrazar mi condición,<br/>Señor<br/>No puedo dar la talla<br/>no soy suficiente<br/>Quiero dejar de hacer<br/>Para dejarme amar (por ti)</p><p class="song-stanza">Quiero ser, ser lavado<br/>Ser curado, y quiero<br/>Morir a mí mismo<br/>Y quiero estar arrodillado<br/>Quiero vaciarme<br/>Y, en el fondo, siento</p><p class="song-stanza">Que no soy valorado<br/>Estoy herido<br/>Soy rechazado<br/>Soy pecado<br/>Pero, soy amado, soy aceptado<br/>Soy rescatado, no soy esclavo</p><p class="song-stanza">Quiero ser, ser lavado<br/>Ser curado, y quiero<br/>Morir a mí mismo<br/>Y quiero estar arrodillado<br/>Quiero vaciarme<br/>Quiero vivir como</p><p class="song-stanza">Resucitado, resucitado<br/>Resucitado, resucitado</p><p class="song-stanza">Quiero ser, ser lavado<br/>Ser curado, y quiero</p><p class="song-stanza">Morir a mí mismo<br/>Y quiero estar arrodillado<br/>Quiero vaciarme<br/>Quiero vivir como</p><p class="song-stanza">Resucitado</p></div>
+</div><div class="content-card song-card"><h3>Tú, el único Rey</h3><div class="song-lines"><p class="song-stanza">Tú, el Único Rey que tiene que reinar<br/>el Único Señor al que voy a alabar,<br/>Hoy levanto el corazón al que lo<br/>conquistó<br/>Simplemente porque Tú eres Dios</p><p class="song-stanza">Quiero ponerte por encima de todo<br/>En cada momento sentarte en el trono<br/>Que tu alabanza esté siempre en mi boca<br/>Y reconocer que Tú eres Dios</p><p class="song-stanza">Que alabarte a ti, Señor<br/>sea siempre lo primero<br/>Fijo mi mirada en el cielo</p><p class="song-stanza">Tú, el Único Rey que tiene que reinar<br/>el Único Señor al que voy a alabar,<br/>Hoy levanto el corazón al que lo<br/>conquistó<br/>Simplemente porque Tú eres Dios</p><p class="song-stanza">Y a Ti, toda la alabanza,<br/>todo el poder y el honor,<br/>toda la gloria al Señor (x4)</p></div></div><div class="content-card song-card"><h3>Divino Pan</h3><div class="song-lines"><p class="song-stanza">Vengo como enfermo,<br/>al médico de vida.<br/>Vengo como impuro,<br/>a tu misericordia.</p><p class="song-stanza">Vengo como ciego,<br/>a la luz del mundo.<br/>Vengo como pobre,<br/>al Señor de señores.</p><p class="song-stanza song-refrain song-refrain song-refrain">Divino Pan, que oculta humanidad<br/>De un Dios que salva y es digno de alabar.<br/>Jesús presente en la Eucaristía,<br/>Sangre preciosa, Cuerpo de Dios</p><p class="song-stanza">Eres alimento<br/>que das vida a los hombres.</p><p class="song-stanza">Concédele a mi alma<br/>que viva de ti.</p><p class="song-stanza">Hostia divina hoy quiero recibirte,<br/>así convertirme y alabarte Señor.</p><p class="song-stanza song-refrain song-refrain song-refrain">Divino Pan, que oculta humanidad<br/>De un Dios que salva y es digno de alabar.<br/>Jesús presente en la Eucaristía,<br/>Sangre preciosa, Cuerpo de Dios</p></div></div></div></section>
 <!-- ======================================================
      CANTOS MEDITACIÓN
 ====================================================== -->
-
-<section id="cantos-meditacion" class="page">
-
+<section class="page" id="cantos-meditacion">
 <div class="page-top">
-
-  <button class="back-button" onclick="openPage('misa', false)">
+<button class="back-button" onclick="openPage('misa', false)">
     ← MISA
   </button>
-
-  <h2>Meditación</h2>
-
+<h2>Meditación</h2>
 </div>
-
-<div class="page-content">
-
-  <div class="content-card accent">
-    <h3>Próximamente</h3>
-    <p>Publicaremos aquí los cantos de Meditación.</p>
-  </div>
-
-</div>
-
+<div class="page-content"><div class="content-card song-card"><h3>Llena de Gracia</h3><div class="song-lines"><p class="song-stanza">No existe un corazón que ame más<br/>que aquel que dijo sí hasta el final,<br/>no descansó, nunca dudó,<br/>lo hizo todo con fe y con amor.</p><p class="song-stanza">Desde el principio recibió<br/>la gracia que viene solo de Dios.<br/>Con su pequeñez y su humildad<br/>nos muestra el camino a la santidad.</p><p class="song-stanza song-refrain">Madre de Dios, llena de gracia,<br/>Reina de paz, Consuelo del alma.</p><p class="song-stanza song-refrain">María cuídame, con tu manto cúbreme,<br/>Sé mi puente al cielo, llévame a Dios.<br/>Y así como Tú quiero llenarme de su gracia<br/>que se refleje en mi alma,<br/>la alegría de su amor.</p><p class="song-stanza">De su amor, de su amor. (bis)</p><p class="song-stanza song-refrain">Madre de Dios, llena de gracia,<br/>Reina de paz, Consuelo del alma.</p><p class="song-stanza song-refrain">María cuídame, con tu manto cúbreme,<br/>Sé mi puente al cielo, llévame a Dios.<br/>Y así como Tú quiero llenarme de su gracia<br/>que se refleje en mi alma,<br/>la alegría de su amor.</p><p class="song-stanza">De su amor, de su amor. (bis)</p></div></div></div>
 </section>
-
-
-
 <!-- ======================================================
      CANTOS SALIDA
 ====================================================== -->
-
-<section id="cantos-salida" class="page">
-
+<section class="page" id="cantos-salida">
 <div class="page-top">
-
-  <button class="back-button" onclick="openPage('misa', false)">
+<button class="back-button" onclick="openPage('misa', false)">
     ← MISA
   </button>
-
-  <h2>Salida</h2>
-
+<h2>Salida</h2>
 </div>
-
-<div class="page-content">
-
-  <div class="content-card accent">
-    <h3>Próximamente</h3>
-    <p>Publicaremos aquí los cantos de Salida.</p>
-  </div>
-
-</div>
-
+<div class="page-content"><div class="content-card song-card"><h3>Viva Cristo Rey</h3><div class="song-lines"><p class="song-stanza">Un grito de guerra<br/>se escucha en la faz de la tierra<br/>y en todo lugar.<br/>Los prestos guerreros empuñan su espada<br/>y se enlistan para pelear</p><p class="song-stanza">Para eso han sido entrenados,<br/>defenderán la verdad.<br/>Y no les será arrebatado<br/>el fuego que en su sangre está.</p><p class="song-stanza song-refrain">¡Viva Cristo Rey, viva Cristo Rey!<br/>El grito de guerra que enciende la tierra.<br/>¡Viva Cristo Rey,<br/>nuestro soberano Señor!<br/>Nuestro capitán y campeón,<br/>pelear por Él es todo un honor.</p><p class="song-stanza">Sabemos que esta batalla no es fácil<br/>y muchos se acobardarán.<br/>Y bajo los dardos de nuestro<br/>enemigo,<br/>sin duda perecerán.</p><p class="song-stanza">Yo tendré mi espada en alto,<br/>como la usa mi Señor.<br/>A Él nada lo ha derrotado,<br/>su fuerza es la de Dios.</p><p class="song-stanza song-refrain">¡Viva Cristo Rey, viva Cristo Rey!<br/>El grito de guerra que enciende la tierra.<br/>¡Viva Cristo Rey,<br/>nuestro soberano Señor!<br/>Nuestro capitán y campeón,<br/>pelear por Él es todo un honor.<br/>(bis)</p><p class="song-stanza">Viva Cristo Rey</p></div></div></div>
 </section>
-
-
-
 <!-- ======================================================
      ADORACIÓN
 ====================================================== -->
-
-<section id="adoracion" class="page">
-
+<section class="page" id="adoracion">
 <div class="page-top">
-
-
-  <button class="back-button" onclick="openPage('home', false)">
-    ← VOLVER
-  </button>
-
-  <h2>Adoración Permanente</h2>
-
-  <p class="page-subtitle">
+<button class="back-button" onclick="openPage('misa', false)">← MISA</button>
+<h2>Adoración Permanente</h2>
+<p class="page-subtitle">
     Elegí un turno para acompañar a Jesús
   </p>
-
 </div>
-
-
 <div class="page-content">
-
-
-  <div class="adoration-intro">
-
-    <div class="adoration-intro-label">
+<div class="adoration-intro">
+<div class="adoration-intro-label">
       ADORACIÓN AL SANTÍSIMO
     </div>
-
-    <p>
+<p>
       Durante la jornada tendremos
       <strong>Adoración Permanente.</strong>
       Te invitamos a elegir uno o más turnos de
       30 minutos para acompañar a Jesús.
-      <br>Dirigite al gazebo indicado en el plano
+      <br/>Dirigite al gazebo indicado en el plano
     </p>
-
-  </div>
-
-
-  <div
-    id="adoration-my-slots"
-    class="adoration-my-slots"
-    style="display:none;"
-  >
-
-    <div class="adoration-my-label">
+</div>
+<div class="adoration-my-slots" id="adoration-my-slots" style="display:none;">
+<div class="adoration-my-label">
       TUS TURNOS
     </div>
-
-    <div
-      id="adoration-my-slots-text"
-      class="adoration-my-slots-text"
-    ></div>
-
-    <div class="adoration-my-thanks">
+<div class="adoration-my-slots-text" id="adoration-my-slots-text"></div>
+<div class="adoration-my-thanks">
       ¡Gracias por acompañarnos en la Adoración!
     </div>
-
-  </div>
-
-
-  <div class="adoration-section-title">
-
-    <span style="font-size:14px;">ELEGÍ TU TURNO</span>
-
-    <p>
+</div>
+<div class="adoration-section-title">
+<span style="font-size:14px;">ELEGÍ TU TURNO</span>
+<p>
       Tocá + para anotarte. Podés elegir más de un horario.
     </p>
-
-  </div>
-
-
-  <div
-    id="adoration-loading"
-    class="adoration-loading"
-  >
+</div>
+<div class="adoration-loading" id="adoration-loading">
     Cargando turnos...
   </div>
+<div class="adoration-error" id="adoration-error" style="display:none;"></div>
+<div class="adoration-slots" id="adoration-slots"></div>
+<div class="adoration-divider"></div>
+<button class="content-button" onclick="openPage('reflexiones-adoracion')">
+<div>
+      Entrar en presencia de Dios
 
-
-  <div
-    id="adoration-error"
-    class="adoration-error"
-    style="display:none;"
-  ></div>
-
-
-  <div
-    id="adoration-slots"
-    class="adoration-slots"
-  ></div>
-
-
-  <div class="adoration-divider"></div>
-
-
-  <button
-    class="content-button"
-    onclick="openPage('reflexiones-adoracion')"
-  >
-
-    <div>
-      Reflexiones para la Adoración
-
-      <div class="reading-reference">
-        Textos para acompañar tu momento de oración
-      </div>
-    </div>
-
-    <span class="content-button-arrow">›</span>
-
-  </button>
-
-
-  <!--
+      <div class="reading-reference">Textos para ayudarte a rezar</div>
+</div>
+<span class="content-button-arrow">›</span>
+</button>
+<!--
     REEMPLAZAR # POR EL LINK REAL DE SPOTIFY
   -->
-
-  <a
-    class="content-button"
-    href="#"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-
-    <div>
-      Playlist de Adoración
-
-      <div class="reading-reference">
-        Escuchá nuestra playlist en Spotify
-      </div>
-    </div>
-
-    <span class="content-button-arrow">↗</span>
-
-  </a>
-
-
 </div>
-
 </section>
-
-
-
 <!-- ======================================================
      REFLEXIONES ADORACIÓN
 ====================================================== -->
-
-<section id="reflexiones-adoracion" class="page">
-
+<section class="page" id="reflexiones-adoracion">
 <div class="page-top">
-
-  <button
-    class="back-button"
-    onclick="openPage('adoracion', false)"
-  >
+<button class="back-button" onclick="openPage('adoracion', false)">
     ← ADORACIÓN
   </button>
-
-  <h2>Reflexiones</h2>
-
-  <p class="page-subtitle">
-    Para acompañar tu momento de Adoración
-  </p>
-
+<h2>Entrar en presencia de Dios</h2>
+<p class="page-subtitle">Textos para ayudarte a rezar</p>
 </div>
-
-
-<div class="page-content">
-
-  <div class="content-card accent">
-
-    <h3>Quedate conmigo</h3>
-
-    <p>
-      Próximamente compartiremos reflexiones y textos
-      para acompañar tu momento de oración frente al Santísimo.
-    </p>
-
-  </div>
-
-</div>
-
+<div class="page-content"><div class="content-card accent"><p class="prayer-lines">Ea, hombrecillo, deja un momento tus ocupaciones,
+esconde un poco tus tumultuosos pensamientos.
+Arroja las pesadas preocupaciones y pospón tus fatigosos trabajos.
+Dedica un rato a Dios y descansa un momento en Él.
+Entra en el aposento de tu alma,
+excluye todo excepto a Dios y lo que te ayude a buscarle;
+cerrada la puerta, búscalo.
+Di ahora, corazón mío entero, di ahora a Dios:
+«Busco tu rostro; tu rostro busco, Señor».
+Amén.</p><p style="text-align:right"><strong>San Anselmo de Canterbury</strong></p></div></div>
 </section>
-
-
-
 <!-- ======================================================
      ACTIVIDADES
 ====================================================== -->
-
-<section id="actividades" class="page">
-
+<section class="page" id="actividades">
 <div class="page-top">
-
-  <button class="back-button" onclick="openPage('home', false)">
-    ← VOLVER
-  </button>
-
-  <h2>Actividades</h2>
-
-  <p class="page-subtitle">
-    Evento Familia RC
-  </p>
-
+<button class="back-button" onclick="openPage('dia-rc', false)">← DÍA RC</button>
+<h2>Dinámica</h2>
+<p class="page-subtitle">Para compartir con tu grupo reducido</p>
 </div>
-
-
-<div class="page-content">
-
-  <div class="content-card accent">
-
-    <h3>Actividades del encuentro</h3>
-
-    <p>
-      Próximamente publicaremos acá las actividades
-      preparadas para compartir durante la jornada.
-    </p>
-
-  </div>
-
-</div>
-
+<div class="page-content"><div class="content-card accent"><h3>Con tu grupo reducido, respondé las siguientes preguntas:</h3><ol class="dynamic-questions"><li>¿Cómo te llamó Dios a ser parte de la Iglesia?</li><li>¿Sos consciente de que sos su hijo amado? Nombrá situaciones que te lo recuerden.</li><li>Después de esta experiencia de Familia RC, ¿qué querés llevar a tu sección/comunidad?</li><li>¿Qué te genera la palabra que te tocó?</li><li>¿Qué es para vos ser Iglesia en esta visita del Santo Padre?</li></ol></div></div>
 </section>
-
-
-
 <!-- ======================================================
      AGENDA PAPAL
 ====================================================== -->
-
-<section id="agenda" class="page">
-
+<section class="page" id="agenda">
 <div class="page-top">
-
-  <button class="back-button" onclick="openPage('home', false)">
+<button class="back-button" onclick="openPage('home', false)">
     ← VOLVER
   </button>
-
-  <h2>Minuto a minuto con RC</h2>
-
-  <p class="page-subtitle">
-    Consultá el cronograma de lo que vamos a vivir estos días
-  </p>
-
+<h2>Agenda oficial y RC</h2>
+<p class="page-subtitle">Minuto a minuto de la visita con el Regnum Christi</p>
 </div>
-
-
 <div class="agenda-day-nav">
-
-  <button
-    class="agenda-day-button active"
-    data-day="agenda-domingo"
-    onclick="goToAgendaDay('agenda-domingo',this)"
-  >
-    <span>DOM</span>
-    <strong>8</strong>
-  </button>
-
-  <button
-    class="agenda-day-button"
-    data-day="agenda-lunes"
-    onclick="goToAgendaDay('agenda-lunes',this)"
-  >
-    <span>LUN</span>
-    <strong>9</strong>
-  </button>
-
-  <button
-    class="agenda-day-button"
-    data-day="agenda-martes"
-    onclick="goToAgendaDay('agenda-martes',this)"
-  >
-    <span>MAR</span>
-    <strong>10</strong>
-  </button>
-
-  <button
-    class="agenda-day-button"
-    data-day="agenda-miercoles"
-    onclick="goToAgendaDay('agenda-miercoles',this)"
-  >
-    <span>MIÉ</span>
-    <strong>11</strong>
-  </button>
-
+<button class="agenda-day-button active" data-day="agenda-domingo" onclick="goToAgendaDay('agenda-domingo',this)">
+<span>DOM</span>
+<strong>8</strong>
+</button>
+<button class="agenda-day-button" data-day="agenda-lunes" onclick="goToAgendaDay('agenda-lunes',this)">
+<span>LUN</span>
+<strong>9</strong>
+</button>
+<button class="agenda-day-button" data-day="agenda-martes" onclick="goToAgendaDay('agenda-martes',this)">
+<span>MAR</span>
+<strong>10</strong>
+</button>
+<button class="agenda-day-button" data-day="agenda-miercoles" onclick="goToAgendaDay('agenda-miercoles',this)">
+<span>MIÉ</span>
+<strong>11</strong>
+</button>
 </div>
-
-
-<div class="page-content agenda-content"><div class="notice-official"><strong>Información oficial y cambios de último momento.</strong><br>Los horarios y accesos pueden modificarse. Verificá siempre la <a href="https://www.elpapaenargentina.com.ar/agenda" target="_blank" rel="noopener">agenda oficial de la visita ↗</a> antes de salir.</div><div class="papal-day" id="agenda-domingo"><div class="papal-day-header"><span class="papal-day-name">DOMINGO</span> <span class="papal-day-number">8</span> <span class="papal-day-month">NOVIEMBRE</span><div class="papal-day-city">OAKHILL PILAR</div></div><div class="papal-event rc-event"><div class="papal-time">10:00</div><div class="papal-event-info"><span class="rc-label">REGNUM CHRISTI</span><strong>Salida de colectivos</strong><span>Betania, Facultad de Derecho<a class="meet-map-link" href="https://www.google.com/maps/search/?api=1&query=Facultad%20de%20Derecho%20UBA%20Buenos%20Aires" target="_blank" rel="noopener noreferrer" aria-label="Ver Facultad de Derecho en Google Maps" title="Ver ubicación aproximada en Google Maps"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.5 9 4l6 2.5L21 4v13.5L15 20l-6-2.5L3 20z"/><path d="M9 4v13.5M15 6.5V20"/></svg><span aria-hidden="true">↗</span></a> y Club Ciudad. Mano Amiga sale a las 11:00.</span></div></div><div class="papal-event rc-event"><div class="papal-time">12:00</div><div class="papal-event-info"><span class="rc-label">REGNUM CHRISTI</span><strong>Evento Familia RC</strong><span>Acreditaciones y kits desde las 12:05 · Misa 13:00 · Almuerzo 14:00 · Dinámicas 15:00</span></div></div><div class="papal-event rc-event"><div class="papal-time">17:00</div><div class="papal-event-info"><span class="rc-label">REGNUM CHRISTI</span><strong>Regreso de familias</strong><span>Betania, Facultad de Derecho<a class="meet-map-link" href="https://www.google.com/maps/search/?api=1&query=Facultad%20de%20Derecho%20UBA%20Buenos%20Aires" target="_blank" rel="noopener noreferrer" aria-label="Ver Facultad de Derecho en Google Maps" title="Ver ubicación aproximada en Google Maps"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.5 9 4l6 2.5L21 4v13.5L15 20l-6-2.5L3 20z"/><path d="M9 4v13.5M15 6.5V20"/></svg><span aria-hidden="true">↗</span></a> y Club Ciudad. Mano Amiga no regresa en este horario.</span></div></div><div class="papal-event rc-event"><div class="papal-time">18:30</div><div class="papal-event-info"><span class="rc-label">REGNUM CHRISTI</span><strong>Jóvenes RC</strong><span>Oakhill Pilar<a class="meet-map-link" href="https://www.google.com/maps/search/?api=1&query=Colegio%20Oakhill%20Pilar%20Buenos%20Aires" target="_blank" rel="noopener noreferrer" aria-label="Ver Oakhill Pilar en Google Maps" title="Ver ubicación aproximada en Google Maps"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.5 9 4l6 2.5L21 4v13.5L15 20l-6-2.5L3 20z"/><path d="M9 4v13.5M15 6.5V20"/></svg><span aria-hidden="true">↗</span></a></span></div></div><div class="papal-event rc-event"><div class="papal-time">22:30</div><div class="papal-event-info"><span class="rc-label">REGNUM CHRISTI</span><strong>Regreso de jóvenes</strong><span>Según transporte confirmado; incluye Mano Amiga.</span></div></div></div><div class="papal-day" id="agenda-lunes"><div class="papal-day-header"><span class="papal-day-name">LUNES</span> <span class="papal-day-number">9</span> <span class="papal-day-month">NOVIEMBRE</span><div class="papal-day-city">MISA EN BUENOS AIRES</div></div><div class="papal-event rc-event"><div class="papal-time">07:00</div><div class="papal-event-info"><span class="rc-label">REGNUM CHRISTI</span><strong>Puntos de encuentro RC</strong><span>Barrancas de Belgrano<a class="meet-map-link" href="https://www.google.com/maps/search/?api=1&query=Barrancas%20de%20Belgrano%20Buenos%20Aires" target="_blank" rel="noopener noreferrer" aria-label="Ver Barrancas de Belgrano en Google Maps" title="Ver ubicación aproximada en Google Maps"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.5 9 4l6 2.5L21 4v13.5L15 20l-6-2.5L3 20z"/><path d="M9 4v13.5M15 6.5V20"/></svg><span aria-hidden="true">↗</span></a>, Parque Thays y Parroquia Betania.</span></div></div><div class="papal-event "><div class="papal-time">07:30</div><div class="papal-event-info"><strong>Comienzo de la animación</strong><span>Monumento de los Españoles</span></div></div><div class="papal-event "><div class="papal-time">10:00</div><div class="papal-event-info"><strong>Recorrido del Papamóvil</strong><span>Av. del Libertador</span></div></div><div class="papal-event "><div class="papal-time">11:30</div><div class="papal-event-info"><strong>Santa Misa</strong><span>Monumento de los Españoles</span></div></div><div class="papal-event "><div class="papal-time">13:00</div><div class="papal-event-info"><strong>Despedida del Santo Padre</strong><span></span></div></div><div class="papal-event "><div class="papal-time">13:10</div><div class="papal-event-info"><strong>Cierre musical</strong><span></span></div></div><div class="papal-event "><div class="papal-time">13:30</div><div class="papal-event-info"><strong>Desconcentración</strong><span></span></div></div></div><div class="papal-day" id="agenda-martes"><div class="papal-day-header"><span class="papal-day-name">MARTES</span> <span class="papal-day-number">10</span> <span class="papal-day-month">NOVIEMBRE</span><div class="papal-day-city">ENCUENTRO CON LOS JÓVENES</div></div><div class="papal-event "><div class="papal-time">12:00</div><div class="papal-event-info"><strong>Apertura de accesos</strong><span>Ingreso con código QR</span></div></div><div class="papal-event rc-event"><div class="papal-time">14:30</div><div class="papal-event-info"><span class="rc-label">REGNUM CHRISTI</span><strong>Puntos de encuentro RC</strong><span>Barrancas de Belgrano<a class="meet-map-link" href="https://www.google.com/maps/search/?api=1&query=Barrancas%20de%20Belgrano%20Buenos%20Aires" target="_blank" rel="noopener noreferrer" aria-label="Ver Barrancas de Belgrano en Google Maps" title="Ver ubicación aproximada en Google Maps"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.5 9 4l6 2.5L21 4v13.5L15 20l-6-2.5L3 20z"/><path d="M9 4v13.5M15 6.5V20"/></svg><span aria-hidden="true">↗</span></a>, Parque Thays y Parroquia Betania.</span></div></div><div class="papal-event "><div class="papal-time">16:00</div><div class="papal-event-info"><strong>Comienza la previa</strong><span>Actividades y artistas</span></div></div><div class="papal-event "><div class="papal-time">20:15</div><div class="papal-event-info"><strong>Encuentro con los jóvenes</strong><span>Llegada del Papa León XIV · Monumento de los Españoles</span></div></div><div class="papal-event "><div class="papal-time">22:00</div><div class="papal-event-info"><strong>Cierre</strong><span></span></div></div></div><div class="papal-day" id="agenda-miercoles"><div class="papal-day-header"><span class="papal-day-name">MIÉRCOLES</span> <span class="papal-day-number">11</span> <span class="papal-day-month">NOVIEMBRE</span><div class="papal-day-city">LUJÁN</div></div><div class="papal-event rc-event"><div class="papal-time">04:00</div><div class="papal-event-info"><span class="rc-label">REGNUM CHRISTI</span><strong>Salida de colectivos</strong><span>Oakhill Pilar<a class="meet-map-link" href="https://www.google.com/maps/search/?api=1&query=Colegio%20Oakhill%20Pilar%20Buenos%20Aires" target="_blank" rel="noopener noreferrer" aria-label="Ver Oakhill Pilar en Google Maps" title="Ver ubicación aproximada en Google Maps"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.5 9 4l6 2.5L21 4v13.5L15 20l-6-2.5L3 20z"/><path d="M9 4v13.5M15 6.5V20"/></svg><span aria-hidden="true">↗</span></a>. Grupo Chile y Grupo Betania: horario y punto a confirmar.</span></div></div><div class="papal-event "><div class="papal-time">10:00</div><div class="papal-event-info"><strong>Santa Misa</strong><span>Plaza de la Basílica de Nuestra Señora de Luján</span></div></div><div class="papal-event rc-event"><div class="papal-time">Al finalizar</div><div class="papal-event-info"><span class="rc-label">REGNUM CHRISTI</span><strong>Regreso en colectivos</strong><span>Según las indicaciones de cada grupo.</span></div></div></div></div>
+<div class="page-content agenda-content"><div class="notice-official"><strong>Información oficial y cambios de último momento.</strong><br/>Los horarios y accesos pueden modificarse. Verificá siempre la <a href="https://www.elpapaenargentina.com.ar/agenda" rel="noopener" target="_blank">agenda oficial de la visita ↗</a> antes de salir.</div><div class="papal-day" id="agenda-domingo"><div class="papal-day-header"><span class="papal-day-name">DOMINGO</span> <span class="papal-day-number">8</span> <span class="papal-day-month">NOVIEMBRE</span><div class="papal-day-city">OAKHILL PILAR</div></div><div class="papal-event rc-event"><div class="papal-time">10:00</div><div class="papal-event-info"><span class="rc-label">REGNUM CHRISTI</span><strong>Salida de colectivos</strong><span>Betania, Facultad de Derecho<a aria-label="Ver Facultad de Derecho en Google Maps" class="meet-map-link" href="https://www.google.com/maps/search/?api=1&amp;query=Facultad%20de%20Derecho%20UBA%20Buenos%20Aires" rel="noopener noreferrer" target="_blank" title="Ver ubicación aproximada en Google Maps"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M3 6.5 9 4l6 2.5L21 4v13.5L15 20l-6-2.5L3 20z"></path><path d="M9 4v13.5M15 6.5V20"></path></svg><span aria-hidden="true">↗</span></a> y Club Ciudad. Mano Amiga sale a las 11:00.</span></div></div><div class="papal-event rc-event"><div class="papal-time">12:00</div><div class="papal-event-info"><span class="rc-label">REGNUM CHRISTI</span><strong>Evento Familia RC</strong><span>Acreditaciones y kits desde las 12:05 · Misa 13:00 · Almuerzo 14:00 · Dinámicas 15:00</span></div></div><div class="papal-event rc-event"><div class="papal-time">17:00</div><div class="papal-event-info"><span class="rc-label">REGNUM CHRISTI</span><strong>Regreso de familias</strong><span>Betania, Facultad de Derecho<a aria-label="Ver Facultad de Derecho en Google Maps" class="meet-map-link" href="https://www.google.com/maps/search/?api=1&amp;query=Facultad%20de%20Derecho%20UBA%20Buenos%20Aires" rel="noopener noreferrer" target="_blank" title="Ver ubicación aproximada en Google Maps"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M3 6.5 9 4l6 2.5L21 4v13.5L15 20l-6-2.5L3 20z"></path><path d="M9 4v13.5M15 6.5V20"></path></svg><span aria-hidden="true">↗</span></a> y Club Ciudad. Mano Amiga no regresa en este horario.</span></div></div><div class="papal-event rc-event"><div class="papal-time">18:30</div><div class="papal-event-info"><span class="rc-label">REGNUM CHRISTI</span><strong>Jóvenes RC</strong><span>Oakhill Pilar<a aria-label="Ver Oakhill Pilar en Google Maps" class="meet-map-link" href="https://www.google.com/maps/search/?api=1&amp;query=Colegio%20Oakhill%20Pilar%20Buenos%20Aires" rel="noopener noreferrer" target="_blank" title="Ver ubicación aproximada en Google Maps"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M3 6.5 9 4l6 2.5L21 4v13.5L15 20l-6-2.5L3 20z"></path><path d="M9 4v13.5M15 6.5V20"></path></svg><span aria-hidden="true">↗</span></a></span></div></div><div class="papal-event rc-event"><div class="papal-time">22:30</div><div class="papal-event-info"><span class="rc-label">REGNUM CHRISTI</span><strong>Regreso de jóvenes</strong><span>Según transporte confirmado; incluye Mano Amiga.</span></div></div></div><div class="papal-day" id="agenda-lunes"><div class="papal-day-header"><span class="papal-day-name">LUNES</span> <span class="papal-day-number">9</span> <span class="papal-day-month">NOVIEMBRE</span><div class="papal-day-city">MISA EN BUENOS AIRES</div></div><div class="papal-event rc-event"><div class="papal-time">07:00</div><div class="papal-event-info"><span class="rc-label">REGNUM CHRISTI</span><strong>Puntos de encuentro RC</strong><span>Barrancas de Belgrano<a aria-label="Ver Barrancas de Belgrano en Google Maps" class="meet-map-link" href="https://www.google.com/maps/search/?api=1&amp;query=Barrancas%20de%20Belgrano%20Buenos%20Aires" rel="noopener noreferrer" target="_blank" title="Ver ubicación aproximada en Google Maps"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M3 6.5 9 4l6 2.5L21 4v13.5L15 20l-6-2.5L3 20z"></path><path d="M9 4v13.5M15 6.5V20"></path></svg><span aria-hidden="true">↗</span></a>, Parque Thays y Parroquia Betania.</span></div></div><div class="papal-event"><div class="papal-time">07:30</div><div class="papal-event-info"><strong>Comienzo de la animación</strong><span>Monumento de los Españoles</span></div></div><div class="papal-event"><div class="papal-time">10:00</div><div class="papal-event-info"><strong>Recorrido del Papamóvil</strong><span>Av. del Libertador</span></div></div><div class="papal-event"><div class="papal-time">11:30</div><div class="papal-event-info"><strong>Santa Misa</strong><span>Monumento de los Españoles</span></div></div><div class="papal-event"><div class="papal-time">13:00</div><div class="papal-event-info"><strong>Despedida del Santo Padre</strong><span></span></div></div><div class="papal-event"><div class="papal-time">13:10</div><div class="papal-event-info"><strong>Cierre musical</strong><span></span></div></div><div class="papal-event"><div class="papal-time">13:30</div><div class="papal-event-info"><strong>Desconcentración</strong><span></span></div></div></div><div class="papal-day" id="agenda-martes"><div class="papal-day-header"><span class="papal-day-name">MARTES</span> <span class="papal-day-number">10</span> <span class="papal-day-month">NOVIEMBRE</span><div class="papal-day-city">ENCUENTRO CON LOS JÓVENES</div></div><div class="papal-event"><div class="papal-time">12:00</div><div class="papal-event-info"><strong>Apertura de accesos</strong><span>Ingreso con código QR</span></div></div><div class="papal-event rc-event"><div class="papal-time">14:30</div><div class="papal-event-info"><span class="rc-label">REGNUM CHRISTI</span><strong>Puntos de encuentro RC</strong><span>Barrancas de Belgrano<a aria-label="Ver Barrancas de Belgrano en Google Maps" class="meet-map-link" href="https://www.google.com/maps/search/?api=1&amp;query=Barrancas%20de%20Belgrano%20Buenos%20Aires" rel="noopener noreferrer" target="_blank" title="Ver ubicación aproximada en Google Maps"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M3 6.5 9 4l6 2.5L21 4v13.5L15 20l-6-2.5L3 20z"></path><path d="M9 4v13.5M15 6.5V20"></path></svg><span aria-hidden="true">↗</span></a>, Parque Thays y Parroquia Betania.</span></div></div><div class="papal-event"><div class="papal-time">16:00</div><div class="papal-event-info"><strong>Comienza la previa</strong><span>Actividades y artistas</span></div></div><div class="papal-event"><div class="papal-time">20:15</div><div class="papal-event-info"><strong>Encuentro con los jóvenes</strong><span>Llegada del Papa León XIV · Monumento de los Españoles</span></div></div><div class="papal-event"><div class="papal-time">22:00</div><div class="papal-event-info"><strong>Cierre</strong><span></span></div></div></div><div class="papal-day" id="agenda-miercoles"><div class="papal-day-header"><span class="papal-day-name">MIÉRCOLES</span> <span class="papal-day-number">11</span> <span class="papal-day-month">NOVIEMBRE</span><div class="papal-day-city">LUJÁN</div></div><div class="papal-event rc-event"><div class="papal-time">04:00</div><div class="papal-event-info"><span class="rc-label">REGNUM CHRISTI</span><strong>Salida de colectivos</strong><span>Oakhill Pilar<a aria-label="Ver Oakhill Pilar en Google Maps" class="meet-map-link" href="https://www.google.com/maps/search/?api=1&amp;query=Colegio%20Oakhill%20Pilar%20Buenos%20Aires" rel="noopener noreferrer" target="_blank" title="Ver ubicación aproximada en Google Maps"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M3 6.5 9 4l6 2.5L21 4v13.5L15 20l-6-2.5L3 20z"></path><path d="M9 4v13.5M15 6.5V20"></path></svg><span aria-hidden="true">↗</span></a>. Grupo Chile y Grupo Betania: horario y punto a confirmar.</span></div></div><div class="papal-event"><div class="papal-time">10:00</div><div class="papal-event-info"><strong>Santa Misa</strong><span>Plaza de la Basílica de Nuestra Señora de Luján</span></div></div><div class="papal-event rc-event"><div class="papal-time">Al finalizar</div><div class="papal-event-info"><span class="rc-label">REGNUM CHRISTI</span><strong>Regreso en colectivos</strong><span>Según las indicaciones de cada grupo.</span></div></div></div></div>
 </section>
-
-
-
 <!-- ======================================================
      INFORMACIÓN
 ====================================================== -->
-
-<section id="informacion" class="page">
+<section class="page" id="informacion">
 <div class="page-top">
 <button class="back-button" onclick="openPage('home', false)">
     ← VOLVER
@@ -3079,176 +2259,66 @@ Letra</div>
 <p class="info-tag">La guía oficial puede actualizarse. Revisala antes de salir y seguí las indicaciones de la organización.</p>
 </div></details></div>
 </section>
-
-
-
 <!-- ======================================================
      PREGUNTAS
 ====================================================== -->
-
-<section id="preguntas" class="page"><div class="page-top"><button class="back-button" onclick="openPage('home', false)">← VOLVER</button><h2>Preguntas frecuentes</h2><p class="page-subtitle">Respuestas rápidas y accesos directos a la información</p></div><div class="page-content faq-page-content">
-<div class="faq-feature"><div class="faq-feature-eyebrow">IMPORTANTE · MARTES 10/11</div><h3>QR y sector del Encuentro con los Jóvenes</h3><p>Los <strong>códigos QR oficiales y sectores asignados</strong> se publicarán en <strong>«Mi inscripción» de cada participante</strong>, una vez que recibamos y procesemos la información de la organización.</p><p>Ingresá para verificar tu inscripción y consultá nuevamente cuando anunciemos que los QR están disponibles.</p><button type="button" class="faq-jump" onclick="faqGo('inscripcion')">CONSULTAR MI INSCRIPCIÓN <span aria-hidden="true">→</span></button></div>
-<div class="faq-intro"><strong>Encontrá tu respuesta</strong><p>Elegí un tema y abrí la pregunta. Para horarios, mapas y datos que pueden cambiar, usá los accesos directos a las otras secciones.</p></div>
-<nav class="faq-category-nav" aria-label="Categorías de preguntas frecuentes"><a href="#faq-group-0" class="faq-category-link" onclick="event.preventDefault();document.getElementById('faq-group-0').scrollIntoView({behavior:'smooth',block:'start'})">Inscripciones, acreditaciones y kits <span>›</span></a><a href="#faq-group-1" class="faq-category-link" onclick="event.preventDefault();document.getElementById('faq-group-1').scrollIntoView({behavior:'smooth',block:'start'})">Domingo 8/11 · Día RC <span>›</span></a><a href="#faq-group-2" class="faq-category-link" onclick="event.preventDefault();document.getElementById('faq-group-2').scrollIntoView({behavior:'smooth',block:'start'})">Colectivos y transporte <span>›</span></a><a href="#faq-group-3" class="faq-category-link" onclick="event.preventDefault();document.getElementById('faq-group-3').scrollIntoView({behavior:'smooth',block:'start'})">Lunes 9/11 · Misa en Buenos Aires <span>›</span></a><a href="#faq-group-4" class="faq-category-link" onclick="event.preventDefault();document.getElementById('faq-group-4').scrollIntoView({behavior:'smooth',block:'start'})">Martes 10/11 · Encuentro con los Jóvenes <span>›</span></a><a href="#faq-group-5" class="faq-category-link" onclick="event.preventDefault();document.getElementById('faq-group-5').scrollIntoView({behavior:'smooth',block:'start'})">Miércoles 11/11 · Misa en Luján <span>›</span></a><a href="#faq-group-6" class="faq-category-link" onclick="event.preventDefault();document.getElementById('faq-group-6').scrollIntoView({behavior:'smooth',block:'start'})">Aplicación y consultas generales <span>›</span></a></nav>
-<section class="faq-group" id="faq-group-0"><h3>Inscripciones, acreditaciones y kits</h3><details class="faq-item"><summary>¿Cómo sé a qué eventos estoy inscripto?</summary><div class="faq-answer"><p>Consultá los eventos, colectivos y datos de tu participación desde «Mi inscripción».</p><button type="button" class="faq-jump" onclick="faqGo('inscripcion')">Consultar mi inscripción <span aria-hidden="true">→</span></button></div></details><details class="faq-item"><summary>¿Cómo consulto la inscripción de mi familia?</summary><div class="faq-answer"><p>Verificá los datos de cada participante en «Mi inscripción»: no todos los integrantes necesariamente tienen los mismos eventos o transportes.</p><button type="button" class="faq-jump" onclick="faqGo('inscripcion')">Consultar mi inscripción <span aria-hidden="true">→</span></button></div></details><details class="faq-item"><summary>¿Todavía puedo inscribirme?</summary><div class="faq-answer"><p>La inscripción de Regnum Christi ya cerró y no podemos agregar participantes a los servicios organizados, como kits y colectivos. Algunas celebraciones son de acceso libre.</p><button type="button" class="faq-jump" onclick="faqGo('informacion')">Ver información importante <span aria-hidden="true">→</span></button></div></details><details class="faq-item"><summary>¿Puedo asistir a las Misas de CABA y Luján sin estar inscripto?</summary><div class="faq-answer"><p>Sí. Ambas Misas son de acceso libre y gratuito. La inscripción de RC se utilizó para organizar nuestra participación.</p><button type="button" class="faq-jump" onclick="faqGo('informacion')">Ver información importante <span aria-hidden="true">→</span></button></div></details><details class="faq-item"><summary>¿Cómo me acredito en el Día RC?</summary><div class="faq-answer"><p>La acreditación se realizará al llegar a Oakhill Pilar. Consultá el cronograma y el plano para ubicar el sector correspondiente.</p><button type="button" class="faq-jump" onclick="faqGo('plano')">Ver plano del Día RC <span aria-hidden="true">→</span></button></div></details><details class="faq-item"><summary>¿Dónde retiro mi kit RC?</summary><div class="faq-answer"><p>Si participás del Día RC, el retiro es durante la acreditación del domingo. Para otros grupos se comunicarán las modalidades de entrega.</p><button type="button" class="faq-jump" onclick="faqGo('informacion',0)">Ver retiro de kits <span aria-hidden="true">→</span></button></div></details><details class="faq-item"><summary>¿Qué incluye el kit RC?</summary><div class="faq-answer"><p>Remera, pulsera, stickers, señalador y bandera. Consultá las indicaciones de entrega en la aplicación.</p><button type="button" class="faq-jump" onclick="faqGo('informacion',0)">Ver retiro de kits <span aria-hidden="true">→</span></button></div></details><details class="faq-item"><summary>¿Puede otra persona retirar mi kit?</summary><div class="faq-answer"><p>Si no asistís al Día RC, podés coordinar con alguien que lo retire por vos el domingo. Verificá las indicaciones vigentes.</p><button type="button" class="faq-jump" onclick="faqGo('informacion',0)">Ver retiro de kits <span aria-hidden="true">→</span></button></div></details><details class="faq-item"><summary>¿Se entregan kits durante la Misa del lunes?</summary><div class="faq-answer"><p>No. El lunes no se entregarán kits por razones logísticas.</p><button type="button" class="faq-jump" onclick="faqGo('informacion',0)">Ver retiro de kits <span aria-hidden="true">→</span></button></div></details></section><section class="faq-group" id="faq-group-1"><h3>Domingo 8/11 · Día RC</h3><details class="faq-item"><summary>¿Dónde se realiza el Día RC?</summary><div class="faq-answer"><p>En Oakhill Pilar. En el plano están señalizados el acceso, estacionamiento, acreditaciones y sectores del encuentro.</p><button type="button" class="faq-jump" onclick="faqGo('plano')">Ver plano del Día RC <span aria-hidden="true">→</span></button></div></details><details class="faq-item"><summary>¿A qué hora comienzan y terminan los encuentros?</summary><div class="faq-answer"><p>El Evento Familia RC comienza a las 12:00 y el encuentro de Jóvenes RC a las 18:30. Consultá el detalle y los regresos en «Cronograma».</p><button type="button" class="faq-jump" onclick="faqGo('cronograma')">Ver cronograma <span aria-hidden="true">→</span></button></div></details><details class="faq-item"><summary>¿Qué actividades habrá?</summary><div class="faq-answer"><p>Santa Misa, almuerzo, dinámicas y propuestas para compartir. Los detalles se publican en «Cronograma» y «Actividades».</p><button type="button" class="faq-jump" onclick="faqGo('actividades')">Ver actividades <span aria-hidden="true">→</span></button></div></details><details class="faq-item"><summary>¿Hay estacionamiento?</summary><div class="faq-answer"><p>Sí. El plano indica el sector de estacionamiento y el recorrido hacia las acreditaciones.</p><button type="button" class="faq-jump" onclick="faqGo('plano')">Ver plano del Día RC <span aria-hidden="true">→</span></button></div></details><details class="faq-item"><summary>¿Habrá comida?</summary><div class="faq-answer"><p>El programa incluye un momento de almuerzo. Revisá las comunicaciones y la información actualizada para conocer la modalidad.</p><button type="button" class="faq-jump" onclick="faqGo('cronograma')">Ver cronograma <span aria-hidden="true">→</span></button></div></details><details class="faq-item"><summary>¿Habrá guardería?</summary><div class="faq-answer"><p>El plano contempla un sector de guardería. Las condiciones de funcionamiento serán comunicadas por la organización.</p><button type="button" class="faq-jump" onclick="faqGo('plano')">Ver plano del Día RC <span aria-hidden="true">→</span></button></div></details><details class="faq-item"><summary>¿Dónde están los baños y la asistencia médica?</summary><div class="faq-answer"><p>Sus sectores están indicados en el plano del Día RC.</p><button type="button" class="faq-jump" onclick="faqGo('plano')">Ver plano del Día RC <span aria-hidden="true">→</span></button></div></details><details class="faq-item"><summary>¿Habrá Adoración al Santísimo?</summary><div class="faq-answer"><p>Sí. Durante el encuentro habrá Adoración Permanente y podés reservar turnos de 30 minutos.</p><button type="button" class="faq-jump" onclick="faqGo('adoracion')">Reservar un turno <span aria-hidden="true">→</span></button></div></details><details class="faq-item"><summary>¿Puedo reservar varios turnos de Adoración?</summary><div class="faq-answer"><p>Sí, desde «Adoración Permanente» podés elegir más de un turno y consultar los que reservaste.</p><button type="button" class="faq-jump" onclick="faqGo('adoracion')">Ver mis turnos <span aria-hidden="true">→</span></button></div></details></section><section class="faq-group" id="faq-group-2"><h3>Colectivos y transporte</h3><details class="faq-item"><summary>¿Cómo sé si tengo un colectivo confirmado?</summary><div class="faq-answer"><p>Revisá el transporte y el recorrido asignados en «Mi inscripción».</p><button type="button" class="faq-jump" onclick="faqGo('inscripcion')">Consultar mi inscripción <span aria-hidden="true">→</span></button></div></details><details class="faq-item"><summary>¿De dónde salen los colectivos del domingo?</summary><div class="faq-answer"><p>Desde Betania (Almagro), Facultad de Derecho (Recoleta), Club Ciudad (Núñez) y Colegio Mano Amiga (Fátima). Encontrarás horarios y mapas en la información del domingo.</p><button type="button" class="faq-jump" onclick="faqGo('informacion',1)">Ver puntos de salida <span aria-hidden="true">→</span></button></div></details><details class="faq-item"><summary>¿A qué hora salen los colectivos del domingo?</summary><div class="faq-answer"><p>Betania, Facultad de Derecho y Club Ciudad: 10:00. Colegio Mano Amiga: 11:00.</p><button type="button" class="faq-jump" onclick="faqGo('informacion',1)">Ver horarios y mapas <span aria-hidden="true">→</span></button></div></details><details class="faq-item"><summary>¿A qué hora regresan los colectivos del domingo?</summary><div class="faq-answer"><p>Hay regresos previstos a las 17:00 y 22:30, según recorrido. Mano Amiga no tiene regreso a las 17:00. Verificá tu confirmación en «Mi inscripción».</p><button type="button" class="faq-jump" onclick="faqGo('inscripcion')">Consultar mi inscripción <span aria-hidden="true">→</span></button></div></details><details class="faq-item"><summary>¿Puedo cambiar el colectivo o el horario?</summary><div class="faq-answer"><p>Los recorridos se organizaron según las confirmaciones y los cupos disponibles. Consultá con el equipo organizador; los cambios no están garantizados.</p><button type="button" class="faq-jump" onclick="faqGo('inscripcion')">Consultar mi inscripción <span aria-hidden="true">→</span></button></div></details><details class="faq-item"><summary>¿Puedo ir al Día RC por mis propios medios?</summary><div class="faq-answer"><p>Sí. Consultá los accesos y el estacionamiento de Oakhill Pilar en «Plano».</p><button type="button" class="faq-jump" onclick="faqGo('plano')">Ver plano del Día RC <span aria-hidden="true">→</span></button></div></details><details class="faq-item"><summary>¿Dónde encuentro los mapas de los puntos de salida?</summary><div class="faq-answer"><p>En «Cronograma» e «Información Importante» hay enlaces de Google Maps junto a los puntos de encuentro.</p><button type="button" class="faq-jump" onclick="faqGo('informacion',1)">Ver ubicaciones <span aria-hidden="true">→</span></button></div></details><details class="faq-item"><summary>¿Habrá colectivos para Luján?</summary><div class="faq-answer"><p>Sí, para quienes confirmaron ese servicio. Verificá tu recorrido en «Mi inscripción» y las recomendaciones de viaje en la información del miércoles.</p><button type="button" class="faq-jump" onclick="faqGo('inscripcion')">Consultar mi inscripción <span aria-hidden="true">→</span></button></div></details></section><section class="faq-group" id="faq-group-3"><h3>Lunes 9/11 · Misa en Buenos Aires</h3><details class="faq-item"><summary>¿Dónde y a qué hora es la Misa del lunes?</summary><div class="faq-answer"><p>En el Monumento de los Españoles, Ciudad de Buenos Aires, a las 11:30.</p><button type="button" class="faq-jump" onclick="faqGo('agenda')">Ver minuto a minuto con RC <span aria-hidden="true">→</span></button></div></details><details class="faq-item"><summary>¿Necesito entrada o QR para la Misa del lunes?</summary><div class="faq-answer"><p>No. El acceso es libre y gratuito.</p><button type="button" class="faq-jump" onclick="faqGo('informacion',2)">Ver información del lunes <span aria-hidden="true">→</span></button></div></details><details class="faq-item"><summary>¿Tendremos un sector reservado para Regnum Christi?</summary><div class="faq-answer"><p>No hay sector exclusivo asignado. Nos ubicaremos según el espacio disponible y las indicaciones oficiales.</p><button type="button" class="faq-jump" onclick="faqGo('informacion',2)">Ver información del lunes <span aria-hidden="true">→</span></button></div></details><details class="faq-item"><summary>¿Cuáles son los puntos de encuentro del lunes?</summary><div class="faq-answer"><p>Barrancas de Belgrano, Parque Thays y Parroquia Betania, a las 7:00. Consultá los enlaces de mapa y eventuales ajustes.</p><button type="button" class="faq-jump" onclick="faqGo('informacion',2)">Ver puntos de encuentro <span aria-hidden="true">→</span></button></div></details><details class="faq-item"><summary>¿Por dónde ingresaremos?</summary><div class="faq-answer"><p>El ingreso previsto está sujeto a reconfirmación. Consultá la sección del lunes antes de salir.</p><button type="button" class="faq-jump" onclick="faqGo('informacion',2)">Ver accesos del lunes <span aria-hidden="true">→</span></button></div></details><details class="faq-item"><summary>¿Qué puedo llevar a la Misa?</summary><div class="faq-answer"><p>Hay listados de objetos permitidos y prohibidos y recomendaciones de seguridad. Consultá la información del lunes para no usar indicaciones desactualizadas.</p><button type="button" class="faq-jump" onclick="faqGo('informacion',2)">Ver recomendaciones <span aria-hidden="true">→</span></button></div></details></section><section class="faq-group" id="faq-group-4"><h3>Martes 10/11 · Encuentro con los Jóvenes</h3><details class="faq-item"><summary>¿Cómo sé si estoy inscripto al Encuentro con los Jóvenes?</summary><div class="faq-answer"><p>Ingresá a «Mi inscripción» y verificá si figurás inscripto al evento del martes.</p><button type="button" class="faq-jump" onclick="faqGo('inscripcion')">Consultar mi inscripción <span aria-hidden="true">→</span></button></div></details><details class="faq-item"><summary>¿Necesito un código QR para entrar?</summary><div class="faq-answer"><p><strong>Sí. El ingreso requiere el QR oficial asignado a cada participante.</strong> Cuando la organización nos lo entregue, lo publicaremos en «Mi inscripción».</p><button type="button" class="faq-jump" onclick="faqGo('inscripcion')">Consultar mi inscripción <span aria-hidden="true">→</span></button></div></details><details class="faq-item"><summary>¿Dónde encontraré mi código QR?</summary><div class="faq-answer"><p><strong>En «Mi inscripción», dentro de la información de cada participante.</strong> Allí cargaremos el QR oficial cuando lo recibamos y procesemos. Será el punto central de consulta.</p><button type="button" class="faq-jump" onclick="faqGo('inscripcion')">Consultar mi inscripción <span aria-hidden="true">→</span></button></div></details><details class="faq-item"><summary>¿Cuándo estarán disponibles los QR?</summary><div class="faq-answer"><p>Estamos esperando que la organización oficial los entregue. Una vez recibidos y cargados, aparecerán en «Mi inscripción». Prestá atención a nuestras comunicaciones.</p><button type="button" class="faq-jump" onclick="faqGo('inscripcion')">Consultar mi inscripción <span aria-hidden="true">→</span></button></div></details><details class="faq-item"><summary>¿Dónde consulto mi sector asignado?</summary><div class="faq-answer"><p><strong>El sector asignado también se publicará en «Mi inscripción» de cada participante</strong>, junto con el QR, cuando recibamos esa información oficial.</p><button type="button" class="faq-jump" onclick="faqGo('inscripcion')">Consultar mi inscripción <span aria-hidden="true">→</span></button></div></details><details class="faq-item"><summary>¿Todos los participantes de RC estaremos en el mismo sector?</summary><div class="faq-answer"><p>No podemos garantizarlo: la distribución depende de la organización oficial. Cada participante debe consultar su sector individual.</p><button type="button" class="faq-jump" onclick="faqGo('inscripcion')">Consultar mi inscripción <span aria-hidden="true">→</span></button></div></details><details class="faq-item"><summary>¿Puedo usar el QR de otra persona?</summary><div class="faq-answer"><p>No. Cada participante debe usar el código QR correspondiente a su propia inscripción.</p><button type="button" class="faq-jump" onclick="faqGo('inscripcion')">Consultar mi inscripción <span aria-hidden="true">→</span></button></div></details><details class="faq-item"><summary>Estoy inscripto, pero no veo mi QR. ¿Qué hago?</summary><div class="faq-answer"><p>Puede que todavía no hayamos recibido o cargado los QR. Revisá «Mi inscripción» y nuestras comunicaciones. Si anunciamos que están todos disponibles y el tuyo no aparece, contactá al equipo de inscripciones.</p><button type="button" class="faq-jump" onclick="faqGo('inscripcion')">Consultar mi inscripción <span aria-hidden="true">→</span></button></div></details><details class="faq-item"><summary>¿Puedo participar sin estar inscripto?</summary><div class="faq-answer"><p>El acceso al encuentro es controlado mediante QR oficial y está sujeto a las condiciones de la organización. La inscripción del grupo RC ya cerró.</p><button type="button" class="faq-jump" onclick="faqGo('informacion',3)">Ver información del martes <span aria-hidden="true">→</span></button></div></details><details class="faq-item"><summary>¿Qué edades pueden participar?</summary><div class="faq-answer"><p>El encuentro está destinado a jóvenes de 15 a 35 años. Los menores pueden concurrir acompañados por adultos responsables según su inscripción.</p><button type="button" class="faq-jump" onclick="faqGo('informacion',3)">Ver condiciones del encuentro <span aria-hidden="true">→</span></button></div></details><details class="faq-item"><summary>¿Dónde nos encontramos los jóvenes de RC?</summary><div class="faq-answer"><p>Barrancas de Belgrano, Parque Thays y Parroquia Betania, a las 14:30. Consultá los enlaces de mapas.</p><button type="button" class="faq-jump" onclick="faqGo('informacion',3)">Ver puntos de encuentro <span aria-hidden="true">→</span></button></div></details><details class="faq-item"><summary>¿A qué hora es el encuentro?</summary><div class="faq-answer"><p>La apertura de accesos está prevista desde las 12:00, la previa desde las 16:00 y el encuentro con el Papa a las 20:15.</p><button type="button" class="faq-jump" onclick="faqGo('agenda')">Ver minuto a minuto con RC <span aria-hidden="true">→</span></button></div></details><details class="faq-item"><summary>¿Por dónde debo ingresar?</summary><div class="faq-answer"><p>El acceso dependerá del sector asignado. Revisá «Mi inscripción» y la información del martes cuando se confirmen los accesos.</p><button type="button" class="faq-jump" onclick="faqGo('inscripcion')">Consultar mi inscripción <span aria-hidden="true">→</span></button></div></details><details class="faq-item"><summary>¿Puedo estar con mis amigos si tenemos sectores distintos?</summary><div class="faq-answer"><p>Cada participante deberá respetar el sector de su acreditación. No se puede garantizar el ingreso conjunto a sectores diferentes.</p><button type="button" class="faq-jump" onclick="faqGo('inscripcion')">Consultar mi inscripción <span aria-hidden="true">→</span></button></div></details><details class="faq-item"><summary>¿Qué puedo llevar al encuentro?</summary><div class="faq-answer"><p>Revisá la lista actualizada de elementos permitidos y prohibidos en la información del martes.</p><button type="button" class="faq-jump" onclick="faqGo('informacion',3)">Ver recomendaciones del martes <span aria-hidden="true">→</span></button></div></details></section><section class="faq-group" id="faq-group-5"><h3>Miércoles 11/11 · Misa en Luján</h3><details class="faq-item"><summary>¿Dónde y a qué hora es la Misa de Luján?</summary><div class="faq-answer"><p>En la Plaza de la Basílica de Nuestra Señora de Luján, a las 10:00.</p><button type="button" class="faq-jump" onclick="faqGo('agenda')">Ver minuto a minuto con RC <span aria-hidden="true">→</span></button></div></details><details class="faq-item"><summary>¿Necesito entrada o QR para Luján?</summary><div class="faq-answer"><p>No. La Misa es de acceso libre y gratuito.</p><button type="button" class="faq-jump" onclick="faqGo('informacion',4)">Ver información de Luján <span aria-hidden="true">→</span></button></div></details><details class="faq-item"><summary>¿A qué hora salen los colectivos de RC?</summary><div class="faq-answer"><p>Desde Oakhill Pilar, la salida prevista es a las 4:00. Los otros grupos recibirán indicaciones específicas. Consultá tu recorrido en «Mi inscripción».</p><button type="button" class="faq-jump" onclick="faqGo('inscripcion')">Consultar mi inscripción <span aria-hidden="true">→</span></button></div></details><details class="faq-item"><summary>¿Nos dejan los colectivos cerca de la Basílica?</summary><div class="faq-answer"><p>Por los cortes y controles de seguridad, puede ser necesario caminar varios kilómetros desde el descenso. Preparate para recorrer aproximadamente entre 3 y 8 km.</p><button type="button" class="faq-jump" onclick="faqGo('informacion',4)">Ver guía de Luján <span aria-hidden="true">→</span></button></div></details><details class="faq-item"><summary>¿Qué tengo que llevar a Luján?</summary><div class="faq-answer"><p>Calzado cómodo, agua, gorra, protector solar, abrigo liviano, DNI y medicación personal. Revisá las recomendaciones completas.</p><button type="button" class="faq-jump" onclick="faqGo('informacion',4)">Ver recomendaciones <span aria-hidden="true">→</span></button></div></details><details class="faq-item"><summary>¿Qué objetos están prohibidos en Luján?</summary><div class="faq-answer"><p>Hay restricciones de seguridad para objetos peligrosos, vidrio, drones, alcohol, bolsos grandes y otros elementos. Consultá el detalle actualizado.</p><button type="button" class="faq-jump" onclick="faqGo('informacion',4)">Ver restricciones <span aria-hidden="true">→</span></button></div></details><details class="faq-item"><summary>¿Habrá asistencia médica?</summary><div class="faq-answer"><p>Se prevé un operativo de asistencia y seguridad. Ante emergencias: 911; asistencia médica: 107.</p><button type="button" class="faq-jump" onclick="faqGo('informacion',4)">Ver información de seguridad <span aria-hidden="true">→</span></button></div></details><details class="faq-item"><summary>¿Cuándo regresan los colectivos desde Luján?</summary><div class="faq-answer"><p>Al finalizar la Misa, de acuerdo con las indicaciones de los responsables de cada recorrido.</p><button type="button" class="faq-jump" onclick="faqGo('inscripcion')">Consultar mi inscripción <span aria-hidden="true">→</span></button></div></details></section><section class="faq-group" id="faq-group-6"><h3>Aplicación y consultas generales</h3><details class="faq-item"><summary>¿Dónde consulto el programa de los cuatro días?</summary><div class="faq-answer"><p>En «Minuto a minuto con RC» están los principales horarios y actividades.</p><button type="button" class="faq-jump" onclick="faqGo('agenda')">Ver minuto a minuto con RC <span aria-hidden="true">→</span></button></div></details><details class="faq-item"><summary>¿Dónde se publican los cambios y recomendaciones?</summary><div class="faq-answer"><p>En «Información Importante» y los canales oficiales de comunicación de RC. Revisá la app antes de salir.</p><button type="button" class="faq-jump" onclick="faqGo('informacion')">Ver información importante <span aria-hidden="true">→</span></button></div></details><details class="faq-item"><summary>¿Cómo abro Google Maps de un punto de encuentro?</summary><div class="faq-answer"><p>Tocá el ícono de mapa con la flecha ↗ junto al punto de encuentro en el cronograma o en la información de cada día.</p><button type="button" class="faq-jump" onclick="faqGo('informacion')">Ver información importante <span aria-hidden="true">→</span></button></div></details><details class="faq-item"><summary>¿Qué pasa si cambian los horarios o accesos?</summary><div class="faq-answer"><p>Los horarios y accesos pueden cambiar por indicación de la organización oficial. Verificá las novedades en la aplicación antes de cada evento.</p><button type="button" class="faq-jump" onclick="faqGo('informacion')">Ver información importante <span aria-hidden="true">→</span></button></div></details><details class="faq-item"><summary>¿Necesito internet para usar la app?</summary><div class="faq-answer"><p>Es recomendable tener conexión para consultar datos actualizados, especialmente «Mi inscripción» y el QR. Anticipá tu consulta porque puede haber poca señal durante los eventos.</p><button type="button" class="faq-jump" onclick="faqGo('inscripcion')">Consultar mi inscripción <span aria-hidden="true">→</span></button></div></details><details class="faq-item"><summary>¿Dónde veo la información oficial de la visita?</summary><div class="faq-answer"><p>En el botón «Página oficial» del menú principal, que abre el sitio de la organización de la visita.</p><button type="button" class="faq-jump" onclick="faqGo('home')">Volver al menú principal <span aria-hidden="true">→</span></button></div></details><details class="faq-item"><summary>¿Cómo contacto al equipo organizador?</summary><div class="faq-answer"><p>Usá los canales oficiales de RC que figuran en la aplicación. También podés seguir el canal de WhatsApp y las redes sociales para recibir novedades.</p><button type="button" class="faq-jump" onclick="faqGo('home')">Ver canales de contacto <span aria-hidden="true">→</span></button></div></details></section></div></section>
-
-
-
+<section class="page" id="preguntas"><div class="page-top"><button class="back-button" onclick="openPage('home', false)">← VOLVER</button><h2>Todo lo que necesitás saber</h2><p class="page-subtitle">Preguntas frecuentes</p></div><div class="page-content faq-page-content"><div class="faq-feature"><div class="faq-feature-eyebrow">IMPORTANTE · MARTES 10/11</div><h3>QR y sector del Encuentro con los Jóvenes</h3><p>Los códigos QR oficiales y los sectores asignados se publicarán en <strong>«Mi inscripción» de cada participante</strong>, una vez recibidos de la organización oficial.</p><button class="faq-jump" onclick="openPage('inscripcion')">CONSULTAR MI INSCRIPCIÓN →</button></div><div class="faq-topic"><h3>PACK RC</h3><p class="faq-topic-subtitle">Todo lo relacionado con la inscripción, el pago y la entrega del kit.</p></div><details class="faq-entry"><summary>¿Qué incluye mi inscripción (pack RC)?</summary><div class="faq-entry-body"><p>El pack permite participar de las actividades RC y acceder a los servicios incluidos según la modalidad contratada, como kit y transporte cuando corresponda. Verificá tu situación en «Mi inscripción».</p><button class="faq-jump" onclick="openPage('inscripcion')">IR A MI INSCRIPCIÓN →</button></div></details><details class="faq-entry"><summary>¿Cómo sé si mi inscripción está confirmada?</summary><div class="faq-entry-body"><p>Ingresá a «Mi inscripción» y consultá los eventos y servicios asociados a tu registro.</p><button class="faq-jump" onclick="openPage('inscripcion')">IR A MI INSCRIPCIÓN →</button></div></details><details class="faq-entry"><summary>¿Qué hago si todavía no me inscribí?</summary><div class="faq-entry-body"><p>La inscripción de RC ya cerró. Algunos eventos oficiales son de acceso libre; consultá la agenda y las indicaciones oficiales.</p><button class="faq-jump" onclick="openPage('agenda')">IR A AGENDA OFICIAL Y RC →</button></div></details><details class="faq-entry"><summary>¿Qué es el Kit RC y por dónde se retira?</summary><div class="faq-entry-body"><p>El Kit del peregrino es un recordatorio de nuestra identidad, misión y vocación. Incluye remera, plancha de stickers, pulsera, señalador y tarjeta explicativa. Se retira en la acreditación del Día RC en Oakhill Pilar. Si no venís al Día RC, te haremos llegar tu kit; los colegios los recibirán antes.</p><button class="faq-jump" onclick="openPage('dia-rc')">IR A DÍA RC →</button></div></details><details class="faq-entry"><summary>¿Puede otra persona retirar mi kit?</summary><div class="faq-entry-body"><p>Para coordinar el retiro por un tercero, consultá con el equipo de inscripciones. Los kits de colegios tienen su propia modalidad de entrega.</p><button class="faq-jump" onclick="openPage('inscripcion')">IR A MI INSCRIPCIÓN →</button></div></details><details class="faq-entry"><summary>¿Qué días tengo transporte incluido?</summary><div class="faq-entry-body"><p>Depende del pack y de los recorridos que confirmaste. Consultá «Mi inscripción» para conocer tu transporte.</p><button class="faq-jump" onclick="openPage('inscripcion')">IR A MI INSCRIPCIÓN →</button></div></details><details class="faq-entry"><summary>¿Puedo participar de las actividades si no adquirí un Pack RC?</summary><div class="faq-entry-body"><p>Las actividades y servicios propios del Día RC requieren inscripción; las Misas oficiales de Buenos Aires y Luján son de acceso libre. El Encuentro con los Jóvenes requiere QR oficial.</p><button class="faq-jump" onclick="openPage('agenda')">IR A AGENDA OFICIAL Y RC →</button></div></details><div class="faq-topic"><h3>DÍA RC</h3><p class="faq-topic-subtitle">Todo lo relacionado con nuestro día de encuentro como Familia RC el domingo 8/11.</p></div><details class="faq-entry"><summary>¿Por qué tenemos un Día RC?</summary><div class="faq-entry-body"><p>Para encontrarnos como familia Regnum Christi, rezar, celebrar la Misa, compartir y prepararnos juntos para vivir la visita del Santo Padre.</p><button class="faq-jump" onclick="openPage('dia-rc')">IR A DÍA RC →</button></div></details><details class="faq-entry"><summary>¿Dónde y cuándo se realiza?</summary><div class="faq-entry-body"><p>El domingo 8 de noviembre en Oakhill Pilar. Consultá los horarios en «Cronograma» y la distribución del predio en «Plano».</p><button class="faq-jump" onclick="openPage('cronograma')">IR A CRONOGRAMA →</button></div></details><details class="faq-entry"><summary>¿Quiénes pueden participar?</summary><div class="faq-entry-body"><p>Los participantes inscriptos en los eventos Familia RC y Jóvenes RC, según su modalidad de inscripción.</p><button class="faq-jump" onclick="openPage('inscripcion')">IR A MI INSCRIPCIÓN →</button></div></details><details class="faq-entry"><summary>¿Hay que llevar comida y bebida?</summary><div class="faq-entry-body"><p>Consultá las indicaciones logísticas que comunique la organización para la jornada. Evitá asumir que habrá venta de comida en el predio.</p><button class="faq-jump" onclick="openPage('dia-rc')">IR A DÍA RC →</button></div></details><details class="faq-entry"><summary>¿Hay estacionamiento disponible?</summary><div class="faq-entry-body"><p>Sí, el predio cuenta con un sector de estacionamiento. Revisá el acceso en «Plano».</p><button class="faq-jump" onclick="openPage('plano')">IR A PLANO →</button></div></details><details class="faq-entry"><summary>¿Habrá actividades para los más chicos?</summary><div class="faq-entry-body"><p>Sí, el encuentro incluye actividades familiares y un espacio de guardería identificado en el plano. Consultá allí su ubicación.</p><button class="faq-jump" onclick="openPage('plano')">IR A PLANO →</button></div></details><details class="faq-entry"><summary>¿Qué pasa si llueve?</summary><div class="faq-entry-body"><p>La organización informará cualquier cambio por sus canales de comunicación. Consultá la app antes de salir.</p><button class="faq-jump" onclick="openPage('preguntas')">IR A PREGUNTAS FRECUENTES →</button></div></details><details class="faq-entry"><summary>¿Puedo participar del Día RC aunque no esté inscripto?</summary><div class="faq-entry-body"><p>Los cupos y servicios del Día RC se organizaron sobre las inscripciones cerradas. Para una situación excepcional, contactá al equipo organizador.</p><button class="faq-jump" onclick="openPage('inscripcion')">IR A MI INSCRIPCIÓN →</button></div></details><details class="faq-entry"><summary>¿Habrá asistencia médica?</summary><div class="faq-entry-body"><p>Sí, está previsto un punto de asistencia médica. Su ubicación figura en el plano.</p><button class="faq-jump" onclick="openPage('plano')">IR A PLANO →</button></div></details><div class="faq-topic"><h3>EVENTOS OFICIALES</h3><p class="faq-topic-subtitle">Todo lo relacionado con los encuentros con el Papa: traslados, accesos, horarios y organización.</p></div><details class="faq-entry"><summary>¿Cuáles son los eventos oficiales en los que participaremos como Regnum Christi?</summary><div class="faq-entry-body"><p>La Misa del lunes 9 en Buenos Aires, el Encuentro con los Jóvenes del martes 10 y la Misa del miércoles 11 en Luján. Consultá la agenda.</p><button class="faq-jump" onclick="openPage('agenda')">IR A AGENDA OFICIAL Y RC →</button></div></details><details class="faq-entry"><summary>¿Dónde y a qué hora nos encontramos cada día?</summary><div class="faq-entry-body"><p>Lunes a las 7:00 y martes a las 14:30 en Barrancas de Belgrano, Parque Thays y Parroquia Betania. Para el miércoles, verificá tu recorrido confirmado y el punto de partida. Los mapas están en la agenda.</p><button class="faq-jump" onclick="openPage('agenda')">IR A AGENDA OFICIAL Y RC →</button></div></details><details class="faq-entry"><summary>¿Necesito entrada o acreditación para participar?</summary><div class="faq-entry-body"><p>Las Misas de Buenos Aires y Luján son de acceso libre. El Encuentro con los Jóvenes del martes requiere QR oficial y sector asignado.</p><button class="faq-jump" onclick="openPage('inscripcion')">IR A MI INSCRIPCIÓN →</button></div></details><details class="faq-entry"><summary>¿Dónde consulto mi QR y sector del Encuentro con los Jóvenes?</summary><div class="faq-entry-body"><p>Cuando recibamos los QR y sectores de la organización oficial, los publicaremos en «Mi inscripción» de cada participante. Consultá allí tu registro y los datos de acceso.</p><button class="faq-jump" onclick="openPage('inscripcion')">IR A MI INSCRIPCIÓN →</button></div></details><details class="faq-entry"><summary>¿Qué día uso la remera bordó del Kit RC?</summary><div class="faq-entry-body"><p>Seguí las indicaciones de vestimenta que se comuniquen para cada jornada en los canales de RC.</p><button class="faq-jump" onclick="openPage('agenda')">IR A AGENDA OFICIAL Y RC →</button></div></details><details class="faq-entry"><summary>¿Qué días tengo transporte incluido?</summary><div class="faq-entry-body"><p>Depende de tu inscripción y de los recorridos confirmados. Consultá «Mi inscripción».</p><button class="faq-jump" onclick="openPage('inscripcion')">IR A MI INSCRIPCIÓN →</button></div></details><details class="faq-entry"><summary>¿Qué tengo que llevar a los eventos oficiales?</summary><div class="faq-entry-body"><p>Documento de identidad, calzado cómodo, agua, protección solar, abrigo según el clima y medicación personal si la necesitás. Consultá las restricciones de cada jornada.</p><button class="faq-jump" onclick="openPage('informacion')">IR A INFORMACIÓN IMPORTANTE →</button></div></details><details class="faq-entry"><summary>¿Qué objetos no está permitido ingresar?</summary><div class="faq-entry-body"><p>Hay restricciones de seguridad que pueden variar según el evento. Revisá «Información Importante» y las indicaciones oficiales antes de salir.</p><button class="faq-jump" onclick="openPage('informacion')">IR A INFORMACIÓN IMPORTANTE →</button></div></details><details class="faq-entry"><summary>¿Puedo llevar comida y bebida?</summary><div class="faq-entry-body"><p>Depende de las condiciones de acceso y seguridad de cada evento. Consultá las recomendaciones oficiales para ese día.</p><button class="faq-jump" onclick="openPage('informacion')">IR A INFORMACIÓN IMPORTANTE →</button></div></details><details class="faq-entry"><summary>¿Hay un sector reservado para el Regnum Christi?</summary><div class="faq-entry-body"><p>No hay sectores exclusivos de RC para las Misas de acceso libre. En el Encuentro con los Jóvenes, el sector será asignado por la organización oficial y figurará en «Mi inscripción».</p><button class="faq-jump" onclick="openPage('inscripcion')">IR A MI INSCRIPCIÓN →</button></div></details><details class="faq-entry"><summary>¿Cuánto hay que caminar cada día?</summary><div class="faq-entry-body"><p>Depende de los cortes, controles y lugares de descenso. En Luján puede haber caminatas largas; revisá la guía práctica en «Información Importante».</p><button class="faq-jump" onclick="openPage('informacion')">IR A INFORMACIÓN IMPORTANTE →</button></div></details><details class="faq-entry"><summary>¿Puedo participar si no compré un pack RC?</summary><div class="faq-entry-body"><p>Podés asistir a las Misas de acceso libre. Para el Encuentro con los Jóvenes necesitás QR oficial; los servicios RC están sujetos a inscripción.</p><button class="faq-jump" onclick="openPage('agenda')">IR A AGENDA OFICIAL Y RC →</button></div></details><details class="faq-entry"><summary>¿Qué pasa si llueve?</summary><div class="faq-entry-body"><p>Los eventos y operativos están sujetos a las decisiones de la organización oficial. Consultá la agenda y los canales de RC.</p><button class="faq-jump" onclick="openPage('agenda')">IR A AGENDA OFICIAL Y RC →</button></div></details><div class="faq-topic"><h3>COMUNICACIÓN</h3><p class="faq-topic-subtitle">Dónde encontrar información actualizada y cómo resolver dudas.</p></div><details class="faq-entry"><summary>¿Cuáles son los canales oficiales de comunicación del Regnum Christi?</summary><div class="faq-entry-body"><p>La aplicación, los correos del equipo de inscripciones, el canal de WhatsApp y las redes oficiales de Regnum Christi.</p><button class="faq-jump" onclick="openPage('home')">IR A INICIO →</button></div></details><details class="faq-entry"><summary>¿Dónde puedo consultar el cronograma completo de la visita?</summary><div class="faq-entry-body"><p>En «Agenda oficial y RC» encontrarás el minuto a minuto; en «Día RC», el cronograma del domingo.</p><button class="faq-jump" onclick="openPage('agenda')">IR A AGENDA OFICIAL Y RC →</button></div></details><details class="faq-entry"><summary>¿Cómo me entero de cambios de horario o de último momento?</summary><div class="faq-entry-body"><p>Consultá la app y los canales de WhatsApp y redes de RC antes de salir. La organización oficial puede modificar accesos y horarios.</p><button class="faq-jump" onclick="openPage('agenda')">IR A AGENDA OFICIAL Y RC →</button></div></details><details class="faq-entry"><summary>¿A quién contacto si tengo una duda sobre mi inscripción?</summary><div class="faq-entry-body"><p>Al equipo de inscripciones de Regnum Christi, por los canales comunicados en los correos de inscripción. Primero revisá «Mi inscripción».</p><button class="faq-jump" onclick="openPage('inscripcion')">IR A MI INSCRIPCIÓN →</button></div></details><details class="faq-entry"><summary>¿A quién puedo consultar por temas de transporte y organización?</summary><div class="faq-entry-body"><p>Al equipo organizador de RC, por los canales comunicados. Revisá primero tu recorrido en «Mi inscripción» y los puntos de encuentro en la agenda.</p><button class="faq-jump" onclick="openPage('inscripcion')">IR A MI INSCRIPCIÓN →</button></div></details><details class="faq-entry"><summary>¿Por dónde recibiré información y cambios de último momento?</summary><div class="faq-entry-body"><p>Por la app, el canal de WhatsApp y los canales oficiales de Regnum Christi.</p><button class="faq-jump" onclick="openPage('home')">IR A INICIO →</button></div></details><details class="faq-entry"><summary>¿Dónde se compartirán las fotos y videos de los encuentros?</summary><div class="faq-entry-body"><p>A través de los canales y redes oficiales de Regnum Christi, una vez que estén disponibles.</p><button class="faq-jump" onclick="openPage('home')">IR A INICIO →</button></div></details></div></section>
 <!-- ======================================================
      FOOTER
 ====================================================== -->
-
 <footer class="footer">
-
-  <img
-    class="footer-logo"
-    src="assets/logoregnumchristi.png"
-    alt="Regnum Christi"
-  >
-
-
-  <div class="socials">
-
-    <a
-      class="social-link"
-      href="https://www.instagram.com/regnumchristiargentina/"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <img src="assets/instagram2.png" alt="Instagram">
-    </a>
-
-
-    <a
-      class="social-link"
-      href="https://www.instagram.com/regnumchristichile/"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <img src="assets/instagram2.png" alt="Instagram Chile">
-    </a>
-
-
-    <a
-      class="social-link"
-      href="https://whatsapp.com/channel/0029Vb8ufeeCMY0R5zcwej0b"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <img src="assets/whatsapp2.png" alt="WhatsApp">
-    </a>
-
-
-    <a
-      class="social-link"
-      href="mailto:inscripcionesvisitapapa@regnumchristi.ar"
-    >
-      <img src="assets/sobre.png" alt="Email">
-    </a>
-
-  </div>
-
-
-  <div class="footer-divider"></div>
-
-
-  <div class="footer-text">
+<img alt="Regnum Christi" class="footer-logo" src="assets/logoregnumchristi.png"/>
+<div class="socials">
+<a class="social-link" href="https://www.instagram.com/regnumchristiargentina/" rel="noopener noreferrer" target="_blank">
+<img alt="Instagram" src="assets/instagram2.png"/>
+</a>
+<a class="social-link" href="https://www.instagram.com/regnumchristichile/" rel="noopener noreferrer" target="_blank">
+<img alt="Instagram Chile" src="assets/instagram2.png"/>
+</a>
+<a class="social-link" href="https://whatsapp.com/channel/0029Vb8ufeeCMY0R5zcwej0b" rel="noopener noreferrer" target="_blank">
+<img alt="WhatsApp" src="assets/whatsapp2.png"/>
+</a>
+<a class="social-link" href="mailto:inscripcionesvisitapapa@regnumchristi.ar">
+<img alt="Email" src="assets/sobre.png"/>
+</a>
+</div>
+<div class="footer-divider"></div>
+<div class="footer-text">
 
     Regnum Christi Argentina
 
-    <br>
+    <br/>
 
     Visita del papa León XIV · Argentina 2026
 
   </div>
-
 </footer>
-
-
 </div>
-<!-- FIN APP --><div class="map-viewer" id="mapViewer" role="dialog" aria-label="Plano ampliado"><div class="map-viewer-head"><strong>Plano del Día RC</strong><button onclick="closeMapViewer()">✕ Cerrar</button></div><div class="map-viewer-scroll" id="mapScroll"><img id="mapZoomImage" src="assets/mapadelevento.png" alt="Plano ampliado del evento"></div><div class="map-viewer-controls"><button onclick="zoomMap(-0.4)">−</button><button onclick="zoomMap(0)">Restablecer</button><button onclick="zoomMap(0.4)">+</button></div></div>
-
-
-
+<!-- FIN APP --><div aria-label="Plano ampliado" class="map-viewer" id="mapViewer" role="dialog"><div class="map-viewer-head"><strong>Plano del Día RC</strong><button onclick="closeMapViewer()">✕ Cerrar</button></div><div class="map-viewer-scroll" id="mapScroll"><img alt="Plano ampliado del evento" id="mapZoomImage" src="assets/mapadelevento.png"/></div><div class="map-viewer-controls"><button onclick="zoomMap(-0.4)">−</button><button onclick="zoomMap(0)">Restablecer</button><button onclick="zoomMap(0.4)">+</button></div></div>
 <!-- ======================================================
      MODAL ADORACIÓN
 ====================================================== -->
-
-<div
-  id="adoration-modal"
-  class="adoration-modal"
-  style="display:none;"
->
-
-  <div
-    class="adoration-modal-backdrop"
-    onclick="closeAdorationModal()"
-  ></div>
-
-
-  <div class="adoration-modal-card">
-
-    <button
-      class="adoration-modal-close"
-      onclick="closeAdorationModal()"
-      aria-label="Cerrar"
-    >
+<div class="adoration-modal" id="adoration-modal" style="display:none;">
+<div class="adoration-modal-backdrop" onclick="closeAdorationModal()"></div>
+<div class="adoration-modal-card">
+<button aria-label="Cerrar" class="adoration-modal-close" onclick="closeAdorationModal()">
       ×
     </button>
-
-
-    <div class="adoration-modal-label">
+<div class="adoration-modal-label">
       ADORACIÓN PERMANENTE
     </div>
-
-
-    <h3>Anotate en este turno</h3>
-
-
-    <div
-      id="adoration-modal-slot"
-      class="adoration-modal-slot"
-    ></div>
-
-
-    <label
-      class="adoration-name-label"
-      for="adoration-name"
-    >
+<h3>Anotate en este turno</h3>
+<div class="adoration-modal-slot" id="adoration-modal-slot"></div>
+<label class="adoration-name-label" for="adoration-name">
       Nombre y apellido
     </label>
-
-
-    <input
-      id="adoration-name"
-      class="adoration-name-input"
-      type="text"
-      autocomplete="name"
-      maxlength="80"
-      placeholder="Tu nombre y apellido"
-    >
-
-
-    <div
-      id="adoration-modal-error"
-      class="adoration-modal-error"
-    ></div>
-
-
-    <button
-      id="adoration-confirm-button"
-      class="adoration-confirm-button"
-      onclick="confirmAdorationSubscription()"
-    >
+<input autocomplete="name" class="adoration-name-input" id="adoration-name" maxlength="80" placeholder="Tu nombre y apellido" type="text"/>
+<div class="adoration-modal-error" id="adoration-modal-error"></div>
+<button class="adoration-confirm-button" id="adoration-confirm-button" onclick="confirmAdorationSubscription()">
       CONFIRMAR TURNO
     </button>
-
-  </div>
-
 </div>
-
-
-
+</div>
 <script>
 let mapScale=1;function openMapViewer(){document.getElementById('mapViewer').classList.add('open');document.body.style.overflow='hidden';zoomMap(0)}function closeMapViewer(){document.getElementById('mapViewer').classList.remove('open');document.body.style.overflow=''}function zoomMap(d){mapScale=d===0?1:Math.max(1,Math.min(4,mapScale+d));document.getElementById('mapZoomImage').style.width=(mapScale*100)+'%'}document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMapViewer()});
 
@@ -4226,11 +3296,5 @@ function faqGo(page,infoIndex){
   }
 }
 </script>
-
-
 </body>
-
 </html>
-
-
-
