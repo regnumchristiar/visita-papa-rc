@@ -3222,22 +3222,43 @@ if("serviceWorker" in navigator){
 }
 
 
-/* Ajusta la altura del formulario integrado sin scroll interno. */
+/* Altura estable de «Mi inscripción»: medir el contenido real, no el scrollHeight
+   del documento (que puede incluir la altura anterior del iframe y crecer sin fin). */
 (function(){
-  const frame=document.getElementById('rcInscripcionFrame');
-  if(!frame)return;
-  frame.addEventListener('load',function(){
+  const frame = document.getElementById('rcInscripcionFrame');
+  if (!frame) return;
+  let observer = null;
+  let raf = 0;
+
+  frame.addEventListener('load', function(){
     try {
-      const doc=frame.contentDocument;
-      if(!doc)return;
-      const resize=()=>{
-        const h=Math.max(doc.body.scrollHeight,doc.documentElement.scrollHeight);
-        frame.style.height=Math.max(440,h+12)+'px';
+      if (observer) observer.disconnect();
+      const doc = frame.contentDocument;
+      if (!doc) return;
+      const content = doc.querySelector('main.wrap') || doc.querySelector('main');
+      if (!content) { frame.style.height = '620px'; return; }
+
+      const resize = function(){
+        if (raf) cancelAnimationFrame(raf);
+        raf = requestAnimationFrame(function(){
+          raf = 0;
+          const rect = content.getBoundingClientRect();
+          const top = content.offsetTop || 0;
+          const desired = Math.max(440, Math.ceil(top + rect.height + 16));
+          const current = parseFloat(frame.style.height) || 0;
+          if (Math.abs(current - desired) > 2) frame.style.height = desired + 'px';
+        });
       };
+
       resize();
-      if(window.ResizeObserver){new ResizeObserver(resize).observe(doc.body);}
-      frame.contentWindow.addEventListener('resize',resize);
-    }catch(e){frame.style.height='1000px';}
+      if (window.ResizeObserver) {
+        observer = new ResizeObserver(resize);
+        observer.observe(content);
+      }
+      frame.contentWindow.addEventListener('resize', resize);
+    } catch(e) {
+      frame.style.height = '620px';
+    }
   });
 })();
 
