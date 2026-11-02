@@ -7,7 +7,18 @@ body.integrada .top{display:none;}
 body.integrada .wrap{max-width:920px;margin:0 auto;padding:12px 14px 30px;}
 body.integrada .card{box-shadow:0 3px 12px #00000008;border-radius:13px;}
 body.integrada .card:first-child{margin-top:0;}
-</style></head><body><script>if(new URLSearchParams(location.search).get("integrada")==="1")document.body.classList.add("integrada");</script><header class="top"><div class="eyebrow">REGNUM CHRISTI ARGENTINA</div><h1>Mi inscripción</h1><p>Visita del Papa León XIV · Consulta de eventos, colectivos y kit</p></header><main class="wrap"><section class="card" id="searchPanel"><h2>Consultá tu inscripción</h2><p class="muted">Ingresá el DNI, RUT o correo electrónico utilizado al inscribirte. Si varias personas comparten un correo, podrás elegir a quién consultar.</p><input id="document" type="text" autocomplete="off" placeholder="DNI / RUT / correo electrónico"><button id="searchBtn">Buscar inscripción</button><div id="error" class="note error hidden" role="alert"></div><div id="choices" class="hidden"><h3>Elegí la persona</h3><div id="choicesList"></div></div></section><section id="result" class="hidden"><div class="card"><div class="pill">✓ Inscripción registrada</div><h2 style="margin-top:13px">Tu inscripción</h2><div id="headerInfo" class="grid"></div><div id="familyNote" class="note hidden">Este grupo incluye únicamente integrantes registrados en el mismo pack. Si alguien no figura, puede haberse inscripto posteriormente en otro pack, por ejemplo, a través de su colegio. Podés consultar esa inscripción con su propio DNI o correo.</div></div><div class="card"><h2 id="membersTitle">Detalle de inscripción</h2><p class="muted">Seleccioná el nombre de cada integrante para consultar su información individual.</p><div id="members"></div></div><div class="card"><h2>¿Necesitás ayuda?</h2><p class="muted">Si encontrás alguna diferencia o tenés una consulta, escribinos indicando tu número de registro.</p><a id="helpLink" class="button" href="mailto:inscripcionesvisitapapa@regnumchristi.ar">✉️ Contactar a inscripciones</a><button class="secondary" id="another">Consultar otra inscripción</button></div></section></main><script>
+
+.youth-extra{padding:9px 12px 12px;background:#f8fafb;border-bottom:1px solid var(--line);border-radius:0 0 8px 8px}
+.youth-links{display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-size:13px;font-weight:700}
+.youth-links a,.youth-links button{color:var(--wine);background:#eaf3f6;border:1px solid #c8dfe7;border-radius:7px;padding:7px 12px;width:auto;text-decoration:none;font-size:13px}
+.youth-links button{cursor:pointer}
+.youth-links .disabled{opacity:.5;cursor:default}
+.youth-pending{font-size:11px;color:#915423;margin-top:7px;line-height:1.45}
+.modal-bg{position:fixed;inset:0;background:#17222ac4;z-index:1000;display:flex;align-items:center;justify-content:center;padding:18px}
+.modal-panel{background:white;border-radius:14px;padding:22px;width:min(560px,100%);max-height:90vh;overflow:auto;box-shadow:0 15px 60px #0004}
+.modal-panel h2{margin-bottom:12px}.modal-panel .close{width:auto;float:right;background:#e9eef1;color:var(--wine);padding:7px 12px}
+.modal-panel a{color:var(--wine)}.map-frame{width:100%;height:260px;border:0;border-radius:10px;margin-top:10px}
+</style></head><body><script>if(new URLSearchParams(location.search).get("integrada")==="1")document.body.classList.add("integrada");</script><header class="top"><div class="eyebrow">REGNUM CHRISTI ARGENTINA</div><h1>Mi inscripción</h1><p>Visita del Papa León XIV · Consulta de eventos, colectivos y kit</p></header><main class="wrap"><section class="card" id="searchPanel"><h2>Consultá tu inscripción</h2><p class="muted">Ingresá el DNI, RUT o correo electrónico utilizado al inscribirte. Si varias personas comparten un correo, podrás elegir a quién consultar.</p><input id="document" type="text" autocomplete="off" placeholder="DNI / RUT / correo electrónico"><button id="searchBtn">Buscar inscripción</button><div id="error" class="note error hidden" role="alert"></div><div id="choices" class="hidden"><h3>Elegí la persona</h3><div id="choicesList"></div></div></section><section id="result" class="hidden"><div class="card"><div class="pill">✓ Inscripción registrada</div><h2 style="margin-top:13px">Tu inscripción</h2><div id="headerInfo" class="grid"></div><div id="familyNote" class="note hidden">Este grupo incluye únicamente integrantes registrados en el mismo pack. Si alguien no figura, puede haberse inscripto posteriormente en otro pack, por ejemplo, a través de su colegio. Podés consultar esa inscripción con su propio DNI o correo.</div></div><div class="card"><h2 id="membersTitle">Detalle de inscripción</h2><p class="muted">Seleccioná el nombre de cada integrante para consultar su información individual.</p><div id="members"></div></div><div class="card"><h2>¿Necesitás ayuda?</h2><p class="muted">Si encontrás alguna diferencia o tenés una consulta, escribinos indicando tu número de registro.</p><a id="helpLink" class="button" href="mailto:inscripcionesvisitapapa@regnumchristi.ar">✉️ Contactar a inscripciones</a><button class="secondary" id="another">Consultar otra inscripción</button></div></section></main><div id="sectorModal" class="modal-bg hidden" role="dialog" aria-modal="true" aria-labelledby="sectorHeading"><div class="modal-panel"><button type="button" class="close" id="closeSector">Cerrar ✕</button><h2 id="sectorHeading">Sector y acceso</h2><div id="sectorContents"></div></div></div><script>
 const API='https://colectivos-regnum-christi.delicate-sun-3691.workers.dev';
 const $=id=>document.getElementById(id);const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 function error(t){$('error').textContent=t;$('error').classList.toggle('hidden',!t)}
@@ -18,12 +29,44 @@ function line(k,v){return `<div class="row"><span>${esc(k)}</span><span>${v}</sp
 function badge(s){return s==='si'?'<span class="status yes">✓ Inscripto</span>':s==='no'?'<span class="status no">— No inscripto</span>':'<span class="status no">Sin dato confirmado</span>'}
 function render(p){$('choices').classList.add('hidden');$('searchPanel').classList.add('hidden');$('result').classList.remove('hidden');$('headerInfo').innerHTML=field('N.º de registro',p.registration)+field('Pack',p.pack)+field('Integrantes registrados',p.groupSize)+field('Consulta','Solo lectura');$('familyNote').classList.toggle('hidden',!p.family);$('membersTitle').textContent=p.family?'Mi grupo familiar':'Mi inscripción';$('members').innerHTML=p.people.map((o,i)=>{
  const e=o.events,t=o.transport,k=o.kit;
- const events=[['Domingo 8/11 · Evento Familia RC',e.familias],['Domingo 8/11 · Evento Jóvenes RC',e.jovenes],['Lunes 9/11 · Misa CABA',e.caba],['Martes 10/11 · Vigilia con los Jóvenes',e.vigilia],['Miércoles 11/11 · Misa Luján',e.lujan]].map(x=>line(x[0],badge(x[1]))).join('');
+ const events=[['Domingo 8/11 · Evento Familia RC',e.familias],['Domingo 8/11 · Evento Jóvenes RC',e.jovenes],['Lunes 9/11 · Misa CABA',e.caba],['Martes 10/11 · Encuentro con los jóvenes',e.vigilia],['Miércoles 11/11 · Misa Luján',e.lujan]].map(x=>x[0].includes('Encuentro con los jóvenes') ? youthEventRow(x[0],x[1],o) : line(x[0],badge(x[1]))).join('');
  const ida=t.domingoIda?esc(t.domingoIda.origen+' · Partida '+t.domingoIda.hora):'Sin colectivo asignado';
  const vuelta=t.domingoVuelta?esc(t.domingoVuelta.destino+' · Partida '+t.domingoVuelta.hora):'Sin colectivo asignado';
  const kit=k.retirado?'✓ Retirado'+(k.fechaHora?' · '+esc(k.fechaHora):''):'Pendiente de retiro';
  return `<details ${i===0?'open':''}><summary>${esc(o.name)}</summary><div class="detailBody"><h3>📅 Eventos</h3>${events}<h3 class="sectionTitle">🚌 Colectivos</h3>${line('Domingo · Ida',ida)}${line('Domingo · Vuelta',vuelta)}${line('Miércoles · Luján',esc(t.lujan||'Sin colectivo asignado'))}<p class="muted">Lunes y martes no hay colectivos de Regnum Christi programados.</p><h3 class="sectionTitle">👕 Kit RC</h3>${line('Talle de remera',esc(k.talle))}${line('Retiro del kit',kit)}</div></details>`;
  }).join('');$('helpLink').href='mailto:inscripcionesvisitapapa@regnumchristi.ar?subject='+encodeURIComponent('Consulta sobre inscripción '+p.registration+' – Visita del Papa');window.scrollTo(0,0)}
+
+// Completar estas configuraciones cuando la organización oficial informe los
+// puntos de encuentro, enlaces de Google Maps y mapas de puertas por sector.
+// Ejemplo: 'SECTOR A': {puntos:[{nombre:'Punto 1',url:'https://maps.google.com/...'}], mapa:'https://...'}
+const SECTOR_INFO = {};
+function validHttpUrl(s){try{const u=new URL(String(s||''));return ['https:','http:'].includes(u.protocol)?u.href:''}catch{return ''}}
+function youthEventRow(label,state,person){
+ const base=line(label,badge(state));
+ if(state!=='si')return base;
+ const qr=validHttpUrl(person?.youth?.qr);
+ const sector=String(person?.youth?.sector||'').trim();
+ const id='sector-'+Math.random().toString(36).slice(2);
+ const qrHtml=qr?`<a href="${esc(qr)}" target="_blank" rel="noopener noreferrer">QR ↗</a>`:'<span class="disabled">QR</span>';
+ const sectorHtml=sector?`<button type="button" data-sector="${esc(sector)}" aria-label="Ver sector y acceso">Sector y acceso</button>`:'<span class="disabled">Sector y acceso</span>';
+ const pending=(!qr||!sector)?'<div class="youth-pending">⚠ Pendiente de envío por parte de organización oficial</div>':'';
+ return base+`<div class="youth-extra"><div class="youth-links">${qrHtml}<span>|</span>${sectorHtml}</div>${pending}</div>`;
+}
+function openSector(sector){
+ const info=SECTOR_INFO[sector]||{};
+ const puntos=Array.isArray(info.puntos)?info.puntos:[];
+ const links=puntos.filter(p=>validHttpUrl(p.url)).map(p=>`<li><a href="${esc(validHttpUrl(p.url))}" target="_blank" rel="noopener noreferrer">${esc(p.nombre||'Ver punto de encuentro en Google Maps')} ↗</a></li>`).join('');
+ const mapa=validHttpUrl(info.mapa);
+ $('sectorContents').innerHTML=`<p><strong>Sector asignado:</strong> ${esc(sector)}</p>`+
+ (links?`<h3>Puntos de encuentro</h3><ul>${links}</ul>`:'<p class="muted">Los puntos de encuentro y sus enlaces se publicarán cuando sean informados por la organización.</p>')+
+ (mapa?`<h3>Mapa de acceso</h3><p><a href="${esc(mapa)}" target="_blank" rel="noopener noreferrer">Abrir mapa con la puerta asignada ↗</a></p>`:'<p class="muted">El mapa de la puerta de acceso se incorporará cuando esté disponible.</p>');
+ $('sectorModal').classList.remove('hidden');$('closeSector').focus();
+}
+document.addEventListener('click',e=>{const b=e.target.closest('[data-sector]');if(b)openSector(b.dataset.sector)});
+$('closeSector').addEventListener('click',()=>$('sectorModal').classList.add('hidden'));
+$('sectorModal').addEventListener('click',e=>{if(e.target===$('sectorModal'))$('sectorModal').classList.add('hidden')});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')$('sectorModal').classList.add('hidden')});
+
 $('searchBtn').addEventListener('click',()=>lookup($('document').value.trim()));$('document').addEventListener('keydown',e=>{if(e.key==='Enter')lookup($('document').value.trim())});$('another').addEventListener('click',()=>{error('');$('result').classList.add('hidden');$('searchPanel').classList.remove('hidden');$('choices').classList.add('hidden');$('document').value='';window.scrollTo(0,0)});
 </script></body></html>
 
