@@ -1647,10 +1647,10 @@ details p{
 
 .rc-home-notice-wrap .rc-app-notice{position:relative;padding-right:46px;}
 .rc-notice-close{position:absolute;right:5px;top:4px;width:36px;height:36px;padding:0;border:0;background:transparent;color:#745000;font-size:26px;line-height:1;cursor:pointer;}
-.rc-notice-info{display:none;align-items:center;justify-content:center;width:24px;height:24px;padding:0;border:1px solid #e5c66b;border-radius:50%;background:#fff5cf;color:#745000;font-family:Georgia,serif;font-size:16px;font-weight:bold;cursor:pointer;}
+.rc-notice-info{display:flex;flex-shrink:0;margin-left:auto;align-items:center;justify-content:center;width:24px;height:24px;padding:0;border:1px solid #e5c66b;border-radius:50%;background:#fff5cf;color:#745000;font-family:Georgia,serif;font-size:16px;font-weight:bold;cursor:pointer;}
 .rc-home-notice-wrap.is-collapsed .rc-app-notice{display:none;}
-.rc-home-notice-wrap.is-collapsed{position:relative;height:0;}
-.rc-home-notice-wrap.is-collapsed .rc-notice-info{display:flex;position:absolute;top:11px;right:11px;margin:0;z-index:1;}
+.rc-home-notice-wrap.is-collapsed{display:none;}
+#home .home-content{padding-top:14px;}
 .rc-notice-close:focus-visible,.rc-notice-info:focus-visible{outline:2px solid #745000;outline-offset:3px;}
 
 .info-dismissible{position:relative;padding-right:43px;}
@@ -1687,6 +1687,10 @@ details p{
 #reflexiones-adoracion .prayer-unified .prayer-lines{white-space:normal;}
 #reflexiones-adoracion .prayer-unified .prayer-lines br{display:block;content:"";margin-top:3px;}
 #reflexiones-adoracion .prayer-unified p:last-child{margin-top:16px;}
+
+/* Avisos administrados desde NOVEDADES_APP. */
+.app-news{display:flex;align-items:center;gap:5px;margin:18px 22px 0;min-height:28px}.app-news-open{display:inline-flex;align-items:center;gap:7px;max-width:calc(100% - 34px);border:1px solid #c7dfcf;border-radius:20px;background:#eff8f1;color:#34734b;padding:6px 11px;cursor:pointer;font:inherit;font-size:10px;font-weight:750;letter-spacing:.08em}.app-news-open svg{width:15px;height:15px;flex-shrink:0}.app-news-open[hidden]{display:none}.app-news-open:disabled{cursor:default;color:#817779;background:#fafafa;border-color:#eee}.app-news-count{font-size:10px;letter-spacing:0;font-weight:500}.app-news-refresh{display:inline-flex;align-items:center;justify-content:center;width:27px;height:27px;border:0;border-radius:50%;background:transparent;color:#96868a;cursor:pointer;padding:5px}.app-news-refresh svg{width:16px;height:16px}.app-news-refresh:hover{background:#f5eff0;color:#803742}.app-news-refresh:disabled{opacity:.45}.app-news-status{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}.app-news-open:focus-visible,.app-news-refresh:focus-visible,.app-news-close:focus-visible{outline:2px solid #803742;outline-offset:3px}.app-news-open:focus-visible{outline-color:#34734b;}
+.app-news-dialog{box-sizing:border-box;width:calc(100% - 32px);max-width:440px;max-height:85vh;max-height:85dvh;border:0;border-radius:18px;padding:23px;background:#fff;color:#333;box-shadow:0 16px 60px #0003}.app-news-dialog::backdrop{background:rgba(28,18,22,.38)}.app-news-dialog-title{font-size:15px;color:#803742;margin:0 30px 16px 0}.app-news-close{position:absolute;right:12px;top:10px;border:0;background:transparent;color:#8c7b80;font-size:26px;cursor:pointer;width:32px;height:32px}.app-news-card{border:1px solid #d5e3e5;border-left:3px solid #427b85;border-radius:11px;background:#f5fafb;padding:16px;margin:12px 0 0;overflow-wrap:anywhere}.app-news-card[data-type="importante"]{background:#fff9ee;border-color:#d6ae66}.app-news-card[data-type="informativo"]{background:#f6f7fa;border-color:#a4afc0}.app-news-card h3{font-size:21px;line-height:1.25;margin:9px 0}.app-news-card p{white-space:pre-line;line-height:1.5;margin:9px 0;font-size:14px}.app-news-label{font-size:10px;font-weight:800;letter-spacing:.06em;color:#42717a}.app-news-card[data-type="importante"] .app-news-label{color:#946414}.app-news-card[data-type="informativo"] .app-news-label{color:#61708a}.app-news-card .app-news-meta{font-size:11px;color:#7b7779}.app-news-map{display:inline-block;background:#803742;color:#fff!important;border-radius:8px;padding:11px 14px;margin-top:8px;text-decoration:none;font-size:13px;font-weight:650}
 </style></head>
 <body>
 <div class="app">
@@ -1707,6 +1711,16 @@ details p{
      HOME
 ====================================================== -->
 <main id="home">
+<section class="app-news" aria-label="Avisos del grupo RC">
+<button type="button" class="app-news-open" id="app-news-open" aria-haspopup="dialog" aria-controls="app-news-dialog" disabled>
+<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="2" fill="currentColor" stroke="none"/><path d="M7.8 7.8a6 6 0 0 0 0 8.4m8.4-8.4a6 6 0 0 1 0 8.4M4.4 4.4a10.8 10.8 0 0 0 0 15.2M19.6 4.4a10.8 10.8 0 0 1 0 15.2"/></svg>
+<span id="app-news-caption">AVISOS RC</span><span class="app-news-count" id="app-news-count"></span>
+</button>
+<button type="button" class="app-news-refresh" id="app-news-refresh" aria-label="Actualizar avisos" title="Actualizar avisos"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7v5h-5M4 17v-5h5M6.1 7a7 7 0 0 1 11.5-1L20 9M4 15l2.4 3A7 7 0 0 0 17.9 17"/></svg></button>
+<button type="button" id="rcHomeNoticeInfo" class="rc-notice-info" aria-label="Mostrar nota sobre esta app" aria-controls="rcHomeNotice" aria-expanded="true" title="Información sobre esta app" onclick="setHomeNoticeCollapsed(false, true)"><span aria-hidden="true">i</span></button>
+<p class="app-news-status" id="app-news-status" role="status">Consultando avisos…</p>
+</section>
+
 <div id="rcHomeNoticeWrap" class="rc-home-notice-wrap"><aside id="rcHomeNotice" class="rc-app-notice" aria-label="Acerca de esta app">
 <button type="button" class="rc-notice-close" aria-label="Reducir nota a un ícono de información" title="Cerrar nota" onclick="setHomeNoticeCollapsed(true, true)">×</button>
 <p><strong>NOTA:</strong> App para inscriptos a través de Regnum Christi. No es la app oficial de la visita del Papa.</p>
@@ -1716,8 +1730,9 @@ details p{
 <p><strong>Toda la información oficial de la visita del Papa se comunica a través de <a href="https://www.elpapaenargentina.com.ar/" target="_blank" rel="noopener noreferrer">elpapaenargentina.com.ar ↗</a>.</strong></p>
 </details>
 </aside>
-<button type="button" id="rcHomeNoticeInfo" class="rc-notice-info" aria-label="Mostrar nota sobre esta app" aria-controls="rcHomeNotice" aria-expanded="true" title="Información sobre esta app" onclick="setHomeNoticeCollapsed(false, true)"><span aria-hidden="true">i</span></button></div>
+</div>
 <div class="home-content">
+
 <div class="welcome">
 <h1>Vivamos este encuentro como familia Regnum Christi</h1>
 <p style="font-size:85%;">Toda la información que necesitás para vivir la visita del papa León XIV en comunidad.</p>
@@ -2324,6 +2339,11 @@ Amén.</p><p style="text-align:right"><strong>San Anselmo de Canterbury</strong>
     </button>
 </div>
 </div>
+<dialog class="app-news-dialog" id="app-news-dialog" aria-labelledby="app-news-dialog-title">
+<button type="button" class="app-news-close" id="app-news-close" aria-label="Cerrar avisos">×</button>
+<h2 class="app-news-dialog-title" id="app-news-dialog-title">Avisos del grupo RC</h2>
+<div id="app-news-list" aria-live="polite" aria-relevant="additions removals"></div>
+</dialog>
 <script>
 let mapScale=1;function openMapViewer(){document.getElementById('mapViewer').classList.add('open');document.body.style.overflow='hidden';zoomMap(0)}function closeMapViewer(){document.getElementById('mapViewer').classList.remove('open');document.body.style.overflow=''}function zoomMap(d){mapScale=d===0?1:Math.max(1,Math.min(4,mapScale+d));document.getElementById('mapZoomImage').style.width=(mapScale*100)+'%'}document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMapViewer()});
 
@@ -3362,6 +3382,95 @@ function toggleInfoNotice(id, collapsed, moveFocus = true){
     try { collapsed = localStorage.getItem('rc_info_notice_' + box.id) === '1'; } catch (_) {}
     toggleInfoNotice(box.id, collapsed, false);
   });
+})();
+
+
+/* Avisos: lectura independiente de los flujos de inscripción y Adoración. */
+(function(){
+  const api = ADORACION_API; // Mismo despliegue, nueva acción de solo lectura.
+  const ttl = 12 * 60 * 60 * 1000;
+  const list = document.getElementById('app-news-list');
+  const status = document.getElementById('app-news-status');
+  const button = document.getElementById('app-news-refresh');
+  const opener = document.getElementById('app-news-open');
+  const caption = document.getElementById('app-news-caption');
+  const count = document.getElementById('app-news-count');
+  const dialog = document.getElementById('app-news-dialog');
+  opener.addEventListener('click', () => {if(notices.length) dialog.showModal();});
+  document.getElementById('app-news-close').addEventListener('click', () => dialog.close());
+  dialog.addEventListener('click', e => {
+    if(e.target !== dialog) return;
+    const r = dialog.getBoundingClientRect();
+    if(e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) dialog.close();
+  });
+  let notices = [], busy = false, offset = 0, rendered = '';
+  function mapsLink(value){
+    try {
+      const u = new URL(value);
+      const host = u.hostname.toLowerCase();
+      return u.protocol === 'https:' && !u.username && !u.password &&
+        (host === 'maps.app.goo.gl' || (host === 'goo.gl' && u.pathname.startsWith('/maps')) ||
+         host === 'maps.google.com' || (/^(www\.)?google\.(com|com\.ar)$/.test(host) && /^\/maps(?:\/|$)/.test(u.pathname))) ? u.href : '';
+    } catch (_) { return ''; }
+  }
+  function render(){
+    const now = Date.now() + offset;
+    notices = notices.filter(n => {
+      const published = Date.parse(n.fecha_publicacion);
+      return Number.isFinite(published) && published <= now && now < published + ttl;
+    });
+    opener.disabled = notices.length === 0;
+    caption.textContent = notices.length ? 'AHORA · AVISO IMPORTANTE' : 'SIN AVISOS NUEVOS';
+    count.textContent = notices.length > 1 ? String(notices.length) : '';
+    opener.setAttribute('aria-label', notices.length ? 'Abrir avisos del grupo RC: ' + notices.length + ' vigentes' : 'Sin avisos nuevos');
+    if(!notices.length && dialog.open) dialog.close();
+    const signature = JSON.stringify(notices);
+    if(signature === rendered) return;
+    rendered = signature;
+    list.replaceChildren();
+    notices.forEach(n => {
+      const card = document.createElement('article');
+      card.className = 'app-news-card'; card.dataset.type = n.tipo;
+      function add(tag, value, cls){
+        const el = document.createElement(tag); el.textContent = value;
+        if(cls) el.className = cls; card.appendChild(el); return el;
+      }
+      add('div', {ubicacion:'AHORA · ESTAMOS ACÁ', importante:'AVISO IMPORTANTE', informativo:'INFORMACIÓN RC'}[n.tipo], 'app-news-label');
+      add('h3', n.titulo);
+      if(n.evento) add('p', n.evento, 'app-news-meta');
+      add('p', n.mensaje);
+      add('p', 'Publicado ' + new Date(n.fecha_publicacion).toLocaleString('es-AR', {timeZone:'America/Argentina/Buenos_Aires',day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'}) + ' · Vigente por 12 horas', 'app-news-meta');
+      const link = mapsLink(n.enlace_maps);
+      if(link){ const a = add('a', n.tipo === 'ubicacion' ? 'Encontrate con el grupo · Abrir Maps ↗' : 'Ver ubicación en Google Maps ↗', 'app-news-map'); a.href = link; a.target = '_blank'; a.rel = 'noopener noreferrer'; }
+      list.appendChild(card);
+    });
+  }
+  async function refresh(){
+    if(busy) return;
+    busy = true; button.disabled = true; status.textContent = 'Actualizando avisos…';
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 15000);
+    try {
+      const response = await fetch(api + '?action=novedades&t=' + Date.now(), {cache:'no-store',signal:controller.signal});
+      if(!response.ok) throw new Error('HTTP');
+      const data = await response.json();
+      const serverNow = Date.parse(data.serverTime);
+      if(data.ok !== true || !Array.isArray(data.avisos) || !Number.isFinite(serverNow)) throw new Error('Formato');
+      offset = serverNow - Date.now();
+      notices = data.avisos.filter(n => n && ['ubicacion','importante','informativo'].includes(n.tipo) && typeof n.titulo === 'string' && typeof n.mensaje === 'string');
+      notices.sort((a,b) => Date.parse(b.fecha_publicacion)-Date.parse(a.fecha_publicacion));
+      render();
+      status.textContent = notices.length ? 'Avisos actualizados. Consulta automática cada 60 segundos.' : 'No hay avisos vigentes. Consulta automática cada 60 segundos.';
+    } catch (_) {
+      render(); status.textContent = 'No pudimos actualizar. Revisá tu conexión y tocá Actualizar avisos.';
+    } finally {clearTimeout(timeout);busy = false;button.disabled = false;}
+  }
+  button.addEventListener('click', refresh);
+  document.addEventListener('visibilitychange', () => {if(!document.hidden){render();refresh();}});
+  window.addEventListener('online', refresh);
+  setInterval(() => {if(!document.hidden) refresh();}, 60000);
+  setInterval(render, 1000); // Vencimiento local incluso sin conexión.
+  refresh();
 })();
 
 loadInitialPage();
