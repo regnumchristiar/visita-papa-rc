@@ -3344,15 +3344,25 @@ function setHomeNoticeCollapsed(collapsed, moveFocus = false){
   setHomeNoticeCollapsed(collapsed);
 })();
 
-function toggleInfoNotice(id, collapsed){
+function toggleInfoNotice(id, collapsed, moveFocus = true){
   const box = document.getElementById(id);
   if (!box) return;
   box.classList.toggle('is-collapsed', collapsed);
   const expand = box.querySelector('.info-notice-expand');
   expand.setAttribute('aria-expanded', String(!collapsed));
-  const target = collapsed ? expand : box.querySelector('.info-notice-close');
-  target.focus();
+  try { localStorage.setItem('rc_info_notice_' + id, collapsed ? '1' : '0'); } catch (_) {}
+  if (moveFocus) {
+    const target = collapsed ? expand : box.querySelector('.info-notice-close');
+    target.focus();
+  }
 }
+(function(){
+  document.querySelectorAll('#informacion .info-dismissible').forEach(function(box){
+    let collapsed = false;
+    try { collapsed = localStorage.getItem('rc_info_notice_' + box.id) === '1'; } catch (_) {}
+    toggleInfoNotice(box.id, collapsed, false);
+  });
+})();
 
 loadInitialPage();
 </script>
