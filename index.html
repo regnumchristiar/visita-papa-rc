@@ -1644,6 +1644,14 @@ details p{
 .rc-app-notice p{margin:0 0 9px;}
 .rc-app-notice p:last-child{margin-bottom:0;}
 .rc-app-notice a{color:#426877;font-weight:bold;overflow-wrap:anywhere;}
+
+.rc-home-notice-wrap .rc-app-notice{position:relative;padding-right:46px;}
+.rc-notice-close{position:absolute;right:5px;top:4px;width:36px;height:36px;padding:0;border:0;background:transparent;color:#745000;font-size:26px;line-height:1;cursor:pointer;}
+.rc-notice-info{display:none;align-items:center;justify-content:center;width:24px;height:24px;padding:0;border:1px solid #e5c66b;border-radius:50%;background:#fff5cf;color:#745000;font-family:Georgia,serif;font-size:16px;font-weight:bold;cursor:pointer;}
+.rc-home-notice-wrap.is-collapsed .rc-app-notice{display:none;}
+.rc-home-notice-wrap.is-collapsed{position:relative;height:0;}
+.rc-home-notice-wrap.is-collapsed .rc-notice-info{display:flex;position:absolute;top:3px;right:22px;margin:0;z-index:1;}
+.rc-notice-close:focus-visible,.rc-notice-info:focus-visible{outline:2px solid #745000;outline-offset:3px;}
 </style>
 <style>
 .main-five .menu-button{min-height:84px}.main-five .menu-title{font-weight:750}.main-five .menu-description{line-height:1.35}
@@ -1689,7 +1697,8 @@ details p{
      HOME
 ====================================================== -->
 <main id="home">
-<aside class="rc-app-notice" aria-label="Acerca de esta app">
+<div id="rcHomeNoticeWrap" class="rc-home-notice-wrap"><aside id="rcHomeNotice" class="rc-app-notice" aria-label="Acerca de esta app">
+<button type="button" class="rc-notice-close" aria-label="Reducir nota a un ícono de información" title="Cerrar nota" onclick="setHomeNoticeCollapsed(true, true)">×</button>
 <p><strong>NOTA:</strong> App para inscriptos a través de Regnum Christi. No es la app oficial de la visita del Papa.</p>
 <details class="rc-app-notice-details"><summary>Leer más</summary>
 <p>Está dirigida exclusivamente a quienes se inscribieron <strong>a través de Regnum Christi</strong> para participar como movimiento en nuestras actividades y en los eventos oficiales de la visita del Santo Padre.</p>
@@ -1697,6 +1706,7 @@ details p{
 <p><strong>Toda la información oficial de la visita del Papa se comunica a través de <a href="https://www.elpapaenargentina.com.ar/" target="_blank" rel="noopener noreferrer">elpapaenargentina.com.ar ↗</a>.</strong></p>
 </details>
 </aside>
+<button type="button" id="rcHomeNoticeInfo" class="rc-notice-info" aria-label="Mostrar nota sobre esta app" aria-controls="rcHomeNotice" aria-expanded="true" title="Información sobre esta app" onclick="setHomeNoticeCollapsed(false, true)"><span aria-hidden="true">i</span></button></div>
 <div class="home-content">
 <div class="welcome">
 <h1>Vivamos este encuentro como familia Regnum Christi</h1>
@@ -3304,6 +3314,25 @@ function faqGo(page,infoIndex){
     }
   }
 }
+
+/* Recordar si la nota del inicio está reducida en este navegador. */
+function setHomeNoticeCollapsed(collapsed, moveFocus = false){
+  const wrap = document.getElementById('rcHomeNoticeWrap');
+  const info = document.getElementById('rcHomeNoticeInfo');
+  if (!wrap || !info) return;
+  wrap.classList.toggle('is-collapsed', collapsed);
+  info.setAttribute('aria-expanded', String(!collapsed));
+  try { localStorage.setItem('rc_home_notice_collapsed', collapsed ? '1' : '0'); } catch (_) {}
+  if (moveFocus) {
+    const target = collapsed ? info : wrap.querySelector('.rc-notice-close');
+    if (target) target.focus();
+  }
+}
+(function(){
+  let collapsed = false;
+  try { collapsed = localStorage.getItem('rc_home_notice_collapsed') === '1'; } catch (_) {}
+  setHomeNoticeCollapsed(collapsed);
+})();
 
 loadInitialPage();
 </script>
