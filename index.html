@@ -3490,4 +3490,18 @@ function toggleInfoNotice(id, collapsed, moveFocus = true){
     } catch (_) {
       lastRefreshFailed = true;
       render(); setStatus('No pudimos actualizar. Revisá tu conexión y tocá las flechas para reintentar.');
-    } finally {clearTimeout(timeout);busy = false;button.disabled = false
+    } finally {clearTimeout(timeout);busy = false;button.disabled = false;infoRefresh.disabled = false;}
+  }
+  button.addEventListener('click', refresh);
+  infoRefresh.addEventListener('click', refresh);
+  document.addEventListener('visibilitychange', () => {if(!document.hidden){render();refresh();}});
+  window.addEventListener('online', refresh);
+  setInterval(() => {if(!document.hidden) refresh();}, 60000);
+  setInterval(render, 1000); // Vencimiento local incluso sin conexión.
+  refresh();
+})();
+
+loadInitialPage();
+</script>
+</body>
+</html>
